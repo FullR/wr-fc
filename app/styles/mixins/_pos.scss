@@ -1,0 +1,24 @@
+/*
+    Set all position properties:
+    y offset,
+    x offset,
+    top/bottom,
+    left/right,
+    position
+*/
+@mixin pos($y: auto, $x: auto, $topBottom: top, $leftRight: left, $posType: absolute) {
+    position: $posType;
+    @if $topBottom == top {
+        top: $y;
+    }
+    @else {
+        bottom: $y;
+    }
+
+    @if $leftRight == left {
+        left: $x;
+    }
+    @else {
+        right: $x;
+    }
+}

@@ -1,0 +1,27 @@
+.splash {
+    @include fill;
+    background: url('images/splash.png') no-repeat;
+    background-size: 100% 100%;
+}
+
+.splash__next-button {
+    @include pos(100px, 100px, bottom, right);
+    @include size(192px, 120px);
+    background: url('images/arrow.png') no-repeat;
+    background-size: 100% 100%;
+    border: 0;
+    cursor: pointer;
+
+    @include active {
+        background-image: url('images/arrow_hover.png');
+    }
+}
+
+.splash > .tctc-logo {
+    @include pos(16px, 16px);
+}
+
+.splash__grade-label {
+    @include pos(16px, 16px, top, right);
+    font-size: 22px;
+}

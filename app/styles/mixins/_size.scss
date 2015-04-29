@@ -1,0 +1,5 @@
+// Utility mixin for setting width/height
+@mixin size($width: auto, $height: auto) {
+    width: $width;
+    height: $height;
+}

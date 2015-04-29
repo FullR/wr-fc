@@ -1,0 +1,4 @@
+// Marks the last element as last for susy grids
+@mixin mark-last {
+    &:last-child { @include last; }
+}

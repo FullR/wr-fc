@@ -1,0 +1,6 @@
+@mixin border-image($src, $width, $offset, $repeat) {
+  -webkit-border-image:$src $width $offset $repeat; /* Safari */
+     -moz-border-image:$src $width $offset $repeat; /* Old firefox */
+       -o-border-image:$src $width $offset $repeat; /* Opera */
+          border-image:$src $width $offset $repeat;
+}

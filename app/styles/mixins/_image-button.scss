@@ -1,0 +1,12 @@
+// Utility mixin for creating buttons
+// with image backgrounds and hover image
+// backgrounds
+@mixin image-button($imgUrl, $hoverUrl) {
+    background: url($imgUrl) no-repeat;
+    background-size: 100% 100%;
+    cursor: pointer;
+
+    @include active {
+        background-image: url($hoverUrl)
+    }
+}

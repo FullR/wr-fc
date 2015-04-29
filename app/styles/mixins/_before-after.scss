@@ -1,0 +1,15 @@
+// after pseudo-selector with default blank content
+@mixin after($content: "") {
+    &::after {
+        content: $content;
+        @content;
+    }
+}
+
+// before pseudo-selector with default blank content
+@mixin before($content: "") {
+    &::before {
+        content: $content;
+        @content;
+    }
+}
