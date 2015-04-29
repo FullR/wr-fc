@@ -5,7 +5,6 @@ var Q = require("q");
 var exec = Q.nfbind(require("child_process").exec);
 var plumber = require("gulp-plumber");
 var runSequence = require("run-sequence");
-var es = require("event-stream");
 var buffer = require("vinyl-buffer");
 var uglify = require("gulp-uglify");
 var rename = require("gulp-rename");
