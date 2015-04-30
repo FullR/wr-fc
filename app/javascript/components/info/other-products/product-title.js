@@ -8,7 +8,7 @@ var ProductTitle = React.createClass({
             textDecoration: "italic"
         };
         return (
-            <span><span style={style}>{this.props.children}</span>™</span>
+            <span><span style={style}>{this.props.children}</span>&trade;</span>
         );
     }
 });

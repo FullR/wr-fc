@@ -10,8 +10,8 @@ var ButtonGroupHeader = React.createClass({
             width: "100%",
             height: "5%",
             fontSize: bp({
-                [medium]: "1.5rem",
-                defaults: "2rem"
+                [medium]: "1.75rem",
+                defaults: "2.5rem"
             }),
             fontWeight: "bold"
         };

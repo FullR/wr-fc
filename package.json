@@ -7,7 +7,9 @@
     "browserify": "^6.1.0",
     "express": "^4.9.7",
     "glob": "^4.3.2",
+    "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.0.0",
+    "gulp-plumber": "^1.0.0",
     "gulp-react": "^1.0.2",
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^0.7.1",
@@ -17,9 +19,9 @@
     "node-webkit-builder": "^0.3.2",
     "rimraf": "^2.2.8",
     "run-sequence": "^1.1.0",
+    "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.0.0",
-    "watchify": "^2.3.0",
-    "vinyl-buffer": "^1.0.0"
+    "watchify": "^2.3.0"
   },
   "dependencies": {
     "fastclick": "^1.0.6",

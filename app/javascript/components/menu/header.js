@@ -31,7 +31,7 @@ var MenuHeader = React.createClass({
         };
         return (
             <div style={style}>
-                Word Roots {level.title} Flashcards™
+                Word Roots {level.title} Flashcards&trade;
                 <div style={subHeaderStyle}>
                     Touch a game to begin.
                 </div>

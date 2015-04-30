@@ -2,3 +2,5 @@ node_modules
 .sass-cache
 dist
 statics
+cordova-level-1
+.DS_store

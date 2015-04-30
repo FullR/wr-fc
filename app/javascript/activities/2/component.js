@@ -7,7 +7,7 @@ var store = require("./store");
 var Activity2 = React.createClass({
     render: function() {
         var title = (<span>Game 2 - <Root>Roots</Root></span>);
-        var instructions = (<span>Touch the definition of this <Root>prefix:</Root></span>);
+        var instructions = (<span>Touch the definition of this <Root>root:</Root></span>);
         return (<ActivityType1 
             id="2"
             store={store} 

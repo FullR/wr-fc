@@ -11,15 +11,7 @@ var MenuButton = React.createClass({
     render: function() {
         var style = this.buildStyles({
             display: "block",
-            position: "absolute",
-            backgroundImage: "url('assets/images/home-button.png')",
-            backgroundSize: "100% 100%",
-
-            states: [
-                {hover: {
-                    backgroundImage: "url('assets/images/home-button_hover.png')"
-                }}
-            ]
+            position: "absolute"
         });
 
         _.extend(style, bp({
@@ -38,8 +30,10 @@ var MenuButton = React.createClass({
             }
         }));
 
+        var stateEvents = this.getBrowserStateEvents();
+
         return (
-            <Link {...this.getBrowserStateEvents()} style={style} to="menu"/>
+            <Link {...stateEvents} style={style} to="menu" className="menu-button"/>
         );
     }
 });

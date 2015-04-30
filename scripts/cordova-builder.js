@@ -16,12 +16,13 @@ var writeFile = Q.nfbind(require("fs").writeFile);
         (platforms:[String]) - Platforms to install
         (plugins:[String]) - Plugins to install
         (entryPoint:[String]) - Name of application entry point file (default: "index.html")
+        (preferences:[String]) - Raw preference strings to be added to config.xml
         (version:String)
         (description:String)
         (author:Object):
             (name:String)
             (email:String)
-
+            (href:String)
 */
 function build(options) {
     var projectDir = options.dest;
@@ -59,6 +60,10 @@ function build(options) {
             return addProjectFiles(projectDir, src);
         })
         .then(function() {
+            log("Generating config.xml");
+            return buildConfigXML(options);
+        })
+        .then(function() {
             return platforms.reduce(function(promise, platform) {
                 log("Adding platform: " + platform);
                 return promise.then(addPlatform.bind(null, projectDir, platform));
@@ -69,10 +74,6 @@ function build(options) {
                 log("Adding plugin: " + plugin);
                 return promise.then(addPlugin.bind(null, projectDir, plugin));
             }, Q.resolve());
-        })
-        .then(function() {
-            log("Generating config.xml");
-            return buildConfigXML(options);
         });
 
     function log() {
@@ -83,7 +84,7 @@ function build(options) {
 }
 
 function createProject(path, id, name) {
-    return exec("cordova create " + path + " " + (id || "") + " " + name);
+    return exec("cordova create '" + path + "' " + (id || "") + " '" + name + "'");
 }
 
 function addPlatform(projectDir, platform) {
@@ -102,9 +103,10 @@ function addMergeDirectory(projectDir, mergeDir) {
 }
 
 function addProjectFiles(projectDir, projectFileDir) {
-    return exec("rm -rf " + projectDir + "/www/*")
+    return exec("rm -rf " + projectDir + "/www")
         .then(function() {
-            return exec("cp -R " + projectFileDir + "/* " + projectDir + "/www");
+            //return exec("cp -R " + projectFileDir + "/* " + projectDir + "/www");
+            return exec("ln -s " + projectFileDir + " " + projectDir + "/www");
         });
 }
 

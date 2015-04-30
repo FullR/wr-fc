@@ -2,8 +2,12 @@ function path(filepath) {
     if(window.__platform.name === "android") {
         return `/android_asset/www/${filepath}`;
     }
-
-    return filepath;
+    else if(window.__platform.name === "ios") {
+        return `${filepath}`;
+    }
+    else {
+        return filepath;
+    }
 }
 
 var audioExtention,

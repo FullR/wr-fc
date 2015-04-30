@@ -3,6 +3,7 @@ var _ = require("lodash");
 var fastclick = require("fastclick");
 var Router = require("react-router");
 var ready = require("polyfills/cordova/device-ready");
+require("babelify/polyfill");
 
 module.exports = function setup(globals) {
     _.extend(window, globals);
@@ -14,6 +15,9 @@ module.exports = function setup(globals) {
         var router;
         fastclick(document.body);
         try {
+            if(window.plugin && window.plugin.statusbarOverlay) {
+                window.plugin.statusbarOverlay.hide();
+            }
             // Function.prototype.bind polyfill for cordova
             require("polyfills/function-prototype-bind")();
             // Cordova media polyfill

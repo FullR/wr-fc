@@ -8,7 +8,7 @@ var Title = React.createClass({
         };
 
         return (
-            <span {...this.props}><span style={style}>Word Roots {level.title} Flashcards</span>™</span>
+            <span {...this.props}><span style={style}>Word Roots {level.title} Flashcards</span>&trade;</span>
         );
     }
 });

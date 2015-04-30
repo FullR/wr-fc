@@ -1,0 +1,37 @@
+$PREFIX: #00a651;
+$ROOT: #d2232a;
+$SUFFIX: #007dc5;
+$WORD: #00adad;
+
+$PREFIX_ACTIVE: #00d868;
+$ROOT_ACTIVE: #f92a31;
+$SUFFIX_ACTIVE: #00a0f7;
+$WORD_ACTIVE: #00c3c3;
+
+.activity-button--red {
+    background: $ROOT;
+    &:active {
+        background: $ROOT_ACTIVE;
+    }
+}
+
+.activity-button--blue {
+    background: $SUFFIX;
+    &:active {
+        background: $SUFFIX_ACTIVE;
+    }
+}
+
+.activity-button--green {
+    background: $PREFIX;
+    &:active {
+        background: $PREFIX_ACTIVE;
+    }
+}
+
+.activity-button--cyan {
+    background: $WORD;
+    &:active {
+        background: $WORD_ACTIVE;
+    }
+}

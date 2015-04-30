@@ -96,13 +96,13 @@ var OtherProducts = React.createClass({
                             <ProductTitle>Letter Sounds Song and Game</ProductTitle>&nbsp;
                             <ProductGrade>PreK – Grade 1</ProductGrade>
                             <br/>
-                            Students learn letter sounds by singing the Letter Sounds Song™ and playing fun, simple games.  The fast, fun, and effective way to learn phonics!
+                            Students learn letter sounds by singing the Letter Sounds Song&trade; and playing fun, simple games.  The fast, fun, and effective way to learn phonics!
                         </Product><hr/>
                         <Product src="assets/images/other-products/vssg.png" href="http://www.criticalthinking.com/vowel-sounds-song-and-game.html">
                             <ProductTitle>Vowel Sounds Song and Game</ProductTitle>&nbsp;
                             <ProductGrade>PreK – Grade 2</ProductGrade>
                             <br/>
-                            The fun, easy way to teach long and short vowel sounds!  Students sing the Vowel Sounds Song™ and play games to master short and long vowels.
+                            The fun, easy way to teach long and short vowel sounds!  Students sing the Vowel Sounds Song&trade; and play games to master short and long vowels.
                         </Product><hr/>
                         <Product src="assets/images/other-products/rtr.png" href="http://www.criticalthinking.com/fun-time-phonics-series.html">
                             <ProductTitle>Fun-Time Phonics!</ProductTitle>&nbsp;
@@ -131,7 +131,7 @@ var OtherProducts = React.createClass({
                                     <div style={citationStyle}>- Michael Baker, President</div>
                                 </div>
                             </div>
-                            <div style={paragraphStyle}>The Critical Thinking Co.™ is recommended by <span style={magazineStyle}>Learning® Magazine</span>, <span style={magazineStyle}>The Well-Trained Mind</span>, <span style={magazineStyle}>College Prep Genius</span>, <span style={magazineStyle}>Creative Child Magazine</span>, <span style={magazineStyle}>Dr. Toy</span>, and used by <span style={magazineStyle}>Sylvan Learning® Centers</span>, <span style={magazineStyle}>Club Z In-Home Tutoring</span>, leading U.S. public schools, and gifted and talented programs in 57 countries throughout the world.</div>
+                            <div style={paragraphStyle}>The Critical Thinking Co.&trade; is recommended by <span style={magazineStyle}>Learning® Magazine</span>, <span style={magazineStyle}>The Well-Trained Mind</span>, <span style={magazineStyle}>College Prep Genius</span>, <span style={magazineStyle}>Creative Child Magazine</span>, <span style={magazineStyle}>Dr. Toy</span>, and used by <span style={magazineStyle}>Sylvan Learning® Centers</span>, <span style={magazineStyle}>Club Z In-Home Tutoring</span>, leading U.S. public schools, and gifted and talented programs in 57 countries throughout the world.</div>
                             <div style={guaranteeStyle}>We guarantee better grades and higher test scores or your money back.</div>
                             <div style={paragraphStyle}>Children love our products and you’ll love what our products do for your child!</div>
                         </div>

@@ -20,7 +20,7 @@ var TctcInfoBox = React.createClass({
 
         return (
             <div style={style}>
-                © 2014 The Critical Thinking Co.™ • <WebLink href="http://www.CriticalThinking.com">www.CriticalThinking.com</WebLink> • 800-458-4849
+                &copy; 2014 The Critical Thinking Co.&trade; &#8226; <WebLink href="http://www.CriticalThinking.com">www.CriticalThinking.com</WebLink> &#8226; 800-458-4849
             </div>
         );
     }

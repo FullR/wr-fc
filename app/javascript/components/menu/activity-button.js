@@ -12,7 +12,8 @@ function backgroundColor(color, hoverColor) {
     return {
         background: color,
         states: [
-            {hover: { background: hoverColor }}
+            {hover: { background: hoverColor }},
+            {active: { background: hoverColor }}
         ]
     };
 }
@@ -32,12 +33,12 @@ var style = {
     overflow: "hidden",
 
     modifiers: [
-        {color: {
+        /*{color: {
             green: backgroundColor(colors.PREFIX, colors.PREFIX_HOVER),
             red: backgroundColor(colors.ROOT, colors.ROOT_HOVER),
             blue: backgroundColor(colors.SUFFIX, colors.SUFFIX_HOVER),
             cyan: backgroundColor(colors.WORD, colors.WORD_HOVER)
-        }},
+        }},*/
         {large: {
             width: "25%"
         }},
@@ -77,9 +78,10 @@ var ActivityButton = React.createClass({
             textAlign: "center",
             color: "#000000"
         };
+        var color = this.props.color;
 
         return (
-            <Link
+            <Link className={"activity-button activity-button--"+color}
                 {...this.getBrowserStateEvents()}
                 style={this.buildStyles(style)}
                 to={"activity-"+this.props.activityId}

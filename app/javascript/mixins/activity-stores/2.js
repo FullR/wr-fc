@@ -34,7 +34,10 @@ module.exports = function(basePartList) {
             var unusedChoiceGroups = (partList || basePartList).map((correctPart) => {
                 var incorrectChoices = _(dictionary.parts)
                     .filter((part) => {
-                        var passes = part.key !== correctPart.key && part.definition !== correctPart.definition;
+                        var passes = part.key !== correctPart.key && 
+                                     part.definition !== correctPart.definition &&
+                                     part.type === correctPart.type;
+                        
                         if(passes && correctPart.blacklist) {
                             passes = correctPart.blacklist.indexOf(part.key) === -1; // make sure the part isn't on the correct part's blacklist
                         }

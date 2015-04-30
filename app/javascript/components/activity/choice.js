@@ -82,6 +82,11 @@ var Choice = React.createClass({
             backgroundSize: "100% 100%"
         };
 
+        var stateEvents = this.getBrowserStateEvents();
+
+        stateEvents.onTouchStart = stateEvents.onMouseEnter;
+        stateEvents.onTouchCancel = stateEvents.onMouseLeave;
+
         if(this.props.revealed && !this.props.correct && !this.props.selected) {
             _.extend(style, {
                 visibility: "hidden",
@@ -98,9 +103,13 @@ var Choice = React.createClass({
 
         return (
             <div {...this.props}
-                 {...this.getBrowserStateEvents()}
+                 {...stateEvents}
                  style={this.buildStyles(style)}
-                 onClick={this.onClick}
+                 onMouseUp={this.onClick}
+                 onTouchEnd={(event) => {
+                    stateEvents.onMouseLeave(event);
+                    this.onClick(event);
+                 }}
             >
                 {this.props.children}
 
