@@ -47,7 +47,8 @@ var inputStyle = {
     width: "60%",
     height: 45,
     display: "inline-block",
-    fontSize: "3.2rem"
+    fontSize: "3.2rem",
+    textAlign: "center"
 };
 
 var CreateUserScreen = React.createClass({

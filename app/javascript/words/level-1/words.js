@@ -4452,7 +4452,7 @@ module.exports = [
         "level": 1,
         "type": "word",
         "id": "memory",
-        "definition": "an ability to retain knowledge; an individual�s stock of retained knowledge",
+        "definition": "an ability to retain knowledge; an individual's stock of retained knowledge",
         "prefixes": [],
         "roots": [
             "root-memor"
