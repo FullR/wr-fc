@@ -31,6 +31,10 @@ var Sound = React.createClass({
         }
     },
 
+    isPlaying: function() {
+        return this.sound.isPlaying();
+    },
+
     render: function() {
         return <div style={{display: "none"}}/>;
     }

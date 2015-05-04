@@ -52,7 +52,7 @@ var OtherProducts = React.createClass({
             fontWeight: 700,
             width: "100%",
             textAlign: "center",
-            margin: "16px 0 16px 0"
+            margin: "48px 0 16px 0"
         };
 
         var paragraphStyle = {

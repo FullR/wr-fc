@@ -56,6 +56,7 @@ var ActivityType2 = React.createClass({
         var exampleWordId = this.state.data.currentAttempt.exampleWordId;
         var correctPartId = this.state.getCorrectChoice().partId;
         var actions = this.props.actions;
+        var index = this.state.getIndex();
         var sounds;
 
         if(revealed) {
@@ -77,7 +78,7 @@ var ActivityType2 = React.createClass({
                     onEnd={this.onSoundEnd}/>
 
                 <Info>
-                    {this.renderTitle()} {this.state.getIndex()}/{this.state.getCount()}
+                    {this.renderTitle()} {index}/{this.state.getCount()}
                 </Info>
 
                 <InstructionsBox>
@@ -85,17 +86,18 @@ var ActivityType2 = React.createClass({
                     <DefinitionDisplayBox 
                         partId={this.state.getCorrectChoice().partId}/>
                     <ExampleWord
-                        key={exampleWordId}
+                        key={index + exampleWordId}
                         wordId={exampleWordId} 
                         underlinedPartId={correctPartId}
-                        hidden={!revealed}/>
+                        hidden={!revealed}
+                        playable={true}/>
                 </InstructionsBox>
 
                 <ChoiceContainer>
                     {choices.map((choice) =>
                         <PartChoice 
                             onClick={actions.selectChoice.bind(null, choice)} 
-                            key={choice.partId} 
+                            key={index + choice.partId} 
                             revealed={revealed}
                             correct={choice.correct}
                             selected={choice.selected}

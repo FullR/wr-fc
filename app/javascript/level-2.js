@@ -8,7 +8,7 @@ var setup = require("setup");
 setup({
     level: {
         title: "Level 2",
-        ISBN: "978-1-60144-310-6"
+        ISBN: "978-1-60144-669-5"
     },
     dictionary: new Dictionary({
         parts: require("words/level-2/parts"),

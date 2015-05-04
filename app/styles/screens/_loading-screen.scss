@@ -1,0 +1,23 @@
+$image-width: 616px;
+$image-height: 399px;
+$width: $image-width * 0.75;
+$height: $image-height * 0.75;
+
+.logo-container {
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.tctc-logo {
+    display: inline-block;
+    width: $width;
+    height: $height;
+}
+
+.loading-screen {
+    @include v-align;
+    width: 100%;
+    margin-top: -100px;
+}

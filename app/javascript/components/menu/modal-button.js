@@ -20,7 +20,7 @@ var ModalButton = React.createClass({
 
             states: [
                 {hover: {
-                    backgroundColor: this.props.hoverBackground
+                    backgroundColor: this.props.backgroundHover
                 }}
             ]
         }, this.props.style);

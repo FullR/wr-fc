@@ -7,10 +7,12 @@
     @import 'mixins/mark-last';
     @import 'mixins/pos';
     @import 'mixins/size';
+    @import 'mixins/v-align';
 
 @import 'reset';
+@import 'loader';
 @import 'setup';
-@import 'common';
 
 @import 'screens/menu';
 @import 'screens/activity';
+@import 'screens/loading-screen';

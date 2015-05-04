@@ -194,7 +194,7 @@ gulp.task("html", function() {
 gulp.task("generate:word-lists", require("./scripts/build-word-lists"));
 
 gulp.task("watch", function() {
-    gulp.watch("app/styles/**/*.scss", ["styles"]);
+    gulp.watch("app/styles/**/*.scss", ["sass"]);
     gulp.watch("app/index.html", ["html"]);
 });
 

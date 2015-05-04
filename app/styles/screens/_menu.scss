@@ -10,28 +10,28 @@ $WORD_ACTIVE: #00c3c3;
 
 .activity-button--red {
     background: $ROOT;
-    &:active {
+    &:active, &:hover {
         background: $ROOT_ACTIVE;
     }
 }
 
 .activity-button--blue {
     background: $SUFFIX;
-    &:active {
+    &:active, &:hover {
         background: $SUFFIX_ACTIVE;
     }
 }
 
 .activity-button--green {
     background: $PREFIX;
-    &:active {
+    &:active, &:hover {
         background: $PREFIX_ACTIVE;
     }
 }
 
 .activity-button--cyan {
     background: $WORD;
-    &:active {
+    &:active, &:hover {
         background: $WORD_ACTIVE;
     }
 }
