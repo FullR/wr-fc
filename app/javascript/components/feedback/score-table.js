@@ -39,7 +39,7 @@ var ScoreTable = React.createClass({
             bottom: 0,
             width: "auto",
             left: 0,
-            right: 17
+            right: 0
         };
 
         return (

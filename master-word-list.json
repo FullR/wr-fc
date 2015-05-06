@@ -1028,7 +1028,7 @@
     {"level": 1, "type": "word", "id": "luminosity", "definition": "the relative quantity of light; a state of being luminous", "prefixes": [], "roots": ["lumin"], "suffixes": ["osity"], "choosableParts": ["ab","miss","vene","itive"]},
     {"level": 1, "type": "word", "id": "luminous", "definition": "giving off or reflecting light", "prefixes": [], "roots": ["lumin"], "suffixes": ["ous"], "choosableParts": ["dis","cogn","fract","ible"]},
     {"level": 1, "type": "word", "id": "manual", "definition": "having to do with the hands", "prefixes": [], "roots": ["manu"], "suffixes": ["al"], "choosableParts": ["e","cred","equi","ic"]},
-    {"level": 1, "type": "word", "id": "manuscript", "definition": "a handwritten document or author’s original text", "prefixes": [], "roots": ["manu", "script"], "suffixes": [], "choosableParts": ["en","cumul","equi","ice"]},
+    {"level": 1, "type": "word", "id": "manuscript", "definition": "a handwritten document or author's original text", "prefixes": [], "roots": ["manu", "script"], "suffixes": [], "choosableParts": ["en","cumul","equi","ice"]},
     {"level": 1, "type": "word", "id": "marine", "definition": "of or pertaining to the sea", "prefixes": [], "roots": ["mar"], "suffixes": ["ine"], "choosableParts": ["il","dict","equi","id"]},
     {"level": 1, "type": "word", "id": "memorable", "definition": "able to be remembered; worth remembering", "prefixes": [], "roots": ["memor"], "suffixes": ["able"], "choosableParts": ["ac","manu","vent","ly"]},
     {"level": 1, "type": "word", "id": "memorial", "definition": "related to remembering a person or event", "prefixes": [], "roots": ["memor"], "suffixes": ["ial"], "choosableParts": ["extro","gress","equ","ile"]},

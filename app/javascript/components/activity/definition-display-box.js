@@ -6,11 +6,11 @@ var DefinitionDisplayBox = React.createClass({
     render: function() {
         var size = this.props.size;
         var style = size === "small" ? {
-            fontSize: "3.2rem",
-            lineHeight: "3.8rem"
+            fontSize: 32,
+            lineHeight: "38px"
         } : {
-            fontSize: "5.2rem",
-            lineHeight: "6.4rem"
+            fontSize: 52,
+            lineHeight: "64px"
         };
 
         return (

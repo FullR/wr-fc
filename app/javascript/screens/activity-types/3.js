@@ -1,6 +1,7 @@
 var React = require("react");
 var Reflux = require("reflux");
 var activityMixin = require("mixins/activity");
+var windowListener = require("mixins/window-listener");
 
 var Feedback = require("screens/feedback");
 var FeedbackTitle = require("components/feedback/title");
@@ -20,7 +21,8 @@ var Sound = require("components/utility/sound");
 var ActivityType3 = React.createClass({
     mixins: [
         Reflux.ListenerMixin,
-        activityMixin
+        activityMixin,
+        windowListener
     ],
 
     onSoundPlay: function() {
@@ -45,6 +47,17 @@ var ActivityType3 = React.createClass({
 
     renderInstructions: function() {
         return this.props.instructions;
+    },
+
+    componentDidMount: function() {
+        this.on("keydown", (event) => {
+            switch(event.keyCode) {
+                case 32: if(!this.state.isShowingFeedback() && this.state.isWaiting()) {
+                    this.props.actions.continueActivity();
+                    break;
+                }
+            }
+        });
     },
 
     renderActivity: function() {
@@ -88,7 +101,7 @@ var ActivityType3 = React.createClass({
                     highlighted={this.state.soundPlaying}
                     onClick={revealed ? this.playCorrectWord : null}/>
 
-                <ChoiceContainer>
+                <ChoiceContainer choiceCount={this.props.choiceCount}>
                     {choices.map((choice) =>
                         <PartChoice 
                             onClick={actions.selectChoice.bind(null, choice)} 
@@ -96,8 +109,7 @@ var ActivityType3 = React.createClass({
                             revealed={revealed}
                             correct={choice.correct}
                             selected={choice.selected}
-                            partId={choice.partId}
-                            choiceCount={this.props.choiceCount}/>
+                            partId={choice.partId}/>
                     )}
                 </ChoiceContainer>
 

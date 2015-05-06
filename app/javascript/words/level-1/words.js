@@ -4327,7 +4327,7 @@ module.exports = [
         "level": 1,
         "type": "word",
         "id": "manuscript",
-        "definition": "a handwritten document or author�s original text",
+        "definition": "a handwritten document or author's original text",
         "prefixes": [],
         "roots": [
             "root-manu",

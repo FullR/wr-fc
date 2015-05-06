@@ -21,7 +21,7 @@ var DefinitionChoice = React.createClass({
             width: "100%",
             fontSize: bp({
                 //[medium]: "1.4rem",
-                defaults: "2.2rem"
+                defaults: 22
             }),
             fontWeight: 800
         };

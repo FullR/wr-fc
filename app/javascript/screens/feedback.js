@@ -1,4 +1,5 @@
 var React = require("react");
+var Reflux = require("reflux");
 var ScoreTable = require("components/feedback/score-table");
 var colors = require("colors");
 var FeedbackButton = require("components/feedback/button");
@@ -39,6 +40,8 @@ var buttonStyle = {
 };
 
 var Feedback = React.createClass({
+    mixins: [Reflux.connect(appStore, "app")],
+
     contextTypes: {
         router: React.PropTypes.func,
         level: React.PropTypes.object,

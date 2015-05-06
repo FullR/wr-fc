@@ -8,14 +8,10 @@ var ContinueButton = React.createClass({
 
     render: function() {
         var style = this.buildStyles({
-            position: "absolute",
-            right: bp({
-                [medium]: "3rem",
-                defaults: "10rem"
-            }),
-            bottom: "15%",
-            width: "7.5rem",
-            height: "15rem",
+            display: "inline-block",
+            verticalAlign: "middle",
+            width: 75,
+            height: 150,
             backgroundSize: "100% 100%",
             backgroundImage: "url('assets/images/continue-button.png')",
             cursor: "pointer",

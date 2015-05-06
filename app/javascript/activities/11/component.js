@@ -6,7 +6,7 @@ var store = require("./store");
 
 var Activity11 = React.createClass({
     render: function() {
-        var title = "Game 11 - Two Word Parts";
+        var title = "Game 11 - Three Word Parts";
         var instructions = "Touch the three word parts that together make a word.";
         return (<ActivityType3
             id="11"

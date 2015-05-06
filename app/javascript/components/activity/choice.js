@@ -19,31 +19,33 @@ var Choice = React.createClass({
     },
 
     render: function() {
-        var width = this.props.choiceCount ? (((100/this.props.choiceCount) * 0.9) + "%") : bp({
-            [small]: "12rem",
-            [medium]: "18rem",
-            defaults: "25rem"
-        });
+        var width = bp({
+            [small]: 125,
+            [medium]: 175,
+            "width < 1245": 175,
+            defaults: 250
+        });//this.props.width;
+
         var style = {
             position: "relative",
             boxSizing: "border-box",
             display: "inline-block",
             width: width,
             height: "100%",
-            margin: "0 0.4rem 0 0.4rem",
-            border: "0.3rem solid #DCDC94",
-            borderRadius: "1rem",
+            margin: "0 5px 0 5px",
+            border: "3px solid #DCDC94",
+            borderRadius: 10,
             background: this.props.highlighted ? "#FFFD61" : "#F1F1D4",
             cursor: "pointer",
 
             states: [
                 {hover: {
-                    border: "0.3rem solid #000000",
+                    border: "3px solid #000000",
                     background: this.props.onRevealedClick && this.props.revealed ? "#FFFD61" : "#F1F1D4"
                 }},
 
                 {active: {
-                    border: "0.3rem solid #000000",
+                    border: "3px solid #000000",
                     background: this.props.onRevealedClick && this.props.revealed ? "#FFFD61" : "#F1F1D4"
                 }}
             ],
@@ -51,12 +53,12 @@ var Choice = React.createClass({
             modifiers: _.compact([
                 {selected: {
                     cursor: "default",
-                    border: "0.3rem solid #000000"
+                    border: "3px solid #000000"
                 }},
 
                 {revealed: {
                     cursor: this.props.onRevealedClick ? "pointer" : "default",
-                    border: "0.3rem solid #000000"
+                    border: "3px solid #000000"
                 }}
             ])
         };
@@ -75,8 +77,8 @@ var Choice = React.createClass({
         var correctIconStyle = {
             position: "absolute",
             width: "80%",
-            height: "3.5rem",
-            bottom: "-4rem",
+            height: "30%",
+            bottom: "-34%",
             left: "10%",
             backgroundImage: "url('assets/images/stars.png')",
             backgroundSize: "100% 100%"
@@ -85,7 +87,7 @@ var Choice = React.createClass({
         var stateEvents = this.getBrowserStateEvents();
 
         stateEvents.onTouchStart = stateEvents.onMouseEnter;
-        stateEvents.onTouchCancel = stateEvents.onMouseLeave;
+        stateEvents.onTouchCancel = stateEvents.onTouchEnd = stateEvents.onMouseLeave;
 
         if(this.props.revealed && !this.props.correct && !this.props.selected) {
             _.extend(style, {

@@ -1,5 +1,6 @@
 var React = require("react");
 var {StyleResolverMixin, BrowserStateMixin} = require("radium");
+var soundManager = require("sound/sound-manager");
 var Word = require("components/activity/word");
 var Definition = require("components/activity/definition");
 var Sound = require("components/utility/sound");
@@ -37,14 +38,17 @@ var ExampleWord = React.createClass({
 
     play: function() {
         this.refs.sound.play();
+        if(this.props.onPlay) {
+            this.props.onPlay();
+        }
     },
 
     render: function() {
         var playable = this.props.playable;
         var style = this.buildStyles({
             width: "100%",
-            fontSize: "2.8rem",
-            marginTop: "1.6rem",
+            fontSize: 28,
+            marginTop: 16,
             transition: "opacity 0.25s",
             opacity: this.props.hidden ? 0 : 1,
             cursor: playable ? "pointer" : null,

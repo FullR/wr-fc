@@ -98,7 +98,7 @@ var EndGameWindow = React.createClass({
                     <div style={windowStyle}>
                         <div style={bgImageOverlayStyle}>
                             <div style={headerStyle}>Congratulations!</div>
-                            <div style={textStyle}>You have completed all of the games.<br/>You can restart by clearing your data from the menu.</div>
+                            <div style={textStyle}>You have completed all of the games.<br/>You can restart by selecting Clear User Data from the Admin/Score screen.</div>
                             <div style={buttonContainerStyle}>
                                 <div {...this.getBrowserStateEvents()} style={this.buildStyles(buttonStyle)} onClick={this.close}>Close</div>
                             </div>

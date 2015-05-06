@@ -2,6 +2,7 @@ var React = require("react");
 var _ = require("lodash");
 var soundManager = require("sound/sound-manager");
 var Q = require("q");
+var queue = require("utility/queue");
 
 function wait(ms) {
     var deferred = Q.defer();
@@ -24,21 +25,29 @@ var Sounds = React.createClass({
     },
 
     play: function() {
-        return this.sounds.reduce((q, sound) => {
+        var delay = this.props.delay;
+        /*return this.sounds.reduce((q, sound, index) => {
             return q.then(() => {
                 if(this.isMounted()) {
-                    return sound.play();
-                }
-            }).then(() => {
-                if(this.props.delay && this.isMounted()) {
-                    this.deferred = wait(this.props.delay);
-                    return this.deferred.promise;
+                    return sound.play(index ? delay : null);
                 }
             });
-        }, Q.resolve());
+        }, Q.resolve());*/
+        this._queue = queue(this.sounds, (sound, index) => {
+            return sound.play(index ? delay : null);
+        });
+
+        return this._queue.promise.then(() => {
+            this._queue = null;
+        });
     },
 
     stop: function() {
+        console.log("Stopping", this._queue);
+        if(this._queue) {
+            this._queue.stop();
+            this._queue = null;
+        }
         _.invoke(this.sounds, "stop");
     },
 

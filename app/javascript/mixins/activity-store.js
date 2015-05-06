@@ -17,7 +17,7 @@ module.exports = {
             return {correct: 0, max: 0};
         }
         return this.data.scores.reduce((highscore, score) => 
-            !score.isReview && score.correct > highscore.correct
+            !score.isReview && score.correct > highscore.correct ? score : highscore
         );
     },
 

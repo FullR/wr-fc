@@ -3,9 +3,9 @@ var React = require("react");
 var style = {
     position: "absolute",
     left: "50%",
-    top: "6.4rem",
-    width: "60rem",
-    marginLeft: "-30rem",
+    top: 64,
+    width: 600,
+    marginLeft: -300,
     cursor: "default"
 };
 

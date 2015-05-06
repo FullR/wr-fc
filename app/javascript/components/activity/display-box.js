@@ -11,8 +11,8 @@ var DisplayBox = React.createClass({
         var style = {
             background: colors.DISPLAY_BOX_BG,
             cursor: disabled ? "default" : "pointer",
-            marginTop: "1.6rem",
-            padding: "0.8rem",
+            marginTop: 16,
+            padding: 8,
             textAlign: "center",
             modifiers: [
                 {highlighted: {

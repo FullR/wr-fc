@@ -159,7 +159,7 @@ function check(levelObj) {
         });
     });
 
-    /*words.forEach(function(word) {
+    words.forEach(function(word) {
         if(!wordSoundExists(word)) {
             console.log("Sound file not found for " + word.key);
         }
@@ -175,7 +175,7 @@ function check(levelObj) {
         if(!definitionSoundExists(word)) {
             console.log("Definition sound file not found for " + word.key);
         }
-    });*/
+    });
 }
 
 function saveWordList(path, wordList) {

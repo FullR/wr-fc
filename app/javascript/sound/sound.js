@@ -46,6 +46,7 @@ _.extend(Sound.prototype, emitter, {
     _finishedPlaying: function(stopped) {
         var deferred = this.deferred;
         this.playing = false;
+        this.timeout = null;
         
         if(deferred) {
             deferred.resolve();
@@ -56,13 +57,23 @@ _.extend(Sound.prototype, emitter, {
         return Q.resolve();
     },
 
-    play: function() {
+    play: function(delay) {
         if(!this.loaded) {
             return Q.resolve();
         }
         return this.stop()
-            .then(function() {
+            .then(() => {
+                var deferred;
+                if(delay) {
+                    deferred = Q.defer();
+                    this.timeout = setTimeout(deferred.resolve, delay);
+                    return deferred.promise;
+                }
+                return Q.resolve();
+            })
+            .then(() => {
                 var deferred = Q.defer();
+                this.timeout = null;
                 this.deferred = deferred;
                 this.playing = true;
                 this.media.play();
@@ -70,7 +81,7 @@ _.extend(Sound.prototype, emitter, {
                 this.fire("play");
                 return deferred.promise;
             }.bind(this))
-            .then(function() {
+            .then(() => {
                 this.playing = false;
                 this.fire("end");
             }.bind(this));
@@ -81,6 +92,10 @@ _.extend(Sound.prototype, emitter, {
     },
 
     stop: function() {
+        if(this.timeout) {
+            clearTimeout(this.timeout);
+            this.timeout = null;
+        }
         if(this.deferred) {
             this.media.stop();
             return this._finishedPlaying();

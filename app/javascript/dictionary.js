@@ -11,7 +11,7 @@ function Dictionary(props) {
     var byType = (type) => ((part) => part.type === type);
     var parts = props.parts;
     var words = props.words;
-    
+
     this.parts = parts;
     this.words = words;
     this.prefixes = parts.filter(byType("prefix"));

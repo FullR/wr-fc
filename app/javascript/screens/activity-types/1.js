@@ -1,6 +1,7 @@
 var React = require("react");
 var Reflux = require("reflux");
 var activityMixin = require("mixins/activity");
+var windowListener = require("mixins/window-listener");
 
 var Feedback = require("screens/feedback");
 var FeedbackTitle = require("components/feedback/title");
@@ -15,12 +16,14 @@ var InstructionsBox = require("components/activity/instructions-box");
 var Instructions = require("components/activity/instructions");
 var PartDisplayBox = require("components/activity/part-display-box");
 var ExampleWord = require("components/activity/example-word");
+var BottomContainer = require("components/activity/bottom-container");
 var Sound = require("components/utility/sound");
 
 var ActivityType1 = React.createClass({
     mixins: [
         Reflux.ListenerMixin,
-        activityMixin
+        activityMixin,
+        windowListener
     ],
 
     playWordSound: function() {
@@ -45,6 +48,17 @@ var ActivityType1 = React.createClass({
 
     renderInstructions: function() {
         return this.props.instructions;
+    },
+
+    componentDidMount: function() {
+        this.on("keydown", (event) => {
+            switch(event.keyCode) {
+                case 32: if(!this.state.isShowingFeedback() && this.state.isWaiting()) {
+                    this.props.actions.continueActivity();
+                    break;
+                }
+            }
+        });
     },
 
     renderActivity: function() {
@@ -74,6 +88,7 @@ var ActivityType1 = React.createClass({
                 key={correctPartSoundPath}
                 path={correctPartSoundPath}
                 autoplay={true}
+                delay={250}
                 onPlay={this.onSoundPlay}
                 onEnd={this.onSoundEnd}/>
         ];
@@ -93,27 +108,29 @@ var ActivityType1 = React.createClass({
                         highlighted={this.state.soundPlaying}/>
                     <ExampleWord
                         key={index + exampleWordId}
-                        wordId={exampleWordId} 
+                        wordId={exampleWordId}
                         underlinedPartId={correctPartId}
                         hidden={!revealed}/>
                 </InstructionsBox>
 
-                <ChoiceContainer>
-                    {choices.map((choice) =>
-                        <DefinitionChoice 
-                            onClick={actions.selectChoice.bind(null, choice)} 
-                            key={index + choice.partId} 
-                            revealed={revealed}
-                            correct={choice.correct}
-                            selected={choice.selected}
-                            partId={choice.partId}/>
-                    )}
-                </ChoiceContainer>
+                <BottomContainer>
+                    <ChoiceContainer choiceCount={3}>
+                        {choices.map((choice) =>
+                            <DefinitionChoice 
+                                onClick={actions.selectChoice.bind(null, choice)} 
+                                key={index + choice.partId} 
+                                revealed={revealed}
+                                correct={choice.correct}
+                                selected={choice.selected}
+                                partId={choice.partId}/>
+                        )}
+                    </ChoiceContainer>
 
-                {revealed ?
-                    <ContinueButton onClick={actions.continueActivity}/> :
-                    null 
-                }
+                    {revealed ?
+                        <ContinueButton onClick={actions.continueActivity}/> :
+                        null 
+                    }
+                </BottomContainer>
             </div>
         );
     },

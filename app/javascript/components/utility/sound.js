@@ -14,7 +14,15 @@ var Sound = React.createClass({
 
         this.sound.load().then(() => {
             if(this.props.autoplay) {
-                this.sound.play();
+                if(this.props.delay) {
+                    this.timeout = setTimeout(() => {
+                        this.timeout = null;
+                        this.sound.play();
+                    }, this.props.delay);
+                }
+                else {
+                    this.sound.play();
+                }
             }
         });
     },
@@ -22,6 +30,10 @@ var Sound = React.createClass({
     componentWillUnmount: function() {
         if(this.sound) {
             soundManager.release(this.sound);
+        }
+        if(this.timeout) {
+            clearTimeout(this.timeout);
+            this.timeout = null;
         }
     },
 

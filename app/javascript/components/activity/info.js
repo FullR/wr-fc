@@ -2,9 +2,9 @@ var React = require("react");
 
 var style = {
     position: "absolute",
-    top: "0.8rem",
-    right: "0.8rem",
-    fontSize: "1.8rem",
+    top: 8,
+    right: 8,
+    fontSize: 18,
     cursor: "default"
 };
 

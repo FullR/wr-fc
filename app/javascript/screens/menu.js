@@ -14,6 +14,7 @@ var ButtonRow = require("components/menu/button-row");
 var ActivityButton = require("components/menu/activity-button");
 var ChangeUserButton = require("components/menu/change-user-button");
 var FooterMenu = require("components/menu/footer-menu");
+var FooterLink = require("components/menu/footer-link");
 var UsernameLabel = require("components/menu/username-label");
 var ScoreLabel = require("components/menu/score-label");
 var ActivityButtonTitle = require("components/menu/activity-button-title");
@@ -27,17 +28,6 @@ var setUsername = require("actions/set-username");
 var style = {
     width: "100%",
     height: "100%"
-};
-
-var footerLinkStyle = {
-    margin: bp({
-        [small]: "0 0.25rem",
-        [medium]: "0 1rem",
-        defaults: "0 1.6rem"
-    }),
-    color: "#0000FF",
-    textDecoration: "underline",
-    cursor: "pointer"
 };
 
 var logoStyle = {
@@ -90,6 +80,7 @@ var Menu = React.createClass({
         if(appStore.isStarted(activityId)) {
             if(appStore.isCompleted(activityId)) {
                 highscore = appStore.getHighscore(activityId);
+                console.log(highscore);
                 percent = Math.floor((highscore.correct / highscore.max)*100);
                 return (<ScoreLabel>{percent}%</ScoreLabel>);
             }
@@ -194,11 +185,11 @@ var Menu = React.createClass({
 
                 <ChangeUserButton onClick={this.openModal.bind(this, changeUserModal)}/>
                 <FooterMenu>
-                    <Link to="about" style={footerLinkStyle}>About</Link>
-                    <Link to="license" style={footerLinkStyle}>License Agreement</Link>
-                    <Link to="products" style={footerLinkStyle}>Other Products</Link>
-                    <Link to="credits" style={footerLinkStyle}>Credits</Link>
-                    <span style={footerLinkStyle} onClick={this.openModal.bind(this, clearModal)}>Clear User Data</span>
+                    <FooterLink to="about">About</FooterLink>
+                    <FooterLink to="license">License Agreement</FooterLink>
+                    <FooterLink to="products">Other Products</FooterLink>
+                    <FooterLink to="credits">Credits</FooterLink>
+                    <FooterLink onClick={this.openModal.bind(this, clearModal)}>Clear User Data</FooterLink>
                 </FooterMenu>
             </div>
         );
