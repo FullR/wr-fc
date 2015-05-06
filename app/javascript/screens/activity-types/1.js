@@ -2,6 +2,7 @@ var React = require("react");
 var Reflux = require("reflux");
 var activityMixin = require("mixins/activity");
 var windowListener = require("mixins/window-listener");
+var isMounted = require("utility/mounted-only");
 
 var Feedback = require("screens/feedback");
 var FeedbackTitle = require("components/feedback/title");
@@ -26,19 +27,19 @@ var ActivityType1 = React.createClass({
         windowListener
     ],
 
-    playWordSound: function() {
+    playWordSound: isMounted(function() {
         this.refs.wordSound.play();
-    },
+    }),
 
-    onSoundPlay: function() {
+    onSoundPlay: isMounted(function() {
         this.state.soundPlaying = true;
         this.setState(this.state);
-    },
+    }),
 
-    onSoundEnd: function() {
+    onSoundEnd: isMounted(function() {
         this.state.soundPlaying = false;
         this.setState(this.state);
-    },
+    }),
 
     renderTitle: function() {
         return (
@@ -125,12 +126,12 @@ var ActivityType1 = React.createClass({
                                 partId={choice.partId}/>
                         )}
                     </ChoiceContainer>
-
-                    {revealed ?
-                        <ContinueButton onClick={actions.continueActivity}/> :
-                        null 
-                    }
                 </BottomContainer>
+
+                {revealed ?
+                    <ContinueButton onClick={actions.continueActivity}/> :
+                    null 
+                }
             </div>
         );
     },

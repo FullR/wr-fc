@@ -2,6 +2,7 @@ var React = require("react");
 var Reflux = require("reflux");
 var activityMixin = require("mixins/activity");
 var windowListener = require("mixins/window-listener");
+var isMounted = require("utility/mounted-only");
 
 var Feedback = require("screens/feedback");
 var FeedbackTitle = require("components/feedback/title");
@@ -15,6 +16,7 @@ var Info = require("components/activity/info");
 var InstructionsBox = require("components/activity/instructions-box");
 var Instructions = require("components/activity/instructions");
 var DefinitionDisplayBox = require("components/activity/definition-display-box");
+var BottomContainer = require("components/activity/bottom-container");
 var PartPieceDisplay = require("components/activity/part-piece-display");
 var Sound = require("components/utility/sound");
 
@@ -25,19 +27,19 @@ var ActivityType3 = React.createClass({
         windowListener
     ],
 
-    onSoundPlay: function() {
+    onSoundPlay: isMounted(function() {
         this.state.soundPlaying = true;
         this.setState(this.state);
-    },
+    }),
 
-    onSoundEnd: function() {
+    onSoundEnd: isMounted(function() {
         this.state.soundPlaying = false;
         this.setState(this.state);
-    },
+    }),
 
-    playCorrectWord: function() {
+    playCorrectWord: isMounted(function() {
         this.refs.correctWord.play();
-    },
+    }),
 
     renderTitle: function() {
         return (
@@ -101,22 +103,24 @@ var ActivityType3 = React.createClass({
                     highlighted={this.state.soundPlaying}
                     onClick={revealed ? this.playCorrectWord : null}/>
 
-                <ChoiceContainer choiceCount={this.props.choiceCount}>
-                    {choices.map((choice) =>
-                        <PartChoice 
-                            onClick={actions.selectChoice.bind(null, choice)} 
-                            key={choice.partId} 
-                            revealed={revealed}
-                            correct={choice.correct}
-                            selected={choice.selected}
-                            partId={choice.partId}/>
-                    )}
-                </ChoiceContainer>
+                <BottomContainer>
+                    <ChoiceContainer choiceCount={this.props.choiceCount}>
+                        {choices.map((choice) =>
+                            <PartChoice 
+                                onClick={actions.selectChoice.bind(null, choice)} 
+                                key={choice.partId} 
+                                revealed={revealed}
+                                correct={choice.correct}
+                                selected={choice.selected}
+                                partId={choice.partId}/>
+                        )}
+                    </ChoiceContainer>
 
-                {revealed ?
-                    <ContinueButton onClick={actions.continueActivity}/> :
-                    null 
-                }
+                    {revealed ?
+                        <ContinueButton onClick={actions.continueActivity}/> :
+                        null 
+                    }
+                </BottomContainer>
             </div>
         );
     },

@@ -3,6 +3,7 @@ var Reflux = require("reflux");
 var activityMixin = require("mixins/activity");
 var windowListener = require("mixins/window-listener");
 var soundManager = require("sound/sound-manager");
+var isMounted = require("utility/mounted-only");
 
 var Feedback = require("screens/feedback");
 var FeedbackTitle = require("components/feedback/title");
@@ -16,6 +17,7 @@ var Info = require("components/activity/info");
 var InstructionsBox = require("components/activity/instructions-box");
 var Instructions = require("components/activity/instructions");
 var DefinitionDisplayBox = require("components/activity/definition-display-box");
+var BottomContainer = require("components/activity/bottom-container");
 var ExampleWord = require("components/activity/example-word");
 var Sound = require("components/utility/sound");
 var Sounds = require("components/utility/sounds");
@@ -27,26 +29,26 @@ var ActivityType2 = React.createClass({
         windowListener
     ],
 
-    playWordSound: function() {
+    playWordSound: isMounted(function() {
         soundManager.stop();
         this.refs.wordSound.play();
-    },
+    }),
 
-    stopSounds: function() {
+    stopSounds: isMounted(function() {
         if(this.refs.sounds) {
             this.refs.sounds.stop();
         }
-    },
+    }),
 
-    onSoundPlay: function() {
+    onSoundPlay: isMounted(function() {
         this.state.soundPlaying = true;
         this.setState(this.state);
-    },
+    }),
 
-    onSoundEnd: function() {
+    onSoundEnd: isMounted(function() {
         this.state.soundPlaying = false;
         this.setState(this.state);
-    },
+    }),
 
     renderTitle: function() {
         return (
@@ -115,24 +117,26 @@ var ActivityType2 = React.createClass({
                         onPlay={this.stopSounds}/>
                 </InstructionsBox>
 
-                <ChoiceContainer choiceCount={3}>
-                    {choices.map((choice) =>
-                        <PartChoice 
-                            onClick={actions.selectChoice.bind(null, choice)} 
-                            key={index + choice.partId} 
-                            revealed={revealed}
-                            correct={choice.correct}
-                            selected={choice.selected}
-                            partId={choice.partId}
-                            onRevealedClick={choice.correct ? this.playWordSound : null}
-                            highlighted={choice.correct && this.state.soundPlaying}/>
-                    )}
-                </ChoiceContainer>
+                <BottomContainer>
+                    <ChoiceContainer choiceCount={3}>
+                        {choices.map((choice) =>
+                            <PartChoice 
+                                onClick={actions.selectChoice.bind(null, choice)} 
+                                key={index + choice.partId} 
+                                revealed={revealed}
+                                correct={choice.correct}
+                                selected={choice.selected}
+                                partId={choice.partId}
+                                onRevealedClick={choice.correct ? this.playWordSound : null}
+                                highlighted={choice.correct && this.state.soundPlaying}/>
+                        )}
+                    </ChoiceContainer>
 
-                {revealed ?
-                    <ContinueButton onClick={actions.continueActivity}/> :
-                    null 
-                }
+                    {revealed ?
+                        <ContinueButton onClick={actions.continueActivity}/> :
+                        null 
+                    }
+                </BottomContainer>
             </div>
         );
     },

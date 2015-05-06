@@ -2,7 +2,7 @@ var React = require("react");
 var {StyleResolverMixin, BrowserStateMixin} = require("radium");
 var _ = require("lodash");
 var bp = require("utility/bp");
-var {small, medium} = require("sizes");
+var {micro, small, medium} = require("sizes");
 
 var animationSpeed = 0.5;
 
@@ -20,11 +20,32 @@ var Choice = React.createClass({
 
     render: function() {
         var width = bp({
+            [micro]: 100,
             [small]: 125,
             [medium]: 175,
-            "width < 1245": 175,
             defaults: 250
-        });//this.props.width;
+        });
+        var correctIconWidth = bp({
+            [small]: 100,
+            [medium]: 125,
+            defaults: 150
+        });
+        var correctIconHeight = bp({
+            [small]: (2/3)*30,
+            [medium]: (5/6)*30,
+            defaults: 30
+        });
+
+        var incorrectIconWidth = bp({
+            [small]: 75,
+            [medium]: 100,
+            defaults: 150
+        }) * 0.9;
+        var incorrectIconHeight = bp({
+            [small]: 75,
+            [medium]: 100,
+            defaults: 150
+        }) * 0.9;
 
         var style = {
             position: "relative",
@@ -65,10 +86,12 @@ var Choice = React.createClass({
 
         var incorrectIconStyle = {
             position: "absolute",
-            width: "80%",
-            height: "100%",
-            left: "10%",
-            top: 0,
+            width: incorrectIconWidth,
+            height: incorrectIconHeight,
+            top: "50%",
+            left: "50%",
+            marginLeft: -(incorrectIconWidth/2),
+            marginTop: -(incorrectIconHeight/2),
             backgroundImage: "url('assets/images/x.png')",
             backgroundSize: "100% 100%",
             opacity: 0.5
@@ -76,10 +99,11 @@ var Choice = React.createClass({
 
         var correctIconStyle = {
             position: "absolute",
-            width: "80%",
-            height: "30%",
-            bottom: "-34%",
-            left: "10%",
+            width: correctIconWidth,
+            height: correctIconHeight,
+            bottom: -(correctIconHeight + 3),
+            left: "50%",
+            marginLeft: -(correctIconWidth/2),
             backgroundImage: "url('assets/images/stars.png')",
             backgroundSize: "100% 100%"
         };
