@@ -46,6 +46,12 @@ function wordsWithPartExists(level, partKey) {
     });
 }
 
+function remove(c) {
+    return function(str) {
+        return str.replace(c, "");
+    };
+}
+
 function fixWords() {
     masterList.forEach(function(word) {
         var level = word.level;
@@ -141,14 +147,6 @@ function check(levelObj) {
         });
     }
 
-    function wordSoundExists(word) {
-        return fs.existsSync("/../statics/assets/audio/"+word.soundFile+".ogg");
-    }
-
-    function definitionSoundExists(word) {
-        return fs.existsSync("/../statics/assets/audio/"+word.definitionSoundFile+".ogg");
-    }
-
     ["prefixes", "roots", "suffixes", "choosableParts"].forEach(function(field) {
         words.forEach(function(word) {
             word[field].forEach(function(partId) {
@@ -157,24 +155,6 @@ function check(levelObj) {
                 }
             });
         });
-    });
-
-    words.forEach(function(word) {
-        if(!wordSoundExists(word)) {
-            console.log("Sound file not found for " + word.key);
-        }
-    });
-
-    parts.forEach(function(word) {
-        if(!wordSoundExists(word)) {
-            console.log("Sound file not found for " + word.key);
-        }
-    });
-
-    parts.forEach(function(word) {
-        if(!definitionSoundExists(word)) {
-            console.log("Definition sound file not found for " + word.key);
-        }
     });
 }
 

@@ -623,7 +623,7 @@ module.exports = [
         "level": 0,
         "type": "word",
         "id": "describe",
-        "definition": "to create a picture in a person�s mind from the use of words alone",
+        "definition": "to create a picture in a person's mind from the use of words alone",
         "prefixes": [
             "prefix-de"
         ],
@@ -644,7 +644,7 @@ module.exports = [
         "level": 0,
         "type": "word",
         "id": "descriptive",
-        "definition": "tending to use words that tell about smell, sight, sound, texture, and taste to create a picture in a person�s mind",
+        "definition": "tending to use words that tell about smell, sight, sound, texture, and taste to create a picture in a person's mind",
         "prefixes": [
             "prefix-de"
         ],
@@ -1398,7 +1398,7 @@ module.exports = [
         "level": 0,
         "type": "word",
         "id": "insensitive",
-        "definition": "tending not to respond to other people�s feelings or things that happen to or around oneself",
+        "definition": "tending not to respond to other people's feelings or things that happen to or around oneself",
         "prefixes": [
             "prefix-in"
         ],
@@ -1421,7 +1421,7 @@ module.exports = [
         "level": 0,
         "type": "word",
         "id": "instruct",
-        "definition": "to build into someone�s education information about a subject or how to do something",
+        "definition": "to build into someone's education information about a subject or how to do something",
         "prefixes": [
             "prefix-in"
         ],
@@ -2302,7 +2302,7 @@ module.exports = [
         "level": 0,
         "type": "word",
         "id": "sensation",
-        "definition": "the process of feeling something physically through one�s senses",
+        "definition": "the process of feeling something physically through one's senses",
         "prefixes": [],
         "roots": [
             "root-sens"

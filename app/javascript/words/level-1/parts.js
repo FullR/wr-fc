@@ -1836,7 +1836,7 @@ module.exports = [
         "level": 1,
         "type": "suffix",
         "id": "ness",
-        "definition": "state, quality, act",
+        "definition": "state of being",
         "joiner": null,
         "key": "suffix-ness",
         "soundFile": "word-parts/suffix/S-ness",

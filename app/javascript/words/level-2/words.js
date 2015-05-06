@@ -16,6 +16,7 @@ module.exports = [
         "choosableParts": [
             "prefix-con",
             "root-acer",
+            "root-virid",
             "suffix-able"
         ],
         "key": "word-aberrant",
@@ -36,6 +37,7 @@ module.exports = [
         "choosableParts": [
             "prefix-ab",
             "root-acr",
+            "root-virid",
             "root-al"
         ],
         "key": "word-acerbate",
@@ -1058,7 +1060,7 @@ module.exports = [
         "level": 2,
         "type": "word",
         "id": "congratulate",
-        "definition": "to express pleasure at another�s success, good fortune, etc.",
+        "definition": "to express pleasure at another's success, good fortune, etc.",
         "prefixes": [
             "prefix-con"
         ],
@@ -1632,7 +1634,7 @@ module.exports = [
         "level": 2,
         "type": "word",
         "id": "detection",
-        "definition": "the act of noticing or discovering something�s existence; the uncovering of clues",
+        "definition": "the act of noticing or discovering something's existence; the uncovering of clues",
         "prefixes": [
             "prefix-de"
         ],
@@ -1713,6 +1715,7 @@ module.exports = [
         ],
         "choosableParts": [
             "prefix-ex",
+            "root-sens",
             "root-acr",
             "suffix-ent"
         ],
@@ -1952,6 +1955,7 @@ module.exports = [
         "choosableParts": [
             "prefix-se",
             "root-dynamo",
+            "root-sens",
             "suffix-ulence"
         ],
         "key": "word-disperse",
@@ -1997,6 +2001,7 @@ module.exports = [
         "choosableParts": [
             "prefix-e",
             "root-dynamo",
+            "root-sens",
             "suffix-ulation"
         ],
         "key": "word-dispersive",
@@ -2901,7 +2906,7 @@ module.exports = [
         "level": 2,
         "type": "word",
         "id": "ethnocentric",
-        "definition": "inclined to regard one�s own social group as superior to all others",
+        "definition": "inclined to regard one's own social group as superior to all others",
         "prefixes": [],
         "roots": [
             "root-ethno",
@@ -3342,6 +3347,7 @@ module.exports = [
         ],
         "choosableParts": [
             "prefix-e",
+            "root-virid",
             "root-joint",
             "suffix-ulence"
         ],
@@ -3787,7 +3793,7 @@ module.exports = [
         "level": 2,
         "type": "word",
         "id": "indignity",
-        "definition": "an act that offends one�s self respect; an insult",
+        "definition": "an act that offends one's self respect; an insult",
         "prefixes": [
             "prefix-in"
         ],
@@ -6056,6 +6062,7 @@ module.exports = [
         ],
         "choosableParts": [
             "prefix-un",
+            "root-virid",
             "root-dynamo",
             "suffix-y"
         ],

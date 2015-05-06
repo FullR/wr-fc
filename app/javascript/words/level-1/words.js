@@ -2414,6 +2414,7 @@ module.exports = [
             "suffix-ate"
         ],
         "choosableParts": [
+            "prefix-inter",
             "root-script",
             "root-vor",
             "suffix-ible"
@@ -4200,7 +4201,7 @@ module.exports = [
         "level": 1,
         "type": "word",
         "id": "loquaciousness",
-        "definition": "the quality of being very talkative",
+        "definition": "being very talkative",
         "prefixes": [],
         "roots": [
             "root-loqu"
@@ -4707,7 +4708,7 @@ module.exports = [
         "level": 1,
         "type": "word",
         "id": "obstruction",
-        "definition": "an obstacle or something put up against something else",
+        "definition": "an obstacle put up against something else",
         "prefixes": [
             "prefix-ob"
         ],
