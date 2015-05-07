@@ -42,6 +42,9 @@ module.exports = function setup(globals) {
             if(window.plugin && window.plugin.statusbarOverlay) {
                 window.plugin.statusbarOverlay.hide();
             }
+            if(window.navigator && window.navigator.splashscreen) {
+                window.navigator.splashscreen.hide();
+            }
             // Function.prototype.bind polyfill for cordova
             require("polyfills/function-prototype-bind")();
             // Cordova media polyfill

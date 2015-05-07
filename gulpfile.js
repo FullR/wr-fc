@@ -106,6 +106,8 @@ function statics(level) {
 
 function cordova(level) {
     var cordovaBuilder = require("./scripts/cordova-builder");
+    var splashImage = __dirname + "/statics/" + level + "/images/splash.png";
+    
     return function() {
         return cordovaBuilder({
             verbose: true,
@@ -115,11 +117,12 @@ function cordova(level) {
             dest: __dirname + "/cordova-"+level,
             src: __dirname + "/dist/"+level,
             merge: __dirname + "/cordova-merges",
-            platforms: ["ios"],
+            platforms: ["android"],//["ios"],
             plugins: [
                 "org.apache.cordova.media",
                 "org.apache.cordova.console",
-                "https://github.com/katzer/cordova-plugin-hidden-statusbar-overlay" // since fullscreen no longer works in iOS
+                "https://github.com/katzer/cordova-plugin-hidden-statusbar-overlay", // since fullscreen no longer works in iOS
+                "org.apache.cordova.splashscreen"
             ],
             preferences: [
                 '<preference name="Orientation" value="landscape" />',
@@ -129,6 +132,7 @@ function cordova(level) {
                 '<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">',
                 '    <false/>',
                 '</gap:config-file>'
+                '<preference name="SplashScreen" value="'+splashImage+'" />'
             ],
             author: {
                 name: "James Meyers",
