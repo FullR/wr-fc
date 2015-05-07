@@ -106,8 +106,9 @@ function statics(level) {
 
 function cordova(level) {
     var cordovaBuilder = require("./scripts/cordova-builder");
-    var splashImage = __dirname + "/statics/" + level + "/images/splash.png";
-    
+    var splash = __dirname + "/statics/" + level + "/images/splash.png";
+    var icon = __dirname + "/statics/" + level + "/images/icon.png";
+
     return function() {
         return cordovaBuilder({
             verbose: true,
@@ -131,8 +132,9 @@ function cordova(level) {
                 '<preference name="webviewbounce" value="false" />',
                 '<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">',
                 '    <false/>',
-                '</gap:config-file>'
-                '<preference name="SplashScreen" value="'+splashImage+'" />'
+                '</gap:config-file>',
+                '<preference name="SplashScreen" value="'+splash+'" />',
+                '<icon src="'+icon+'" />'
             ],
             author: {
                 name: "James Meyers",
