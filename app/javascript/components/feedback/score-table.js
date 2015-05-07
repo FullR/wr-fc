@@ -3,7 +3,7 @@ var _ = require("lodash");
 var Score = require("components/feedback/score");
 var colors = require("colors");
 var bp = require("utility/bp");
-var {small, medium} = require("sizes");
+var {micro, small, medium} = require("sizes");
 
 var ScoreTable = React.createClass({
     render: function() {
@@ -20,14 +20,22 @@ var ScoreTable = React.createClass({
 
         var style = {
             border: "1px solid #000",
-            width: "50rem",
-            height: height,
+            width: "100%",
+            height: "100%",
             background: colors.HIGHSCORE_BG
         };
 
         var tableStyle = {
-            position: "relative",
-            height: height - 40,
+            position: "absolute",
+            top: 0,
+            left: 0,
+            right: 0,
+            bottom: bp({
+                [micro]: 30,
+                [small]: 40,
+                [medium]: 50,
+                defaults: 60
+            }),
             overflow: "auto",
             width: "100%",
             background: "#FFFFFF",

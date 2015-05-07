@@ -6,7 +6,7 @@ var Word = require("components/activity/word");
 var colors = require("colors");
 var dictionary = window.dictionary;
 var bp = require("utility/bp");
-var {small, medium} = require("sizes");
+var {micro, small, medium} = require("sizes");
 
 var PartPieceDisplay = React.createClass({
     mixins: [StyleResolverMixin, BrowserStateMixin],
@@ -16,11 +16,20 @@ var PartPieceDisplay = React.createClass({
         var word = dictionary.get(wordId);
         var parts = [...word.prefixes, ...word.roots, ...word.suffixes];
 
+        var fontSize = bp({
+            [micro]: 25,
+            [small]: 35,
+            [medium]: 55,
+            defaults: 75
+        });
+
         var style = {
             position: "absolute",
-            top: bp({
-                [medium]: "35%",
-                defaults: "50%"
+            bottom: bp({
+                [micro]: 150,
+                [small]: 200,
+                [medium]: 300,
+                defaults: 400
             }),
             width: "100%",
             textAlign: "center",
@@ -29,30 +38,19 @@ var PartPieceDisplay = React.createClass({
 
         var partStyle = {
             display: "inline-block",
-            fontSize: "5.6rem",
-            lineHeight: "5.6rem",
-            borderBottom: "0.3rem solid #000000",
-            height: "6rem",
-            verticalAlign: "middle"
+            fontSize: fontSize,
+            lineHeight: fontSize + "px",
+            height: fontSize,
+            borderBottom: "3px solid #000000",
+            verticalAlign: "middle",
+            margin: revealed && !word.space ? 0 : "0 8px",
+            width: revealed ? "auto" : bp({
+                [micro]: 100,
+                [small]: 130,
+                [medium]: 160,
+                defaults: 190
+            })
         };
-
-        _.extend(partStyle, bp({
-            [medium]: {
-                height: "5rem",
-                fontSize: "4.8rem",
-                lineHeight: "4.8rem",
-                margin: revealed && !word.space ? 0 : "0 0.6rem",
-                width: revealed ? "auto" : "14rem"
-            },
-
-            defaults: {
-                height: "6rem",
-                fontSize: "5.6rem",
-                lineHeight: "5.6rem",
-                margin: revealed && !word.space ? 0 : "0 0.8rem",
-                width: revealed ? "auto" : "19rem"
-            }
-        }));
 
         var interactableStyle = this.buildStyles({
             display: "inline-block",

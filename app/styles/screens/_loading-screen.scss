@@ -21,3 +21,15 @@ $height: $image-height * 0.75;
     width: 100%;
     margin-top: -100px;
 }
+
+@media only screen and (min-width : 800px) {
+    .tctc-logo {
+        display: inline-block;
+        width: $width * 0.5;
+        height: $height * 0.5;
+    }
+
+    .loading-screen {
+        margin-top: -50px;
+    }
+}

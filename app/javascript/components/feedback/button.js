@@ -15,17 +15,12 @@ var FeedbackButton = React.createClass({
             border: "1px solid #000000",
             borderRadius: "0.5rem",
             padding: bp({
-                [small]: "0.4rem 1rem",
-                [medium]: "0.8rem 1.5rem",
-                defaults: "1.2rem 2rem"
+                [small]: "4px 10px",
+                [medium]: "8px 15px",
+                defaults: "12px 20px"
             }),
-            fontSize: bp({
-                [small]: "1.2rem",
-                [medium]: "1.8rem",
-                defaults: "2.4rem"
-            }),
+            fontSize: 24,
             cursor: "pointer",
-
             states: [
                 {hover: {
                     background: colors.INFO_BUTTON_BG_HOVER

@@ -112,7 +112,8 @@ var ActivityType3 = React.createClass({
                                 revealed={revealed}
                                 correct={choice.correct}
                                 selected={choice.selected}
-                                partId={choice.partId}/>
+                                partId={choice.partId}
+                                choiceCount={choices.length}/>
                         )}
                     </ChoiceContainer>
 

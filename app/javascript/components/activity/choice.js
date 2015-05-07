@@ -19,12 +19,29 @@ var Choice = React.createClass({
     },
 
     render: function() {
-        var width = bp({
-            [micro]: 100,
-            [small]: 125,
-            [medium]: 175,
-            defaults: 250
-        });
+        var width;
+
+        switch(this.props.choiceCount) {
+            case 5: width = bp({
+                [micro]: 100,
+                [small]: 125,
+                [medium]: 175,
+                defaults: 250
+            }); break;
+            case 4: width = bp({
+                [micro]: 1.2 * 100,
+                [small]: 1.2 * 125,
+                [medium]: 1.2 * 175,
+                defaults: 1.2 * 250
+            }); break;
+            default: width = bp({
+                [micro]: 1.5 * 100,
+                [small]: 1.5 * 125,
+                [medium]: 1.5 * 175,
+                defaults: 1.5 * 250
+            })
+        }
+
         var correctIconWidth = bp({
             [small]: 100,
             [medium]: 125,

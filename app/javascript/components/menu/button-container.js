@@ -7,12 +7,14 @@ var ButtonContainer = React.createClass({
         var style = {
             position: "absolute",
             top: bp({
-                [medium]: "6rem",
-                defaults: "8rem"
+                [small]: 45,
+                [medium]: 65,
+                defaults: 80
             }),
             bottom: bp({
-                [medium]: "10rem",
-                defaults: "16rem"
+                [small]: 80,
+                [medium]: 120,
+                defaults: 160
             }),
             width: "100%",
             textAlign: "center"

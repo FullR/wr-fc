@@ -24,7 +24,7 @@ var style = {
     width: "20%",
     height: "100%",
     border: "1px solid black",
-    borderRadius: "0.8rem",
+    borderRadius: 8,
     textAlign: "center",
     verticalAlign: "middle",
     cursor: "pointer",
@@ -56,23 +56,23 @@ var ActivityButton = React.createClass({
             left: -1,
             top: -1,
             width: bp({
-                [medium]: "2rem",
-                defaults: "3rem"
+                [medium]: 20,
+                defaults: 30
             }),
             height: bp({
-                [medium]: "2rem",
-                defaults: "3rem"
+                [medium]: 20,
+                defaults: 30
             }),
             fontSize: bp({
-                [medium]: "1rem",
-                defaults: "2.25rem"
+                [medium]: 14,
+                defaults: 22.5
             }),
             lineHeight: bp({
-                [medium]: "2rem",
-                defaults: "3rem"
+                [medium]: "20px",
+                defaults: "30px"
             }),
-            borderBottomRightRadius: "0.4rem",
-            borderTopLeftRadius: "0.6rem",
+            borderBottomRightRadius: 4,
+            borderTopLeftRadius: 6,
             border: "1px solid black",
             background: "#FFFFFF",
             textAlign: "center",

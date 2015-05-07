@@ -22,7 +22,7 @@ var About = React.createClass({
 
         var headerStyle = {
             width: "100%",
-            fontSize: "2.4rem",
+            fontSize: "24",
             textAlign: "center",
             fontWeight: 700
         };

@@ -4,7 +4,6 @@ var {small, medium} = require("sizes");
 
 var ChoiceContainer = React.createClass({
     render: function() {
-        var children = this.props.children;
         var width = bp({
             [small]: (125 * 5) + 50,
             [medium]: (175 * 5) + 50,

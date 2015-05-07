@@ -1,6 +1,6 @@
 var React = require("react");
 var bp = require("utility/bp");
-var {small, medium} = require("sizes");
+var {micro, small, medium} = require("sizes");
 
 var FooterMenu = React.createClass({
     render: function() {
@@ -10,12 +10,15 @@ var FooterMenu = React.createClass({
             right: "8rem",
             textAlign: "center",
             fontSize: bp({
-                [medium]: "1.75rem",
-                defaults: "2.5rem"
+                [small]: 18,
+                [medium]: 22,
+                defaults: 25
             }),
             bottom: bp({
-                [medium]: "4rem",
-                defaults: "8rem"
+                [micro]: 25,
+                [small]: 35,
+                [medium]: 45,
+                defaults: 60
             })
         };
 

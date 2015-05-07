@@ -12,15 +12,17 @@ var Logo = React.createClass({
         var style = _.extend({
             display: "block",
             width: bp({
-                [medium]: width * 0.75,
+                [small]: width * 0.65,
+                [medium]: width * 0.85,
                 defaults: width
             }),
 
             height: bp({
-                [medium]: height * 0.75,
+                [small]: height * 0.65,
+                [medium]: height * 0.85,
                 defaults: height
             }),
-            zIndex: 10
+            zIndex: 5
         }, this.props.style);
 
 

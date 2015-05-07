@@ -5,15 +5,20 @@ var {small, medium} = require("sizes");
 var ScoreLabel = React.createClass({
     render: function() {
         var style = {
+            bottom: bp({
+                [small]: 3,
+                [medium]: 5,
+                defaults: 8
+            }),
+            fontSize: bp({
+                [small]: 12,
+                [medium]: 15,
+                defaults: 22.5
+            }),
             position: "absolute",
-            bottom: 8,
             width: "100%",
             textAlign: "center",
-            fontSize: bp({
-                [medium]: "1.5rem",
-                defaults: "2.25rem"
-            }),
-            textShadow: "0.2rem 0.2rem 0.2rem rgba(150,150,150,0.44)",
+            textShadow: "2px 2px 2px rgba(150,150,150,0.44)",
             color: "#FFFFFF"
         };
         return (

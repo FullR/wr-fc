@@ -11,25 +11,31 @@ var ChangeUserButton = React.createClass({
         var style = {
             position: "absolute",
             left: bp({
-                [medium]: "2rem",
-                defaults: "3.2rem"
+                [small]: 10,
+                [medium]: 20,
+                defaults: 32
             }),
             bottom: bp({
-                [medium]: "2rem",
-                defaults: "3.2rem"
+                [small]: 10,
+                [medium]: 20,
+                defaults: 32
             }),
             fontSize: bp({
-                [medium]: "2rem",
-                defaults: "3rem"
+                [medium]: 20,
+                defaults: 30
             }),
-            padding: "0.8rem",
+            padding: bp({
+                [small]: 4,
+                [medium]: 6,
+                defaults: 8
+            }),
             zIndex: 2,
             background: colors.INFO_BUTTON_BG,
             border: "1px solid black",
             borderRadius: 5,
             color: "#FFFFFF",
             textAlign: "center",
-            textShadow: "0.2rem 0.2rem 0.2rem rgba(150, 150, 150, 0.44)",
+            textShadow: "2px 2px 2px rgba(150, 150, 150, 0.44)",
             cursor: "pointer",
 
             states: [

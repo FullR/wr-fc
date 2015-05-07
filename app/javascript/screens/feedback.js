@@ -5,6 +5,8 @@ var colors = require("colors");
 var FeedbackButton = require("components/feedback/button");
 var appStore = require("app-store");
 var EndGameWindow = require("components/feedback/end-game");
+var bp = require("utility/bp");
+var {micro, small, medium} = require("sizes");
 
 var style = {
     background: colors.FEEDBACK_BG,
@@ -12,31 +14,8 @@ var style = {
     height: "100%"
 };
 
-var mostRecentArrowStyle = {
-    position: "absolute",
-    width: "100%",
-    textAlign: "right",
-    left: "-105%",
-    fontWeight: "bold",
-    fontSize: "2.5rem",
-    color: "#FF0000"
-};
-
-var scoreStyle = {
-    position: "absolute",
-    top: "50%",
-    left: "50%",
-    margin: "-22rem 0 0 -25rem",
-};
-
-var buttonGroupStyle = {
-    position: "absolute",
-    right: "3rem",
-    bottom: "3rem"
-};
-
 var buttonStyle = {
-    marginLeft: "3rem"
+    marginLeft: 30
 };
 
 var Feedback = React.createClass({
@@ -58,6 +37,48 @@ var Feedback = React.createClass({
     },
 
     render: function() {
+        var mostRecentArrowStyle = {
+            position: "absolute",
+            width: "100%",
+            textAlign: "right",
+            left: bp({
+                [micro]: "-100.5%",
+                [small]: "-102%",
+                [medium]: "-103.5%",
+                defaults: "-105%"
+            }),
+            fontWeight: "bold",
+            fontSize: bp({
+                [small]: 20,
+                [medium]: 25,
+                defaults: 30
+            }),
+            lineHeight: bp({
+                [small]: "40px",
+                [medium]: "50px",
+                defaults: "60px"
+            }),
+            color: "#FF0000"
+        };
+        var scoreStyle = {
+            position: "absolute",
+            top: "15%",
+            bottom: "15%",
+            left: "25%",
+            right: "25%"
+        };
+
+        var buttonPadding = bp({
+            [micro]: 5,
+            [small]: 10,
+            [medium]: 20,
+            defaults: 30
+        });
+        var buttonGroupStyle = {
+            position: "absolute",
+            right: buttonPadding,
+            bottom: buttonPadding
+        };
         return (
             <div style={style}>
                 {this.props.children}

@@ -3,7 +3,7 @@ var _ = require("lodash");
 var {Link} = require("react-router");
 var {StyleResolverMixin, BrowserStateMixin} = require("radium");
 var bp = require("utility/bp");
-var {small, medium} = require("sizes");
+var {micro, small, medium} = require("sizes");
 
 var MenuButton = React.createClass({
     mixins: [StyleResolverMixin, BrowserStateMixin],
@@ -15,18 +15,30 @@ var MenuButton = React.createClass({
         });
 
         _.extend(style, bp({
-            [medium]: {
-                left: "1rem",
-                bottom: "1rem",
-                width: "6.9rem",
-                height: "7.125rem"
+            [micro]: {
+                left: 2,
+                bottom: 2,
+                width: 0.5 * 92,
+                height: 0.5 * 95
+            },
+            [small]: {
+                left: 5,
+                bottom: 5,
+                width: 0.6 * 92,
+                height: 0.6 * 95,
             },
 
+            [medium]: {
+                left: 10,
+                bottom: 10,
+                width: 0.85 * 92,
+                height: 0.85 * 95
+            },
             defaults: {
-                left: "1.6rem",
-                bottom: "1.6rem",
-                width: "9.2rem",
-                height: "9.5rem"
+                left: 16,
+                bottom: 16,
+                width: 92,
+                height: 95
             }
         }));
 

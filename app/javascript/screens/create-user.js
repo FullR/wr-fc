@@ -2,6 +2,8 @@ var React = require("react");
 var setUsername = require("actions/set-username");
 var colors = require("colors");
 var {StyleResolverMixin, BrowserStateMixin} = require("radium");
+var bp = require("utility/bp");
+var {micro, small, medium} = require("sizes");
 
 var style = {
     width: "100%",
@@ -14,7 +16,7 @@ var labelStyle = {
     top: "25%",
     width: "100%",
     textAlign: "center",
-    fontSize: "3rem",
+    fontSize: 30,
     fontWeight: 400
 };
 
@@ -23,31 +25,14 @@ var formStyle = {
     top: "40%",
     width: "100%",
     textAlign: "center",
-    fontSize: "3.2rem"
-};
-
-var buttonStyle = {
-    width: 120,
-    marginLeft: 16,
-    fontSize: "3.2rem",
-    borderRadius: 5,
-    border: "1px solid black",
-    color: "#FFFFFF",
-    cursor: "pointer",
-    background: colors.INFO_BUTTON_BG,
-
-    states: [
-        {hover: {
-            background: colors.INFO_BUTTON_BG_HOVER
-        }}
-    ]
+    fontSize: 32
 };
 
 var inputStyle = {
     width: "60%",
     height: 45,
     display: "inline-block",
-    fontSize: "3.2rem",
+    fontSize: 32,
     textAlign: "center"
 };
 
@@ -82,6 +67,35 @@ var CreateUserScreen = React.createClass({
     },
 
     render: function() {
+        var buttonStyle = {
+            width: bp({
+                [small]: 80,
+                [medium]: 100,
+                defaults: 120
+            }),
+            fontSize: bp({
+                [small]: 24,
+                [medium]: 28,
+                defaults: 32
+            }),
+            marginLeft: bp({
+                [small]: 8,
+                [medium]: 12,
+                defaults: 16
+            }),
+            height: 45,
+            borderRadius: 5,
+            border: "1px solid black",
+            color: "#FFFFFF",
+            cursor: "pointer",
+            background: colors.INFO_BUTTON_BG,
+
+            states: [
+                {hover: {
+                    background: colors.INFO_BUTTON_BG_HOVER
+                }}
+            ]
+        };
         return (
             <div style={style}>
                 <div style={labelStyle}>Enter a name to begin.</div>

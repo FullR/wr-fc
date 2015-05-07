@@ -1,24 +1,30 @@
 var React = require("react");
 var bp = require("utility/bp");
 var colors = require("colors");
-var {small, medium} = require("sizes");
+var {micro, small, medium} = require("sizes");
 
 var ActivityButtonTitle = React.createClass({
     render: function() {
         var style = {
-            textAlign: "left",
-            position: "absolute",
-            top: "0.5rem",
-            fontWeight: "bold",
+            top: bp({
+                [medium]: 3,
+                defaults: 5
+            }),
             left: bp({
-                [medium]: "2.5rem",
-                defaults: "4.5rem"
+                [small]: 25,
+                [medium]: 35,
+                defaults: 45
             }),
             fontSize: bp({
-                [medium]: "1.5rem",
-                defaults: "2rem"
+                [micro]: 12,
+                [small]: 16,
+                [medium]: 20,
+                defaults: 24
             }),
-            width: "80%",
+            textAlign: "left",
+            position: "absolute",
+            fontWeight: "bold",
+            right: 10,
             color: "#000000"
         };
 

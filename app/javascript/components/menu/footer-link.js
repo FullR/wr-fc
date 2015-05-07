@@ -1,7 +1,7 @@
 var React = require("react");
 var bp = require("utility/bp");
 var {Link} = require("react-router");
-var {small, medium} = require("sizes");
+var {micro, small, medium} = require("sizes");
 var {StyleResolverMixin, BrowserStateMixin} = require("radium");
 
 var FooterLink = React.createClass({
@@ -10,9 +10,10 @@ var FooterLink = React.createClass({
     render: function() {
         var style = this.buildStyles({
             margin: bp({
-                [small]: "0 0.25rem",
-                [medium]: "0 1rem",
-                defaults: "0 1.6rem"
+                [micro]: "0 5px",
+                [small]: "0 8px",
+                [medium]: "0 12px",
+                defaults: "0 16px"
             }),
             color: "#0000FF",
             textDecoration: "underline",

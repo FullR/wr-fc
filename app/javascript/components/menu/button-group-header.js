@@ -1,7 +1,7 @@
 var React = require("react");
 var _ = require("lodash");
 var bp = require("utility/bp");
-var {small, medium} = require("sizes");
+var {micro, small, medium} = require("sizes");
 
 var ButtonGroupHeader = React.createClass({
     render: function() {
@@ -10,8 +10,10 @@ var ButtonGroupHeader = React.createClass({
             width: "100%",
             height: "5%",
             fontSize: bp({
-                [medium]: "1.75rem",
-                defaults: "2.5rem"
+                [micro]: 12,
+                [small]: 15,
+                [medium]: 20,
+                defaults: 25
             }),
             fontWeight: "bold"
         };
