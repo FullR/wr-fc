@@ -21,7 +21,7 @@ var ContinueButton = React.createClass({
             textAlign: "right",
             bottom: "15%",
             marginBottom: -20,
-            right: "3%",
+            right: "2.5%",
             states: [
                 {hover: {
                     backgroundImage: "url('assets/images/continue-button_hover.png')"

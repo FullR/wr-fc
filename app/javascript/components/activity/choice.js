@@ -23,10 +23,10 @@ var Choice = React.createClass({
 
         switch(this.props.choiceCount) {
             case 5: width = bp({
-                [micro]: 100,
-                [small]: 125,
-                [medium]: 175,
-                defaults: 250
+                [micro]: 85,
+                [small]: 110,
+                [medium]: 160,
+                defaults: 235
             }); break;
             case 4: width = bp({
                 [micro]: 1.2 * 100,
