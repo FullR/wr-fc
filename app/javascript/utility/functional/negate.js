@@ -1,5 +1,3 @@
-
-
 /*
     Inverts the output of a function
     

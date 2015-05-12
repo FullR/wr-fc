@@ -105,6 +105,4 @@ bp.mixin = {
     }
 };
 
-// console.log(style);
-
 module.exports = bp;

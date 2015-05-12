@@ -27,7 +27,6 @@ var MenuButton = React.createClass({
                 width: 0.6 * 92,
                 height: 0.6 * 95,
             },
-
             [medium]: {
                 left: 10,
                 bottom: 10,

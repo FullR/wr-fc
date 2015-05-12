@@ -6,20 +6,22 @@ var {small, medium} = require("sizes");
 var UsernameLabel = React.createClass({
     render: function() {
         var style = {
-            position: "absolute"
+            position: "absolute",
+            textDecoration: "none",
+            color: "#000000"
         };
 
         _.extend(style, bp({
             [medium]: {
-                top: "2rem",
-                right: "2rem",
-                fontSize: "1.5rem"
+                top: 20,
+                right: 20,
+                fontSize: 15
             },
 
             defaults: {
-                top: "3.2rem",
-                right: "3.2rem",
-                fontSize: "2rem"
+                top: 32,
+                right: 32,
+                fontSize: 20
             }
         }));
         return (

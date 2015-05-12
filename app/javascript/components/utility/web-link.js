@@ -1,8 +1,18 @@
 var React = require("react");
 
 var WebLink = React.createClass({
+    openInSystem: function(event) {
+        event.preventDefault();
+        window.open(this.props.href, "_system", "location=yes")
+    },
+
     render: function() {
-        return (<a {...this.props} target={window.__platform.cordova ? "_system" : "_blank"}>{this.props.children}</a>);
+        if(window.__platform.cordova) {
+            return (
+                <a {...this.props} href="#" onClick={this.openInSystem}>{this.props.children}</a>
+            );
+        }
+        return (<a {...this.props} target="_blank">{this.props.children}</a>);
     }
 });
 

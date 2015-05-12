@@ -6,15 +6,15 @@ var setUsername = require("actions/set-username");
 var completeActivity = require("actions/complete-activity");
 
 var activityStores = {
-    "1": require("activities/1/store"),
-    "2": require("activities/2/store"),
-    "3": require("activities/3/store"),
-    "4": require("activities/4/store"),
-    "5": require("activities/5/store"),
-    "6": require("activities/6/store"),
-    "7": require("activities/7/store"),
-    "8": require("activities/8/store"),
-    "9": require("activities/9/store"),
+    "1":  require("activities/1/store"),
+    "2":  require("activities/2/store"),
+    "3":  require("activities/3/store"),
+    "4":  require("activities/4/store"),
+    "5":  require("activities/5/store"),
+    "6":  require("activities/6/store"),
+    "7":  require("activities/7/store"),
+    "8":  require("activities/8/store"),
+    "9":  require("activities/9/store"),
     "10": require("activities/10/store"),
     "11": require("activities/11/store"),
     "12": require("activities/12/store")

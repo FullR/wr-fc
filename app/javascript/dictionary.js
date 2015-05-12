@@ -20,6 +20,7 @@ function Dictionary(props) {
 
     this.index = parts.concat(words).reduce((index, word) => {
         if(additionalProps[word.key]) {
+            // add any additional props to the word
             _.extend(word, additionalProps[word.key]);
         }
         index[word.key] = word;

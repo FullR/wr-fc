@@ -24,4 +24,4 @@ var InfoFooter = React.createClass({
     }
 });
 
-module.exports = InfoFooter
+module.exports = InfoFooter;

@@ -4,6 +4,7 @@ var fastclick = require("fastclick");
 var Router = require("react-router");
 var ready = require("polyfills/cordova/device-ready");
 require("babelify/polyfill");
+require("polyfills/function-prototype-bind");
 
 var images = [
     "continue-button",
@@ -45,8 +46,6 @@ module.exports = function setup(globals) {
             if(window.navigator && window.navigator.splashscreen) {
                 window.navigator.splashscreen.hide();
             }
-            // Function.prototype.bind polyfill for cordova
-            require("polyfills/function-prototype-bind")();
             // Cordova media polyfill
             require("polyfills/cordova/cordova-media-plugin")();
             router = Router.create(require("routes"));

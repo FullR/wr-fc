@@ -159,7 +159,7 @@ function check(levelObj) {
 }
 
 function saveWordList(path, wordList) {
-    fs.writeFileSync(path, "module.exports = " + JSON.stringify(wordList, null, 4) + ";");
+    fs.writeFileSync(path, "module.exports = " + JSON.stringify(wordList, null, 4) + ";\n");
 }
 
 module.exports = function() {

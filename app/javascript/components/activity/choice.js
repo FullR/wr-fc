@@ -31,7 +31,7 @@ var Choice = React.createClass({
             case 4: width = bp({
                 [micro]: 1.2 * 100,
                 [small]: 1.2 * 125,
-                [medium]: 1.2 * 175,
+                [medium]: 1.2 * 165,
                 defaults: 1.2 * 250
             }); break;
             default: width = bp({

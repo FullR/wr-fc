@@ -1,5 +1,3 @@
-
-
 /*
     Set a deeply nested property in an object.
     If an intermediate property doesn"t exist,

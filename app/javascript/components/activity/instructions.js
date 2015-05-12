@@ -6,8 +6,8 @@ var Instructions = React.createClass({
     render: function() {
         var style = {
             fontSize: bp({
-                [medium]: "2.5rem",
-                defaults: "3.5rem"
+                [medium]: 25,
+                defaults: 35
             }),
             textAlign: "center",
             transition: this.props.fade ? "opacity 0.25s" : null,

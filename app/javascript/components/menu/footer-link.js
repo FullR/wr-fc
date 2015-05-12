@@ -32,4 +32,4 @@ var FooterLink = React.createClass({
     }
 });
 
-module.exports  =FooterLink;
+module.exports = FooterLink;

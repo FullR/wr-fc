@@ -31,6 +31,7 @@ var style = {
     transition: "background 0.25s",
     margin: "0 2% 0 2%",
     overflow: "hidden",
+    zIndex: 3,
 
     modifiers: [
         /*{color: {
@@ -43,7 +44,7 @@ var style = {
             width: "25%"
         }},
         {active: {
-            boxShadow: `0px 0px 1.5rem 0.5rem ${colors.GLOW}`
+            boxShadow: `0px 0px 15px 5px ${colors.GLOW}`
         }}
     ]
 };

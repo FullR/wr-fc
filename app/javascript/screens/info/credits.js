@@ -4,10 +4,18 @@ var Footer = require("components/info/footer");
 var getVars = require("components/info/variables");
 var WebLink = require("components/utility/web-link");
 var colors = require("colors");
+var bp = require("utility/bp");
+var {micro, small, medium} = require("sizes");
 
 var Credits = React.createClass({
     render: function() {
         var vars = getVars();
+        var linePadding = bp({
+            [small]: 10,
+            [medium]: 15,
+            defaults: 20
+        });
+
         var contentStyle = {
             overflow: "auto",
             position: "absolute",
@@ -16,17 +24,25 @@ var Credits = React.createClass({
             bottom: vars.FOOTER_HEIGHT,
             background: colors.CREDITS_BG,
             textAlign: "center",
-            fontSize: 25,
-            lineHeight: "30px"
+            fontSize: bp({
+                [small]: 19,
+                [medium]: 22,
+                defaults: 25
+            }),
+            lineHeight: bp({
+                [small]: "20px",
+                [medium]: "25px",
+                defaults: "30px"
+            })
         };
 
         var headerStyle = {
             fontWeight: 700,
-            marginTop: "5%"
+            marginTop: "3%"
         };
 
         var roleStyle = {
-            marginTop: 20,
+            marginTop: linePadding,
             color: colors.CREDITS_ROLE
         };
 
@@ -35,7 +51,8 @@ var Credits = React.createClass({
         };
 
         var isbnStyle = {
-            marginTop: 40
+            marginTop: 40,
+            marginBottom: "3%"
         };
 
         return (

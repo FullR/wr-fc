@@ -1,5 +1,3 @@
-
-
 /*
     Takes a key and a value and returns a function 
     that takes an object and assigns the value to it 

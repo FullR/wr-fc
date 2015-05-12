@@ -1,5 +1,3 @@
-
-
 /*
     Determines whether or not a value is truthy
 */

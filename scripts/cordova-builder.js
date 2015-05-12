@@ -130,7 +130,7 @@ function buildConfigXML(options) {
             tab(1) + '</description>',
             author ? [
                 tab(1) + '<author email="'+(author.email || "")+'" href="'+(author.href || "")+'">',
-                tab(2) +     (author.name || "Anonymous"),
+                tab(2) +     (author.name || ""),
                 tab(1) + '</author>',
             ] : [],
             tab(1) + '<content src="'+(options.entryPoint || "index.html")+'" />',
@@ -141,10 +141,6 @@ function buildConfigXML(options) {
 
     function tab(count) {
         return Array.apply(null, {length: count * 4}).map(function() { return " "; }).join("");
-    }
-
-    function ifAuthor(v) {
-        return author ? v : null;
     }
 
     return writeFile(options.dest + "/config.xml", content);

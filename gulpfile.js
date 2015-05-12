@@ -134,7 +134,8 @@ function cordova(level) {
                 '<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">',
                 '    <false/>',
                 '</gap:config-file>',
-                '<preference name="SplashScreen" value="'+splash+'" />',
+                '<splash src="'+splash+'" width="1242" height="2208"/>',
+                '<preference name="SplashScreenDelay" value="10000" />',
                 '<icon src="'+icon+'" />',
                 '<preference name="EnableViewportScale" value="true"/>'
             ],

@@ -1,5 +1,3 @@
-
-
 /*
     Curried dot operator
 

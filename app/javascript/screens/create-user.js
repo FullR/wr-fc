@@ -49,8 +49,9 @@ var CreateUserScreen = React.createClass({
     },
 
     updateUsername: function(event) {
+        var username = event.target.value;
         this.setState({
-            username: event.target.value
+            username: username.length > 35 ? username.slice(0, 35) : username
         });
     },
 
@@ -68,11 +69,6 @@ var CreateUserScreen = React.createClass({
 
     render: function() {
         var buttonStyle = {
-            width: bp({
-                [small]: 80,
-                [medium]: 100,
-                defaults: 120
-            }),
             fontSize: bp({
                 [small]: 24,
                 [medium]: 28,
@@ -83,7 +79,7 @@ var CreateUserScreen = React.createClass({
                 [medium]: 12,
                 defaults: 16
             }),
-            height: 45,
+            padding: "8px 12px 8px 12px",
             borderRadius: 5,
             border: "1px solid black",
             color: "#FFFFFF",

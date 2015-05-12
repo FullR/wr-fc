@@ -13,7 +13,7 @@ var FeedbackButton = React.createClass({
             background: colors.INFO_BUTTON_BG,
             color: "#FFFFFF",
             border: "1px solid #000000",
-            borderRadius: "0.5rem",
+            borderRadius: 5,
             padding: bp({
                 [small]: "4px 10px",
                 [medium]: "8px 15px",

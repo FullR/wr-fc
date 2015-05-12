@@ -8,16 +8,16 @@ var MenuHeader = React.createClass({
         var style = {
             position: "relative",
             top: bp({
-                [medium]: "1rem",
-                defaults: "2rem"
+                [medium]: 10,
+                defaults: 20
             }),
             fontSize: bp({
-                [medium]: "2rem",
-                defaults: "3rem"
+                [medium]: 20,
+                defaults: 30
             }),
             height: bp({
-                [medium]: "6rem",
-                defaults: "8rem"
+                [medium]: 60,
+                defaults: 80
             }),
             width: "100%",
             textAlign: "center"
@@ -25,8 +25,8 @@ var MenuHeader = React.createClass({
 
         var subHeaderStyle = {
             fontSize: bp({
-                [medium]: "1.5rem",
-                defaults: "2rem"
+                [medium]: 15,
+                defaults: 20
             })
         };
         return (
