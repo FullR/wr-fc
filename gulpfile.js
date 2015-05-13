@@ -106,8 +106,6 @@ function statics(level) {
 
 function cordova(level) {
     var cordovaBuilder = require("./scripts/cordova-builder");
-    var splash = "www/assets/images/splash.png";
-    var icon = "www/assets/images/icon.png";
 
     return function() {
         return cordovaBuilder({
@@ -115,10 +113,10 @@ function cordova(level) {
             name: titles[level],
             version: pkg.version,
             id: ids[level],
-            dest: __dirname + "/cordova-"+level,
-            src: __dirname + "/dist/"+level,
-            merge: __dirname + "/cordova-merges",
-            platforms: ["ios"],
+            dest: __dirname + "/cordova-builds/" + level,
+            src: __dirname + "/dist/" + level,
+            merge: __dirname + "/cordova-merges/all",
+            platforms: ["android", "ios"],
             plugins: [
                 "org.apache.cordova.media",
                 "org.apache.cordova.console",
@@ -134,9 +132,11 @@ function cordova(level) {
                 '<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">',
                 '    <false/>',
                 '</gap:config-file>',
-                '<splash src="'+splash+'" width="1242" height="2208"/>',
+                '<splash src="www/assets/splashscreens/Default-Landscape.png" width="1024" height="768"/>',
+                '<splash src="www/assets/splashscreens/Default-Landscape@2x.png" width="2048" height="1536"/>',
+                '<splash src="www/assets/splashscreens/Default-Landscape-736h@3x.png" width="2208" height="1242"/>',
                 '<preference name="SplashScreenDelay" value="10000" />',
-                '<icon src="'+icon+'" />',
+                '<icon src="www/assets/images/icon.png" />',
                 '<preference name="EnableViewportScale" value="true"/>'
             ],
             author: {
@@ -147,11 +147,35 @@ function cordova(level) {
     };
 }
 
+function desktop(level) {
+    return function() {
+        var NwBuilder = require("node-webkit-builder");
+        var nw = new NwBuilder({
+            version: "0.12.1",
+            macIcns: "./statics/"+level+"/assets/icon.icns",
+            files: "./dist/"+level+"/**/!(*.mp3)",
+            platforms: ["osx32", "osx64", "win32", "win64"],
+            buildDir: "./desktop-builds",
+            macZip: true
+        });
+
+        nw.on("log", console.log.bind(console));
+        return nw.build();
+    };
+}
+
 // Build tasks handle html, scss, js, etc
 gulp.task("build", build());
 
 // Bundle tasks just handle javascript bundling
-gulp.task("bundle", ["bundle:beginning", "bundle:level-1", "bundle:level-2", "bundle:level-3"]);
+gulp.task("bundle", function(callback) {
+    runSequence(
+        "bundle:beginning",
+        "bundle:level-1",
+        "bundle:level-2",
+        "bundle:level-3",
+        callback);
+});
 
 // Statics
 gulp.task("statics", function(callback) {
@@ -160,25 +184,30 @@ gulp.task("statics", function(callback) {
         "statics:level-1",
         "statics:level-2",
         "statics:level-3",
-        callback
-    );
-});
-
-// Upload
-gulp.task("upload", ["build"], function() {
-    upload();
+        callback);
 });
 
 // Cordova
-gulp.task("cordova", ["cordova:beginning", "cordova:level-1", "cordova:level-2", "cordova:level-2"]);
-
-levels.forEach(function(level) {
-    gulp.task("build:" + level, build(level));
-    gulp.task("bundle:" + level, bundleLevel(level));
-    gulp.task("statics:" + level, statics(level));
-    gulp.task("upload:" + level, ["build:"+level], upload.bind(null, level));
-    gulp.task("cordova:" + level, ["build:"+level], cordova(level));
+gulp.task("cordova", function(callback) {
+    runSequence(
+        "cordova:beginning",
+        "cordova:level-1",
+        "cordova:level-2",
+        "cordova:level-3",
+        callback);
 });
+
+gulp.task("desktop", function(callback) {
+    runSequence(
+        "desktop:beginning",
+        "desktop:level-1",
+        "desktop:level-2",
+        "desktop:level-3",
+        callback);
+});
+
+// Upload
+gulp.task("upload", ["build"], upload);
 
 gulp.task("sass", function() {
     var sass = require("gulp-ruby-sass");
@@ -217,3 +246,13 @@ gulp.task("serve", function() {
 });
 
 gulp.task("default", ["build"]);
+
+levels.forEach(function(level) {
+    gulp.task("build:" + level, build(level));
+    gulp.task("bundle:" + level, bundleLevel(level));
+    gulp.task("statics:" + level, statics(level));
+
+    gulp.task("desktop:" + level, ["build:"+level], desktop(level));
+    gulp.task("upload:" + level, ["build:"+level], upload.bind(null, level));
+    gulp.task("cordova:" + level, ["build:"+level], cordova(level));
+});

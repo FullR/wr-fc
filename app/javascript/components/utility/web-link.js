@@ -3,11 +3,16 @@ var React = require("react");
 var WebLink = React.createClass({
     openInSystem: function(event) {
         event.preventDefault();
-        window.open(this.props.href, "_system", "location=yes")
+        if(window.gui) {
+            window.gui.Shell.openExternal(this.props.href);
+        }
+        else {
+            window.open(this.props.href, "_system", "location=yes")
+        }
     },
 
     render: function() {
-        if(window.__platform.cordova) {
+        if(window.__platform.cordova || window.platform) { // cordova or node-webkit
             return (
                 <a {...this.props} href="#" onClick={this.openInSystem}>{this.props.children}</a>
             );

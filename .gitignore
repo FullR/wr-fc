@@ -1,6 +1,8 @@
 node_modules
 .sass-cache
+cache
 dist
 statics
-cordova-level-1
+cordova-builds
+desktop-builds
 .DS_store

@@ -13,6 +13,7 @@ var ButtonGroupHeader = require("components/menu/button-group-header");
 var ButtonRow = require("components/menu/button-row");
 var ActivityButton = require("components/menu/activity-button");
 var ChangeUserButton = require("components/menu/change-user-button");
+var CloseButton = require("components/menu/close-button");
 var FooterMenu = require("components/menu/footer-menu");
 var FooterLink = require("components/menu/footer-link");
 var UsernameLabel = require("components/menu/username-label");
@@ -184,6 +185,7 @@ var Menu = React.createClass({
                 </ButtonContainer>
 
                 <ChangeUserButton onClick={this.openModal.bind(this, changeUserModal)}/>
+                <CloseButton/>
                 <FooterMenu>
                     <FooterLink to="about">About</FooterLink>
                     <FooterLink to="license">License Agreement</FooterLink>

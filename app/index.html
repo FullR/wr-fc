@@ -7,6 +7,13 @@
         <link rel="stylesheet" href="assets/app.css">
     </head>
     <body>
+        <script>
+            if(typeof require !== "undefined") {
+                console.log("node-webkit detected");
+                window.gui = require("nw.gui");
+                window._isNodeWebkit = true;
+            }
+        </script>
         <div class="loading-screen">
             <div class="logo-container">
                 <img class="tctc-logo" src="assets/images/tctc-logo.png"/>

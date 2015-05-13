@@ -4,6 +4,8 @@ var Header = require("components/info/header");
 var Footer = require("components/info/footer");
 var getVars = require("components/info/variables");
 var WebLink = require("components/utility/web-link");
+var bp = require("utility/bp");
+var {micro, small, medium} = require("sizes");
 
 var Product = require("components/info/other-products/product");
 var ProductTitle = require("components/info/other-products/product-title");
@@ -37,7 +39,11 @@ var OtherProducts = React.createClass({
             display: "inline-block",
             left: 200,
             right: 200,
-            fontSize: 24
+            fontSize: bp({
+                [small]: 18,
+                [medium]: 20,
+                defaults: 24
+            })
         };
 
         var marginImageStyle = {

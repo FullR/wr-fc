@@ -50,7 +50,7 @@ var noStyle = {
 var Modal = React.createClass({
     render: function() {
         return (
-            <div style={overlayStyle}>
+            <div style={overlayStyle} onClick={this.props.onNoClick}>
                 <div style={windowStyle}>
                     <div style={textStyle}>
                         {this.props.children}
@@ -59,7 +59,7 @@ var Modal = React.createClass({
                         background={colors.MODAL_NO} 
                         backgroundHover={colors.MODAL_NO_HOVER}
                         style={noStyle}
-                        onClick={this.props.onNoClick}
+                        onClick={this.props.onNoClick} 
                     >
                         No
                     </ModalButton>

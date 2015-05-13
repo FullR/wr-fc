@@ -149,10 +149,7 @@ var Choice = React.createClass({
                  {...stateEvents}
                  style={this.buildStyles(style)}
                  onMouseUp={this.onClick}
-                 onTouchEnd={(event) => {
-                    stateEvents.onMouseLeave(event);
-                    this.onClick(event);
-                 }}
+                 onTouchEnd={this.onClick}
             >
                 {this.props.children}
 

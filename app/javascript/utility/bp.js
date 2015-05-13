@@ -105,4 +105,12 @@ bp.mixin = {
     }
 };
 
+bp.getHeight = function() {
+    return height;
+};
+
+bp.getWidth = function() {
+    return width;
+};
+
 module.exports = bp;

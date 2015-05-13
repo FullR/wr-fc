@@ -46,6 +46,9 @@ function build(options) {
 
     return exec("rm -rf " + projectDir)
         .then(function() {
+            return mkdirp(projectDir);
+        })
+        .then(function() {
             log("Creating project " + name);
             return createProject(projectDir, id, name);
         })
@@ -53,6 +56,14 @@ function build(options) {
             if(typeof merge === "string") {
                 log("Adding merge directory");
                 return addMergeDirectory(projectDir, merge);
+            }
+            else if(_.isArray(merge)) {
+                log("Adding merge directories");
+                return merge.reduce(function(promise, mergeDir) {
+                    return promise.then(function() {
+                        return addMergeDirectory(projectDir, mergeDir);
+                    });
+                }, Q.resolve());
             }
         })
         .then(function() {
