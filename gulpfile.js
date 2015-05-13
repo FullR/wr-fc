@@ -41,7 +41,11 @@ function bundleLevel(level) {
 
     if(watch) {
         bundler = watchify(Browserify(_.extend({
-            paths: ["./node_modules", "./app/javascript", "./lib"],
+            paths: [
+                "./node_modules",
+                "./app/javascript",
+                "./lib"
+            ],
             debug: !release
         }, watchify.args)))
         .on("time", function(time) {
@@ -59,7 +63,7 @@ function bundleLevel(level) {
     }
 
     function bundle() {
-        var stream = bundler            
+        var stream = bundler
             .on("error", function(error) {
                 gutil.log(colors.errors("Bundler Error:\n") + error.toString());
             })
@@ -177,7 +181,7 @@ gulp.task("bundle", function(callback) {
         callback);
 });
 
-// Statics
+// Static images, sounds, fonts, etc.
 gulp.task("statics", function(callback) {
     runSequence(
         "statics:beginning",
@@ -207,7 +211,9 @@ gulp.task("desktop", function(callback) {
 });
 
 // Upload
-gulp.task("upload", ["build"], upload);
+gulp.task("upload", ["build"], function() {
+    return upload();
+});
 
 gulp.task("sass", function() {
     var sass = require("gulp-ruby-sass");

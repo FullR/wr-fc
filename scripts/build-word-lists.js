@@ -37,8 +37,8 @@ function partExists(level, partKey) {
 
 function wordsWithPartExists(level, partKey) {
     return masterList.some(function(word) {
-        return word.level === level && 
-               word.type === "word" && 
+        return word.level === level &&
+               word.type === "word" &&
                word.prefixes
                     .concat(word.roots)
                     .concat(word.suffixes)
@@ -79,8 +79,8 @@ function fixWords() {
 
         if(word.type === "word") {
             word.choosableParts = word.choosableParts
-                .map(function(partId) { 
-                    return partId.replace(/-|–/, ""); 
+                .map(function(partId) {
+                    return partId.replace(/-|–/, "");
                 })
                 .map(trim)
                 .map(function(id) {

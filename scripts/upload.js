@@ -2,7 +2,6 @@
     Uploads compiled code to the test server for internal
     testing
 */
-
 function upload(level) {
     var Q = require("q");
     var exec = Q.nfbind(require("child_process").exec);
