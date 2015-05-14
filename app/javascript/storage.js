@@ -16,13 +16,13 @@ function save() {
 }
 
 module.exports = {
-    set: function(key, value) {
+    set: function _set(key, value) {
         data[key] = value;
         save();
         return value;
     },
 
-    get: function(key) {
+    get: function _get(key) {
         return data[key];
     }
 };

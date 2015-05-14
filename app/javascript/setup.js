@@ -16,12 +16,12 @@ var images = [
     "tctc-logo",
     "x",
     "other-products/left",
+    "other-products/lssg",
     "other-products/right",
     "other-products/asg",
     "other-products/vssg",
     "other-products/rtr",
     "other-products/rr",
-    "other-products/lssg",
     "splash"
 ];
 

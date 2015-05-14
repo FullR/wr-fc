@@ -1,6 +1,6 @@
 var _ = require("lodash");
 
-// edge cases flags go here
+// edge case flags go here
 var additionalProps = {
     "word-per capita": { // only word with a space in it
         space: true
