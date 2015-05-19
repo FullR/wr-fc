@@ -43,7 +43,6 @@ var Sounds = React.createClass({
     },
 
     stop: function() {
-        console.log("Stopping", this._queue);
         if(this._queue) {
             this._queue.stop();
             this._queue = null;

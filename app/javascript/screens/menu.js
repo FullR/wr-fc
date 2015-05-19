@@ -81,7 +81,6 @@ var Menu = React.createClass({
         if(appStore.isStarted(activityId)) {
             if(appStore.isCompleted(activityId)) {
                 highscore = appStore.getHighscore(activityId);
-                console.log(highscore);
                 percent = Math.floor((highscore.correct / highscore.max)*100);
                 return (<ScoreLabel>{percent}%</ScoreLabel>);
             }

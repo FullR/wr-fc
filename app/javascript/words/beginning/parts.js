@@ -712,8 +712,8 @@ module.exports = [
         "id": "scribe",
         "definition": "write, written",
         "joiner": [
-            4,
-            5
+            5,
+            6
         ],
         "key": "root-scribe",
         "soundFile": "word-parts/root/R-scribe",

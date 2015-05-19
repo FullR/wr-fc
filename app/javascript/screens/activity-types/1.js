@@ -19,6 +19,7 @@ var PartDisplayBox = require("components/activity/part-display-box");
 var ExampleWord = require("components/activity/example-word");
 var BottomContainer = require("components/activity/bottom-container");
 var Sound = require("components/utility/sound");
+var dictionary = window.dictionary;
 
 var ActivityType1 = React.createClass({
     mixins: [
@@ -26,6 +27,15 @@ var ActivityType1 = React.createClass({
         activityMixin,
         windowListener
     ],
+
+    getSounds: function() {
+        var correctPart = dictionary.get(this.state.getCorrectChoice().partId);
+        
+        return {
+            correctWord: correctPart.soundFile,
+            correctDefinition: correctPart.definitionSoundFile
+        };
+    },
 
     playWordSound: isMounted(function() {
         this.refs.wordSound.play();
