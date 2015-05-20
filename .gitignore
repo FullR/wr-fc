@@ -2,9 +2,11 @@ node_modules
 .sass-cache
 cache
 dist
-statics
 cordova-builds
 desktop-builds
 .DS_store
 audio
-
+statics/beginning/assets/audio
+statics/level-1/assets/audio
+statics/level-2/assets/audio
+statics/level-3/assets/audio
