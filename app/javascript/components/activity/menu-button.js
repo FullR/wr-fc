@@ -1,18 +1,17 @@
 var React = require("react");
 var _ = require("lodash");
 var {Link} = require("react-router");
-var {StyleResolverMixin, BrowserStateMixin} = require("radium");
 var bp = require("utility/bp");
 var {micro, small, medium} = require("sizes");
 
 var MenuButton = React.createClass({
-    mixins: [StyleResolverMixin, BrowserStateMixin],
+    mixins: [require("mixins/style")],
 
     render: function() {
-        var style = this.buildStyles({
+        var style = {
             display: "block",
             position: "absolute"
-        });
+        };
 
         _.extend(style, bp({
             [micro]: {
@@ -41,10 +40,8 @@ var MenuButton = React.createClass({
             }
         }));
 
-        var stateEvents = this.getBrowserStateEvents();
-
         return (
-            <Link {...stateEvents} style={style} to="menu" className="menu-button"/>
+            <Link {...this.getStyle(style)} to="menu" className="menu-button"/>
         );
     }
 });

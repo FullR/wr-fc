@@ -1,15 +1,14 @@
 var React = require("react");
 var {Link} = require("react-router");
 var colors = require("colors");
-var {StyleResolverMixin, BrowserStateMixin} = require("radium");
 var bp = require("utility/bp");
 var {micro, small, medium} = require("sizes");
 
 var InfoBackButton = React.createClass({
-    mixins: [StyleResolverMixin, BrowserStateMixin],
+    mixins: [require("mixins/style")],
 
     render: function() {
-        var style = this.buildStyles({
+        var style = {
             position: "absolute",
             bottom: bp({
                 [medium]: 6,
@@ -43,10 +42,10 @@ var InfoBackButton = React.createClass({
                     background: colors.INFO_BUTTON_BG_HOVER
                 }}
             ]
-        });
+        };
 
         return (
-            <Link {...this.getBrowserStateEvents()} style={style} to="menu">Back</Link>
+            <Link {...this.getStyle(style)} to="menu">Back</Link>
         );
     }
 });

@@ -1,10 +1,7 @@
 var React = require("react");
 var _ = require("lodash");
-var {StyleResolverMixin} = require("radium");
 
 var ButtonRow = React.createClass({
-    mixins: [StyleResolverMixin],
-
     render: function() {
         var styles = {
             display: "block",
@@ -16,7 +13,7 @@ var ButtonRow = React.createClass({
         };
 
         return (
-            <div style={this.buildStyles(styles)}>
+            <div style={styles}>
                 {this.props.children}
             </div>
         );

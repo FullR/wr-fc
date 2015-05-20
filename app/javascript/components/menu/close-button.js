@@ -1,11 +1,10 @@
 var React = require("react");
-var {StyleResolverMixin, BrowserStateMixin} = require("radium");
 var bp = require("utility/bp");
 var colors = require("colors");
 var {small, medium} = require("sizes");
 
 var CloseButton = React.createClass({
-    mixins: [StyleResolverMixin, BrowserStateMixin],
+    mixins: [require("mixins/style")],
     closeProgram: function() {
         if(window.gui) {
             window.gui.Window.get().close();
@@ -13,7 +12,7 @@ var CloseButton = React.createClass({
     },
 
     render: function() {
-        var style = this.buildStyles({
+        var style = {
             position: "absolute",
             right: bp({
                 [small]: 10,
@@ -48,11 +47,11 @@ var CloseButton = React.createClass({
                     background: colors.INFO_BUTTON_BG_HOVER
                 }}
             ]
-        });
+        };
 
         if(window._isNodeWebkit) {
             return (
-                <div {...this.getBrowserStateEvents()} onClick={this.closeProgram} style={style}>Close</div>
+                <div {...this.getStyle(style)} onClick={this.closeProgram}>Close</div>
             );
         }
         return null;

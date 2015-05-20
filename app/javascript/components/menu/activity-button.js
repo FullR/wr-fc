@@ -1,5 +1,4 @@
 var React = require("react");
-var {StyleResolverMixin, BrowserStateMixin} = require("radium");
 var _ = require("lodash");
 var {Link} = require("react-router");
 var s = require("utility/styles");
@@ -34,14 +33,14 @@ var style = {
     zIndex: 3,
 
     modifiers: [
-        /*{color: {
+        {color: {
             green: backgroundColor(colors.PREFIX, colors.PREFIX_HOVER),
             red: backgroundColor(colors.ROOT, colors.ROOT_HOVER),
             blue: backgroundColor(colors.SUFFIX, colors.SUFFIX_HOVER),
             cyan: backgroundColor(colors.WORD, colors.WORD_HOVER)
-        }},*/
+        }},
         {large: {
-            width: "25%"
+            width: window.level.id === "beginning" ?  "37%" : "25%"
         }},
         {active: {
             boxShadow: `0px 0px 15px 5px ${colors.GLOW}`
@@ -50,7 +49,7 @@ var style = {
 };
 
 var ActivityButton = React.createClass({
-    mixins: [StyleResolverMixin, BrowserStateMixin],
+    mixins: [require("mixins/style")],
     render: function() {
         var indexStyle = {
             position: "absolute",
@@ -79,14 +78,9 @@ var ActivityButton = React.createClass({
             textAlign: "center",
             color: "#000000"
         };
-        var color = this.props.color;
 
         return (
-            <Link className={"activity-button activity-button--"+color}
-                {...this.getBrowserStateEvents()}
-                style={this.buildStyles(style)}
-                to={"activity-"+this.props.activityId}
-            >
+            <Link {...this.getStyle(style)} to={"activity-"+this.props.activityId}>
                 <div style={indexStyle}>{this.props.index || this.props.activityId}</div>
                 {this.props.children}
             </Link>

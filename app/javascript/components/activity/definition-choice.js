@@ -20,10 +20,13 @@ var DefinitionChoice = React.createClass({
         var fontSizeRatio;
 
         if(defLength > 60) {
-            fontSizeRatio = 0.6;
+            fontSizeRatio = 0.7;
+        }
+        else if(defLength > 50) {
+            fontSizeRatio = 0.8;
         }
         else if(defLength > 40) {
-            fontSizeRatio = 0.8;
+            fontSizeRatio = 0.9;
         }
         else {
             fontSizeRatio = 1;

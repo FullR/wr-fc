@@ -20,6 +20,8 @@ var activityStores = {
     "12": require("activities/12/store")
 };
 
+var beginningActs = ["1","2","3","4","5","6","7","8","10","11"];
+
 var AppStore = Reflux.createStore({
     mixins: [storageMixin("app")],
 
@@ -86,7 +88,13 @@ var AppStore = Reflux.createStore({
     },
 
     areAllCompleted: function() {
-        return _.every(this.data.completedActivities, function(isCompleted) {
+        var completedActivities = window.level.id === "beginning" ? 
+            _.filter(this.data.completedActivities, function(value, id) { // only check activities that are playable in beginning level
+                return beginningActs.indexOf(id) !== -1;
+            }) : 
+            this.data.completedActivities;
+
+        return _.every(completedActivities, function(isCompleted) {
             return isCompleted;
         });
     },

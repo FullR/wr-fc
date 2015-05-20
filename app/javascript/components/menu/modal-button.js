@@ -1,9 +1,8 @@
 var React = require("react");
 var _ = require("lodash");
-var {StyleResolverMixin, BrowserStateMixin} = require("radium");
 
 var ModalButton = React.createClass({
-    mixins: [StyleResolverMixin, BrowserStateMixin],
+    mixins: [require("mixins/style")],
 
     render: function() {
         var style = _.extend({
@@ -26,7 +25,7 @@ var ModalButton = React.createClass({
         }, this.props.style);
 
         return (
-            <div {...this.props} {...this.getBrowserStateEvents()} style={this.buildStyles(style)}>
+            <div {...this.props} {...this.getStyle(style)}>
                 {this.props.children}
             </div>
         );

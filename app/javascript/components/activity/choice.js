@@ -7,7 +7,7 @@ var {micro, small, medium} = require("sizes");
 var animationSpeed = 0.5;
 
 var Choice = React.createClass({
-    mixins: [StyleResolverMixin, BrowserStateMixin],
+    mixins: [require("mixins/style")],
 
     onClick: function(event) {
         if(!this.props.revealed && this.props.onClick) {
@@ -125,11 +125,6 @@ var Choice = React.createClass({
             backgroundSize: "100% 100%"
         };
 
-        var stateEvents = this.getBrowserStateEvents();
-
-        stateEvents.onTouchStart = stateEvents.onMouseEnter;
-        stateEvents.onTouchCancel = stateEvents.onTouchEnd = stateEvents.onMouseLeave;
-
         if(this.props.revealed && !this.props.correct && !this.props.selected) {
             _.extend(style, {
                 visibility: "hidden",
@@ -146,10 +141,8 @@ var Choice = React.createClass({
 
         return (
             <div {...this.props}
-                 {...stateEvents}
-                 style={this.buildStyles(style)}
-                 onMouseUp={this.onClick}
-                 onTouchEnd={this.onClick}
+                 {...this.getStyle(style)}
+                 onClick={this.onClick}
             >
                 {this.props.children}
 

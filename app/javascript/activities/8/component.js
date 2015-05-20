@@ -8,6 +8,7 @@ var Activity8 = React.createClass({
     render: function() {
         var title = "Game 8 - Three Word Parts";
         var instructions = "Touch the two word parts that together mean:";
+        var isBeginning = (window.level.id === "beginning");
         return (<ActivityType3
             id="8"
             store={store}
@@ -15,7 +16,7 @@ var Activity8 = React.createClass({
             title={title}
             instructions={instructions}
             choiceCount={4}
-            next="activity-9"/>);
+            next={isBeginning ? "activity-10" : "activity-9"}/>);
     }
 });
 

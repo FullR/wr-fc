@@ -1,5 +1,4 @@
 var React = require("react");
-var {StyleResolverMixin, BrowserStateMixin} = require("radium");
 var soundManager = require("sound/sound-manager");
 var Word = require("components/activity/word");
 var Definition = require("components/activity/definition");
@@ -8,7 +7,7 @@ var colors = require("colors");
 var dictionary = window.dictionary;
 
 var ExampleWord = React.createClass({
-    mixins: [StyleResolverMixin, BrowserStateMixin],
+    mixins: [require("mixins/style")],
 
     getInitialState: function() {
         return {
@@ -45,10 +44,11 @@ var ExampleWord = React.createClass({
 
     render: function() {
         var playable = this.props.playable;
-        var style = this.buildStyles({
+        var style = {
             width: "100%",
-            fontSize: 28,
-            marginTop: 16,
+            fontSize: 32,
+            paddingTop: 16,
+            paddingBottom: 16,
             transition: "opacity 0.25s",
             opacity: this.props.hidden ? 0 : 1,
             cursor: playable ? "pointer" : null,
@@ -59,10 +59,10 @@ var ExampleWord = React.createClass({
                     background: playable ? colors.DISPLAY_BOX_BG_HOVER : null
                 }}
             ]
-        });
+        };
 
         return (
-            <div {...this.getBrowserStateEvents()} style={style} onClick={playable ? this.play : null}>
+            <div {...this.getStyle(style)} onClick={playable ? this.play : null}>
                 {playable ?
                     <Sound ref="sound" 
                         path={dictionary.get(this.props.wordId).soundFile}

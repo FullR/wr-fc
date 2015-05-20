@@ -1,11 +1,10 @@
 var React = require("react");
-var {StyleResolverMixin, BrowserStateMixin} = require("radium");
 var colors = require("colors");
 var bp = require("utility/bp");
 var {small, medium} = require("sizes");
 
 var ChangeUserButton = React.createClass({
-    mixins: [StyleResolverMixin, BrowserStateMixin],
+    mixins: [require("mixins/style")],
 
     render: function() {
         var style = {
@@ -46,7 +45,7 @@ var ChangeUserButton = React.createClass({
         };
 
         return (
-            <div {...this.props} {...this.getBrowserStateEvents()} style={this.buildStyles(style)}>
+            <div {...this.props} {...this.getStyle(style)}>
                 Change<br/>User
             </div>
         );

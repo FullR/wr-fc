@@ -339,7 +339,7 @@ module.exports = [
         "choosableParts": [
             "prefix-e",
             "root-capita",
-            "root-t�g�",
+            "root-tégé",
             "suffix-nate"
         ],
         "key": "word-altruism",
@@ -403,7 +403,7 @@ module.exports = [
         "choosableParts": [
             "prefix-de",
             "root-aux",
-            "root-t�g�",
+            "root-tégé",
             "suffix-ee"
         ],
         "key": "word-arbitration",
@@ -424,7 +424,7 @@ module.exports = [
         "choosableParts": [
             "prefix-il",
             "root-cert",
-            "root-t�g�",
+            "root-tégé",
             "suffix-ulation"
         ],
         "key": "word-arbitrator",
@@ -3114,7 +3114,7 @@ module.exports = [
         ],
         "choosableParts": [
             "prefix-bi",
-            "root-t�g�",
+            "root-tégé",
             "root-jur",
             "suffix-ation"
         ],
@@ -5153,13 +5153,13 @@ module.exports = [
     {
         "level": 2,
         "type": "word",
-        "id": "prot�g�",
+        "id": "protégé",
         "definition": "an individual guided and helped by someone older and wiser",
         "prefixes": [
             "prefix-pro"
         ],
         "roots": [
-            "root-t�g�"
+            "root-tégé"
         ],
         "suffixes": [],
         "choosableParts": [
@@ -5168,8 +5168,8 @@ module.exports = [
             "root-dyn",
             "suffix-tion"
         ],
-        "key": "word-prot�g�",
-        "soundFile": "word-parts/word/W-prot�g�"
+        "key": "word-protégé",
+        "soundFile": "word-parts/word/W-protégé"
     },
     {
         "level": 2,
@@ -6460,7 +6460,7 @@ module.exports = [
         "suffixes": [],
         "choosableParts": [
             "prefix-se",
-            "root-t�g�",
+            "root-tégé",
             "root-dict",
             "suffix-ary"
         ],
@@ -6635,7 +6635,7 @@ module.exports = [
         "suffixes": [],
         "choosableParts": [
             "prefix-in",
-            "root-t�g�",
+            "root-tégé",
             "root-al",
             "suffix-ics"
         ],

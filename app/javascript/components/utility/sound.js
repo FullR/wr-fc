@@ -43,6 +43,12 @@ var Sound = React.createClass({
         }
     },
 
+    stop: function() {
+        if(this.isMounted()) {
+            return this.sound.stop();
+        }
+    },
+
     isPlaying: function() {
         return this.sound.isPlaying();
     },

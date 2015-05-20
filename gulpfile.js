@@ -10,6 +10,10 @@ var uglify = require("gulp-uglify");
 var rename = require("gulp-rename");
 var upload = require("./scripts/upload");
 var pkg = require("./package");
+var Browserify = require("browserify");
+var source  = require("vinyl-source-stream");
+var watchify = require("watchify");
+require("babel/register")
 var colors = {
     time: gutil.colors.magenta,
     taskName: gutil.colors.cyan,
@@ -34,9 +38,6 @@ var release = process.argv.indexOf("--release") !== -1;
 var levels = ["beginning", "level-1", "level-2", "level-3"];
 
 function bundleLevel(level) {
-    var Browserify = require("browserify");
-    var source  = require("vinyl-source-stream");
-    var watchify = require("watchify");
     var bundler;
 
     if(watch) {
@@ -52,24 +53,26 @@ function bundleLevel(level) {
             gutil.log("Finished '"+colors.taskName("bundle:"+level)+"' after " + colors.time(time + " ms"));
         })
         .on("update", bundle)
-        .add("./app/javascript/"+level+".js");
+        .add("./app/javascript/"+level+".js")
+        .transform(require("babelify"))
+        .transform("brfs");
     }
     else {
         bundler = Browserify({
             paths: ["./node_modules", "./app/javascript", "./lib"],
             debug: !release
         })
-        .add("./app/javascript/"+level+".js");
+        .add("./app/javascript/"+level+".js")
+        .transform(require("babelify"))
+        .transform("brfs");
     }
 
     function bundle() {
         var stream = bundler
+            .bundle()
             .on("error", function(error) {
                 gutil.log(colors.errors("Bundler Error:\n") + error.toString());
             })
-            .transform(require("babelify"))
-            .transform("brfs")
-            .bundle()
             .pipe(source(level+".js"))
             .pipe(buffer())
             .pipe(rename("app.js"));
@@ -88,6 +91,7 @@ function build(level) {
         runSequence.apply(null, _.compact([
             ["html", "sass", "generate:word-lists"],
             level ? "bundle:" + level : "bundle",
+            level ? "generate:word-audio:"+level : "generate:word-audio",
             level ? "statics:" + level : "statics",
             watch ? "watch" : null,
             watch ? "serve" : null,
@@ -236,6 +240,15 @@ gulp.task("html", function() {
 });
 
 gulp.task("generate:word-lists", require("./scripts/build-word-lists"));
+gulp.task("generate:word-audio", function(callback) {
+    runSequence(
+        "generate:word-audio:beginning",
+        "generate:word-audio:level-1",
+        "generate:word-audio:level-2",
+        "generate:word-audio:level-3",
+        callback
+    );
+});
 
 gulp.task("watch", function() {
     gulp.watch("app/styles/**/*.scss", ["sass"]);
@@ -261,4 +274,7 @@ levels.forEach(function(level) {
     gulp.task("desktop:" + level, ["build:"+level], desktop(level));
     gulp.task("upload:" + level, ["build:"+level], upload.bind(null, level));
     gulp.task("cordova:" + level, ["build:"+level], cordova(level));
+    gulp.task("generate:word-audio:"+level, function() {
+        return require("./scripts/build-audio-dirs")(level);
+    });
 });

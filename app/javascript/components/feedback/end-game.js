@@ -1,9 +1,8 @@
 var React = require("react");
-var {StyleResolverMixin, BrowserStateMixin} = require("radium");
 var colors = require("colors");
 
 var EndGameWindow = React.createClass({
-    mixins: [StyleResolverMixin, BrowserStateMixin],
+    mixins: [require("mixins/style")],
     getInitialState: function() {
         return {
             open: true
@@ -24,7 +23,7 @@ var EndGameWindow = React.createClass({
             position: "absolute",
             height: "100%",
             width: "100%",
-            background: "rgba(0,0,0,0.2)",
+            background: "rgba(0,0,0,0.8)",
             zIndex: 5
         };
 
@@ -93,14 +92,14 @@ var EndGameWindow = React.createClass({
         }
 
         return (
-            <div style={overlayStyle}>
+            <div style={overlayStyle} onClick={this.close}>
                 <div style={{position: "relative", width: "100%", height: "100%"}}>
                     <div style={windowStyle}>
                         <div style={bgImageOverlayStyle}>
                             <div style={headerStyle}>Congratulations!</div>
                             <div style={textStyle}>You have completed all of the games.<br/>You can restart by selecting Clear User Data from the Admin/Score screen.</div>
                             <div style={buttonContainerStyle}>
-                                <div {...this.getBrowserStateEvents()} style={this.buildStyles(buttonStyle)} onClick={this.close}>Close</div>
+                                <div {...this.getStyle(buttonStyle)} onClick={this.close}>Close</div>
                             </div>
                         </div>
                     </div>

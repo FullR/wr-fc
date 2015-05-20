@@ -93,7 +93,7 @@ var Menu = React.createClass({
 
     render: function() {
         var isActive = this.state.appStore.isLastActivity.bind(this.state.appStore);
-
+        var isBeginning = (window.level.id === "beginning");
         var clearModal = (
             <Modal
                 key="clear-user-modal"
@@ -161,25 +161,29 @@ var Menu = React.createClass({
                             <ActivityButtonTitle>Identify Three Word Parts From the Word{"'"}s Definition</ActivityButtonTitle>
                             {this.renderLabel("8")}
                         </ActivityButton>
-                        <ActivityButton activityId="9" active={isActive("9")} color="cyan" large={true}>
-                            <ActivityButtonTitle>Identify Four Word Parts From the Word{"'"}s Definition</ActivityButtonTitle>
-                            {this.renderLabel("9")}
-                        </ActivityButton>
+                        {isBeginning ? null :
+                            <ActivityButton activityId="9" active={isActive("9")} color="cyan" large={true}>
+                                <ActivityButtonTitle>Identify Four Word Parts From the Word{"'"}s Definition</ActivityButtonTitle>
+                                {this.renderLabel("9")}
+                            </ActivityButton>
+                        }
                     </ButtonRow>
 
                     <ButtonRow>
-                        <ActivityButton activityId="10" active={isActive("10")} color="cyan" large={true}>
+                        <ActivityButton index={isBeginning ? "9" : "10"} activityId="10" active={isActive("10")} color="cyan" large={true}>
                             <ActivityButtonTitle>Identify Two Word Parts That Form a Word</ActivityButtonTitle>
                             {this.renderLabel("10")}
                         </ActivityButton>
-                        <ActivityButton activityId="11" active={isActive("11")} color="cyan" large={true}>
+                        <ActivityButton index={isBeginning ? "10" : "11"} activityId="11" active={isActive("11")} color="cyan" large={true}>
                             <ActivityButtonTitle>Identify Three Word Parts That Form a Word</ActivityButtonTitle>
                             {this.renderLabel("11")}
                         </ActivityButton>
-                        <ActivityButton activityId="12" active={isActive("12")} color="cyan" large={true}>
-                            <ActivityButtonTitle>Identify Four Word Parts That Form a Word</ActivityButtonTitle>
-                            {this.renderLabel("12")}
-                        </ActivityButton>
+                        {isBeginning ? null :
+                            <ActivityButton activityId="12" active={isActive("12")} color="cyan" large={true}>
+                                <ActivityButtonTitle>Identify Four Word Parts That Form a Word</ActivityButtonTitle>
+                                {this.renderLabel("12")}
+                            </ActivityButton>
+                        }
                     </ButtonRow>
                 </ButtonContainer>
 

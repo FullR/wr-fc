@@ -7,6 +7,7 @@ var setup = require("setup");
 // between the different levels
 setup({
     level: {
+        id: "level-3",
         title: "Level 3",
         ISBN: "978-1-60144-670-1"
     },

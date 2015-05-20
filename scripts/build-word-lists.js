@@ -174,21 +174,11 @@ module.exports = function() {
     level2 = getLevelWords(2);
     //level3 = getLevelWords(3);
 
-    /*console.log("-- Beginning --");
-    check(level0);
-    console.log("\n");
 
-    console.log("-- Level 1 --");
+    /*check(level0);
     check(level1);
-    console.log("\n");*/
-
-    console.log("-- Level 2 --");
     check(level2);
-    console.log("\n");
-
-    /*console.log("-- Level 3 --");
-    check(level3);
-    console.log("\n");*/
+    check(level3);*/
 
     saveWordList(__dirname + "/../app/javascript/words/beginning/words.js", level0.words);
     saveWordList(__dirname + "/../app/javascript/words/beginning/parts.js", level0.parts);

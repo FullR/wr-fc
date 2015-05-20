@@ -1,13 +1,12 @@
 var React = require("react");
-var {StyleResolverMixin, BrowserStateMixin} = require("radium");
 var bp = require("utility/bp");
 var {micro, small, medium} = require("sizes");
 
 var ContinueButton = React.createClass({
-    mixins: [StyleResolverMixin, BrowserStateMixin],
+    mixins: [require("mixins/style")],
 
     render: function() {
-        var style = this.buildStyles({
+        var style = {
             position: "absolute",
             width: bp({
                 [small]: 45,
@@ -27,10 +26,10 @@ var ContinueButton = React.createClass({
                     backgroundImage: "url('assets/images/continue-button_hover.png')"
                 }}
             ]
-        });
+        };
 
         return (
-            <div {...this.props} {...this.getBrowserStateEvents()} style={style}></div>
+            <div {...this.props} {...this.getStyle(style)}/>
         );
     }
 });

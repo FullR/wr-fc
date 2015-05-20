@@ -2,10 +2,9 @@ var React = require("react");
 var bp = require("utility/bp");
 var {Link} = require("react-router");
 var {micro, small, medium} = require("sizes");
-var {StyleResolverMixin, BrowserStateMixin} = require("radium");
 
 var FooterLink = React.createClass({
-    mixins: [StyleResolverMixin, BrowserStateMixin],
+    mixins: [require("mixins/style")],
 
     render: function() {
         var style = this.buildStyles({
@@ -27,8 +26,8 @@ var FooterLink = React.createClass({
         });
 
         return this.props.to ?
-            <Link {...this.getBrowserStateEvents()} {...this.props} style={style}>{this.props.children}</Link> :
-            <span {...this.getBrowserStateEvents()} {...this.props} style={style}>{this.props.children}</span>;
+            <Link {...this.getStyle(style)} {...this.props}>{this.props.children}</Link> :
+            <span {...this.getStyle(style)} {...this.props}>{this.props.children}</span>;
     }
 });
 

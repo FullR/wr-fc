@@ -14,25 +14,18 @@ function remove(dir) {
     return exec(`rm -rf '${dir}'`);
 }
 
-var levels = [
-    {
-        id: "beginning",
-        parts: require("../app/javascript/words/beginning/parts"),
-        words: require("../app/javascript/words/beginning/words")
-    }, {
-        id: "level-1",
-        parts: require("../app/javascript/words/level-1/parts"),
-        words: require("../app/javascript/words/level-1/words")
-    }, {
-        id: "level-2",
-        parts: require("../app/javascript/words/level-2/parts"),
-        words: require("../app/javascript/words/level-2/words")
-    }, {
-        id: "level-3",
-        parts: require("../app/javascript/words/level-3/parts"),
-        words: require("../app/javascript/words/level-3/words")
+var levels = ["beginning", "level-1", "level-2", "level-3"];
+function getLevel(levelId) {
+    if(levels.indexOf(levelId) === -1) {
+        throw new Error("Unrecognized level: " + levelId);
     }
-];
+
+    return {
+        id: levelId,
+        parts: require(`../app/javascript/words/${levelId}/parts`),
+        words: require(`../app/javascript/words/${levelId}/words`)
+    };
+}
 
 function getSourcePath(part, isDefinition) {
     var fileName = `${isDefinition ? "D" : ""}${part.type[0].toUpperCase()}-${part.id}`;
@@ -54,9 +47,8 @@ function createDir(path) {
     }
 }
 
-
-levels.forEach((level) => {
-    level.parts.concat(level.words).reduce((promise, part) => {
+function buildLevelDir(level) {
+    return level.parts.concat(level.words).reduce((promise, part) => {
         var source = getSourcePath(part, false);
         var dest = getDestinationPath(part, level.id, false);
 
@@ -111,4 +103,18 @@ levels.forEach((level) => {
                 }
             });
     }, Q.resolve()).catch((error) => console.log(error.toString()));
-});
+}
+
+if(require.main === module) { 
+    levels
+        .map(getLevel)
+        .forEach(buildLevelDir);
+}
+
+module.exports = function buildLevelDir_export(...levelIds) {
+    return levelIds.reduce((promise, levelId) => {
+        return promise.then(() => {
+            return buildLevelDir(getLevel(levelId));
+        });
+    }, Q.resolve());
+};

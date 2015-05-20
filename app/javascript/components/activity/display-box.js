@@ -1,10 +1,9 @@
 var React = require("react");
 var _ = require("lodash");
-var {StyleResolverMixin, BrowserStateMixin} = require("radium");
 var colors = require("colors");
 
 var DisplayBox = React.createClass({
-    mixins: [StyleResolverMixin, BrowserStateMixin],
+    mixins: [require("mixins/style")],
 
     render: function() {
         var disabled = this.props.disabled || !this.props.onClick;
@@ -27,7 +26,7 @@ var DisplayBox = React.createClass({
         };
 
         return (
-            <div {...this.props} {...this.getBrowserStateEvents()} style={this.buildStyles(style)}>
+            <div {...this.props} {...this.getStyle(style)}>
                 {this.props.children}
             </div>
         );

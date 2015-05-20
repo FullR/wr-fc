@@ -1,6 +1,5 @@
 var React = require("react");
 var _ = require("lodash");
-var {StyleResolverMixin, BrowserStateMixin} = require("radium");
 var WordPart = require("components/activity/word-part");
 var Word = require("components/activity/word");
 var colors = require("colors");
@@ -9,7 +8,7 @@ var bp = require("utility/bp");
 var {micro, small, medium} = require("sizes");
 
 var PartPieceDisplay = React.createClass({
-    mixins: [StyleResolverMixin, BrowserStateMixin],
+    mixins: [require("mixins/style")],
 
     render: function() {
         var {choices, wordId, revealed} = this.props;
@@ -17,10 +16,10 @@ var PartPieceDisplay = React.createClass({
         var parts = [...word.prefixes, ...word.roots, ...word.suffixes];
 
         var fontSize = bp({
-            [micro]: 25,
-            [small]: 35,
-            [medium]: 55,
-            defaults: 75
+            [micro]: 20,
+            [small]: 22,
+            [medium]: 40,
+            defaults: 60
         });
 
         var style = {
@@ -72,7 +71,7 @@ var PartPieceDisplay = React.createClass({
 
         return (
             <div style={style}>
-                <div {...this.getBrowserStateEvents()} style={interactableStyle} onClick={this.props.onClick}>
+                <div {...this.getListeners()} style={interactableStyle} onClick={this.props.onClick}>
                     {
                         parts.map((partId, i) => {
                             if(revealed || choices.filter((choice) => choice.partId === partId)[0].selected) {

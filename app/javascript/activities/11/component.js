@@ -6,8 +6,10 @@ var store = require("./store");
 
 var Activity11 = React.createClass({
     render: function() {
-        var title = "Game 11 - Three Word Parts";
+        var index = window.level.id === "beginning" ? "10" : "11";
+        var title = `Game ${index} - Three Word Parts`;
         var instructions = "Touch the three word parts that together make a word.";
+        var isBeginning = (window.level.id === "beginning");
         return (<ActivityType3
             id="11"
             hideDefinition={true}
@@ -16,7 +18,7 @@ var Activity11 = React.createClass({
             title={title}
             instructions={instructions}
             choiceCount={4}
-            next="activity-12"/>);
+            next={isBeginning ? null : "activity-12"}/>);
     }
 });
 

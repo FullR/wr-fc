@@ -1,9 +1,8 @@
 var React = require("react");
 var WebLink = require("components/utility/web-link");
-var {StyleResolverMixin, BrowserStateMixin} = require("radium");
 
 var Product = React.createClass({
-    mixins: [StyleResolverMixin, BrowserStateMixin],
+    mixins: [require("mixins/style")],
 
     render: function() {
         var style = {
@@ -40,7 +39,7 @@ var Product = React.createClass({
         };
 
         return (
-            <WebLink href={this.props.href} style={this.buildStyles(style)} {...this.getBrowserStateEvents()}>
+            <WebLink {...this.getStyle(style)} href={this.props.href}>
                 <img src={this.props.src} style={imageStyle}/>
                 <div style={contentStyle}>
                     {this.props.children}

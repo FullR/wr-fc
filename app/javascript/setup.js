@@ -28,7 +28,7 @@ var images = [
 module.exports = function setup(globals) {
     _.extend(window, globals);
     React.initializeTouchEvents(true);
-    document.getElementsByTagName("title")[0].innerHTML = "Word Roots " + window.level.title + " Flashcards";
+    document.getElementsByTagName("title")[0].innerHTML = `Word Roots ${window.level.title} Flashcards`;
 
     ready.then(function() {
         var appStore = require("app-store");
@@ -36,30 +36,28 @@ module.exports = function setup(globals) {
         fastclick(document.body);
 
         images.forEach((filename) => {
-            document.createElement("img").src = "assets/images/"+filename+".png";
+            document.createElement("img").src = `assets/images/${filename}.png`;
         });
 
-        try {
-            if(window.plugin && window.plugin.statusbarOverlay) {
-                window.plugin.statusbarOverlay.hide();
-            }
-            if(window.navigator && window.navigator.splashscreen) {
-                window.navigator.splashscreen.hide();
-            }
-            // Cordova media polyfill
-            require("polyfills/cordova/cordova-media-plugin")();
-            router = Router.create(require("routes"));
 
-            router.run(function(Handler, state) {
-                React.withContext({
-                    router: router
-                }, function() {
-                    React.render(<Handler {...state}/>, document.body);
-                });
-            });
-        } catch(error) {
-            console.log("Caught: " + error);
-            return require("q").reject(error); // Q keeps errors from being thrown within promise callbacks
+        if(window.plugin && window.plugin.statusbarOverlay) {
+            window.plugin.statusbarOverlay.hide();
         }
-    }).done();
+        if(window.navigator && window.navigator.splashscreen) {
+            window.navigator.splashscreen.hide();
+        }
+        // Cordova media polyfill
+        require("polyfills/cordova/cordova-media-plugin")();
+        router = Router.create(require("routes"));
+
+        router.run(function(Handler, state) {
+            React.withContext({
+                router: router
+            }, function() {
+                React.render(<Handler {...state}/>, document.body);
+            });
+        });
+    }).catch((error) => {
+        console.error("Caught: " + error.toString());
+    });
 };

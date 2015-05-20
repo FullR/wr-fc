@@ -1310,15 +1310,15 @@ module.exports = [
     {
         "level": 2,
         "type": "root",
-        "id": "t�g�",
+        "id": "tégé",
         "definition": "cover",
         "joiner": [
             3,
             4
         ],
-        "key": "root-t�g�",
-        "soundFile": "word-parts/root/R-t�g�",
-        "definitionSoundFile": "definitions/root/DR-t�g�"
+        "key": "root-tégé",
+        "soundFile": "word-parts/root/R-tégé",
+        "definitionSoundFile": "definitions/root/DR-tégé"
     },
     {
         "level": 2,

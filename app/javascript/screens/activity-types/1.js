@@ -38,7 +38,17 @@ var ActivityType1 = React.createClass({
     },
 
     playWordSound: isMounted(function() {
+        if(this.refs.definitionSound) {
+            this.refs.definitionSound.stop();
+        }
         this.refs.wordSound.play();
+    }),
+
+    playDefinitionSound: isMounted(function() {
+        if(this.refs.wordSound) {
+            this.refs.wordSound.stop();
+        }
+        this.refs.definitionSound.play();
     }),
 
     onSoundPlay: isMounted(function() {
@@ -48,6 +58,16 @@ var ActivityType1 = React.createClass({
 
     onSoundEnd: isMounted(function() {
         this.state.soundPlaying = false;
+        this.setState(this.state);
+    }),
+
+    onDefinitionPlay: isMounted(function() {
+        this.state.defintionPlaying = true;
+        this.setState(this.state);
+    }),
+
+    onDefinitionEnd: isMounted(function() {
+        this.state.defintionPlaying = false;
         this.setState(this.state);
     }),
 
@@ -90,9 +110,12 @@ var ActivityType1 = React.createClass({
                 onPlay={this.onSoundPlay}
                 onEnd={this.onSoundEnd}/>,
             <Sound
+                ref="definitionSound"
                 key={correctDefSoundPath}
                 path={correctDefSoundPath}
-                autoplay={true}/>
+                autoplay={true}
+                onPlay={this.onDefinitionPlay}
+                onEnd={this.onDefinitionEnd}/>
         ] : [
             <Sound
                 ref="wordSound"
@@ -128,12 +151,14 @@ var ActivityType1 = React.createClass({
                     <ChoiceContainer choiceCount={3}>
                         {choices.map((choice) =>
                             <DefinitionChoice 
-                                onClick={actions.selectChoice.bind(null, choice)} 
+                                onClick={actions.selectChoice.bind(null, choice)}
+                                onRevealedClick={(revealed && choice.correct) ? this.playDefinitionSound : null}
                                 key={index + choice.partId} 
                                 revealed={revealed}
                                 correct={choice.correct}
                                 selected={choice.selected}
-                                partId={choice.partId}/>
+                                partId={choice.partId}
+                                highlighted={(revealed && choice.correct) && this.state.defintionPlaying}/>
                         )}
                     </ChoiceContainer>
                 </BottomContainer>
