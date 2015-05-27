@@ -14,7 +14,7 @@ function remove(dir) {
     return exec(`rm -rf '${dir}'`);
 }
 
-var levels = ["beginning", "level-1", "level-2", "level-3"];
+var levels = ["beginning", "level-1", "level-2", "level-3", "beginning-demo", "level-1-demo", "level-2-demo", "level-3-demo"];
 function getLevel(levelId) {
     if(levels.indexOf(levelId) === -1) {
         throw new Error("Unrecognized level: " + levelId);

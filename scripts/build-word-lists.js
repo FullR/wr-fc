@@ -127,7 +127,7 @@ var mergeDirectories = {
     "0": __dirname + "/../merges/beginning",
     "1": __dirname + "/../merges/level-1",
     "2": __dirname + "/../merges/level-2",
-    //"3": __dirname + "/../merges/level-3"
+    "3": __dirname + "/../merges/level-3"
 };
 
 var audioPrefixes = {
@@ -166,14 +166,14 @@ module.exports = function() {
     var level0;
     var level1;
     var level2;
-    //var level3;
+    var level3;
+
     fixWords();
 
     level0 = getLevelWords(0);
     level1 = getLevelWords(1);
     level2 = getLevelWords(2);
-    //level3 = getLevelWords(3);
-
+    level3 = getLevelWords(3);
 
     /*check(level0);
     check(level1);
@@ -189,8 +189,20 @@ module.exports = function() {
     saveWordList(__dirname + "/../app/javascript/words/level-2/words.js", level2.words);
     saveWordList(__dirname + "/../app/javascript/words/level-2/parts.js", level2.parts);
 
-    //saveWordList(__dirname + "/../app/javascript/words/level-3/words.js", level3.words);
-    //saveWordList(__dirname + "/../app/javascript/words/level-3/parts.js", level3.parts);
+    saveWordList(__dirname + "/../app/javascript/words/level-3/words.js", level3.words);
+    saveWordList(__dirname + "/../app/javascript/words/level-3/parts.js", level3.parts);
+
+    saveWordList(__dirname + "/../app/javascript/words/beginning-demo/words.js", level0.words);
+    saveWordList(__dirname + "/../app/javascript/words/beginning-demo/parts.js", level0.parts);
+
+    saveWordList(__dirname + "/../app/javascript/words/level-1-demo/words.js", level1.words);
+    saveWordList(__dirname + "/../app/javascript/words/level-1-demo/parts.js", level1.parts);
+
+    saveWordList(__dirname + "/../app/javascript/words/level-2-demo/words.js", level2.words);
+    saveWordList(__dirname + "/../app/javascript/words/level-2-demo/parts.js", level2.parts);
+
+    saveWordList(__dirname + "/../app/javascript/words/level-3-demo/words.js", level3.words);
+    saveWordList(__dirname + "/../app/javascript/words/level-3-demo/parts.js", level3.parts);
 
     //buildMasterList();
     //buildLevelLists();

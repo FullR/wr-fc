@@ -114,6 +114,7 @@ var ActivityType1 = React.createClass({
                 key={correctDefSoundPath}
                 path={correctDefSoundPath}
                 autoplay={true}
+                delay={250}
                 onPlay={this.onDefinitionPlay}
                 onEnd={this.onDefinitionEnd}/>
         ] : [
@@ -174,6 +175,7 @@ var ActivityType1 = React.createClass({
     renderFeedback: function() {
         return (
             <Feedback
+                demoText={this.props.demoText}
                 scores={this.state.data.scores}
                 onReviewClick={this.props.actions.review}
                 onReplayClick={this.props.actions.replay}

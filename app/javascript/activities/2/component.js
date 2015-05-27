@@ -14,7 +14,8 @@ var Activity2 = React.createClass({
             actions={actions} 
             title={title}
             instructions={instructions}
-            next="activity-3"/>);
+            next="activity-3"
+            demoText={`There are ${window.dictionary.roots.length - 2} additional roots in the full version`}/>);
     }
 });
 

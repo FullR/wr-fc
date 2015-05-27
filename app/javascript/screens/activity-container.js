@@ -20,6 +20,7 @@ var ActivityContainer = React.createClass({
             bottom: 30,
             left: 30
         };
+
         return (
             <div style={style}>
                 <RouteHandler {...this.props}/>

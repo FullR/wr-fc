@@ -4,7 +4,7 @@
 	"description": "Educational App",
 	"version": "0.1.0",
 	"window": {
-		"title": "Word Roots Flashcards",
+		"title": "Word Roots Beginning Flashcards",
 		"icon": "./res/icon.png",
 		"toolbar": true,
 		"frame": true,

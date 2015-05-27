@@ -38,30 +38,37 @@ module.exports = function(basePartList) {
         },
 
         createNewAttempt: function(partList) {
-            var unusedChoiceGroups = (partList || basePartList).map((correctPart) => {
-                var incorrectChoices = _(dictionary.parts)
-                    .filter((part) => {
-                        var passes = part.key !== correctPart.key && part.definition !== correctPart.definition;
-                        if(passes && correctPart.blacklist) {
-                            passes = correctPart.blacklist.indexOf(part.key) === -1; // make sure the part isn't on the correct part's blacklist
-                        }
-                        return passes;
-                    })
-                    .map((part) => {
-                        return {
-                            partId: part.key,
-                            correct: false,
-                            selected: false
-                        };
-                    })
-                    .sample(2)
-                    .value();
+            var unusedChoiceGroups = (partList || basePartList)
+                .filter((part) => {
+                    if(!window.level.demo) {
+                        return true;
+                    }
+                    return window.level.demoChoices["1"].indexOf(part.key) !== -1;
+                })
+                .map((correctPart) => {
+                    var incorrectChoices = _(dictionary.parts)
+                        .filter((part) => {
+                            var passes = part.key !== correctPart.key && part.definition !== correctPart.definition;
+                            if(passes && correctPart.blacklist) {
+                                passes = correctPart.blacklist.indexOf(part.key) === -1; // make sure the part isn't on the correct part's blacklist
+                            }
+                            return passes;
+                        })
+                        .map((part) => {
+                            return {
+                                partId: part.key,
+                                correct: false,
+                                selected: false
+                            };
+                        })
+                        .sample(2)
+                        .value();
 
-                return [
-                    {partId: correctPart.key, correct: true, selected: false},
-                    ...incorrectChoices
-                ];
-            });
+                    return [
+                        {partId: correctPart.key, correct: true, selected: false},
+                        ...incorrectChoices
+                    ];
+                });
             var correctPartId;
 
             unusedChoiceGroups = _.shuffle(unusedChoiceGroups).map(_.shuffle);

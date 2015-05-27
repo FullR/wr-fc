@@ -58,8 +58,8 @@ var ScoreTable = React.createClass({
                     height: "100%"
                 }}>
                     <div style={tableStyle}>
-                        {this.props.scores.map((score) =>
-                            <tr>
+                        {this.props.scores.map((score, index) =>
+                            <tr key={index}>
                                 <Score correct={score.correct} max={score.max}>
                                     {score.isReview ? "Replay Incorrect Score" : "Game Score"}
                                 </Score>

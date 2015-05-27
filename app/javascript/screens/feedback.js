@@ -5,6 +5,7 @@ var colors = require("colors");
 var FeedbackButton = require("components/feedback/button");
 var appStore = require("app-store");
 var EndGameWindow = require("components/feedback/end-game");
+var DemoModal = require("components/feedback/demo-modal");
 var bp = require("utility/bp");
 var {micro, small, medium} = require("sizes");
 
@@ -89,7 +90,9 @@ var Feedback = React.createClass({
 
                 {appStore.areAllCompleted() ?
                     <EndGameWindow/> :
-                    null
+                    window.level.demo ? 
+                        <DemoModal>{this.props.demoText}</DemoModal>:
+                        null
                 }
 
                 <div style={buttonGroupStyle}>

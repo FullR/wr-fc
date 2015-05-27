@@ -9,7 +9,8 @@ setup({
     level: {
         id: "level-1",
         title: "Level 1",
-        ISBN: "978-1-60144-668-8"
+        ISBN: "978-1-60144-668-8",
+        href: "http://www.criticalthinking.com/word-roots-level1-flashcards-software.html"
     },
     dictionary: new Dictionary({
         parts: require("words/level-1/parts"),

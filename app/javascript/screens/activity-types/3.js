@@ -78,6 +78,7 @@ var ActivityType3 = React.createClass({
                         ref="correctWord"
                         key={index}
                         path={correctWordSound}
+                        delay={250}
                         autoplay={true}
                         onPlay={this.onSoundPlay}
                         onEnd={this.onSoundEnd}/> :
@@ -129,6 +130,7 @@ var ActivityType3 = React.createClass({
     renderFeedback: function() {
         return (
             <Feedback
+                demoText={`There are an additional ${window.dictionary.words.length - 2} words in the full version`}
                 scores={this.state.data.scores}
                 onReviewClick={this.props.actions.review}
                 onReplayClick={this.props.actions.replay}

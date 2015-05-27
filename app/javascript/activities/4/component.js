@@ -14,7 +14,8 @@ var Activity4 = React.createClass({
             actions={actions} 
             title={title}
             instructions={instructions}
-            next="activity-5"/>);
+            next="activity-5"
+            demoText={`There are ${window.dictionary.prefixes.length - 2} additional prefixes in the full version`}/>);
     }
 });
 

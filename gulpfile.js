@@ -13,29 +13,49 @@ var pkg = require("./package");
 var Browserify = require("browserify");
 var source  = require("vinyl-source-stream");
 var watchify = require("watchify");
-require("babel/register")
+require("babel/register");
+
 var colors = {
     time: gutil.colors.magenta,
     taskName: gutil.colors.cyan,
     errors: gutil.colors.red.underline
 };
+
 var ids = {
     "beginning": "com.criticalthinking.wordrootsfcbeg",
     "level-1": "com.criticalthinking.wordrootsfc1",
     "level-2": "com.criticalthinking.wordrootsfc2",
-    "level-3": "com.criticalthinking.wordrootsfc3"
+    "level-3": "com.criticalthinking.wordrootsfc3",
+    "beginning": "com.criticalthinking.wordrootsfcbegdemo",
+    "level-1": "com.criticalthinking.wordrootsfc1demo",
+    "level-2": "com.criticalthinking.wordrootsfc2demo",
+    "level-3": "com.criticalthinking.wordrootsfc3demo"
 };
+
 var titles = {
     "beginning": "Word Roots Beginning Flashcards",
     "level-1": "Word Roots Level 1 Flashcards",
     "level-2": "Word Roots Level 2 Flashcards",
-    "level-3": "Word Roots Level 3 Flashcards"
+    "level-3": "Word Roots Level 3 Flashcards",
+    "beginning": "Word Roots Beginning Flashcards Demo",
+    "level-1": "Word Roots Level 1 Flashcards Demo",
+    "level-2": "Word Roots Level 2 Flashcards Demo",
+    "level-3": "Word Roots Level 3 Flashcards Demo"
 };
 
 // command line arguments
 var watch = process.argv.indexOf("--watch") !== -1;
 var release = process.argv.indexOf("--release") !== -1;
-var levels = ["beginning", "level-1", "level-2", "level-3"];
+var levels = [
+    "beginning",
+    "level-1",
+    "level-2",
+    "level-3",
+    "beginning-demo",
+    "level-1-demo",
+    "level-2-demo",
+    "level-3-demo"
+];
 
 function bundleLevel(level) {
     var bundler;
@@ -228,7 +248,11 @@ gulp.task("sass", function() {
         .pipe(gulp.dest("dist/beginning/assets"))
         .pipe(gulp.dest("dist/level-1/assets"))
         .pipe(gulp.dest("dist/level-2/assets"))
-        .pipe(gulp.dest("dist/level-3/assets"));
+        .pipe(gulp.dest("dist/level-3/assets"))
+        .pipe(gulp.dest("dist/beginning-demo/assets"))
+        .pipe(gulp.dest("dist/level-1-demo/assets"))
+        .pipe(gulp.dest("dist/level-2-demo/assets"))
+        .pipe(gulp.dest("dist/level-3-demo/assets"));
 });
 
 gulp.task("html", function() {
@@ -236,7 +260,11 @@ gulp.task("html", function() {
         .pipe(gulp.dest("dist/beginning"))
         .pipe(gulp.dest("dist/level-1"))
         .pipe(gulp.dest("dist/level-2"))
-        .pipe(gulp.dest("dist/level-3"));
+        .pipe(gulp.dest("dist/level-3"))
+        .pipe(gulp.dest("dist/beginning-demo"))
+        .pipe(gulp.dest("dist/level-1-demo"))
+        .pipe(gulp.dest("dist/level-2-demo"))
+        .pipe(gulp.dest("dist/level-3-demo"));
 });
 
 gulp.task("generate:word-lists", require("./scripts/build-word-lists"));

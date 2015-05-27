@@ -16,7 +16,8 @@ var Activity10 = React.createClass({
             actions={actions}
             title={title}
             instructions={instructions}
-            next="activity-11"/>);
+            next="activity-11"
+            demoText={`There are ${window.dictionary.words.length - 2} additional words in the full version`}/>);
     }
 });
 

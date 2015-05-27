@@ -95,6 +95,7 @@ var ActivityType2 = React.createClass({
                 {sounds}
                 <Sound 
                     ref="wordSound"
+                    delay={250}
                     key={correctPartSoundPath} 
                     path={correctPartSoundPath}
                     onPlay={this.onSoundPlay}
@@ -144,6 +145,7 @@ var ActivityType2 = React.createClass({
     renderFeedback: function() {
         return (
             <Feedback
+                demoText={this.props.demoText}
                 scores={this.state.data.scores}
                 onReviewClick={this.props.actions.review}
                 onReplayClick={this.props.actions.replay}

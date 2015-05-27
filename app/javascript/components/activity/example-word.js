@@ -47,8 +47,9 @@ var ExampleWord = React.createClass({
         var style = {
             width: "100%",
             fontSize: 32,
-            paddingTop: 16,
-            paddingBottom: 16,
+            marginTop: 6,
+            paddingTop: 10,
+            paddingBottom: 10,
             transition: "opacity 0.25s",
             opacity: this.props.hidden ? 0 : 1,
             cursor: playable ? "pointer" : null,

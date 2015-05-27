@@ -1,3 +1,1 @@
-var Reflux = require("reflux");
-
-module.exports = Reflux.createAction();
+module.exports = require("reflux").createAction();

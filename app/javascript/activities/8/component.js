@@ -16,7 +16,8 @@ var Activity8 = React.createClass({
             title={title}
             instructions={instructions}
             choiceCount={4}
-            next={isBeginning ? "activity-10" : "activity-9"}/>);
+            next={isBeginning ? "activity-10" : "activity-9"}
+            demoText={`There are ${window.dictionary.words.length - 2} additional words in the full version`}/>);
     }
 });
 

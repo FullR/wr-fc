@@ -19,29 +19,37 @@ module.exports = function(baseWordList) {
 
         createNewAttempt: function(wordList) {
             this.soundPlaying = false;
-            var unusedChoiceGroups = (wordList || baseWordList).map((correctWord) => {
-                var incorrectChoice = {
-                    partId: _.sample(correctWord.choosableParts, 1)[0],
-                    correct: false,
-                    selected: false
-                };
-
-                var correctChoices = [...correctWord.prefixes, ...correctWord.roots, ...correctWord.suffixes].map((wordPartId) => {
-                    return {
-                        partId: wordPartId,
-                        correct: true,
+            var unusedChoiceGroups = (wordList || baseWordList)
+                .filter((part) => {
+                    var id = +this.activityId;
+                    if(!window.level.demo) {
+                        return true;
+                    }
+                    return window.level.demoChoices[id >= 10 ? "4" : "3"].indexOf(part.key) !== -1;
+                })
+                .map((correctWord) => {
+                    var incorrectChoice = {
+                        partId: _.sample(correctWord.choosableParts, 1)[0],
+                        correct: false,
                         selected: false
                     };
-                });
 
-                return {
-                    correctWordId: correctWord.key,
-                    choices: _.shuffle([
-                        ...correctChoices,
-                        incorrectChoice
-                    ])
-                }
-            });
+                    var correctChoices = [...correctWord.prefixes, ...correctWord.roots, ...correctWord.suffixes].map((wordPartId) => {
+                        return {
+                            partId: wordPartId,
+                            correct: true,
+                            selected: false
+                        };
+                    });
+
+                    return {
+                        correctWordId: correctWord.key,
+                        choices: _.shuffle([
+                            ...correctChoices,
+                            incorrectChoice
+                        ])
+                    }
+                });
 
             unusedChoiceGroups = _.shuffle(unusedChoiceGroups);
 

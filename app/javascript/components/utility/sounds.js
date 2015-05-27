@@ -26,15 +26,9 @@ var Sounds = React.createClass({
 
     play: function() {
         var delay = this.props.delay;
-        /*return this.sounds.reduce((q, sound, index) => {
-            return q.then(() => {
-                if(this.isMounted()) {
-                    return sound.play(index ? delay : null);
-                }
-            });
-        }, Q.resolve());*/
+
         this._queue = queue(this.sounds, (sound, index) => {
-            return sound.play(index ? delay : null);
+            return sound.play(delay);
         });
 
         return this._queue.promise.then(() => {
