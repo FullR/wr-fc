@@ -212,6 +212,10 @@ gulp.task("statics", function(callback) {
         "statics:level-1",
         "statics:level-2",
         "statics:level-3",
+        "statics:beginning-demo",
+        "statics:level-1-demo",
+        "statics:level-2-demo",
+        "statics:level-3-demo",
         callback);
 });
 
@@ -222,6 +226,10 @@ gulp.task("cordova", function(callback) {
         "cordova:level-1",
         "cordova:level-2",
         "cordova:level-3",
+        "cordova:beginning-demo",
+        "cordova:level-1-demo",
+        "cordova:level-2-demo",
+        "cordova:level-3-demo",
         callback);
 });
 
@@ -231,6 +239,10 @@ gulp.task("desktop", function(callback) {
         "desktop:level-1",
         "desktop:level-2",
         "desktop:level-3",
+        "desktop:beginning-demo",
+        "desktop:level-1-demo",
+        "desktop:level-2-demo",
+        "desktop:level-3-demo",
         callback);
 });
 

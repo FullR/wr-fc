@@ -1,6 +1,6 @@
 var Storage = require("putainde-localstorage");
 var level = window.level;
-var storage = Storage.create({namespace: "word-roots-fc-"+level.title});
+var storage = Storage.create({namespace: `word-roots-fc-${level.title}${level.demo ? "-demo" : ""}`});
 var version = require("../../package").version;
 
 var data = storage.get("application");
