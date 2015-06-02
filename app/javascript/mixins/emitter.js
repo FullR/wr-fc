@@ -1,11 +1,11 @@
 /*
     Mixin for providing basic subscriber model
 */
-var emitter = {
+const emitter = {
     // Alert subscribers to an event
-    fire: function(eventId, event) {
-        var listeners = this._listeners || (this._listeners = {}),
-            listenerGroup = listeners[eventId];
+    fire(eventId, event) {
+        const listeners = this._listeners || (this._listeners = {});
+        const listenerGroup = listeners[eventId];
         
         if(listenerGroup) {
             listenerGroup.forEach(function(listener) {
@@ -15,15 +15,15 @@ var emitter = {
     },
     
     // Subscribe to a events of a certain type
-    on: function(eventId, callback) {
+    on(eventId, callback) {
         this._listeners = this._listeners || {};
         this._listeners[eventId] = this._listeners[eventId] || [];
         this._listeners[eventId].push(callback);
     },
     
     // Stop subscribing to events of a specific type
-    off: function(eventId, callback) {
-        var listenerGroup = this._listeners ? this._listeners[eventId] : null;
+    off(eventId, callback) {
+        const listenerGroup = this._listeners ? this._listeners[eventId] : null;
         if(listenerGroup) {
             listenerGroup.splice(listenerGroup.indexOf(callback), 1);
         }

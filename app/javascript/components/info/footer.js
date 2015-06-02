@@ -1,13 +1,13 @@
-var React = require("react");
-var colors = require("colors");
-var TctcInfoBox = require("components/info/tctc-info-box");
-var InfoBackButton = require("components/info/info-back-button");
-var getVars = require("./variables");
+const React = require("react");
+const colors = require("colors");
+const TctcInfoBox = require("components/info/tctc-info-box");
+const InfoBackButton = require("components/info/info-back-button");
+const getVars = require("./variables");
 
-var InfoFooter = React.createClass({
-    render: function() {
-        var vars = getVars();
-        var style = {
+const InfoFooter = React.createClass({
+    render() {
+        const vars = getVars();
+        const style = {
             position: "absolute",
             bottom: 0,
             width: "100%",

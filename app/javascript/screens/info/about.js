@@ -1,17 +1,17 @@
-var React = require("react");
-var Header = require("components/info/header");
-var Footer = require("components/info/footer");
-var getVars = require("components/info/variables");
-var WebLink = require("components/utility/web-link");
-var Title = require("components/info/title");
-var colors = require("colors");
-var dictionary = window.dictionary;
+const React = require("react");
+const Header = require("components/info/header");
+const Footer = require("components/info/footer");
+const getVars = require("components/info/variables");
+const WebLink = require("components/utility/web-link");
+const Title = require("components/info/title");
+const colors = require("colors");
+const dictionary = window.dictionary;
 
-var About = React.createClass({
-    render: function() {
-        var isBeginning = window.level.id === "beginning";
-        var vars = getVars();
-        var contentStyle = {
+const About = React.createClass({
+    render() {
+        const isBeginning = window.level.id === "beginning";
+        const vars = getVars();
+        const contentStyle = {
             position: "absolute",
             top: vars.HEADER_HEIGHT,
             bottom: vars.FOOTER_HEIGHT,
@@ -21,14 +21,14 @@ var About = React.createClass({
             padding: "16px 80px 16px 80px"
         };
 
-        var headerStyle = {
+        const headerStyle = {
             width: "100%",
             fontSize: "24",
             textAlign: "center",
             fontWeight: 700
         };
 
-        var paragraphStyle = {
+        const paragraphStyle = {
             fontSize: 22,
             marginTop: 16,
             lineHeight: "26px"

@@ -1,8 +1,8 @@
-var React = require("react");
-var ModalButton = require("components/menu/modal-button");
-var colors = require("colors");
+const React = require("react");
+const ModalButton = require("components/menu/modal-button");
+const colors = require("colors");
 
-var overlayStyle = {
+const overlayStyle = {
     position: "absolute",
     top: 0,
     left: 0,
@@ -12,7 +12,7 @@ var overlayStyle = {
     zIndex: 10
 };
 
-var windowStyle = {
+const windowStyle = {
     position: "absolute",
     left: "50%",
     top: "50%",
@@ -24,7 +24,7 @@ var windowStyle = {
     zIndex: 11
 };
 
-var textStyle = {
+const textStyle = {
     position: "absolute",
     top: 32,
     left: "10%",
@@ -35,20 +35,20 @@ var textStyle = {
     color: "#000000"
 };
 
-var yesStyle = {
+const yesStyle = {
     position: "absolute",
     bottom: 32,
     right: 32
 };
 
-var noStyle = {
+const noStyle = {
     position: "absolute",
     bottom: 32,
     left: 32
 };
 
-var Modal = React.createClass({
-    render: function() {
+const Modal = React.createClass({
+    render() {
         return (
             <div style={overlayStyle} onClick={this.props.onNoClick}>
                 <div style={windowStyle}>

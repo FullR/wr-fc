@@ -1,16 +1,16 @@
-var _ = require("lodash");
+const _ = require("lodash");
 
 // edge case flags go here
-var additionalProps = {
+const additionalProps = {
     "word-per capita": { // only word with a space in it
         space: true
     }
 };
 
 function Dictionary(props) {
-    var byType = (type) => ((part) => part.type === type);
-    var parts = props.parts;
-    var words = props.words;
+    const byType = (type) => ((part) => part.type === type);
+    const parts = props.parts;
+    const words = props.words;
 
     this.parts = parts;
     this.words = words;
@@ -31,8 +31,8 @@ function Dictionary(props) {
 }
 
 _.extend(Dictionary.prototype, {
-    get: function(key) {
-        var word = this.index[key];
+    get(key) {
+        const word = this.index[key];
         if(!word) {
             console.error("Can't find word with key: " + key);
             return null;
@@ -40,7 +40,7 @@ _.extend(Dictionary.prototype, {
         return word;
     },
 
-    getWordsWithPart: function(partId) {
+    getWordsWithPart(partId) {
         return _(this.words)
         .filter((word) => {
             return [...word.prefixes, ...word.roots, ...word.suffixes].indexOf(partId) !== -1
@@ -49,7 +49,7 @@ _.extend(Dictionary.prototype, {
         .value();
     },
 
-    filterByPartCount: function(count) {
+    filterByPartCount(count) {
         return this.words.filter((word) => {
             return [...word.prefixes, ...word.roots, ...word.suffixes].length === count;
         });

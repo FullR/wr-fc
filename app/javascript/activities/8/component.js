@@ -1,14 +1,14 @@
-var React = require("react");
-var Suffix = require("components/activity/suffix");
-var ActivityType3 = require("screens/activity-types/3");
-var actions = require("./actions");
-var store = require("./store");
+const React = require("react");
+const Suffix = require("components/activity/suffix");
+const ActivityType3 = require("screens/activity-types/3");
+const actions = require("./actions");
+const store = require("./store");
 
-var Activity8 = React.createClass({
-    render: function() {
-        var title = "Game 8 - Three Word Parts";
-        var instructions = "Touch the two word parts that together mean:";
-        var isBeginning = (window.level.id === "beginning");
+const Activity8 = React.createClass({
+    render() {
+        const title = "Game 8 - Three Word Parts";
+        const instructions = "Touch the two word parts that together mean:";
+        const isBeginning = (window.level.id === "beginning");
         return (<ActivityType3
             id="8"
             store={store}

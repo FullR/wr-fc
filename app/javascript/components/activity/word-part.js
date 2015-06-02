@@ -1,21 +1,21 @@
-var React = require("react");
-var _ = require("lodash");
-var colors = require("colors");
-var dictionary = window.dictionary;
+const React = require("react");
+const _ = require("lodash");
+const colors = require("colors");
+const dictionary = window.dictionary;
 
 function wrapMiddle(start, end, wrapStart, wrapEnd, str) {
     return str.substring(0, start) + wrapStart + str.substring(start, end) + wrapEnd + str.substring(end, str.length);
 }
 
-var WordPart = React.createClass({
+const WordPart = React.createClass({
     propTypes: {
         partId: React.PropTypes.string.isRequired
     },
 
-    render: function() {
-        var part = dictionary.get(this.props.partId);
-        var joiner;
-        var html;
+    render() {
+        const part = dictionary.get(this.props.partId);
+        let joiner;
+        let html;
 
         if(!part) {
             return <span {...this.props} style={_.extend(style, this.props.style)}>WORD PART NOT FOUND: {this.props.partId}</span>;
@@ -28,7 +28,7 @@ var WordPart = React.createClass({
             html = wrapMiddle(joiner[0], joiner[1], `<span style="color:${colors.JOINER}">`, "</span>", html);
         }
 
-        var style = {
+        const style = {
             color: colors[part.type.toUpperCase()]
         };
 

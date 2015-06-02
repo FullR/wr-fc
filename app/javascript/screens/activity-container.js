@@ -1,26 +1,26 @@
-var React = require("react");
-var MenuButton = require("components/activity/menu-button");
-var {RouteHandler} = require("react-router");
+const React = require("react");
+const MenuButton = require("components/activity/menu-button");
+const {RouteHandler} = require("react-router");
 
-var ActivityContainer = React.createClass({
+const style = {
+    width: "100%",
+    height: "100%"
+};
+
+const menuButtonStyle = {
+    position: "absolute",
+    bottom: 30,
+    left: 30
+};
+
+const ActivityContainer = React.createClass({
     contextTypes: {
         router: React.PropTypes.func,
         level: React.PropTypes.object,
         dictionary: React.PropTypes.object
     },
 
-    render: function() {
-        var style = {
-            width: "100%",
-            height: "100%"
-        };
-
-        var menuButtonStyle = {
-            position: "absolute",
-            bottom: 30,
-            left: 30
-        };
-
+    render() {
         return (
             <div style={style}>
                 <RouteHandler {...this.props}/>

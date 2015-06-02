@@ -1,9 +1,9 @@
-var React = require("react");
-var _ = require("lodash");
+const React = require("react");
+const _ = require("lodash");
 
-var Block = React.createClass({
-    render: function() {
-        var style = _.extend({
+const Block = React.createClass({
+    render() {
+        const style = _.extend({
             position: "relative",
             display: "inline-block",
             verticalAlign: "middle"

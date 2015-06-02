@@ -1,11 +1,11 @@
-var React = require("react");
-var bp = require("utility/bp");
-var colors = require("colors");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const bp = require("utility/bp");
+const colors = require("colors");
+const {micro, small, medium} = require("sizes");
 
-var ActivityButtonTitle = React.createClass({
-    render: function() {
-        var style = {
+const ActivityButtonTitle = React.createClass({
+    render() {
+        const style = {
             top: bp({
                 [medium]: 3,
                 defaults: 5

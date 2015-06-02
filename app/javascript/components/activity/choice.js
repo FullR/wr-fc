@@ -1,15 +1,15 @@
-var React = require("react");
-var {StyleResolverMixin, BrowserStateMixin} = require("radium");
-var _ = require("lodash");
-var bp = require("utility/bp");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const {StyleResolverMixin, BrowserStateMixin} = require("radium");
+const _ = require("lodash");
+const bp = require("utility/bp");
+const {micro, small, medium} = require("sizes");
 
-var animationSpeed = 0.5;
+const animationSpeed = 0.5;
 
-var Choice = React.createClass({
+const Choice = React.createClass({
     mixins: [require("mixins/style")],
 
-    onClick: function(event) {
+    onClick(event) {
         if(!this.props.revealed && this.props.onClick) {
             this.props.onClick(event);
         }
@@ -18,8 +18,8 @@ var Choice = React.createClass({
         }
     },
 
-    render: function() {
-        var width;
+    render() {
+        let width;
 
         switch(this.props.choiceCount) {
             case 5: width = bp({
@@ -42,29 +42,30 @@ var Choice = React.createClass({
             })
         }
 
-        var correctIconWidth = bp({
+        const correctIconWidth = bp({
             [small]: 100,
             [medium]: 125,
             defaults: 150
         });
-        var correctIconHeight = bp({
+
+        const correctIconHeight = bp({
             [small]: (2/3)*30,
             [medium]: (5/6)*30,
             defaults: 30
         });
 
-        var incorrectIconWidth = bp({
+        const incorrectIconWidth = bp({
             [small]: 75,
             [medium]: 100,
             defaults: 150
         }) * 0.9;
-        var incorrectIconHeight = bp({
+        const incorrectIconHeight = bp({
             [small]: 75,
             [medium]: 100,
             defaults: 150
         }) * 0.9;
 
-        var style = {
+        const style = {
             position: "relative",
             boxSizing: "border-box",
             display: "inline-block",
@@ -101,7 +102,7 @@ var Choice = React.createClass({
             ])
         };
 
-        var incorrectIconStyle = {
+        const incorrectIconStyle = {
             position: "absolute",
             width: incorrectIconWidth,
             height: incorrectIconHeight,
@@ -114,7 +115,7 @@ var Choice = React.createClass({
             opacity: 0.5
         };
 
-        var correctIconStyle = {
+        const correctIconStyle = {
             position: "absolute",
             width: correctIconWidth,
             height: correctIconHeight,

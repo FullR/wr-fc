@@ -1,6 +1,6 @@
-var Q = require("q");
+const Q = require("q");
 
-var ready;
+let ready;
 
 if (window.__platform.cordova) {
     ready = Q.Promise(function(resolve) {

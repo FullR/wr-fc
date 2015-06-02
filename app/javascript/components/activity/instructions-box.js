@@ -1,10 +1,10 @@
-var React = require("react");
-var bp = require("utility/bp");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const bp = require("utility/bp");
+const {micro, small, medium} = require("sizes");
 
-var InstructionsBox = React.createClass({
-    render: function() {
-        var style = {
+const InstructionsBox = React.createClass({
+    render() {
+        const style = {
             position: "absolute",
             left: "50%",
             top: bp({
@@ -16,6 +16,7 @@ var InstructionsBox = React.createClass({
             marginLeft: -300,
             cursor: "default"
         };
+
         return (
             <div {...this.props} style={style}>
                 {this.props.children}

@@ -1,13 +1,13 @@
-var React = require("react");
-var DisplayBox = require("components/activity/display-box");
-var Definition = require("components/activity/definition");
-var bp = require("utility/bp");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const DisplayBox = require("components/activity/display-box");
+const Definition = require("components/activity/definition");
+const bp = require("utility/bp");
+const {micro, small, medium} = require("sizes");
 
-var DefinitionDisplayBox = React.createClass({
-    render: function() {
-        var size = this.props.size;
-        var style = size === "small" ? {
+const DefinitionDisplayBox = React.createClass({
+    render() {
+        const size = this.props.size;
+        const style = size === "small" ? {
             fontSize: bp({
                 [small]: 20,
                 [medium]: 26,

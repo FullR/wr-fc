@@ -1,16 +1,16 @@
-var React = require("react");
-var bp = require("utility/bp");
-var {small, medium} = require("sizes");
+const React = require("react");
+const bp = require("utility/bp");
+const {small, medium} = require("sizes");
 
-var ChoiceContainer = React.createClass({
-    render: function() {
-        var width = bp({
+const ChoiceContainer = React.createClass({
+    render() {
+        const width = bp({
             [small]: (125 * 5) + 50,
             [medium]: (175 * 5) + 50,
             "width < 1245": (175 * 5) + 50,
             defaults: (250 * 5) + 50
         });
-        var style = {
+        const style = {
             display: "inline-block",
             height: "100%",
             width: width,

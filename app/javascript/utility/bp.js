@@ -1,10 +1,10 @@
-var _ = require("lodash");
-var [width, height] = getDimension();
+const _ = require("lodash");
+const compareRegex = /(width|height)\s*(<|>|=|<=|>=)\s*(\d*)/;
 
-var compareRegex = /(width|height)\s*(<|>|=|<=|>=)\s*(\d*)/;
+let [width, height] = getDimension();
 
 function getDimension() {
-    var docEl = document.documentElement,
+    const docEl = document.documentElement,
         body = document.getElementsByTagName('body')[0],
         width = window.innerWidth || docEl.clientWidth || body.clientWidth,
         height = window.innerHeight || docEl.clientHeight || body.clientHeight;
@@ -34,7 +34,7 @@ function op(compareFn) {
     };
 }
 
-var compareOps = {
+const compareOps = {
     "<": op(function(a, b) {
         return a < b;
     }),
@@ -52,12 +52,12 @@ var compareOps = {
     })
 };
 
-var evalCache = {};
+let evalCache = {};
 function evalOp(bpString) {
-    var dimName;
-    var op;
-    var compareValue;
-    var passes;
+    let dimName;
+    let op;
+    let compareValue;
+    let passes;
 
     if(typeof evalCache[bpString] === "boolean") {
         return evalCache[bpString];
@@ -69,10 +69,10 @@ function evalOp(bpString) {
 }
 
 function bp(bpMap) {
-    var pairs = _.pairs(bpMap);
-    var defaultResult;
+    const pairs = _.pairs(bpMap);
+    let defaultResult;
 
-    for(var [bpString, resultValue] of pairs) {
+    for(let [bpString, resultValue] of pairs) {
         if(bpString === "defaults") {
             defaultResult = resultValue;
             continue;
@@ -91,13 +91,13 @@ window.addEventListener("resize", () => {
 });
 
 bp.mixin = {
-    componentDidMount: function() {
-        var onResize = (() => this.forceUpdate());
+    componentDidMount() {
+        const onResize = (() => this.forceUpdate());
         window.addEventListener("resize", onResize);
         this.unsubscribe = (() => window.removeEventListener("resize", onResize));
     },
 
-    componentWillUnmount: function() {
+    componentWillUnmount() {
         if(this.unsubscribe) {
             this.unsubscribe();
             this.unsubscribe = null;
@@ -105,12 +105,7 @@ bp.mixin = {
     }
 };
 
-bp.getHeight = function() {
-    return height;
-};
-
-bp.getWidth = function() {
-    return width;
-};
+bp.getHeight = () => height;
+bp.getWidth = () => width;
 
 module.exports = bp;

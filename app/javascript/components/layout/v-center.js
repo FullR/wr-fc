@@ -1,13 +1,13 @@
-var React = require("react");
-var _ = require("lodash");
+const React = require("react");
+const _ = require("lodash");
 
-var VCenter = React.createClass({
-    render: function() {
-        var style = _.extend({
+const VCenter = React.createClass({
+    render() {
+        const style = _.extend({
             height: "100%"
         }, this.props.style);
 
-        var wrapperStyle = {
+        const wrapperStyle = {
             position: "relative",
             top: "50%",
             transform: "translateY(-50%)",

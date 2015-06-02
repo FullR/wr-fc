@@ -7,7 +7,7 @@ if (!Function.prototype.bind) {
             throw new TypeError("Function.prototype.bind - what is trying to be bound is not callable");
         }
 
-        var aArgs = Array.prototype.slice.call(arguments, 1), 
+        const aArgs = Array.prototype.slice.call(arguments, 1), 
           fToBind = this, 
           FNop = function () {},
           FBound = function () {

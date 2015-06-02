@@ -1,4 +1,4 @@
-var Reflux = require("reflux");
+const Reflux = require("reflux");
 
 module.exports = {
     selectChoice: Reflux.createAction(),

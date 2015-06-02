@@ -1,12 +1,12 @@
-var React = require("react");
-var bp = require("utility/bp");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const bp = require("utility/bp");
+const {micro, small, medium} = require("sizes");
 
-var ContinueButton = React.createClass({
+const ContinueButton = React.createClass({
     mixins: [require("mixins/style")],
 
-    render: function() {
-        var style = {
+    render() {
+        const style = {
             position: "absolute",
             width: bp({
                 [small]: 45,

@@ -1,5 +1,5 @@
 module.exports = {
-    fill: function() {
+    fill() {
         return {
             display: "block",
             width: "100%",
@@ -7,14 +7,14 @@ module.exports = {
         };
     },
 
-    backgroundImage: function(url, xSize="100%", ySize="100%") {
+    backgroundImage(url, xSize="100%", ySize="100%") {
         return {
             backgroundImage: `url('${url}')`,
             backgroundSize: `${xSize} ${ySize}`
         };
     },
 
-    size: function(width="auto", height="auto") {
+    size(width="auto", height="auto") {
         return {width, height};
     }
 };

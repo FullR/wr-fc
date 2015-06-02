@@ -1,13 +1,13 @@
-var React = require("react");
-var colors = require("colors");
-var getVars = require("./variables");
-var bp = require("utility/bp");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const colors = require("colors");
+const getVars = require("./variables");
+const bp = require("utility/bp");
+const {micro, small, medium} = require("sizes");
 
-var InfoHeader = React.createClass({
-    render: function() {
-        var vars = getVars();
-        var style = {
+const InfoHeader = React.createClass({
+    render() {
+        const vars = getVars();
+        const style = {
             height: vars.HEADER_HEIGHT,
             width: "100%",
             fontSize: bp({

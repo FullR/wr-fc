@@ -1,28 +1,28 @@
-var React = require("react");
-var Reflux = require("reflux");
-var activityMixin = require("mixins/activity");
-var windowListener = require("mixins/window-listener");
-var soundManager = require("sound/sound-manager");
-var isMounted = require("utility/mounted-only");
+const React = require("react");
+const Reflux = require("reflux");
+const activityMixin = require("mixins/activity");
+const windowListener = require("mixins/window-listener");
+const soundManager = require("sound/sound-manager");
+const isMounted = require("utility/mounted-only");
 
-var Feedback = require("screens/feedback");
-var FeedbackTitle = require("components/feedback/title");
+const Feedback = require("screens/feedback");
+const FeedbackTitle = require("components/feedback/title");
 
-var ChoiceContainer = require("components/activity/choice-container");
-var PartChoice = require("components/activity/part-choice");
-var WordPart = require("components/activity/word-part");
-var Word = require("components/activity/word");
-var ContinueButton = require("components/activity/continue-button");
-var Info = require("components/activity/info");
-var InstructionsBox = require("components/activity/instructions-box");
-var Instructions = require("components/activity/instructions");
-var DefinitionDisplayBox = require("components/activity/definition-display-box");
-var BottomContainer = require("components/activity/bottom-container");
-var ExampleWord = require("components/activity/example-word");
-var Sound = require("components/utility/sound");
-var Sounds = require("components/utility/sounds");
+const ChoiceContainer = require("components/activity/choice-container");
+const PartChoice = require("components/activity/part-choice");
+const WordPart = require("components/activity/word-part");
+const Word = require("components/activity/word");
+const ContinueButton = require("components/activity/continue-button");
+const Info = require("components/activity/info");
+const InstructionsBox = require("components/activity/instructions-box");
+const Instructions = require("components/activity/instructions");
+const DefinitionDisplayBox = require("components/activity/definition-display-box");
+const BottomContainer = require("components/activity/bottom-container");
+const ExampleWord = require("components/activity/example-word");
+const Sound = require("components/utility/sound");
+const Sounds = require("components/utility/sounds");
 
-var ActivityType2 = React.createClass({
+const ActivityType2 = React.createClass({
     mixins: [
         Reflux.ListenerMixin,
         activityMixin,
@@ -50,17 +50,17 @@ var ActivityType2 = React.createClass({
         this.setState(this.state);
     }),
 
-    renderTitle: function() {
+    renderTitle() {
         return (
             <span>{this.props.title}</span>
         );
     },
 
-    renderInstructions: function() {
+    renderInstructions() {
         return this.props.instructions;
     },
 
-    componentDidMount: function() {
+    componentDidMount() {
         this.on("keydown", (event) => {
             switch(event.keyCode) {
                 case 32: if(!this.state.isShowingFeedback() && this.state.isWaiting()) {
@@ -71,16 +71,16 @@ var ActivityType2 = React.createClass({
         });
     },
 
-    renderActivity: function() {
-        var revealed = this.state.isWaiting();
-        var choices = this.state.getCurrentChoiceGroup();
-        var correctPartSoundPath = this.state.getCorrectSound();
-        var exampleWordSoundPath = this.state.getExampleSoundPath();
-        var exampleWordId = this.state.data.currentAttempt.exampleWordId;
-        var correctPartId = this.state.getCorrectChoice().partId;
-        var actions = this.props.actions;
-        var index = this.state.getIndex();
-        var sounds;
+    renderActivity() {
+        const revealed = this.state.isWaiting();
+        const choices = this.state.getCurrentChoiceGroup();
+        const correctPartSoundPath = this.state.getCorrectSound();
+        const exampleWordSoundPath = this.state.getExampleSoundPath();
+        const exampleWordId = this.state.data.currentAttempt.exampleWordId;
+        const correctPartId = this.state.getCorrectChoice().partId;
+        const actions = this.props.actions;
+        const index = this.state.getIndex();
+        let sounds;
 
         if(revealed) {
             sounds = (<Sounds ref="sounds" autoplay={true} key={correctPartSoundPath + "-sounds"} delay={250} paths={[
@@ -142,7 +142,7 @@ var ActivityType2 = React.createClass({
         );
     },
 
-    renderFeedback: function() {
+    renderFeedback() {
         return (
             <Feedback
                 demoText={this.props.demoText}
@@ -156,7 +156,7 @@ var ActivityType2 = React.createClass({
         );
     },
 
-    render: function() {
+    render() {
         if(this.state.isShowingFeedback()) {
             return this.renderFeedback();
         }

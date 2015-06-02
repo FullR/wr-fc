@@ -1,10 +1,10 @@
-var React = require("react");
-var bp = require("utility/bp");
-var {small, medium} = require("sizes");
+const React = require("react");
+const bp = require("utility/bp");
+const {small, medium} = require("sizes");
 
-var ButtonContainer = React.createClass({
-    render: function() {
-        var style = {
+const ButtonContainer = React.createClass({
+    render() {
+        const style = {
             position: "absolute",
             top: bp({
                 [small]: 45,
@@ -19,6 +19,7 @@ var ButtonContainer = React.createClass({
             width: "100%",
             textAlign: "center"
         };
+
         return (
             <div style={style}>
                 {this.props.children}

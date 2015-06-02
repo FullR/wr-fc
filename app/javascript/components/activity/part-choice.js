@@ -1,12 +1,12 @@
-var React = require("react");
-var Choice = require("components/activity/choice");
-var WordPart = require("components/activity/word-part");
-var bp = require("utility/bp");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const Choice = require("components/activity/choice");
+const WordPart = require("components/activity/word-part");
+const bp = require("utility/bp");
+const {micro, small, medium} = require("sizes");
 
-var PartChoice = React.createClass({
-    render: function() {
-        var style = {
+const PartChoice = React.createClass({
+    render() {
+        const style = {
             fontSize: bp({
                 [micro]: 16,
                 [small]: 24,

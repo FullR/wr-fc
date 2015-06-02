@@ -1,7 +1,7 @@
-var Reflux = require("reflux");
-var storageMixin = require("mixins/storage");
-var activityStoreMixin = require("mixins/activity-stores/3");
-var dictionary = window.dictionary;
+const Reflux = require("reflux");
+const storageMixin = require("mixins/storage");
+const activityStoreMixin = require("mixins/activity-stores/3");
+const dictionary = window.dictionary;
 
 module.exports = Reflux.createStore({
     mixins: [

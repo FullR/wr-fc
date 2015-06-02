@@ -1,10 +1,10 @@
-var Q = require("q");
+const Q = require("q");
 
 function applyMediaPolyfill() {
-    var noop = function() {},
-        HowlerModule,
-        Howler,
-        Howl;
+    const noop = () => {};
+    let HowlerModule;
+    let Howler;
+    let Howl;
 
     function MediaPollyfill(url, onFinishPlaying, onErrorPlaying, onPlayingStatus) {
         this.url = url;
@@ -19,8 +19,8 @@ function applyMediaPolyfill() {
         Howler = HowlerModule.Howler;
 
         MediaPollyfill.prototype = {
-            load: function() {
-                var deferred = Q.defer();
+            load() {
+                const deferred = Q.defer();
 
                 this.sound = new Howl({
                     urls:        [this.url],
@@ -34,19 +34,19 @@ function applyMediaPolyfill() {
                 return deferred.promise;
             },
 
-            stop: function() {
+            stop() {
                 if(this.sound) {
                     this.sound.stop();
                 }
             },
 
-            play: function() {
+            play() {
                 if(this.sound) {
                     this.sound.play();
                 }
             },
 
-            release: function() {
+            release() {
                 //if(this.sound) {
                 //    this.sound.unload();
                 //    this.sound = null;

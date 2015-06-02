@@ -1,25 +1,25 @@
-var React = require("react");
-var soundManager = require("sound/sound-manager");
-var Word = require("components/activity/word");
-var Definition = require("components/activity/definition");
-var Sound = require("components/utility/sound");
-var colors = require("colors");
-var dictionary = window.dictionary;
+const React = require("react");
+const soundManager = require("sound/sound-manager");
+const Word = require("components/activity/word");
+const Definition = require("components/activity/definition");
+const Sound = require("components/utility/sound");
+const colors = require("colors");
+const dictionary = window.dictionary;
 
-var ExampleWord = React.createClass({
+const ExampleWord = React.createClass({
     mixins: [require("mixins/style")],
 
-    getInitialState: function() {
+    getInitialState() {
         return {
             playing: false
         };
     },
 
-    isPlaying: function() {
+    isPlaying() {
         return this.state.playing;
     },
 
-    onPlay: function() {
+    onPlay() {
         if(this.isMounted()) {
             this.setState({
                 playing: true
@@ -27,7 +27,7 @@ var ExampleWord = React.createClass({
         }
     },
 
-    onEnd: function() {
+    onEnd() {
         if(this.isMounted()) {
             this.setState({
                 playing: false
@@ -35,16 +35,16 @@ var ExampleWord = React.createClass({
         }
     },
 
-    play: function() {
+    play() {
         this.refs.sound.play();
         if(this.props.onPlay) {
             this.props.onPlay();
         }
     },
 
-    render: function() {
-        var playable = this.props.playable;
-        var style = {
+    render() {
+        const playable = this.props.playable;
+        const style = {
             width: "100%",
             fontSize: 32,
             marginTop: 6,

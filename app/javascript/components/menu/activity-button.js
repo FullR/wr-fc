@@ -1,11 +1,11 @@
-var React = require("react");
-var _ = require("lodash");
-var {Link} = require("react-router");
-var s = require("utility/styles");
-var bp = require("utility/bp");
-var colors = require("colors");
+const React = require("react");
+const _ = require("lodash");
+const {Link} = require("react-router");
+const s = require("utility/styles");
+const bp = require("utility/bp");
+const colors = require("colors");
 
-var {small, medium} = require("sizes");
+const {small, medium} = require("sizes");
 
 function backgroundColor(color, hoverColor) {
     return {
@@ -17,7 +17,7 @@ function backgroundColor(color, hoverColor) {
     };
 }
 
-var style = {
+const style = {
     position: "relative",
     display: "inline-block",
     width: "20%",
@@ -48,10 +48,10 @@ var style = {
     ]
 };
 
-var ActivityButton = React.createClass({
+const ActivityButton = React.createClass({
     mixins: [require("mixins/style")],
-    render: function() {
-        var indexStyle = {
+    render() {
+        const indexStyle = {
             position: "absolute",
             left: -1,
             top: -1,

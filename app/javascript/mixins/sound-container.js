@@ -1,11 +1,11 @@
-var _ = require("lodash");
-var Q = require("q");
-var soundManager = require("sound/sound-manager");
+const _ = require("lodash");
+const Q = require("q");
+const soundManager = require("sound/sound-manager");
 
 module.exports = {
-    _buildSounds: function() {
-        var paths;
-        var toRelease;
+    _buildSounds() {
+        let paths;
+        let toRelease;
 
         if(!this.getSounds) { throw new Error("You must define a getSounds method");}
         paths = this.getSounds();
@@ -27,31 +27,31 @@ module.exports = {
         this._soundLoadPromise = Q.all(_.invoke(this._sounds), "load").catch(() => Q.resolve());
     },
 
-    componentDidMount: function() {
+    componentDidMount() {
         this._buildSounds();
     },
 
-    componentDidUpdate: function() {
+    componentDidUpdate() {
         this._buildSounds();
     },
 
-    componentWillUnmount: function() {
+    componentWillUnmount() {
         if(this._sounds) {
             _.invoke(this._sounds, "release");
         }
     },
 
-    play: function(id, delay) {
+    play(id, delay) {
         return this._soundLoadPromise.then(() => {
             return this._sounds[id].play(delay);
         });
     },
 
-    stop: function() {
+    stop() {
         _.invoke(this._sounds, "stop");
     },
 
-    isPlaying: function(id) {
+    isPlaying(id) {
         return this._sounds[id].isPlaying();
     }
 };

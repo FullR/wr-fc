@@ -1,18 +1,18 @@
-var React = require("react");
-var _ = require("lodash");
-var WebLink = require("components/utility/web-link");
-var bp = require("utility/bp");
-var {small, medium} = require("sizes");
+const React = require("react");
+const _ = require("lodash");
+const WebLink = require("components/utility/web-link");
+const bp = require("utility/bp");
+const {small, medium} = require("sizes");
 
-var Logo = React.createClass({
-    render: function() {
-        var ratio = bp({
+const Logo = React.createClass({
+    render() {
+        const ratio = bp({
             [small]: 0.65,
             [medium]: 0.85,
             defaults: 1
         });
 
-        var style = _.extend({
+        const style = _.extend({
             display: "block",
             width: 205 * ratio,
             height: 132 * ratio,
@@ -20,7 +20,7 @@ var Logo = React.createClass({
         }, this.props.style);
 
 
-        var imageStyle = {
+        const imageStyle = {
             display: "block",
             width: "100%",
             height: "100%"

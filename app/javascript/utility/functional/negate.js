@@ -2,7 +2,7 @@
     Inverts the output of a function
     
     Example:
-        var notFoo = negate(function(v) { return v === "foo"; });
+        let notFoo = negate(function(v) { return v === "foo"; });
         notFoo("foo") === false
         notFoo("bar") === true
 */

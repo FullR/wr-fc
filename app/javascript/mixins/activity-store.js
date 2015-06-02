@@ -1,18 +1,18 @@
-var dictionary = window.dictionary;
+const dictionary = window.dictionary;
 
 module.exports = {
-    getInitialStorage: function() {
+    getInitialStorage() {
         return {
             scores: [],
             currentAttempt: this.createNewAttempt()
         };
     },
 
-    getInitialState: function() {
+    getInitialState() {
         return this;
     },
 
-    getHighscore: function() {
+    getHighscore() {
         if(!this.data.scores.length) {
             return {correct: 0, max: 0};
         }
@@ -21,15 +21,15 @@ module.exports = {
         );
     },
 
-    getCurrentChoiceGroup: function() {
+    getCurrentChoiceGroup() {
         return this.data.currentAttempt.unusedChoiceGroups[0];
     },
 
-    getIndex: function() {
+    getIndex() {
         return this.data.currentAttempt.usedChoiceGroups.length + 1;
     },
 
-    getCount: function() {
+    getCount() {
         return this.data.currentAttempt.unusedChoiceGroups.length + this.data.currentAttempt.usedChoiceGroups.length;
     }
 };

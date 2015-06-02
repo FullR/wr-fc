@@ -1,17 +1,17 @@
-var React = require("react");
-var setUsername = require("actions/set-username");
-var colors = require("colors");
-var {StyleResolverMixin, BrowserStateMixin} = require("radium");
-var bp = require("utility/bp");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const setUsername = require("actions/set-username");
+const colors = require("colors");
+const {StyleResolverMixin, BrowserStateMixin} = require("radium");
+const bp = require("utility/bp");
+const {micro, small, medium} = require("sizes");
 
-var style = {
+const style = {
     width: "100%",
     height: "100%",
     background: colors.LOGIN_BG
 };
 
-var labelStyle = {
+const labelStyle = {
     position: "absolute",
     top: "25%",
     width: "100%",
@@ -20,7 +20,7 @@ var labelStyle = {
     fontWeight: 400
 };
 
-var formStyle = {
+const formStyle = {
     position: "absolute",
     top: "40%",
     width: "100%",
@@ -28,7 +28,7 @@ var formStyle = {
     fontSize: 32
 };
 
-var inputStyle = {
+const inputStyle = {
     width: "60%",
     height: 45,
     display: "inline-block",
@@ -36,26 +36,26 @@ var inputStyle = {
     textAlign: "center"
 };
 
-var CreateUserScreen = React.createClass({
+const CreateUserScreen = React.createClass({
     mixins: [StyleResolverMixin, BrowserStateMixin],
     contextTypes: {
         router: React.PropTypes.func
     },
 
-    getInitialState: function() {
+    getInitialState() {
         return {
             username: ""
         };
     },
 
-    updateUsername: function(event) {
-        var username = event.target.value;
+    updateUsername(event) {
+        const username = event.target.value;
         this.setState({
             username: username.length > 35 ? username.slice(0, 35) : username
         });
     },
 
-    submit: function(event) {
+    submit(event) {
         event.preventDefault();
         if(this.state.username.trim().length) {
             setUsername(this.state.username);
@@ -63,12 +63,12 @@ var CreateUserScreen = React.createClass({
         }
     },
 
-    componentDidMount: function() {
+    componentDidMount() {
         this.refs.input.getDOMNode().focus();
     },
 
-    render: function() {
-        var buttonStyle = {
+    render() {
+        const buttonStyle = {
             fontSize: bp({
                 [small]: 24,
                 [medium]: 28,
@@ -92,6 +92,7 @@ var CreateUserScreen = React.createClass({
                 }}
             ]
         };
+
         return (
             <div style={style}>
                 <div style={labelStyle}>Enter a name to begin.</div>

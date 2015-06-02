@@ -1,11 +1,11 @@
-var React = require("react");
+const React = require("react");
 
-var ProductGrade = React.createClass({
-    render: function() {
-        var style = {
-            fontSize: 22
-        };
+const style = {
+    fontSize: 22
+};
 
+const ProductGrade = React.createClass({
+    render() {
         return (
             <span style={style}>({this.props.children})</span>
         );

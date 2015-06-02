@@ -1,13 +1,13 @@
-var React = require("react");
-var Root = require("components/activity/root");
-var ActivityType1 = require("screens/activity-types/1");
-var actions = require("./actions");
-var store = require("./store");
+const React = require("react");
+const Root = require("components/activity/root");
+const ActivityType1 = require("screens/activity-types/1");
+const actions = require("./actions");
+const store = require("./store");
 
-var Activity2 = React.createClass({
-    render: function() {
-        var title = (<span>Game 2 - <Root>Roots</Root></span>);
-        var instructions = (<span>Touch the definition of this <Root>root:</Root></span>);
+const Activity2 = React.createClass({
+    render() {
+        const title = (<span>Game 2 - <Root>Roots</Root></span>);
+        const instructions = (<span>Touch the definition of this <Root>root:</Root></span>);
         return (<ActivityType1 
             id="2"
             store={store} 

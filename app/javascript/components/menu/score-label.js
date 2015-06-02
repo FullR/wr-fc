@@ -1,10 +1,10 @@
-var React = require("react");
-var bp = require("utility/bp");
-var {small, medium} = require("sizes");
+const React = require("react");
+const bp = require("utility/bp");
+const {small, medium} = require("sizes");
 
-var ScoreLabel = React.createClass({
-    render: function() {
-        var style = {
+const ScoreLabel = React.createClass({
+    render() {
+        const style = {
             bottom: bp({
                 [small]: 3,
                 [medium]: 5,

@@ -1,11 +1,11 @@
-var React = require("react");
-var _ = require("lodash");
+const React = require("react");
+const _ = require("lodash");
 
-var ModalButton = React.createClass({
+const ModalButton = React.createClass({
     mixins: [require("mixins/style")],
 
-    render: function() {
-        var style = _.extend({
+    render() {
+        const style = _.extend({
             backgroundColor: this.props.background,
             fontSize: 24,
             border: "1px solid black",

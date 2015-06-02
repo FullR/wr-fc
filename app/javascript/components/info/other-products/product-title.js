@@ -1,12 +1,13 @@
-var React = require("react");
+const React = require("react");
 
-var ProductTitle = React.createClass({
-    render: function() {
-        var style = {
-            fontSize: 22,
-            fontWeight: 700,
-            textDecoration: "italic"
-        };
+const style = {
+    fontSize: 22,
+    fontWeight: 700,
+    textDecoration: "italic"
+};
+
+const ProductTitle = React.createClass({
+    render() {
         return (
             <span><span style={style}>{this.props.children}</span>&trade;</span>
         );

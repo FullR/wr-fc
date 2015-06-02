@@ -1,18 +1,18 @@
-var React = require("react");
-var bp = require("utility/bp");
-var colors = require("colors");
-var {small, medium} = require("sizes");
+const React = require("react");
+const bp = require("utility/bp");
+const colors = require("colors");
+const {small, medium} = require("sizes");
 
-var CloseButton = React.createClass({
+const CloseButton = React.createClass({
     mixins: [require("mixins/style")],
-    closeProgram: function() {
+    closeProgram() {
         if(window.gui) {
             window.gui.Window.get().close();
         }
     },
 
-    render: function() {
-        var style = {
+    render() {
+        const style = {
             position: "absolute",
             right: bp({
                 [small]: 10,

@@ -4,8 +4,8 @@
     at the specified key. Returns the passed object
 
     Example:
-        var fooSetter = assign("foo", "bar");
-        var a = {};
+        let fooSetter = assign("foo", "bar");
+        let a = {};
 
         fooSetter(a);
 

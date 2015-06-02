@@ -1,11 +1,11 @@
-var React = require("react");
-var _ = require("lodash");
-var bp = require("utility/bp");
-var {small, medium} = require("sizes");
+const React = require("react");
+const _ = require("lodash");
+const bp = require("utility/bp");
+const {small, medium} = require("sizes");
 
-var UsernameLabel = React.createClass({
-    render: function() {
-        var style = {
+const UsernameLabel = React.createClass({
+    render() {
+        const style = {
             position: "absolute",
             textDecoration: "none",
             color: "#000000"

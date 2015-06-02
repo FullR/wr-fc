@@ -1,7 +1,7 @@
-var React = require("react");
+const React = require("react");
 
-var WebLink = React.createClass({
-    openInSystem: function(event) {
+const WebLink = React.createClass({
+    openInSystem(event) {
         event.preventDefault();
         if(window.gui) {
             window.gui.Shell.openExternal(this.props.href);
@@ -11,7 +11,7 @@ var WebLink = React.createClass({
         }
     },
 
-    render: function() {
+    render() {
         if(window.__platform.cordova || window.platform) { // cordova or node-webkit
             return (
                 <a {...this.props} href="#" onClick={this.openInSystem}>{this.props.children}</a>

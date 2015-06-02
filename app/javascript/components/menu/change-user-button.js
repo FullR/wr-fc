@@ -1,13 +1,13 @@
-var React = require("react");
-var colors = require("colors");
-var bp = require("utility/bp");
-var {small, medium} = require("sizes");
+const React = require("react");
+const colors = require("colors");
+const bp = require("utility/bp");
+const {small, medium} = require("sizes");
 
-var ChangeUserButton = React.createClass({
+const ChangeUserButton = React.createClass({
     mixins: [require("mixins/style")],
 
-    render: function() {
-        var style = {
+    render() {
+        const style = {
             position: "absolute",
             left: bp({
                 [small]: 10,

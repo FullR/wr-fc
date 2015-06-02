@@ -1,11 +1,11 @@
-var React = require("react");
-var bp = require("utility/bp");
-var {small, medium} = require("sizes");
-var level = window.level;
+const React = require("react");
+const bp = require("utility/bp");
+const {small, medium} = require("sizes");
+const level = window.level;
 
-var MenuHeader = React.createClass({
-    render: function() {
-        var style = {
+const MenuHeader = React.createClass({
+    render() {
+        const style = {
             position: "relative",
             top: bp({
                 [medium]: 10,
@@ -23,15 +23,16 @@ var MenuHeader = React.createClass({
             textAlign: "center"
         };
 
-        var subHeaderStyle = {
+        const subHeaderStyle = {
             fontSize: bp({
                 [medium]: 15,
                 defaults: 20
             })
         };
+
         return (
             <div style={style}>
-                Word Roots {level.title} Flashcards&trade; {window.level.demo ? <span style={{color: "#F00"}}>Demo</span> : ""}
+                Word Roots {level.title} Flashcards&trade; {level.demo ? <span style={{color: "#F00"}}>Demo</span> : ""}
                 <div style={subHeaderStyle}>
                     Touch a game to begin.
                 </div>

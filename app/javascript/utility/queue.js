@@ -1,9 +1,9 @@
-var Q = require("q");
+const Q = require("q");
 
 module.exports = function queue(arr, fn) {
-    var running = true;
+    let running = true;
 
-    var promise = arr.reduce((q, ...args) => {
+    const promise = arr.reduce((q, ...args) => {
         return q.then(function queueStep() {
             if(running) {
                 return fn(...args);

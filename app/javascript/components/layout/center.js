@@ -1,9 +1,9 @@
-var React = require("react");
-var HCenter = require("./h-center");
-var VCenter = require("./v-center");
+const React = require("react");
+const HCenter = require("./h-center");
+const VCenter = require("./v-center");
 
-var Center = React.createClass({
-    render: function() {
+const Center = React.createClass({
+    render() {
         return (
             <VCenter {...this.props}>
                 <HCenter>

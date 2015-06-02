@@ -1,12 +1,12 @@
-var React = require("react");
-var _ = require("lodash");
-var fastclick = require("fastclick");
-var Router = require("react-router");
-var ready = require("polyfills/cordova/device-ready");
+const React = require("react");
+const _ = require("lodash");
+const fastclick = require("fastclick");
+const Router = require("react-router");
+const ready = require("polyfills/cordova/device-ready");
 require("babelify/polyfill");
 require("polyfills/function-prototype-bind");
 
-var images = [
+const images = [
     "continue-button",
     "continue-button_hover",
     "end-game",
@@ -31,8 +31,8 @@ module.exports = function setup(globals) {
     document.getElementsByTagName("title")[0].innerHTML = `Word Roots ${window.level.title} Flashcards`;
 
     ready.then(function() {
-        var appStore = require("app-store");
-        var router;
+        const appStore = require("app-store");
+        let router;
         fastclick(document.body);
 
         images.forEach((filename) => {

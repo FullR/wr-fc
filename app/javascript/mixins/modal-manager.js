@@ -1,23 +1,23 @@
 module.exports = {
-    getInitialState: function() {
+    getInitialState() {
         modal: null
     },
 
-    openModal: function(modal, props) {
+    openModal(modal, props) {
         this.state.modal = modal;
         this.setState(this.state);
     },
 
-    closeModal: function() {
+    closeModal() {
         this.state.modal = null;
         this.setState(this.state);
     },
 
-    componentWillUnmount: function() {
+    componentWillUnmount() {
         this.state.modal = null;
     },
 
-    renderModal: function() {
+    renderModal() {
         return this.state.modal;
     }
 };

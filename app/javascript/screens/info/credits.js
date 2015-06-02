@@ -1,22 +1,22 @@
-var React = require("react");
-var _ = require("lodash");
-var Footer = require("components/info/footer");
-var getVars = require("components/info/variables");
-var WebLink = require("components/utility/web-link");
-var colors = require("colors");
-var bp = require("utility/bp");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const _ = require("lodash");
+const Footer = require("components/info/footer");
+const getVars = require("components/info/variables");
+const WebLink = require("components/utility/web-link");
+const colors = require("colors");
+const bp = require("utility/bp");
+const {micro, small, medium} = require("sizes");
 
-var Credits = React.createClass({
-    render: function() {
-        var vars = getVars();
-        var linePadding = bp({
+const Credits = React.createClass({
+    render() {
+        const vars = getVars();
+        const linePadding = bp({
             [small]: 10,
             [medium]: 15,
             defaults: 20
         });
 
-        var contentStyle = {
+        const contentStyle = {
             overflow: "auto",
             position: "absolute",
             width: "100%",
@@ -36,21 +36,21 @@ var Credits = React.createClass({
             })
         };
 
-        var headerStyle = {
+        const headerStyle = {
             fontWeight: 700,
             marginTop: "3%"
         };
 
-        var roleStyle = {
+        const roleStyle = {
             marginTop: linePadding,
             color: colors.CREDITS_ROLE
         };
 
-        var nameStyle = {
+        const nameStyle = {
             color: "#000000"
         };
 
-        var isbnStyle = {
+        const isbnStyle = {
             marginTop: 40,
             marginBottom: "3%"
         };

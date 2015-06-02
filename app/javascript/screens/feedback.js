@@ -1,25 +1,25 @@
-var React = require("react");
-var Reflux = require("reflux");
-var ScoreTable = require("components/feedback/score-table");
-var colors = require("colors");
-var FeedbackButton = require("components/feedback/button");
-var appStore = require("app-store");
-var EndGameWindow = require("components/feedback/end-game");
-var DemoModal = require("components/feedback/demo-modal");
-var bp = require("utility/bp");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const Reflux = require("reflux");
+const ScoreTable = require("components/feedback/score-table");
+const colors = require("colors");
+const FeedbackButton = require("components/feedback/button");
+const appStore = require("app-store");
+const EndGameWindow = require("components/feedback/end-game");
+const DemoModal = require("components/feedback/demo-modal");
+const bp = require("utility/bp");
+const {micro, small, medium} = require("sizes");
 
-var style = {
+const style = {
     background: colors.FEEDBACK_BG,
     width: "100%",
     height: "100%"
 };
 
-var buttonStyle = {
+const buttonStyle = {
     marginLeft: 30
 };
 
-var Feedback = React.createClass({
+const Feedback = React.createClass({
     mixins: [Reflux.connect(appStore, "app")],
 
     contextTypes: {
@@ -28,17 +28,17 @@ var Feedback = React.createClass({
         dictionary: React.PropTypes.object
     },
 
-    goToNextGame: function() {
+    goToNextGame() {
         this.context.router.transitionTo(this.props.next);
     },
 
-    canReview: function() {
-        var lastScore = this.props.scores[0];
+    canReview() {
+        const lastScore = this.props.scores[0];
         return lastScore.correct < lastScore.max;
     },
 
-    render: function() {
-        var mostRecentArrowStyle = {
+    render() {
+        const mostRecentArrowStyle = {
             position: "absolute",
             width: "100%",
             textAlign: "right",
@@ -61,7 +61,8 @@ var Feedback = React.createClass({
             }),
             color: "#FF0000"
         };
-        var scoreStyle = {
+
+        const scoreStyle = {
             position: "absolute",
             top: "15%",
             bottom: "15%",
@@ -69,17 +70,19 @@ var Feedback = React.createClass({
             right: "25%"
         };
 
-        var buttonPadding = bp({
+        const buttonPadding = bp({
             [micro]: 5,
             [small]: 10,
             [medium]: 20,
             defaults: 30
         });
-        var buttonGroupStyle = {
+
+        const buttonGroupStyle = {
             position: "absolute",
             right: buttonPadding,
             bottom: buttonPadding
         };
+
         return (
             <div style={style}>
                 {this.props.children}

@@ -1,11 +1,11 @@
-var visitActivity = require("actions/visit-activity");
+const visitActivity = require("actions/visit-activity");
 
 module.exports = {
-    getInitialState: function() {
+    getInitialState() {
         return this.props.store.getInitialState();
     },
 
-    componentDidMount: function() {
+    componentDidMount() {
         visitActivity(this.props.id);
         this.listenTo(this.props.store, (data) => {
             this.setState(data);

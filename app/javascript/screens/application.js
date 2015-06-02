@@ -1,10 +1,10 @@
-var React = require("react"),
-    RouteHandler = require("react-router").RouteHandler;
+const React = require("react");
+const RouteHandler = require("react-router").RouteHandler;
 
-var Application = React.createClass({
+const Application = React.createClass({
     mixins: [require("utility/bp").mixin],
 
-    render: function() {
+    render() {
         return (
             <div style={{width: "100%", height: "100%"}}>
                 <RouteHandler {...this.props}/>

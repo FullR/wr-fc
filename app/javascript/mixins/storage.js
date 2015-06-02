@@ -1,9 +1,9 @@
-var storage = require("storage");
-var reset = require("actions/reset");
+const storage = require("storage");
+const reset = require("actions/reset");
 
 module.exports = function storageMixin(namespace) {
     return {
-        init: function() {
+        init() {
             this.data = storage.get(namespace);
             if(!this.data) {
                 this.reset();
@@ -13,7 +13,7 @@ module.exports = function storageMixin(namespace) {
             this.listenTo(reset, this.reset);
         },
 
-        reset: function() {
+        reset() {
             if(typeof this.getInitialStorage === "function") {
                 this.data = this.getInitialStorage();
             }
@@ -23,7 +23,7 @@ module.exports = function storageMixin(namespace) {
             this.save();
         },
 
-        save: function() {
+        save() {
             storage.set(namespace, this.data);
         }
     };

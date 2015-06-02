@@ -1,31 +1,31 @@
-var React = require("react");
-var _ = require("lodash");
-var Score = require("components/feedback/score");
-var colors = require("colors");
-var bp = require("utility/bp");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const _ = require("lodash");
+const Score = require("components/feedback/score");
+const colors = require("colors");
+const bp = require("utility/bp");
+const {micro, small, medium} = require("sizes");
 
-var ScoreTable = React.createClass({
-    render: function() {
-        var scores = this.props.scores;
-        var highscore = scores.reduce((highscore, score) => {
+const ScoreTable = React.createClass({
+    render() {
+        const scores = this.props.scores;
+        const highscore = scores.reduce((highscore, score) => {
             return !score.isReview && score.correct > highscore.correct ? score : highscore;
         });
 
-        var height =  bp({
+        const height =  bp({
             [small]: 200,
             [medium]: 320,
             defaults: 440
         });
 
-        var style = {
+        const style = {
             border: "1px solid #000",
             width: "100%",
             height: "100%",
             background: colors.HIGHSCORE_BG
         };
 
-        var tableStyle = {
+        const tableStyle = {
             position: "absolute",
             top: 0,
             left: 0,
@@ -42,7 +42,7 @@ var ScoreTable = React.createClass({
             borderBottom: "1px solid black"
         };
 
-        var highscoreStyle = {
+        const highscoreStyle = {
             position: "absolute",
             bottom: 0,
             width: "auto",

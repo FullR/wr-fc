@@ -1,13 +1,13 @@
-var React = require("react");
-var bp = require("utility/bp");
-var {Link} = require("react-router");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const bp = require("utility/bp");
+const {Link} = require("react-router");
+const {micro, small, medium} = require("sizes");
 
-var FooterLink = React.createClass({
+const FooterLink = React.createClass({
     mixins: [require("mixins/style")],
 
-    render: function() {
-        var style = this.buildStyles({
+    render() {
+        const style = this.buildStyles({
             margin: bp({
                 [micro]: "0 5px",
                 [small]: "0 8px",

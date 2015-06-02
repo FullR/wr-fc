@@ -1,10 +1,10 @@
-var React = require("react");
-var bp = require("utility/bp");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const bp = require("utility/bp");
+const {micro, small, medium} = require("sizes");
 
-var FooterMenu = React.createClass({
-    render: function() {
-        var style = {
+const FooterMenu = React.createClass({
+    render() {
+        const style = {
             position: "absolute",
             left: "8rem",
             right: "8rem",

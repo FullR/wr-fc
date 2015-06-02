@@ -1,14 +1,14 @@
-var React = require("react");
-var _ = require("lodash");
-var colors = require("colors");
-var bp = require("utility/bp");
-var {small, medium} = require("sizes");
+const React = require("react");
+const _ = require("lodash");
+const colors = require("colors");
+const bp = require("utility/bp");
+const {small, medium} = require("sizes");
 
-var FeedbackButton = React.createClass({
+const FeedbackButton = React.createClass({
     mixins: [require("mixins/style")],
 
-    render: function() {
-        var style = _.extend({
+    render() {
+        const style = _.extend({
             background: colors.INFO_BUTTON_BG,
             color: "#FFFFFF",
             border: "1px solid #000000",

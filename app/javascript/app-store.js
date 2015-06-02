@@ -1,11 +1,11 @@
-var Reflux = require("reflux");
-var _ = require("lodash");
-var storageMixin = require("mixins/storage");
-var visitActivity = require("actions/visit-activity");
-var setUsername = require("actions/set-username");
-var completeActivity = require("actions/complete-activity");
+const Reflux = require("reflux");
+const _ = require("lodash");
+const storageMixin = require("mixins/storage");
+const visitActivity = require("actions/visit-activity");
+const setUsername = require("actions/set-username");
+const completeActivity = require("actions/complete-activity");
 
-var activityStores = {
+const activityStores = {
     "1":  require("activities/1/store"),
     "2":  require("activities/2/store"),
     "3":  require("activities/3/store"),
@@ -20,18 +20,18 @@ var activityStores = {
     "12": require("activities/12/store")
 };
 
-var beginningActs = ["1","2","3","4","5","6","7","8","10","11"];
+const beginningActs = ["1","2","3","4","5","6","7","8","10","11"];
 
-var AppStore = Reflux.createStore({
+const AppStore = Reflux.createStore({
     mixins: [storageMixin("app")],
 
-    init: function() {
+    init() {
         this.listenTo(visitActivity, "onVisitActivity");
         this.listenTo(setUsername, "onSetUsername");
         this.listenTo(completeActivity, "onCompleteActivity");
     },
 
-    getInitialStorage: function() {
+    getInitialStorage() {
         return {
             username: "",
             lastActivityId: null,
@@ -67,28 +67,28 @@ var AppStore = Reflux.createStore({
         };
     },
 
-    getUsername: function() {
+    getUsername() {
         return this.data.username;
     },
 
-    isLastActivity: function(activityId) {
+    isLastActivity(activityId) {
         return this.data.lastActivityId === activityId;
     },
 
-    getHighscore: function(activityId) {
+    getHighscore(activityId) {
         return activityStores[activityId].getHighscore();
     },
 
-    isStarted: function(activityId) {
+    isStarted(activityId) {
         return this.data.startedActivities[activityId];
     },
 
-    isCompleted: function(activityId) {
+    isCompleted(activityId) {
         return this.data.completedActivities[activityId];
     },
 
-    areAllCompleted: function() {
-        var completedActivities = window.level.id === "beginning" ? 
+    areAllCompleted() {
+        const completedActivities = window.level.id === "beginning" ? 
             _.filter(this.data.completedActivities, function(value, id) { // only check activities that are playable in beginning level
                 return beginningActs.indexOf(id) !== -1;
             }) : 
@@ -99,22 +99,22 @@ var AppStore = Reflux.createStore({
         });
     },
 
-    getInitialState: function() {
+    getInitialState() {
         return this;
     },
 
-    onVisitActivity: function(activityId) {
+    onVisitActivity(activityId) {
         this.data.lastActivityId = activityId;
         this.data.startedActivities[activityId] = true;
         this.trigger(this.data);
     },
 
-    onCompleteActivity: function(activityId) {
+    onCompleteActivity(activityId) {
         this.data.completedActivities[activityId] = true;
         this.trigger(this.data);
     },
 
-    onSetUsername: function(username) {
+    onSetUsername(username) {
         this.data.username = username;
         this.trigger(this.data);
     }

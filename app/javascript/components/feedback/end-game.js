@@ -1,25 +1,25 @@
-var React = require("react");
-var colors = require("colors");
+const React = require("react");
+const colors = require("colors");
 
-var EndGameWindow = React.createClass({
+const EndGameWindow = React.createClass({
     mixins: [require("mixins/style")],
-    getInitialState: function() {
+    getInitialState() {
         return {
             open: true
         };
     },
 
-    close: function() {
+    close() {
         this.setState({
             open: false
         });
     },
 
-    render: function() {
-        var windowWidth = 550;
-        var windowHeight = 350;
+    render() {
+        const windowWidth = 550;
+        const windowHeight = 350;
 
-        var overlayStyle = {
+        const overlayStyle = {
             position: "absolute",
             height: "100%",
             width: "100%",
@@ -27,7 +27,7 @@ var EndGameWindow = React.createClass({
             zIndex: 5
         };
 
-        var windowStyle = {
+        const windowStyle = {
             position: "absolute",
             textAlign: "center",
             left: "50%",
@@ -43,7 +43,7 @@ var EndGameWindow = React.createClass({
             backgroundSize: "100% 100%"
         };
 
-        var bgImageOverlayStyle = {
+        const bgImageOverlayStyle = {
             position: "relative",
             width: "100%",
             height: "100%",
@@ -52,25 +52,25 @@ var EndGameWindow = React.createClass({
             padding: 30
         };
 
-        var headerStyle = {
+        const headerStyle = {
             width: "100%",
             fontSize: 32,
             fontWeight: 700,
         };
 
-        var textStyle = {
+        const textStyle = {
             fontSize: 22,
             marginTop: 60
         };
 
-        var buttonContainerStyle = {
+        const buttonContainerStyle = {
             position: "absolute",
             bottom: 30,
             left: 0,
             width: "100%"
         };
 
-        var buttonStyle = {
+        const buttonStyle = {
             display: "inline-block",
             fontSize: 22,
             color: "#FFFFFF",

@@ -1,11 +1,11 @@
-var React = require("react");
-var _ = require("lodash");
-var bp = require("utility/bp");
-var {small, medium} = require("sizes");
+const React = require("react");
+const _ = require("lodash");
+const bp = require("utility/bp");
+const {small, medium} = require("sizes");
 
-var FeedbackTitle = React.createClass({
-    render: function() {
-        var style = _.extend({
+const FeedbackTitle = React.createClass({
+    render() {
+        const style = _.extend({
             position: "absolute",
             top: 40,
             fontSize: 32,
@@ -22,6 +22,7 @@ var FeedbackTitle = React.createClass({
             },
             defaults: {}
         }));
+
         return (
             <div style={style}>
                 {this.props.children}

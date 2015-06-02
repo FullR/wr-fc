@@ -1,19 +1,19 @@
-var React = require("react");
-var WebLink = require("components/utility/web-link");
-var colors = require("colors");
-var {Link} = require("react-router");
-var bp = require("utility/bp");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const WebLink = require("components/utility/web-link");
+const colors = require("colors");
+const {Link} = require("react-router");
+const bp = require("utility/bp");
+const {micro, small, medium} = require("sizes");
 
-var TctcInfoBox = React.createClass({
-    render: function() {
-        var width = bp({
+const TctcInfoBox = React.createClass({
+    render() {
+        const width = bp({
             [micro]: 450,
             [small]: 600,
             [medium]: 750,
             defaults: 830
         });
-        var style = {
+        const style = {
             position: "absolute",
             bottom: 4,
             width: width,

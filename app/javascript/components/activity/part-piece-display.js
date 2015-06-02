@@ -1,28 +1,28 @@
-var React = require("react");
-var _ = require("lodash");
-var WordPart = require("components/activity/word-part");
-var Word = require("components/activity/word");
-var colors = require("colors");
-var dictionary = window.dictionary;
-var bp = require("utility/bp");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const _ = require("lodash");
+const WordPart = require("components/activity/word-part");
+const Word = require("components/activity/word");
+const colors = require("colors");
+const dictionary = window.dictionary;
+const bp = require("utility/bp");
+const {micro, small, medium} = require("sizes");
 
-var PartPieceDisplay = React.createClass({
+const PartPieceDisplay = React.createClass({
     mixins: [require("mixins/style")],
 
-    render: function() {
-        var {choices, wordId, revealed} = this.props;
-        var word = dictionary.get(wordId);
-        var parts = [...word.prefixes, ...word.roots, ...word.suffixes];
+    render() {
+        const {choices, wordId, revealed} = this.props;
+        const word = dictionary.get(wordId);
+        const parts = [...word.prefixes, ...word.roots, ...word.suffixes];
 
-        var fontSize = bp({
+        const fontSize = bp({
             [micro]: 20,
             [small]: 22,
             [medium]: 40,
             defaults: 60
         });
 
-        var style = {
+        const style = {
             position: "absolute",
             bottom: bp({
                 [micro]: 150,
@@ -35,7 +35,7 @@ var PartPieceDisplay = React.createClass({
             verticalAlign: "middle"
         };
 
-        var partStyle = {
+        const partStyle = {
             display: "inline-block",
             fontSize: fontSize,
             lineHeight: fontSize + "px",
@@ -51,7 +51,7 @@ var PartPieceDisplay = React.createClass({
             })
         };
 
-        var interactableStyle = this.buildStyles({
+        const interactableStyle = this.buildStyles({
             display: "inline-block",
             cursor: "default",
 

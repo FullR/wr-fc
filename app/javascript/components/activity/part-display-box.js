@@ -1,12 +1,12 @@
-var React = require("react");
-var DisplayBox = require("components/activity/display-box");
-var WordPart = require("components/activity/word-part");
-var bp = require("utility/bp");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const DisplayBox = require("components/activity/display-box");
+const WordPart = require("components/activity/word-part");
+const bp = require("utility/bp");
+const {micro, small, medium} = require("sizes");
 
-var PartDisplayBox = React.createClass({
-    render: function() {
-        var style = {
+const PartDisplayBox = React.createClass({
+    render() {
+        const style = {
             fontSize: bp({
                 [small]: 36,
                 [medium]: 44,
@@ -18,6 +18,7 @@ var PartDisplayBox = React.createClass({
                 defaults: "64px"
             })
         };
+
         return (
             <DisplayBox {...this.props}>
                 <WordPart partId={this.props.partId} style={style}/>

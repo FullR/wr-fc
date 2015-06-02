@@ -1,12 +1,13 @@
-var React = require("react");
-var _ = require("lodash");
-var colors = require("colors");
+const React = require("react");
+const _ = require("lodash");
+const colors = require("colors");
 
-var Suffix = React.createClass({
-    render: function() {
-        var style = {
+const Suffix = React.createClass({
+    render() {
+        const style = {
             color: colors.SUFFIX
         };
+
         return (
             <span {...this.props} style={_.extend(style, this.props.style)}>{this.props.children}</span>
         );

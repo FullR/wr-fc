@@ -1,13 +1,13 @@
-var React = require("react");
-var Prefix = require("components/activity/prefix");
-var ActivityType1 = require("screens/activity-types/1");
-var actions = require("./actions");
-var store = require("./store");
+const React = require("react");
+const Prefix = require("components/activity/prefix");
+const ActivityType1 = require("screens/activity-types/1");
+const actions = require("./actions");
+const store = require("./store");
 
-var Activity1 = React.createClass({
-    render: function() {
-        var title = (<span>Game 1 - <Prefix>Prefixes</Prefix></span>);
-        var instructions = (<span>Touch the definition of this <Prefix>prefix:</Prefix></span>);
+const Activity1 = React.createClass({
+    render() {
+        const title = (<span>Game 1 - <Prefix>Prefixes</Prefix></span>);
+        const instructions = (<span>Touch the definition of this <Prefix>prefix:</Prefix></span>);
         return (<ActivityType1
             id="1"
             store={store} 

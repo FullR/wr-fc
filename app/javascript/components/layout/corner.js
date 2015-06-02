@@ -1,5 +1,8 @@
-var React = require("react");
-var _ = require("lodash");
+const React = require("react");
+const _ = require("lodash");
+const style = {
+    position: "absolute"
+};
 
 /* 
     A corner positioned element
@@ -10,15 +13,12 @@ var _ = require("lodash");
         hDistance: distance from the left or right
         distance: shorthand for both vDistance and hDistance
 */
-var Corner = React.createClass({
-    render: function() {
-        var style = {
-            position: "absolute"
-        };
-        var corner = this.props.corner;
-        var distance = this.props.distance || 0;
-        var vDistance = this.props.vDistance || distance;
-        var hDistance = this.props.hDistance || distance;
+const Corner = React.createClass({
+    render() {
+        const corner = this.props.corner;
+        const distance = this.props.distance || 0;
+        const vDistance = this.props.vDistance || distance;
+        const hDistance = this.props.hDistance || distance;
         
         if(corner === "top left") {
             style.top = vDistance;

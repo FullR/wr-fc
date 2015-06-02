@@ -1,13 +1,13 @@
-var React = require("react");
-var _ = require("lodash");
-var soundManager = require("sound/sound-manager");
-var Q = require("q");
-var queue = require("utility/queue");
+const React = require("react");
+const _ = require("lodash");
+const soundManager = require("sound/sound-manager");
+const Q = require("q");
+const queue = require("utility/queue");
 
 function wait(ms) {
-    var deferred = Q.defer();
-    var tid = setTimeout(deferred.resolve, ms);
-    var done = false;
+    const deferred = Q.defer();
+    const tid = setTimeout(deferred.resolve, ms);
+    let done = false;
     deferred.stop = function() {
         if(!done) {
             clearTimeout(tid);
@@ -19,13 +19,13 @@ function wait(ms) {
     return deferred;
 }
 
-var Sounds = React.createClass({
-    load: function() {
+const Sounds = React.createClass({
+    load() {
         return Q.all(_.invoke(this.sounds, "load"));
     },
 
-    play: function() {
-        var delay = this.props.delay;
+    play() {
+        const delay = this.props.delay;
 
         this._queue = queue(this.sounds, (sound, index) => {
             return sound.play(delay);
@@ -36,7 +36,7 @@ var Sounds = React.createClass({
         });
     },
 
-    stop: function() {
+    stop() {
         if(this._queue) {
             this._queue.stop();
             this._queue = null;
@@ -44,11 +44,11 @@ var Sounds = React.createClass({
         _.invoke(this.sounds, "stop");
     },
 
-    release: function() {
+    release() {
         _.invoke(this.sounds, "release");
     },
 
-    componentDidMount: function() {
+    componentDidMount() {
         this.sounds = this.props.paths.map(soundManager.get);
         this.load().then(() => {
             if(this.props.autoplay) {
@@ -57,7 +57,7 @@ var Sounds = React.createClass({
         });
     },
 
-    componentWillUnmount: function() {
+    componentWillUnmount() {
         this.stop();
         this.release();
         if(this.deferred) {
@@ -65,7 +65,7 @@ var Sounds = React.createClass({
         }
     },
 
-    render: function() {
+    render() {
         return (
             <div style={{display: "none"}}/>
         );

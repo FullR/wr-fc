@@ -1,13 +1,13 @@
-var React = require("react");
-var _ = require("lodash");
-var colors = require("colors");
+const React = require("react");
+const _ = require("lodash");
+const colors = require("colors");
 
-var DisplayBox = React.createClass({
+const DisplayBox = React.createClass({
     mixins: [require("mixins/style")],
 
-    render: function() {
-        var disabled = this.props.disabled || !this.props.onClick;
-        var style = {
+    render() {
+        const disabled = this.props.disabled || !this.props.onClick;
+        const style = {
             background: colors.DISPLAY_BOX_BG,
             cursor: disabled ? "default" : "pointer",
             marginTop: 16,

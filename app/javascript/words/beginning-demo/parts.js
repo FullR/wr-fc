@@ -1137,7 +1137,7 @@ module.exports = [
         "level": 0,
         "type": "suffix",
         "id": "itive",
-        "definition": "tending to",
+        "definition": "tending to or performing",
         "joiner": [
             0,
             2
@@ -1150,7 +1150,7 @@ module.exports = [
         "level": 0,
         "type": "suffix",
         "id": "ive",
-        "definition": "tending to",
+        "definition": "tending to or performing",
         "joiner": null,
         "key": "suffix-ive",
         "soundFile": "word-parts/suffix/S-ive",

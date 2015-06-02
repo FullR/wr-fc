@@ -1,14 +1,14 @@
-var React = require("react");
-var _ = require("lodash");
-var {Link} = require("react-router");
-var bp = require("utility/bp");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const _ = require("lodash");
+const {Link} = require("react-router");
+const bp = require("utility/bp");
+const {micro, small, medium} = require("sizes");
 
-var MenuButton = React.createClass({
+const MenuButton = React.createClass({
     mixins: [require("mixins/style")],
 
-    render: function() {
-        var style = {
+    render() {
+        const style = {
             display: "block",
             position: "absolute"
         };

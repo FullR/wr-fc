@@ -1,5 +1,5 @@
-var bp = require("utility/bp");
-var {micro, small, medium} = require("sizes");
+const bp = require("utility/bp");
+const {micro, small, medium} = require("sizes");
 
 module.exports = function() {
     return {

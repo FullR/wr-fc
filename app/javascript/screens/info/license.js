@@ -1,14 +1,14 @@
-var React = require("react");
-var Footer = require("components/info/footer");
-var WebLink = require("components/utility/web-link");
-var getVars = require("components/info/variables");
-var bp = require("utility/bp");
+const React = require("react");
+const Footer = require("components/info/footer");
+const WebLink = require("components/utility/web-link");
+const getVars = require("components/info/variables");
+const bp = require("utility/bp");
 
 
-var License = React.createClass({
-    render: function() {
-        var vars = getVars();
-        var contentStyle = {
+const License = React.createClass({
+    render() {
+        const vars = getVars();
+        const contentStyle = {
             bottom: vars.FOOTER_HEIGHT
         };
 

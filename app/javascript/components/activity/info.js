@@ -1,6 +1,6 @@
-var React = require("react");
+const React = require("react");
 
-var style = {
+const style = {
     position: "absolute",
     top: 8,
     right: 8,
@@ -8,8 +8,8 @@ var style = {
     cursor: "default"
 };
 
-var Info = React.createClass({
-    render: function() {
+const Info = React.createClass({
+    render() {
         return (
             <div style={style}>{this.props.children}</div>
         );

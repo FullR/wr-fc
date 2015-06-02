@@ -1,9 +1,9 @@
-var React = require("react");
-var _ = require("lodash");
+const React = require("react");
+const _ = require("lodash");
 
-var HCenter = React.createClass({
-    render: function() {
-        var style = _.extend({
+const HCenter = React.createClass({
+    render() {
+        const style = _.extend({
             width: "100%",
             textAlign: "center",
             verticalAlign: "middle"

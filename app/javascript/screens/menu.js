@@ -1,43 +1,43 @@
-var React = require("react");
-var Reflux = require("reflux");
-var _ = require("lodash");
-var {Link} = require("react-router");
-var s = require("utility/styles");
-var appStore = require("app-store");
-var bp = require("utility/bp");
-var {small, medium} = require("sizes");
+const React = require("react");
+const Reflux = require("reflux");
+const _ = require("lodash");
+const {Link} = require("react-router");
+const s = require("utility/styles");
+const appStore = require("app-store");
+const bp = require("utility/bp");
+const {small, medium} = require("sizes");
 
-var Header = require("components/menu/header");
-var ButtonContainer = require("components/menu/button-container");
-var ButtonGroupHeader = require("components/menu/button-group-header");
-var ButtonRow = require("components/menu/button-row");
-var ActivityButton = require("components/menu/activity-button");
-var ChangeUserButton = require("components/menu/change-user-button");
-var CloseButton = require("components/menu/close-button");
-var FooterMenu = require("components/menu/footer-menu");
-var FooterLink = require("components/menu/footer-link");
-var UsernameLabel = require("components/menu/username-label");
-var ScoreLabel = require("components/menu/score-label");
-var ActivityButtonTitle = require("components/menu/activity-button-title");
-var Logo = require("components/menu/logo");
-var Modal = require("components/menu/modal");
-var modalMixin = require("mixins/modal-manager");
+const Header = require("components/menu/header");
+const ButtonContainer = require("components/menu/button-container");
+const ButtonGroupHeader = require("components/menu/button-group-header");
+const ButtonRow = require("components/menu/button-row");
+const ActivityButton = require("components/menu/activity-button");
+const ChangeUserButton = require("components/menu/change-user-button");
+const CloseButton = require("components/menu/close-button");
+const FooterMenu = require("components/menu/footer-menu");
+const FooterLink = require("components/menu/footer-link");
+const UsernameLabel = require("components/menu/username-label");
+const ScoreLabel = require("components/menu/score-label");
+const ActivityButtonTitle = require("components/menu/activity-button-title");
+const Logo = require("components/menu/logo");
+const Modal = require("components/menu/modal");
+const modalMixin = require("mixins/modal-manager");
 
-var reset = require("actions/reset");
-var setUsername = require("actions/set-username");
+const reset = require("actions/reset");
+const setUsername = require("actions/set-username");
 
-var style = {
+const style = {
     width: "100%",
     height: "100%"
 };
 
-var logoStyle = {
+const logoStyle = {
     position: "absolute",
     left: 16,
     top: 16
 };
 
-var Menu = React.createClass({
+const Menu = React.createClass({
     mixins: [
         Reflux.ListenerMixin,
         modalMixin
@@ -47,13 +47,13 @@ var Menu = React.createClass({
         router: React.PropTypes.func
     },
 
-    getInitialState: function() {
+    getInitialState() {
         return {
             appStore: appStore
         };
     },
 
-    componentDidMount: function() {
+    componentDidMount() {
         this.listenTo(appStore, () => {
             this.setState(_.extend({}, this.state, {
                 appStore: appStore
@@ -61,27 +61,25 @@ var Menu = React.createClass({
         });
     },
 
-    clearUserData: function() {
-        var username = this.state.appStore.getUsername();
+    clearUserData() {
+        const username = this.state.appStore.getUsername();
         reset();
         setUsername(username);
         this.closeModal();
     },
 
-    changeUser: function() {
+    changeUser() {
         reset();
         this.context.router.transitionTo("login");
     },
 
-    renderLabel: function(activityId) {
-        var appStore = this.state.appStore;
-        var highscore;
-        var percent;
+    renderLabel(activityId) {
+        const appStore = this.state.appStore;
 
         if(appStore.isStarted(activityId)) {
             if(appStore.isCompleted(activityId)) {
-                highscore = appStore.getHighscore(activityId);
-                percent = Math.floor((highscore.correct / highscore.max)*100);
+                let highscore = appStore.getHighscore(activityId);
+                let percent = Math.floor((highscore.correct / highscore.max)*100);
                 return (<ScoreLabel>{percent}%</ScoreLabel>);
             }
             else {
@@ -91,10 +89,10 @@ var Menu = React.createClass({
         return null;
     },
 
-    render: function() {
-        var isActive = this.state.appStore.isLastActivity.bind(this.state.appStore);
-        var isBeginning = (window.level.id === "beginning");
-        var clearModal = (
+    render() {
+        const isActive = this.state.appStore.isLastActivity.bind(this.state.appStore);
+        const isBeginning = (window.level.id === "beginning");
+        const clearModal = (
             <Modal
                 key="clear-user-modal"
                 onNoClick={this.closeModal}
@@ -104,7 +102,7 @@ var Menu = React.createClass({
             </Modal>
         );
 
-        var changeUserModal = (
+        const changeUserModal = (
             <Modal
                 onNoClick={this.closeModal}
                 onYesClick={this.changeUser}

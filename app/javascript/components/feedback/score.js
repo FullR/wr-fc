@@ -1,32 +1,32 @@
-var React = require("react");
-var _ = require("lodash");
-var bp = require("utility/bp");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const _ = require("lodash");
+const bp = require("utility/bp");
+const {micro, small, medium} = require("sizes");
 
-var textStyle = {
+const textStyle = {
     display: "inline-block",
     width: "60%",
     marginLeft: 10
 };
 
-var percentStyle = {
+const percentStyle = {
     display: "inline-block",
     width: "10%"
 };
 
-var fractionStyle = {
+const fractionStyle = {
     display: "inline-block",
     width: "20%",
     marginRight: 10,
     textAlign: "right"
 };
 
-var Score = React.createClass({
-    render: function() {
-        var correct = this.props.correct;
-        var max = this.props.max;
-        var percent = Math.floor((correct/max)*100);
-        var style = {
+const Score = React.createClass({
+    render() {
+        const correct = this.props.correct;
+        const max = this.props.max;
+        const percent = Math.floor((correct/max)*100);
+        const style = {
             height: bp({
                 [micro]: 30,
                 [small]: 40,

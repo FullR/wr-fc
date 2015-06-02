@@ -9,10 +9,11 @@
         a.foo.bar.fizz === "foobar";
 */
 function deepSet(obj, keys, value) {
+    let i;
     if(typeof keys === "string") {
         keys = keys.split(".");
     }
-    for(var i = 0, length = keys.length - 1; i < length; i++) {
+    for(i = 0, length = keys.length - 1; i < length; i++) {
         obj = obj[keys[i]] || (obj[keys[i]] = {});
     }
     obj[keys[i]] = value;

@@ -1,10 +1,10 @@
-var React = require("react");
-var bp = require("utility/bp");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const bp = require("utility/bp");
+const {micro, small, medium} = require("sizes");
 
-var BottomContainer = React.createClass({
-    render: function() {
-        var style = {
+const BottomContainer = React.createClass({
+    render() {
+        const style = {
             position: "absolute",
             bottom: bp({
                 [micro]: 25,

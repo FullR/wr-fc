@@ -1,15 +1,15 @@
-var React = require("react");
+const React = require("react");
 
-var Timer = React.createClass({
+const Timer = React.createClass({
     mixins: [require("mixins/class-names")],
 
-    getInitialState: function() {
+    getInitialState() {
         return {
             remaining: this.props.seconds
         };
     },
 
-    startTimer: function() {
+    startTimer() {
         this.interval = setInterval(() => {
             if(this.state.remaining <= 1) {
                 if(this.props.onComplete) {
@@ -25,22 +25,22 @@ var Timer = React.createClass({
         }, 1000);
     },
 
-    stopTimer: function() {
+    stopTimer() {
         if(this.interval) {
             clearInterval(this.interval);
             this.interval = null;
         }
     },
 
-    componentDidMount: function() {
+    componentDidMount() {
         this.startTimer();
     },
 
-    componentWillUnmount: function() {
+    componentWillUnmount() {
         this.stopTimer();
     },
 
-    render: function() {
+    render() {
         return (
             <span {...this.props} className={this.classNames("timer")}>{this.state.remaining}</span>
         );

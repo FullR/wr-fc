@@ -1,5 +1,5 @@
-var Dictionary = require("dictionary");
-var setup = require("setup");
+const Dictionary = require("dictionary");
+const setup = require("setup");
 
 // these values will be attached to the window object 
 // since they change depending on the level

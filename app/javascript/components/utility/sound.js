@@ -1,8 +1,8 @@
-var React = require("react");
-var soundManager = require("sound/sound-manager");
+const React = require("react");
+const soundManager = require("sound/sound-manager");
 
-var Sound = React.createClass({
-    componentWillMount: function() {
+const Sound = React.createClass({
+    componentWillMount() {
         this.sound = soundManager.get(this.props.path);
 
         if(this.props.onPlay) {
@@ -27,7 +27,7 @@ var Sound = React.createClass({
         });
     },
 
-    componentWillUnmount: function() {
+    componentWillUnmount() {
         if(this.sound) {
             soundManager.release(this.sound);
         }
@@ -37,23 +37,23 @@ var Sound = React.createClass({
         }
     },
 
-    play: function() {
+    play() {
         if(this.isMounted()) {
             return this.sound.play();
         }
     },
 
-    stop: function() {
+    stop() {
         if(this.isMounted()) {
             return this.sound.stop();
         }
     },
 
-    isPlaying: function() {
+    isPlaying() {
         return this.sound.isPlaying();
     },
 
-    render: function() {
+    render() {
         return <div style={{display: "none"}}/>;
     }
 });

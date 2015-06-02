@@ -1,7 +1,7 @@
-var Q         = require("q");
-var _         = require("lodash");
-var emitter   = require("mixins/emitter");
-var normalize = require("polyfills/cordova/normalize-sound-ext");
+const Q         = require("q");
+const _         = require("lodash");
+const emitter   = require("mixins/emitter");
+const normalize = require("polyfills/cordova/normalize-sound-ext");
 
 function Sound(options) {
     _.extend(this, options);
@@ -10,13 +10,13 @@ function Sound(options) {
 
 _.extend(Sound.prototype, emitter, {
     // Get the full sound path with the correct extention for the current platform
-    getNormalizedPath: function() {
+    getNormalizedPath() {
         return normalize.path(this.path) + "." + normalize.audioExtention;
     },
 
-    load: function() {
-        var media;
-        var loadPromise;
+    load() {
+        let media;
+        let loadPromise;
         
         if(!this._loadPromise) {
             this.media = media = new window.Media(this.getNormalizedPath(), 
@@ -43,8 +43,8 @@ _.extend(Sound.prototype, emitter, {
         return this._loadPromise;
     },
 
-    _finishedPlaying: function(stopped) {
-        var deferred = this.deferred;
+    _finishedPlaying(stopped) {
+        let deferred = this.deferred;
         this.playing = false;
         this.timeout = null;
         
@@ -57,13 +57,13 @@ _.extend(Sound.prototype, emitter, {
         return Q.resolve();
     },
 
-    play: function(delay) {
+    play(delay) {
         if(!this.loaded) {
             return Q.resolve();
         }
         return this.stop()
             .then(() => {
-                var deferred;
+                let deferred;
                 if(delay) {
                     deferred = Q.defer();
                     this.timeout = setTimeout(deferred.resolve, delay);
@@ -72,7 +72,7 @@ _.extend(Sound.prototype, emitter, {
                 return Q.resolve();
             })
             .then(() => {
-                var deferred = Q.defer();
+                let deferred = Q.defer();
                 this.timeout = null;
                 this.deferred = deferred;
                 this.playing = true;
@@ -87,11 +87,11 @@ _.extend(Sound.prototype, emitter, {
             }.bind(this));
     },
 
-    isPlaying: function() {
+    isPlaying() {
         return this.playing;
     },
 
-    stop: function() {
+    stop() {
         if(this.timeout) {
             clearTimeout(this.timeout);
             this.timeout = null;
@@ -103,7 +103,7 @@ _.extend(Sound.prototype, emitter, {
         return Q.resolve();
     },
 
-    release: function() {
+    release() {
         if(this.media) {
             this.fire("end");
             this.media.release();

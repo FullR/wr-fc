@@ -1,11 +1,11 @@
-var React = require("react");
-var WebLink = require("components/utility/web-link");
+const React = require("react");
+const WebLink = require("components/utility/web-link");
 
-var Product = React.createClass({
+const Product = React.createClass({
     mixins: [require("mixins/style")],
 
-    render: function() {
-        var style = {
+    render() {
+        const style = {
             display: "block",
             height: 152,
             width: "100%",
@@ -22,14 +22,14 @@ var Product = React.createClass({
             ]
         };
 
-        var imageStyle = {
+        const imageStyle = {
             display: "inline-block",
             height: 152,
             width: 202,
             background: "#FFFFFF"
         };
 
-        var contentStyle = {
+        const contentStyle = {
             position: "absolute",
             left: 202,
             right: 0,

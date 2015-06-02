@@ -1,12 +1,12 @@
-var Q     = require("q");
-var _     = require("lodash");
-var Sound = require("./sound");
+const Q     = require("q");
+const _     = require("lodash");
+const Sound = require("./sound");
 
-var sounds = [];
-var soundIndex = {};
+const sounds = [];
+const soundIndex = {};
 
 function get(path) {
-    var sound;
+    let sound;
     path = `assets/audio/${path}`;
 
     if(soundIndex[path]) { return soundIndex[path]; }
@@ -23,10 +23,10 @@ function release(sound) {
     sound.stop();
 }
 
-var soundManager = {
+const soundManager = {
     get: get,
     release: release,
-    stop: function() {
+    stop() {
         return Q.all(sounds.map(function(sound) {
             return sound.stop();
         }));

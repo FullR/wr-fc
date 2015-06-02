@@ -1,11 +1,11 @@
-var React = require("react");
-var Choice = require("components/activity/choice");
-var Definition = require("components/activity/definition");
-var dictionary = window.dictionary;
-var bp = require("utility/bp");
-var {small, medium} = require("sizes");
+const React = require("react");
+const Choice = require("components/activity/choice");
+const Definition = require("components/activity/definition");
+const dictionary = window.dictionary;
+const bp = require("utility/bp");
+const {small, medium} = require("sizes");
 
-var definitionContainerStyle = {
+const definitionContainerStyle = {
     position: "relative",
     left: "10%",
     width: "80%",
@@ -14,10 +14,10 @@ var definitionContainerStyle = {
     textAlign: "center"
 };
 
-var DefinitionChoice = React.createClass({
-    render: function() {
-        var defLength = dictionary.get(this.props.partId).definition.length;
-        var fontSizeRatio;
+const DefinitionChoice = React.createClass({
+    render() {
+        const defLength = dictionary.get(this.props.partId).definition.length;
+        let fontSizeRatio;
 
         if(defLength > 60) {
             fontSizeRatio = 0.7;
@@ -32,7 +32,7 @@ var DefinitionChoice = React.createClass({
             fontSizeRatio = 1;
         }
 
-        var definitionStyle = {
+        const definitionStyle = {
             display: "table-cell",
             verticalAlign: "middle",
             width: "100%",

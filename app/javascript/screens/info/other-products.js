@@ -1,20 +1,20 @@
-var React = require("react");
-var _ = require("lodash");
-var Header = require("components/info/header");
-var Footer = require("components/info/footer");
-var getVars = require("components/info/variables");
-var WebLink = require("components/utility/web-link");
-var bp = require("utility/bp");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const _ = require("lodash");
+const Header = require("components/info/header");
+const Footer = require("components/info/footer");
+const getVars = require("components/info/variables");
+const WebLink = require("components/utility/web-link");
+const bp = require("utility/bp");
+const {micro, small, medium} = require("sizes");
 
-var Product = require("components/info/other-products/product");
-var ProductTitle = require("components/info/other-products/product-title");
-var ProductGrade = require("components/info/other-products/product-grade");
+const Product = require("components/info/other-products/product");
+const ProductTitle = require("components/info/other-products/product-title");
+const ProductGrade = require("components/info/other-products/product-grade");
 
-var OtherProducts = React.createClass({
-    render: function() {
-        var vars = getVars();
-        var contentStyle = {
+const OtherProducts = React.createClass({
+    render() {
+        const vars = getVars();
+        const contentStyle = {
             position: "absolute",
             overflow: "auto",
             width: "100%",
@@ -22,11 +22,11 @@ var OtherProducts = React.createClass({
             bottom: vars.FOOTER_HEIGHT
         };
 
-        var productBoxStyle = {
+        const productBoxStyle = {
             margin: "0 10% 0 10%"
         };
 
-        var headerStyle = {
+        const headerStyle = {
             width: "100%",
             margin: "16px 0 16px 0",
             fontSize: 22,
@@ -34,7 +34,7 @@ var OtherProducts = React.createClass({
             textAlign: "center"
         };
 
-        var textContainerStyle = {
+        const textContainerStyle = {
             position: "absolute",
             display: "inline-block",
             left: 200,
@@ -46,14 +46,14 @@ var OtherProducts = React.createClass({
             })
         };
 
-        var marginImageStyle = {
+        const marginImageStyle = {
             position: "absolute",
             left: 30,
             width: 80,
             height: 1150
         };
 
-        var textHeaderStyle = {
+        const textHeaderStyle = {
             fontSize: 32,
             fontWeight: 700,
             width: "100%",
@@ -61,28 +61,28 @@ var OtherProducts = React.createClass({
             margin: "48px 0 16px 0"
         };
 
-        var paragraphStyle = {
+        const paragraphStyle = {
             fontSize: 24,
             lineHeight: "32px",
             marginTop: 30
         };
 
-        var guaranteeStyle = _.extend({}, paragraphStyle, {
+        const guaranteeStyle = _.extend({}, paragraphStyle, {
             textAlign: "center",
             fontWeight: 700
         });
 
-        var quoteStyle = {
+        const quoteStyle = {
             display: "inline-block",
             fontStyle: "italic",
             textAlign: "left"
         };
 
-        var citationStyle = {
+        const citationStyle = {
             textAlign: "right"
         };
 
-        var magazineStyle = {
+        const magazineStyle = {
             fontStyle: "italic"
         };
 

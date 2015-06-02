@@ -1,5 +1,5 @@
-var React = require("react");
-var {Route, DefaultRoute, NotFoundRoute} = require("react-router");
+const React = require("react");
+const {Route, DefaultRoute, NotFoundRoute} = require("react-router");
 
 module.exports = (
     <Route handler={require("screens/application")}>

@@ -1,26 +1,26 @@
-var React = require("react");
-var _ = require("lodash");
-var {Link} = require("react-router");
-var appStore = require("app-store");
-var Logo = require("components/menu/logo");
+const React = require("react");
+const _ = require("lodash");
+const {Link} = require("react-router");
+const appStore = require("app-store");
+const Logo = require("components/menu/logo");
 
-var Splash = React.createClass({
-    render: function() {
-        var style = {
-            position: "absolute",
-            cursor: "pointer",
-            width: "100%",
-            height: "100%",
-            backgroundImage: "url('assets/images/splash.png')",
-            backgroundSize: "100% 100%"
-        };
+const style = {
+    position: "absolute",
+    cursor: "pointer",
+    width: "100%",
+    height: "100%",
+    backgroundImage: "url('assets/images/splash.png')",
+    backgroundSize: "100% 100%"
+};
 
-        var logoStyle = {
-            position: "absolute",
-            left: 45,
-            top: 45
-        };
+const logoStyle = {
+    position: "absolute",
+    left: 45,
+    top: 45
+};
 
+const Splash = React.createClass({
+    render() {
         return (
             <div>
                 <Logo style={logoStyle}/>

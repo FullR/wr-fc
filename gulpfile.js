@@ -13,7 +13,10 @@ var pkg = require("./package");
 var Browserify = require("browserify");
 var source  = require("vinyl-source-stream");
 var watchify = require("watchify");
-require("babel/register");
+
+// command line arguments
+var watch = process.argv.indexOf("--watch") !== -1;
+var release = process.argv.indexOf("--release") !== -1;
 
 var colors = {
     time: gutil.colors.magenta,
@@ -43,9 +46,6 @@ var titles = {
     "level-3": "Word Roots Level 3 Flashcards Demo"
 };
 
-// command line arguments
-var watch = process.argv.indexOf("--watch") !== -1;
-var release = process.argv.indexOf("--release") !== -1;
 var levels = [
     "beginning",
     "level-1",
@@ -56,6 +56,8 @@ var levels = [
     "level-2-demo",
     "level-3-demo"
 ];
+
+require("babel/register");
 
 function bundleLevel(level) {
     var bundler;

@@ -1,26 +1,26 @@
-var React = require("react");
-var Reflux = require("reflux");
-var activityMixin = require("mixins/activity");
-var windowListener = require("mixins/window-listener");
-var isMounted = require("utility/mounted-only");
+const React = require("react");
+const Reflux = require("reflux");
+const activityMixin = require("mixins/activity");
+const windowListener = require("mixins/window-listener");
+const isMounted = require("utility/mounted-only");
 
-var Feedback = require("screens/feedback");
-var FeedbackTitle = require("components/feedback/title");
+const Feedback = require("screens/feedback");
+const FeedbackTitle = require("components/feedback/title");
 
-var ChoiceContainer = require("components/activity/choice-container");
-var PartChoice = require("components/activity/part-choice");
-var WordPart = require("components/activity/word-part");
-var Word = require("components/activity/word");
-var ContinueButton = require("components/activity/continue-button");
-var Info = require("components/activity/info");
-var InstructionsBox = require("components/activity/instructions-box");
-var Instructions = require("components/activity/instructions");
-var DefinitionDisplayBox = require("components/activity/definition-display-box");
-var BottomContainer = require("components/activity/bottom-container");
-var PartPieceDisplay = require("components/activity/part-piece-display");
-var Sound = require("components/utility/sound");
+const ChoiceContainer = require("components/activity/choice-container");
+const PartChoice = require("components/activity/part-choice");
+const WordPart = require("components/activity/word-part");
+const Word = require("components/activity/word");
+const ContinueButton = require("components/activity/continue-button");
+const Info = require("components/activity/info");
+const InstructionsBox = require("components/activity/instructions-box");
+const Instructions = require("components/activity/instructions");
+const DefinitionDisplayBox = require("components/activity/definition-display-box");
+const BottomContainer = require("components/activity/bottom-container");
+const PartPieceDisplay = require("components/activity/part-piece-display");
+const Sound = require("components/utility/sound");
 
-var ActivityType3 = React.createClass({
+const ActivityType3 = React.createClass({
     mixins: [
         Reflux.ListenerMixin,
         activityMixin,
@@ -41,17 +41,17 @@ var ActivityType3 = React.createClass({
         this.refs.correctWord.play();
     }),
 
-    renderTitle: function() {
+    renderTitle() {
         return (
             <span>{this.props.title}</span>
         );
     },
 
-    renderInstructions: function() {
+    renderInstructions() {
         return this.props.instructions;
     },
 
-    componentDidMount: function() {
+    componentDidMount() {
         this.on("keydown", (event) => {
             switch(event.keyCode) {
                 case 32: if(!this.state.isShowingFeedback() && this.state.isWaiting()) {
@@ -62,14 +62,14 @@ var ActivityType3 = React.createClass({
         });
     },
 
-    renderActivity: function() {
-        var revealed = this.state.isWaiting();
-        var choices = this.state.getCurrentChoiceGroup().choices;
-        var actions = this.props.actions;
-        var correctWordId = this.state.getCorrectWordId();
-        var correctWordSound = this.state.getCorrectWordSound();
-        var sounds;
-        var index = this.state.getIndex();
+    renderActivity() {
+        const revealed = this.state.isWaiting();
+        const choices = this.state.getCurrentChoiceGroup().choices;
+        const actions = this.props.actions;
+        const correctWordId = this.state.getCorrectWordId();
+        const correctWordSound = this.state.getCorrectWordSound();
+        const index = this.state.getIndex();
+        let sounds;
         
         return (
             <div>
@@ -127,7 +127,7 @@ var ActivityType3 = React.createClass({
         );
     },
 
-    renderFeedback: function() {
+    renderFeedback() {
         return (
             <Feedback
                 demoText={`There are an additional ${window.dictionary.words.length - 2} words in the full version`}
@@ -141,7 +141,7 @@ var ActivityType3 = React.createClass({
         );
     },
 
-    render: function() {
+    render() {
         if(this.state.isShowingFeedback()) {
             return this.renderFeedback();
         }

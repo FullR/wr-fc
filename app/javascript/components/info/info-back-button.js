@@ -1,14 +1,14 @@
-var React = require("react");
-var {Link} = require("react-router");
-var colors = require("colors");
-var bp = require("utility/bp");
-var {micro, small, medium} = require("sizes");
+const React = require("react");
+const {Link} = require("react-router");
+const colors = require("colors");
+const bp = require("utility/bp");
+const {micro, small, medium} = require("sizes");
 
-var InfoBackButton = React.createClass({
+const InfoBackButton = React.createClass({
     mixins: [require("mixins/style")],
 
-    render: function() {
-        var style = {
+    render() {
+        const style = {
             position: "absolute",
             bottom: bp({
                 [medium]: 6,
