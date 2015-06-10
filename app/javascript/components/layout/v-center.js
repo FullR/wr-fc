@@ -1,6 +1,10 @@
 const React = require("react");
 const _ = require("lodash");
 
+/*
+    Vertically fills its container and vertically
+    centers its children
+*/
 const VCenter = React.createClass({
     render() {
         const style = _.extend({

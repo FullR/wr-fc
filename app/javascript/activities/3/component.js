@@ -15,7 +15,7 @@ const Activity3 = React.createClass({
             title={title}
             instructions={instructions}
             next="activity-4"
-            demoText={`There are ${window.dictionary.suffixes.length - 2} additional suffixes in the full version`}/>);
+            demoText={`There are ${window.dictionary.suffixes.length - 2} additional suffixes in the full version.`}/>);
     }
 });
 

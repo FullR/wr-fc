@@ -2,6 +2,13 @@ const React = require("react");
 const soundManager = require("sound/sound-manager");
 
 const Sound = React.createClass({
+    getDefaultProps() {
+        return {
+            autoplay: false,
+            autoload: true
+        };
+    },
+
     componentWillMount() {
         this.sound = soundManager.get(this.props.path);
 
@@ -12,7 +19,8 @@ const Sound = React.createClass({
             this.sound.on("end", this.props.onEnd);
         }
 
-        this.sound.load().then(() => {
+        if(this.props.autoload) {
+            this.load().then(() => {
             if(this.props.autoplay) {
                 if(this.props.delay) {
                     this.timeout = setTimeout(() => {
@@ -24,6 +32,13 @@ const Sound = React.createClass({
                     this.sound.play();
                 }
             }
+            });
+        }
+    },
+
+    load() {
+        return this.sound.load().then(() => {
+            this.loaded = true;
         });
     },
 
@@ -39,7 +54,13 @@ const Sound = React.createClass({
 
     play() {
         if(this.isMounted()) {
-            return this.sound.play();
+            if(this.loaded) {
+                return this.sound.play();
+            } else {
+                return this.load().then(() => {
+                    return this.sound.play();
+                });
+            }
         }
     },
 

@@ -30,5 +30,7 @@ module.exports = (
             <Route name="activity-11" path="11" handler={require("activities/11/component")}/>
             <Route name="activity-12" path="12" handler={require("activities/12/component")}/>
         </Route>
+
+        <Route name="sounds" handler={require("screens/audio-inspector")}/>
     </Route>
 );

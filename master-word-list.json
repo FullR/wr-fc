@@ -511,7 +511,7 @@
     {"level": 0, "type": "suffix", "id": "ist", "definition": "one who", "joiner": null},
     {"level": 0, "type": "suffix", "id": "itive", "definition": "tending to or performing", "joiner": [0, 2]},
     {"level": 0, "type": "suffix", "id": "ive", "definition": "tending to or performing", "joiner": null},
-    {"level": 0, "type": "suffix", "id": "ly", "definition": "in the manner of", "joiner": null},
+    {"level": 0, "type": "suffix", "id": "ly", "definition": "in the manner of; having the quality of", "joiner": null},
     {"level": 0, "type": "suffix", "id": "ness", "definition": "state of being", "joiner": null},
     {"level": 0, "type": "suffix", "id": "olog", "definition": "study of, science", "joiner": null},
     {"level": 0, "type": "suffix", "id": "ology", "definition": "study of, science", "joiner": null},

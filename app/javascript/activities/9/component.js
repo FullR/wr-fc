@@ -16,7 +16,7 @@ const Activity9 = React.createClass({
             instructions={instructions}
             choiceCount={5}
             next="activity-10"
-            demoText={`There are ${window.dictionary.words.length - 2} additional words in the full version`}/>);
+            demoText={`There are ${window.dictionary.words.length - 2} additional words in the full version.`}/>);
     }
 });
 

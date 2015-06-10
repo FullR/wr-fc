@@ -1,21 +1,16 @@
 .menu-button {
     background: url('images/home-button.png') no-repeat 0 0;
-    -webkit-background-size: 100% 100%;
-       -moz-background-size: 100% 100%;
-         -o-background-size: 100% 100%;
-            background-size: 100% 100%;
-    backgroundPosition: top 0 right 0;
-    backgroundPositionX: 0;
-    backgroundPositionY: 0;
+    -webkit-background-size: 200% 100%;
+       -moz-background-size: 200% 100%;
+         -o-background-size: 200% 100%;
+            background-size: 200% 100%;
+    background-position: top 0 right 100%;
+    background-positionX: 100%;
+    background-positionY: 0;
 
     &:hover, &:active {
-        background: url('images/home-button_hover.png') no-repeat 0 0;
-        -webkit-background-size: 100% 100%;
-           -moz-background-size: 100% 100%;
-             -o-background-size: 100% 100%;
-                background-size: 100% 100%;
-        backgroundPosition: top 0 right 0;
-        backgroundPositionX: 0;
-        backgroundPositionY: 0;
+        background-position: top 0 right 0;
+        background-positionX: 0;
+        background-positionY: 0;
     }
 }

@@ -19,12 +19,24 @@ const logoStyle = {
     top: 45
 };
 
+const soundLinkStyle = {
+    position: "absolute",
+    left: 0,
+    width: "100%",
+    bottom: 3,
+    fontSize: 25,
+    color: "#FFF",
+    zIndex: 3,
+    textAlign: "center"
+}
+
 const Splash = React.createClass({
     render() {
         return (
             <div>
                 <Logo style={logoStyle}/>
                 <Link style={style} to={appStore.getUsername().length ? "menu" : "login"}/>
+                <Link to="sounds" style={soundLinkStyle}>Sounds</Link>
             </div>
         );
     }

@@ -11,7 +11,7 @@ function Sound(options) {
 _.extend(Sound.prototype, emitter, {
     // Get the full sound path with the correct extention for the current platform
     getNormalizedPath() {
-        return normalize.path(this.path) + "." + normalize.audioExtention;
+        return normalize.path(this.path) + "." + (this.extention || normalize.audioExtention);
     },
 
     load() {

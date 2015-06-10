@@ -17,7 +17,7 @@ const Activity10 = React.createClass({
             title={title}
             instructions={instructions}
             next="activity-11"
-            demoText={`There are ${window.dictionary.words.length - 2} additional words in the full version`}/>);
+            demoText={`There are ${window.dictionary.words.length - 2} additional words in the full version.`}/>);
     }
 });
 

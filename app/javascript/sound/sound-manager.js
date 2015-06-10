@@ -5,13 +5,14 @@ const Sound = require("./sound");
 const sounds = [];
 const soundIndex = {};
 
-function get(path) {
+function get(path, options={}) {
+    const extention = options.extention || "";
     let sound;
     path = `assets/audio/${path}`;
 
-    if(soundIndex[path]) { return soundIndex[path]; }
+    if(soundIndex[path+"."+extention]) { return soundIndex[path+"."+extention]; }
 
-    sound = new Sound({path});
+    sound = new Sound(_.extend({path}, options));
 
     sounds.push(sound);
     soundIndex[path] = sound;

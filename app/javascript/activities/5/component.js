@@ -15,7 +15,7 @@ const Activity5 = React.createClass({
             title={title}
             instructions={instructions}
             next="activity-6"
-            demoText={`There are ${window.dictionary.roots.length - 2} additional roots in the full version`}/>);
+            demoText={`There are ${window.dictionary.roots.length - 2} additional roots in the full version.`}/>);
     }
 });
 

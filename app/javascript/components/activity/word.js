@@ -21,17 +21,18 @@ const Word = React.createClass({
 
         return (
             <span {...this.props}>
-                {parts.map((partId) => {
+                {parts.map((partId, index) => {
                     let style;
                     if(this.props.underlinedPartId === partId) {
                         style = {
                             textDecoration: "underline"
                         };
                     }
-                    if(word.spacing) {
+                    if(word.spacing && index) {
                         console.log("spacing");
                         style = _.extend(style || {}, {
-                            wordSpacing: "1rem"
+                            //wordSpacing: "1rem"
+                            marginLeft: 10
                         });
                     }
                     return (<WordPart key={partId} partId={partId} style={style}/>);

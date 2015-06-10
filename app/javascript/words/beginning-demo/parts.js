@@ -1160,7 +1160,7 @@ module.exports = [
         "level": 0,
         "type": "suffix",
         "id": "ly",
-        "definition": "in the manner of",
+        "definition": "in the manner of; having the quality of",
         "joiner": null,
         "key": "suffix-ly",
         "soundFile": "word-parts/suffix/S-ly",

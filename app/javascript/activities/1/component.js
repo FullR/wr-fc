@@ -15,7 +15,7 @@ const Activity1 = React.createClass({
             title={title}
             instructions={instructions}
             next="activity-2"
-            demoText={`There are ${window.dictionary.prefixes.length - 2} additional prefixes in the full version`}/>);
+            demoText={`There are ${window.dictionary.prefixes.length - 2} additional prefixes in the full version.`}/>);
     }
 });
 
