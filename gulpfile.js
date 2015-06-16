@@ -204,6 +204,10 @@ gulp.task("bundle", function(callback) {
         "bundle:level-1",
         "bundle:level-2",
         "bundle:level-3",
+        "bundle:beginning-demo",
+        "bundle:level-1-demo",
+        "bundle:level-2-demo",
+        "bundle:level-3-demo",
         callback);
 });
 
@@ -288,6 +292,10 @@ gulp.task("generate:word-audio", function(callback) {
         "generate:word-audio:level-1",
         "generate:word-audio:level-2",
         "generate:word-audio:level-3",
+        "generate:word-audio:beginning-demo",
+        "generate:word-audio:level-1-demo",
+        "generate:word-audio:level-2-demo",
+        "generate:word-audio:level-3-demo",
         callback
     );
 });

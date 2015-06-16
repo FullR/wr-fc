@@ -8,6 +8,7 @@ const setup = require("setup");
 setup({
     level: {
         id: "beginning-demo",
+        levelId: "beginning",
         title: "Beginning",
         ISBN: "978-1-60144-667-1",
         href: "http://www.criticalthinking.com/word-roots-beginning-flashcards-software.html",

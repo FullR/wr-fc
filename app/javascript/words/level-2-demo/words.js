@@ -233,7 +233,7 @@ module.exports = [
             "prefix-pro",
             "root-techn",
             "root-corp",
-            "root-al"
+            "suffix-ary"
         ],
         "key": "word-alienate",
         "soundFile": "word-parts/word/W-alienate"
@@ -3088,7 +3088,8 @@ module.exports = [
         ],
         "suffixes": [
             "suffix-ion",
-            "suffix-al"
+            "suffix-al",
+            "suffix-ism"
         ],
         "choosableParts": [
             "prefix-super",
@@ -5910,7 +5911,7 @@ module.exports = [
             "prefix-super",
             "root-pel",
             "root-cern",
-            "suffix-ative"
+            "suffix-ulation"
         ],
         "key": "word-sedative",
         "soundFile": "word-parts/word/W-sedative"
@@ -6139,10 +6140,11 @@ module.exports = [
         "definition": "emotion, feeling",
         "prefixes": [],
         "roots": [
-            "root-sent",
             "root-sent"
         ],
-        "suffixes": [],
+        "suffixes": [
+            "suffix-iment"
+        ],
         "choosableParts": [
             "prefix-tra",
             "root-veloc",

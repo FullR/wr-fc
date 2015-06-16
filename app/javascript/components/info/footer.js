@@ -1,5 +1,6 @@
 const React = require("react");
 const colors = require("colors");
+const color = require("./level-color");
 const TctcInfoBox = require("components/info/tctc-info-box");
 const InfoBackButton = require("components/info/info-back-button");
 const getVars = require("./variables");
@@ -12,7 +13,7 @@ const InfoFooter = React.createClass({
             bottom: 0,
             width: "100%",
             height: vars.FOOTER_HEIGHT,
-            background: colors.INFO_FRAME_BG
+            background: color
         };
 
         return (

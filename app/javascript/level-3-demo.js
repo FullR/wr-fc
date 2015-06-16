@@ -8,6 +8,7 @@ const setup = require("setup");
 setup({
     level: {
         id: "level-3-demo",
+        levelId: "level-3",
         title: "Level 3",
         ISBN: "978-1-60144-670-1",
         href: "http://www.criticalthinking.com/word-roots-level3-flashcards-software.html",

@@ -1,5 +1,5 @@
 const React = require("react");
-const colors = require("colors");
+const color = require("./level-color");
 const getVars = require("./variables");
 const bp = require("utility/bp");
 const {micro, small, medium} = require("sizes");
@@ -18,7 +18,7 @@ const InfoHeader = React.createClass({
             }),
             lineHeight: vars.HEADER_HEIGHT + "px",
             textAlign: "center",
-            background: colors.INFO_FRAME_BG
+            background: color
         };
 
         return (
