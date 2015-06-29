@@ -146,7 +146,7 @@ function cordova(level) {
             dest: __dirname + "/cordova-builds/" + level,
             src: __dirname + "/dist/" + level,
             merge: __dirname + "/cordova-merges/all",
-            platforms: ["android", "ios"],
+            platforms: ["ios"],
             plugins: [
                 "org.apache.cordova.media",
                 "org.apache.cordova.console",
