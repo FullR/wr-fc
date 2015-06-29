@@ -132,7 +132,7 @@ const OtherProducts = React.createClass({
                             <div style={paragraphStyle}>We design critical thinking into our products so students must carefully analyze what they are learning.  Deeper analysis produces deeper understanding, which results in better academic performance.  Over time, students who practice critical thinking learn to apply it throughout their education and life.</div>
                             <div style={_.extend({}, paragraphStyle, {textAlign: "center", width: "100%"})}>
                                 <div style={quoteStyle}>
-                                    “If we teach children everything we know, their knowledge is limited to ours.<br/>
+                                    “If we teach children everything we know, their knowledge is limited to ours.&nbsp;
                                     If we teach children to think, their knowledge is limitless.”<br/>
                                     <div style={citationStyle}>- Michael Baker, President</div>
                                 </div>

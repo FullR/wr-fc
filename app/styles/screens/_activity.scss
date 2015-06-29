@@ -8,7 +8,7 @@
     background-positionX: 100%;
     background-positionY: 0;
 
-    &:hover, &:active {
+    @include active {
         background-position: top 0 right 0;
         background-positionX: 0;
         background-positionY: 0;

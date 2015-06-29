@@ -33,6 +33,9 @@ module.exports = function setup(globals) {
     ready.then(function() {
         const appStore = require("app-store");
         let router;
+        if(!window.__platform.cordova) {
+            document.body.classList.add("hover-enabled");
+        }
         fastclick(document.body);
 
         images.forEach((filename) => {
