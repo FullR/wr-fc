@@ -1409,6 +1409,19 @@ module.exports = [
     {
         "level": 2,
         "type": "suffix",
+        "id": "ifiable",
+        "definition": "able to be",
+        "joiner": [
+            0,
+            3
+        ],
+        "key": "suffix-ifiable",
+        "soundFile": "word-parts/suffix/S-ifiable",
+        "definitionSoundFile": "definitions/suffix/DS-ifiable"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
         "id": "al",
         "definition": "like, related to; an action or process",
         "joiner": null,
@@ -1449,12 +1462,51 @@ module.exports = [
     {
         "level": 2,
         "type": "suffix",
+        "id": "lant",
+        "definition": "one who, that which; state, quality",
+        "joiner": [
+            0,
+            1
+        ],
+        "key": "suffix-lant",
+        "soundFile": "word-parts/suffix/S-lant",
+        "definitionSoundFile": "definitions/suffix/DS-lant"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
         "id": "ary",
         "definition": "that which; someone or something that belongs to; of, related to; one who",
         "joiner": null,
         "key": "suffix-ary",
         "soundFile": "word-parts/suffix/S-ary",
         "definitionSoundFile": "definitions/suffix/DS-ary"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
+        "id": "iliary",
+        "definition": "that which; someone or something that belongs to; of, related to; one who",
+        "joiner": [
+            0,
+            3
+        ],
+        "key": "suffix-iliary",
+        "soundFile": "word-parts/suffix/S-iliary",
+        "definitionSoundFile": "definitions/suffix/DS-iliary"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
+        "id": "itary",
+        "definition": "that which; someone or something that belongs to; of, related to; one who",
+        "joiner": [
+            0,
+            2
+        ],
+        "key": "suffix-itary",
+        "soundFile": "word-parts/suffix/S-itary",
+        "definitionSoundFile": "definitions/suffix/DS-itary"
     },
     {
         "level": 2,
@@ -1479,12 +1531,103 @@ module.exports = [
     {
         "level": 2,
         "type": "suffix",
+        "id": "bate",
+        "definition": "to make, to act; one who, that which",
+        "joiner": [
+            0,
+            1
+        ],
+        "key": "suffix-bate",
+        "soundFile": "word-parts/suffix/S-bate",
+        "definitionSoundFile": "definitions/suffix/DS-bate"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
+        "id": "ificate",
+        "definition": "to make, to act; one who, that which",
+        "joiner": [
+            0,
+            4
+        ],
+        "key": "suffix-ificate",
+        "soundFile": "word-parts/suffix/S-ificate",
+        "definitionSoundFile": "definitions/suffix/DS-ificate"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
+        "id": "ulate",
+        "definition": "to make, to act; one who, that which",
+        "joiner": [
+            0,
+            2
+        ],
+        "key": "suffix-ulate",
+        "soundFile": "word-parts/suffix/S-ulate",
+        "definitionSoundFile": "definitions/suffix/DS-ulate"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
+        "id": "nate",
+        "definition": "to make, to act; one who, that which",
+        "joiner": [
+            0,
+            1
+        ],
+        "key": "suffix-nate",
+        "soundFile": "word-parts/suffix/S-nate",
+        "definitionSoundFile": "definitions/suffix/DS-nate"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
         "id": "ation",
         "definition": "an action or process",
         "joiner": null,
         "key": "suffix-ation",
         "soundFile": "word-parts/suffix/S-ation",
         "definitionSoundFile": "definitions/suffix/DS-ation"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
+        "id": "ification",
+        "definition": "an action or process",
+        "joiner": [
+            0,
+            4
+        ],
+        "key": "suffix-ification",
+        "soundFile": "word-parts/suffix/S-ification",
+        "definitionSoundFile": "definitions/suffix/DS-ification"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
+        "id": "ization",
+        "definition": "an action or process",
+        "joiner": [
+            0,
+            2
+        ],
+        "key": "suffix-ization",
+        "soundFile": "word-parts/suffix/S-ization",
+        "definitionSoundFile": "definitions/suffix/DS-ization"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
+        "id": "ulation",
+        "definition": "an action or process",
+        "joiner": [
+            0,
+            2
+        ],
+        "key": "suffix-ulation",
+        "soundFile": "word-parts/suffix/S-ulation",
+        "definitionSoundFile": "definitions/suffix/DS-ulation"
     },
     {
         "level": 2,
@@ -1499,80 +1642,15 @@ module.exports = [
     {
         "level": 2,
         "type": "suffix",
-        "id": "ator",
-        "definition": "one who, that which, condition, state, activity",
-        "joiner": [
-            0,
-            2
-        ],
-        "key": "suffix-ator",
-        "soundFile": "word-parts/suffix/S-ator",
-        "definitionSoundFile": "definitions/suffix/DS-ator"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "atory",
-        "definition": "like, relating to, having the quality of; place or thing connected with",
-        "joiner": [
-            0,
-            2
-        ],
-        "key": "suffix-atory",
-        "soundFile": "word-parts/suffix/S-atory",
-        "definitionSoundFile": "definitions/suffix/DS-atory"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "bate",
-        "definition": "to make, to act; one who, that which",
+        "id": "native",
+        "definition": "of, or relating to",
         "joiner": [
             0,
             1
         ],
-        "key": "suffix-bate",
-        "soundFile": "word-parts/suffix/S-bate",
-        "definitionSoundFile": "definitions/suffix/DS-bate"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "bility",
-        "definition": "state, quality, act",
-        "joiner": [
-            0,
-            3
-        ],
-        "key": "suffix-bility",
-        "soundFile": "word-parts/suffix/S-bility",
-        "definitionSoundFile": "definitions/suffix/DS-bility"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "dler",
-        "definition": "one who, that which",
-        "joiner": [
-            0,
-            2
-        ],
-        "key": "suffix-dler",
-        "soundFile": "word-parts/suffix/S-dler",
-        "definitionSoundFile": "definitions/suffix/DS-dler"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "ealogy",
-        "definition": "study of, science",
-        "joiner": [
-            0,
-            2
-        ],
-        "key": "suffix-ealogy",
-        "soundFile": "word-parts/suffix/S-ealogy",
-        "definitionSoundFile": "definitions/suffix/DS-ealogy"
+        "key": "suffix-native",
+        "soundFile": "word-parts/suffix/S-native",
+        "definitionSoundFile": "definitions/suffix/DS-native"
     },
     {
         "level": 2,
@@ -1607,12 +1685,38 @@ module.exports = [
     {
         "level": 2,
         "type": "suffix",
+        "id": "ien",
+        "definition": "having the quality of",
+        "joiner": [
+            0,
+            1
+        ],
+        "key": "suffix-ien",
+        "soundFile": "word-parts/suffix/S-ien",
+        "definitionSoundFile": "definitions/suffix/DS-ien"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
         "id": "ence",
         "definition": "state, quality, act",
         "joiner": null,
         "key": "suffix-ence",
         "soundFile": "word-parts/suffix/S-ence",
         "definitionSoundFile": "definitions/suffix/DS-ence"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
+        "id": "ulence",
+        "definition": "state, quality, act",
+        "joiner": [
+            0,
+            2
+        ],
+        "key": "suffix-ulence",
+        "soundFile": "word-parts/suffix/S-ulence",
+        "definitionSoundFile": "definitions/suffix/DS-ulence"
     },
     {
         "level": 2,
@@ -1633,6 +1737,45 @@ module.exports = [
         "key": "suffix-ent",
         "soundFile": "word-parts/suffix/S-ent",
         "definitionSoundFile": "definitions/suffix/DS-ent"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
+        "id": "ulent",
+        "definition": "one who, that which; like, related to",
+        "joiner": [
+            0,
+            2
+        ],
+        "key": "suffix-ulent",
+        "soundFile": "word-parts/suffix/S-ulent",
+        "definitionSoundFile": "definitions/suffix/DS-ulent"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
+        "id": "oneous",
+        "definition": "like, having the quality of",
+        "joiner": [
+            0,
+            2
+        ],
+        "key": "suffix-oneous",
+        "soundFile": "word-parts/suffix/S-oneous",
+        "definitionSoundFile": "definitions/suffix/DS-oneous"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
+        "id": "dler",
+        "definition": "one who, that which",
+        "joiner": [
+            0,
+            2
+        ],
+        "key": "suffix-dler",
+        "soundFile": "word-parts/suffix/S-dler",
+        "definitionSoundFile": "definitions/suffix/DS-dler"
     },
     {
         "level": 2,
@@ -1667,19 +1810,6 @@ module.exports = [
     {
         "level": 2,
         "type": "suffix",
-        "id": "estic",
-        "definition": "like, related to",
-        "joiner": [
-            0,
-            3
-        ],
-        "key": "suffix-estic",
-        "soundFile": "word-parts/suffix/S-estic",
-        "definitionSoundFile": "definitions/suffix/DS-estic"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
         "id": "ety",
         "definition": "state, quality, act",
         "joiner": null,
@@ -1700,15 +1830,15 @@ module.exports = [
     {
         "level": 2,
         "type": "suffix",
-        "id": "ibility",
-        "definition": "state, quality, act",
+        "id": "ify",
+        "definition": "to make, to act, to do",
         "joiner": [
             0,
-            4
+            1
         ],
-        "key": "suffix-ibility",
-        "soundFile": "word-parts/suffix/S-ibility",
-        "definitionSoundFile": "definitions/suffix/DS-ibility"
+        "key": "suffix-ify",
+        "soundFile": "word-parts/suffix/S-ify",
+        "definitionSoundFile": "definitions/suffix/DS-ify"
     },
     {
         "level": 2,
@@ -1723,6 +1853,19 @@ module.exports = [
     {
         "level": 2,
         "type": "suffix",
+        "id": "estic",
+        "definition": "like, related to",
+        "joiner": [
+            0,
+            3
+        ],
+        "key": "suffix-estic",
+        "soundFile": "word-parts/suffix/S-estic",
+        "definitionSoundFile": "definitions/suffix/DS-estic"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
         "id": "ic",
         "definition": "like, related to",
         "joiner": null,
@@ -1733,25 +1876,38 @@ module.exports = [
     {
         "level": 2,
         "type": "suffix",
+        "id": "istic",
+        "definition": "like, related to",
+        "joiner": [
+            0,
+            3
+        ],
+        "key": "suffix-istic",
+        "soundFile": "word-parts/suffix/S-istic",
+        "definitionSoundFile": "definitions/suffix/DS-istic"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
+        "id": "tic",
+        "definition": "like, related to",
+        "joiner": [
+            0,
+            1
+        ],
+        "key": "suffix-tic",
+        "soundFile": "word-parts/suffix/S-tic",
+        "definitionSoundFile": "definitions/suffix/DS-tic"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
         "id": "ice",
         "definition": "one who, that which",
         "joiner": null,
         "key": "suffix-ice",
         "soundFile": "word-parts/suffix/S-ice",
         "definitionSoundFile": "definitions/suffix/DS-ice"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "icile",
-        "definition": "like, of, relating to",
-        "joiner": [
-            0,
-            2
-        ],
-        "key": "suffix-icile",
-        "soundFile": "word-parts/suffix/S-icile",
-        "definitionSoundFile": "definitions/suffix/DS-icile"
     },
     {
         "level": 2,
@@ -1776,67 +1932,15 @@ module.exports = [
     {
         "level": 2,
         "type": "suffix",
-        "id": "ien",
-        "definition": "having the quality of",
+        "id": "icile",
+        "definition": "like, of, relating to",
         "joiner": [
             0,
-            1
+            2
         ],
-        "key": "suffix-ien",
-        "soundFile": "word-parts/suffix/S-ien",
-        "definitionSoundFile": "definitions/suffix/DS-ien"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "ifiable",
-        "definition": "able to be",
-        "joiner": [
-            0,
-            3
-        ],
-        "key": "suffix-ifiable",
-        "soundFile": "word-parts/suffix/S-ifiable",
-        "definitionSoundFile": "definitions/suffix/DS-ifiable"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "ificate",
-        "definition": "to make, to act; one who, that which",
-        "joiner": [
-            0,
-            4
-        ],
-        "key": "suffix-ificate",
-        "soundFile": "word-parts/suffix/S-ificate",
-        "definitionSoundFile": "definitions/suffix/DS-ificate"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "ification",
-        "definition": "an action or process",
-        "joiner": [
-            0,
-            4
-        ],
-        "key": "suffix-ification",
-        "soundFile": "word-parts/suffix/S-ification",
-        "definitionSoundFile": "definitions/suffix/DS-ification"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "ify",
-        "definition": "to make, to act, to do",
-        "joiner": [
-            0,
-            1
-        ],
-        "key": "suffix-ify",
-        "soundFile": "word-parts/suffix/S-ify",
-        "definitionSoundFile": "definitions/suffix/DS-ify"
+        "key": "suffix-icile",
+        "soundFile": "word-parts/suffix/S-icile",
+        "definitionSoundFile": "definitions/suffix/DS-icile"
     },
     {
         "level": 2,
@@ -1847,58 +1951,6 @@ module.exports = [
         "key": "suffix-ile",
         "soundFile": "word-parts/suffix/S-ile",
         "definitionSoundFile": "definitions/suffix/DS-ile"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "iliary",
-        "definition": "that which; someone or something that belongs to; of, related to; one who",
-        "joiner": [
-            0,
-            3
-        ],
-        "key": "suffix-iliary",
-        "soundFile": "word-parts/suffix/S-iliary",
-        "definitionSoundFile": "definitions/suffix/DS-iliary"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "iment",
-        "definition": "that which; state, quality, act",
-        "joiner": [
-            0,
-            1
-        ],
-        "key": "suffix-iment",
-        "soundFile": "word-parts/suffix/S-iment",
-        "definitionSoundFile": "definitions/suffix/DS-iment"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "imonious",
-        "definition": "having the quality of",
-        "joiner": [
-            0,
-            5
-        ],
-        "key": "suffix-imonious",
-        "soundFile": "word-parts/suffix/S-imonious",
-        "definitionSoundFile": "definitions/suffix/DS-imonious"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "imony",
-        "definition": "state, quality, that which",
-        "joiner": [
-            0,
-            1
-        ],
-        "key": "suffix-imony",
-        "soundFile": "word-parts/suffix/S-imony",
-        "definitionSoundFile": "definitions/suffix/DS-imony"
     },
     {
         "level": 2,
@@ -1919,19 +1971,6 @@ module.exports = [
         "key": "suffix-ion",
         "soundFile": "word-parts/suffix/S-ion",
         "definitionSoundFile": "definitions/suffix/DS-ion"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "ious",
-        "definition": "having the quality of",
-        "joiner": [
-            0,
-            1
-        ],
-        "key": "suffix-ious",
-        "soundFile": "word-parts/suffix/S-ious",
-        "definitionSoundFile": "definitions/suffix/DS-ious"
     },
     {
         "level": 2,
@@ -1966,32 +2005,6 @@ module.exports = [
     {
         "level": 2,
         "type": "suffix",
-        "id": "istic",
-        "definition": "like, related to",
-        "joiner": [
-            0,
-            3
-        ],
-        "key": "suffix-istic",
-        "soundFile": "word-parts/suffix/S-istic",
-        "definitionSoundFile": "definitions/suffix/DS-istic"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "itary",
-        "definition": "that which; someone or something that belongs to; of, related to; one who",
-        "joiner": [
-            0,
-            2
-        ],
-        "key": "suffix-itary",
-        "soundFile": "word-parts/suffix/S-itary",
-        "definitionSoundFile": "definitions/suffix/DS-itary"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
         "id": "ite",
         "definition": "related to, having the quality of",
         "joiner": null,
@@ -2012,38 +2025,28 @@ module.exports = [
     {
         "level": 2,
         "type": "suffix",
-        "id": "itive",
-        "definition": "tending to or performing",
-        "joiner": [
-            0,
-            2
-        ],
-        "key": "suffix-itive",
-        "soundFile": "word-parts/suffix/S-itive",
-        "definitionSoundFile": "definitions/suffix/DS-itive"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "itory",
-        "definition": "like, relating to, having the quality of; place or thing connected with",
-        "joiner": [
-            0,
-            2
-        ],
-        "key": "suffix-itory",
-        "soundFile": "word-parts/suffix/S-itory",
-        "definitionSoundFile": "definitions/suffix/DS-itory"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "itude",
+        "id": "bility",
         "definition": "state, quality, act",
-        "joiner": null,
-        "key": "suffix-itude",
-        "soundFile": "word-parts/suffix/S-itude",
-        "definitionSoundFile": "definitions/suffix/DS-itude"
+        "joiner": [
+            0,
+            3
+        ],
+        "key": "suffix-bility",
+        "soundFile": "word-parts/suffix/S-bility",
+        "definitionSoundFile": "definitions/suffix/DS-bility"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
+        "id": "ibility",
+        "definition": "state, quality, act",
+        "joiner": [
+            0,
+            4
+        ],
+        "key": "suffix-ibility",
+        "soundFile": "word-parts/suffix/S-ibility",
+        "definitionSoundFile": "definitions/suffix/DS-ibility"
     },
     {
         "level": 2,
@@ -2058,38 +2061,38 @@ module.exports = [
     {
         "level": 2,
         "type": "suffix",
+        "id": "uity",
+        "definition": "state, quality, act",
+        "joiner": [
+            0,
+            1
+        ],
+        "key": "suffix-uity",
+        "soundFile": "word-parts/suffix/S-uity",
+        "definitionSoundFile": "definitions/suffix/DS-uity"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
+        "id": "itive",
+        "definition": "tending to or performing",
+        "joiner": [
+            0,
+            2
+        ],
+        "key": "suffix-itive",
+        "soundFile": "word-parts/suffix/S-itive",
+        "definitionSoundFile": "definitions/suffix/DS-itive"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
         "id": "ive",
         "definition": "tending to or performing",
         "joiner": null,
         "key": "suffix-ive",
         "soundFile": "word-parts/suffix/S-ive",
         "definitionSoundFile": "definitions/suffix/DS-ive"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "ization",
-        "definition": "an action or process",
-        "joiner": [
-            0,
-            2
-        ],
-        "key": "suffix-ization",
-        "soundFile": "word-parts/suffix/S-ization",
-        "definitionSoundFile": "definitions/suffix/DS-ization"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "lant",
-        "definition": "one who, that which; state, quality",
-        "joiner": [
-            0,
-            1
-        ],
-        "key": "suffix-lant",
-        "soundFile": "word-parts/suffix/S-lant",
-        "definitionSoundFile": "definitions/suffix/DS-lant"
     },
     {
         "level": 2,
@@ -2104,12 +2107,38 @@ module.exports = [
     {
         "level": 2,
         "type": "suffix",
+        "id": "ealogy",
+        "definition": "study of, science",
+        "joiner": [
+            0,
+            2
+        ],
+        "key": "suffix-ealogy",
+        "soundFile": "word-parts/suffix/S-ealogy",
+        "definitionSoundFile": "definitions/suffix/DS-ealogy"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
         "id": "ly",
         "definition": "in the manner of, having the quality of",
         "joiner": null,
         "key": "suffix-ly",
         "soundFile": "word-parts/suffix/S-ly",
         "definitionSoundFile": "definitions/suffix/DS-ly"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
+        "id": "iment",
+        "definition": "that which; state, quality, act",
+        "joiner": [
+            0,
+            1
+        ],
+        "key": "suffix-iment",
+        "soundFile": "word-parts/suffix/S-iment",
+        "definitionSoundFile": "definitions/suffix/DS-iment"
     },
     {
         "level": 2,
@@ -2124,28 +2153,28 @@ module.exports = [
     {
         "level": 2,
         "type": "suffix",
-        "id": "nate",
-        "definition": "to make, to act; one who, that which",
-        "joiner": [
-            0,
-            2
-        ],
-        "key": "suffix-nate",
-        "soundFile": "word-parts/suffix/S-nate",
-        "definitionSoundFile": "definitions/suffix/DS-nate"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "native",
-        "definition": "of, or relating to",
+        "id": "ument",
+        "definition": "that which; state, quality, act",
         "joiner": [
             0,
             1
         ],
-        "key": "suffix-native",
-        "soundFile": "word-parts/suffix/S-native",
-        "definitionSoundFile": "definitions/suffix/DS-native"
+        "key": "suffix-ument",
+        "soundFile": "word-parts/suffix/S-ument",
+        "definitionSoundFile": "definitions/suffix/DS-ument"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
+        "id": "imony",
+        "definition": "state, quality, that which",
+        "joiner": [
+            0,
+            1
+        ],
+        "key": "suffix-imony",
+        "soundFile": "word-parts/suffix/S-imony",
+        "definitionSoundFile": "definitions/suffix/DS-imony"
     },
     {
         "level": 2,
@@ -2170,15 +2199,15 @@ module.exports = [
     {
         "level": 2,
         "type": "suffix",
-        "id": "oneous",
-        "definition": "like, having the quality of",
+        "id": "ator",
+        "definition": "one who, that which, condition, state, activity",
         "joiner": [
             0,
             2
         ],
-        "key": "suffix-oneous",
-        "soundFile": "word-parts/suffix/S-oneous",
-        "definitionSoundFile": "definitions/suffix/DS-oneous"
+        "key": "suffix-ator",
+        "soundFile": "word-parts/suffix/S-ator",
+        "definitionSoundFile": "definitions/suffix/DS-ator"
     },
     {
         "level": 2,
@@ -2193,12 +2222,64 @@ module.exports = [
     {
         "level": 2,
         "type": "suffix",
+        "id": "atory",
+        "definition": "like, relating to, having the quality of; place or thing connected with",
+        "joiner": [
+            0,
+            2
+        ],
+        "key": "suffix-atory",
+        "soundFile": "word-parts/suffix/S-atory",
+        "definitionSoundFile": "definitions/suffix/DS-atory"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
+        "id": "itory",
+        "definition": "like, relating to, having the quality of; place or thing connected with",
+        "joiner": [
+            0,
+            2
+        ],
+        "key": "suffix-itory",
+        "soundFile": "word-parts/suffix/S-itory",
+        "definitionSoundFile": "definitions/suffix/DS-itory"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
         "id": "ory",
         "definition": "like, relating to, having the quality of; place or thing connected with",
         "joiner": null,
         "key": "suffix-ory",
         "soundFile": "word-parts/suffix/S-ory",
         "definitionSoundFile": "definitions/suffix/DS-ory"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
+        "id": "imonious",
+        "definition": "having the quality of",
+        "joiner": [
+            0,
+            5
+        ],
+        "key": "suffix-imonious",
+        "soundFile": "word-parts/suffix/S-imonious",
+        "definitionSoundFile": "definitions/suffix/DS-imonious"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
+        "id": "ious",
+        "definition": "having the quality of",
+        "joiner": [
+            0,
+            1
+        ],
+        "key": "suffix-ious",
+        "soundFile": "word-parts/suffix/S-ious",
+        "definitionSoundFile": "definitions/suffix/DS-ious"
     },
     {
         "level": 2,
@@ -2213,15 +2294,15 @@ module.exports = [
     {
         "level": 2,
         "type": "suffix",
-        "id": "tic",
-        "definition": "like, related to",
+        "id": "uous",
+        "definition": "having the quality of",
         "joiner": [
             0,
             1
         ],
-        "key": "suffix-tic",
-        "soundFile": "word-parts/suffix/S-tic",
-        "definitionSoundFile": "definitions/suffix/DS-tic"
+        "key": "suffix-uous",
+        "soundFile": "word-parts/suffix/S-uous",
+        "definitionSoundFile": "definitions/suffix/DS-uous"
     },
     {
         "level": 2,
@@ -2236,67 +2317,15 @@ module.exports = [
     {
         "level": 2,
         "type": "suffix",
-        "id": "uity",
+        "id": "itude",
         "definition": "state, quality, act",
         "joiner": [
             0,
             1
         ],
-        "key": "suffix-uity",
-        "soundFile": "word-parts/suffix/S-uity",
-        "definitionSoundFile": "definitions/suffix/DS-uity"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "ulate",
-        "definition": "to make, to act; one who, that which",
-        "joiner": [
-            0,
-            2
-        ],
-        "key": "suffix-ulate",
-        "soundFile": "word-parts/suffix/S-ulate",
-        "definitionSoundFile": "definitions/suffix/DS-ulate"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "ulation",
-        "definition": "an action or process",
-        "joiner": [
-            0,
-            2
-        ],
-        "key": "suffix-ulation",
-        "soundFile": "word-parts/suffix/S-ulation",
-        "definitionSoundFile": "definitions/suffix/DS-ulation"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "ulence",
-        "definition": "state, quality, act",
-        "joiner": [
-            0,
-            2
-        ],
-        "key": "suffix-ulence",
-        "soundFile": "word-parts/suffix/S-ulence",
-        "definitionSoundFile": "definitions/suffix/DS-ulence"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "ulent",
-        "definition": "one who, that which; like, related to",
-        "joiner": [
-            0,
-            2
-        ],
-        "key": "suffix-ulent",
-        "soundFile": "word-parts/suffix/S-ulent",
-        "definitionSoundFile": "definitions/suffix/DS-ulent"
+        "key": "suffix-itude",
+        "soundFile": "word-parts/suffix/S-itude",
+        "definitionSoundFile": "definitions/suffix/DS-itude"
     },
     {
         "level": 2,
@@ -2307,32 +2336,6 @@ module.exports = [
         "key": "suffix-ulous",
         "soundFile": "word-parts/suffix/S-ulous",
         "definitionSoundFile": "definitions/suffix/DS-ulous"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "ument",
-        "definition": "that which; state, quality, act",
-        "joiner": [
-            0,
-            1
-        ],
-        "key": "suffix-ument",
-        "soundFile": "word-parts/suffix/S-ument",
-        "definitionSoundFile": "definitions/suffix/DS-ument"
-    },
-    {
-        "level": 2,
-        "type": "suffix",
-        "id": "uous",
-        "definition": "having the quality of",
-        "joiner": [
-            0,
-            1
-        ],
-        "key": "suffix-uous",
-        "soundFile": "word-parts/suffix/S-uous",
-        "definitionSoundFile": "definitions/suffix/DS-uous"
     },
     {
         "level": 2,

@@ -370,6 +370,27 @@ module.exports = [
     {
         "level": 2,
         "type": "word",
+        "id": "arbitrable",
+        "definition": "subject to decision by arbritration",
+        "prefixes": [],
+        "roots": [
+            "root-arbitr"
+        ],
+        "suffixes": [
+            "suffix-able"
+        ],
+        "choosableParts": [
+            "prefix-e",
+            "root-centr",
+            "root-tru",
+            "suffix-ulate"
+        ],
+        "key": "word-arbitrable",
+        "soundFile": "word-parts/word/W-arbitrable"
+    },
+    {
+        "level": 2,
+        "type": "word",
         "id": "arbitrary",
         "definition": "related to personal judgment; left to chance",
         "prefixes": [],
@@ -2456,6 +2477,26 @@ module.exports = [
         ],
         "key": "word-dynamite",
         "soundFile": "word-parts/word/W-dynamite"
+    },
+    {
+        "level": 2,
+        "type": "word",
+        "id": "dynamometer",
+        "definition": "device for measuring power or force",
+        "prefixes": [],
+        "roots": [
+            "root-dynamo",
+            "root-meter"
+        ],
+        "suffixes": [],
+        "choosableParts": [
+            "prefix-dis",
+            "root-ethno",
+            "root-puls",
+            "suffix-ency"
+        ],
+        "key": "word-dynamometer",
+        "soundFile": "word-parts/word/W-dynamometer"
     },
     {
         "level": 2,

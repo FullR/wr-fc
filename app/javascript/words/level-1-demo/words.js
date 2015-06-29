@@ -1642,7 +1642,7 @@ module.exports = [
             "prefix-ex",
             "root-termin",
             "root-clude",
-            "suffix-ence"
+            "suffix-cide"
         ],
         "key": "word-credulous",
         "soundFile": "word-parts/word/W-credulous"
