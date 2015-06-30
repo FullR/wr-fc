@@ -3549,7 +3549,7 @@ module.exports = [
             "suffix-ate"
         ],
         "choosableParts": [
-            "prefix-re",
+            "prefix-uni",
             "root-later",
             "root-son",
             "suffix-ant"
@@ -4223,7 +4223,7 @@ module.exports = [
         "level": 1,
         "type": "word",
         "id": "luminary",
-        "definition": "an object, like a star, that gives off light; a famous person (star)",
+        "definition": "an object, like a star, that gives off light; a famous person (\"star\")",
         "prefixes": [],
         "roots": [
             "root-lumin"

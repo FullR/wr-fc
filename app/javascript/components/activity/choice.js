@@ -143,7 +143,7 @@ const Choice = React.createClass({
         return (
             <div {...this.props}
                  {...this.getStyle(style)}
-                 onClick={this.onClick}
+                 onMouseDown={this.onClick}
             >
                 {this.props.children}
 
