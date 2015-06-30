@@ -1024,7 +1024,7 @@
     {"level": 1, "type": "word", "id": "loquacious", "definition": "very talkative", "prefixes": [], "roots": ["loqu"], "suffixes": ["acious"], "choosableParts": ["de","clude","frag","ferous"]},
     {"level": 1, "type": "word", "id": "loquaciously", "definition": "in a very talkative or wordy manner", "prefixes": [], "roots": ["loqu"], "suffixes": ["acious", "ly"], "choosableParts": ["ac","fract","mot","ate"]},
     {"level": 1, "type": "word", "id": "loquaciousness", "definition": "being very talkative", "prefixes": [], "roots": ["loqu"], "suffixes": ["acious", "ness"], "choosableParts": ["ad","equi","vis","iate"]},
-    {"level": 1, "type": "word", "id": "luminary", "definition": "an object, like a star, that gives off light; a famous person (star)", "prefixes": [], "roots": ["lumin"], "suffixes": ["ary"], "choosableParts": ["di","clus","fract","ify"]},
+    {"level": 1, "type": "word", "id": "luminary", "definition": "an object, like a star, that gives off light; a famous person (\"star\")", "prefixes": [], "roots": ["lumin"], "suffixes": ["ary"], "choosableParts": ["di","clus","fract","ify"]},
     {"level": 1, "type": "word", "id": "luminescent", "definition": "glowing, luminous", "prefixes": [], "roots": ["lumin"], "suffixes": ["escent"], "choosableParts": ["a","mitt","tract","ative"]},
     {"level": 1, "type": "word", "id": "luminosity", "definition": "the relative quantity of light; a state of being luminous", "prefixes": [], "roots": ["lumin"], "suffixes": ["osity"], "choosableParts": ["ab","miss","vene","itive"]},
     {"level": 1, "type": "word", "id": "luminous", "definition": "giving off or reflecting light", "prefixes": [], "roots": ["lumin"], "suffixes": ["ous"], "choosableParts": ["dis","cogn","fract","ible"]},
