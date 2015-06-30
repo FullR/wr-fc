@@ -123,7 +123,7 @@ const ActivityType2 = React.createClass({
                         {choices.map((choice) =>
                             <PartChoice 
                                 onClick={actions.selectChoice.bind(null, choice)} 
-                                key={index + choice.partId} 
+                                key={`${index}-${choice.partId}`} 
                                 revealed={revealed}
                                 correct={choice.correct}
                                 selected={choice.selected}

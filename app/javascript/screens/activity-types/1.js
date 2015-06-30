@@ -154,7 +154,7 @@ const ActivityType1 = React.createClass({
                             <DefinitionChoice 
                                 onClick={actions.selectChoice.bind(null, choice)}
                                 onRevealedClick={(revealed && choice.correct) ? this.playDefinitionSound : null}
-                                key={index + choice.partId} 
+                                key={`${index}-${choice.partId}`} 
                                 revealed={revealed}
                                 correct={choice.correct}
                                 selected={choice.selected}

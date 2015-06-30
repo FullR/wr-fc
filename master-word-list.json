@@ -649,7 +649,7 @@
     {"level": 2, "type": "suffix", "id": "ive", "definition": "tending to or performing", "joiner": null},
     {"level": 2, "type": "suffix", "id": "less", "definition": "without", "joiner": null},
     {"level": 2, "type": "suffix", "id": "ealogy", "definition": "study of, science", "joiner": [0, 2]},
-    {"level": 2, "type": "suffix", "id": "ly", "definition": "in the manner of, having the quality of", "joiner": null},
+    {"level": 2, "type": "suffix", "id": "ly", "definition": "in the manner of; having the quality of", "joiner": null},
     {"level": 2, "type": "suffix", "id": "iment", "definition": "that which; state, quality, act", "joiner": [0, 1]},
     {"level": 2, "type": "suffix", "id": "ment", "definition": "that which; state, quality, act", "joiner": null},
     {"level": 2, "type": "suffix", "id": "ument", "definition": "that which; state, quality, act", "joiner": [0, 1]},

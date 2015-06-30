@@ -56,15 +56,24 @@ module.exports = function(basePartList) {
                             }
                             return passes;
                         })
+                        .shuffle()
+                        // can't use a simple sample because multiple incorrect parts might have the same definitions
+                        .reduce((incorrectParts, part) => {
+                            if(incorrectParts.length < 2) {
+                                const defNotFound = incorrectParts.every(({definition}) => definition !== part.definition);
+                                if(defNotFound) {
+                                    incorrectParts.push(part);
+                                }
+                            }
+                            return incorrectParts;
+                        }, [])
                         .map((part) => {
                             return {
                                 partId: part.key,
                                 correct: false,
                                 selected: false
                             };
-                        })
-                        .sample(2)
-                        .value();
+                        });
 
                     return [
                         {partId: correctPart.key, correct: true, selected: false},

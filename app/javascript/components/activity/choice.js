@@ -132,7 +132,9 @@ const Choice = React.createClass({
                 transition: `width ${animationSpeed}s, border ${animationSpeed}s, margin ${animationSpeed}s`,
                 width: 0,
                 margin: 0,
-                border: "0px solid #DCDC94"
+                padding: 0,
+                border: "0px solid #DCDC94",
+                borderWidth: 0
             });
         }
         
@@ -144,6 +146,7 @@ const Choice = React.createClass({
             <div {...this.props}
                  {...this.getStyle(style)}
                  onMouseDown={this.onClick}
+                 onTouchStart={this.onClick}
             >
                 {this.props.children}
 
