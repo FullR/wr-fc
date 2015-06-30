@@ -2214,8 +2214,7 @@ module.exports = [
             "root-dom"
         ],
         "suffixes": [
-            "suffix-estic",
-            "suffix-ate"
+            "suffix-esticate"
         ],
         "choosableParts": [
             "prefix-a",

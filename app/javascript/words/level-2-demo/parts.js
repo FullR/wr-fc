@@ -1544,6 +1544,19 @@ module.exports = [
     {
         "level": 2,
         "type": "suffix",
+        "id": "esticate",
+        "definition": "to make, to act; one who, that which",
+        "joiner": [
+            0,
+            5
+        ],
+        "key": "suffix-esticate",
+        "soundFile": "word-parts/suffix/S-esticate",
+        "definitionSoundFile": "definitions/suffix/DS-esticate"
+    },
+    {
+        "level": 2,
+        "type": "suffix",
         "id": "ificate",
         "definition": "to make, to act; one who, that which",
         "joiner": [
