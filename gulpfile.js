@@ -29,10 +29,10 @@ var ids = {
     "level-1": "com.criticalthinking.wordrootsfc1",
     "level-2": "com.criticalthinking.wordrootsfc2",
     "level-3": "com.criticalthinking.wordrootsfc3",
-    "beginning": "com.criticalthinking.wordrootsfcbegdemo",
-    "level-1": "com.criticalthinking.wordrootsfc1demo",
-    "level-2": "com.criticalthinking.wordrootsfc2demo",
-    "level-3": "com.criticalthinking.wordrootsfc3demo"
+    "beginning-demo": "com.criticalthinking.wordrootsfcbegdemo",
+    "level-1-demo": "com.criticalthinking.wordrootsfc1demo",
+    "level-2-demo": "com.criticalthinking.wordrootsfc2demo",
+    "level-3-demo": "com.criticalthinking.wordrootsfc3demo"
 };
 
 var titles = {
@@ -40,10 +40,10 @@ var titles = {
     "level-1": "Word Roots Level 1 Flashcards",
     "level-2": "Word Roots Level 2 Flashcards",
     "level-3": "Word Roots Level 3 Flashcards",
-    "beginning": "Word Roots Beginning Flashcards Demo",
-    "level-1": "Word Roots Level 1 Flashcards Demo",
-    "level-2": "Word Roots Level 2 Flashcards Demo",
-    "level-3": "Word Roots Level 3 Flashcards Demo"
+    "beginning-demo": "Word Roots Beginning Flashcards Demo",
+    "level-1-demo": "Word Roots Level 1 Flashcards Demo",
+    "level-2-demo": "Word Roots Level 2 Flashcards Demo",
+    "level-3-demo": "Word Roots Level 3 Flashcards Demo"
 };
 
 var levels = [

@@ -76,6 +76,7 @@ const Choice = React.createClass({
             borderRadius: 10,
             background: this.props.highlighted ? "#FFFD61" : "#F1F1D4",
             cursor: "pointer",
+            transform: "translate3d(0,0,0)",
 
             states: [
                 {hover: {
@@ -126,15 +127,35 @@ const Choice = React.createClass({
             backgroundSize: "100% 100%"
         };
 
+        let className = "choice";
+
         if(this.props.revealed && !this.props.correct && !this.props.selected) {
-            _.extend(style, {
+            /*_.extend(style, {
                 visibility: "hidden",
-                transition: `width ${animationSpeed}s, border ${animationSpeed}s, margin ${animationSpeed}s`,
+                transition: `width ${animationSpeed}s, border-width ${animationSpeed}s, margin ${animationSpeed}s`,
                 width: 0,
                 margin: 0,
-                padding: 0,
+                //padding: 0,
                 border: "0px solid #DCDC94",
                 borderWidth: 0
+            });*/
+        }
+        if(this.props.hidden) {
+            className += " choice--hidden";
+            _.extend(style, {
+                visibility: "hidden"
+            });
+        } else if(this.props.afterHidden) {
+            className += " choice--after-hidden";
+            _.extend(style, {
+                transition: `left ${animationSpeed}s`,
+                left: `-${width}px`
+            });
+        } else if(this.props.beforeHidden) {
+            className += " choice--before-hidden";
+            _.extend(style, {
+                transition: `right ${animationSpeed}s`,
+                right: `-${width}px`
             });
         }
         
@@ -147,6 +168,7 @@ const Choice = React.createClass({
                  {...this.getStyle(style)}
                  onMouseDown={this.onClick}
                  onTouchStart={this.onClick}
+                 className={className}
             >
                 {this.props.children}
 
