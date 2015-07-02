@@ -5,13 +5,14 @@ const {micro, small, medium} = require("sizes");
 
 const textStyle = {
     display: "inline-block",
-    width: "60%",
+    width: "50%",
     marginLeft: 10
 };
 
 const percentStyle = {
     display: "inline-block",
-    width: "10%"
+    width: "15%",
+    marginRight: "5%"
 };
 
 const fractionStyle = {
