@@ -165,7 +165,7 @@ function cordova(level) {
                 '<splash src="www/assets/splashscreens/Default-Landscape.png" width="1024" height="768"/>',
                 '<splash src="www/assets/splashscreens/Default-Landscape@2x.png" width="2048" height="1536"/>',
                 '<splash src="www/assets/splashscreens/Default-Landscape-736h@3x.png" width="2208" height="1242"/>',
-                '<preference name="SplashScreenDelay" value="10000" />',
+                '<preference name="SplashScreenDelay" value="5000" />',
                 '<icon src="www/assets/images/icon.png" />',
                 '<preference name="EnableViewportScale" value="true"/>'
             ],

@@ -18,28 +18,24 @@ const ChoiceContainer = React.createClass({
             verticalAlign: "middle",
             transform: "translate3d(0,0,0)"
         };
-        const children = [].concat(this.props.children);
+        let children = [].concat(this.props.children);
         const revealedIndex = children.filter((choice) => choice.props.revealed && !choice.props.correct && !choice.props.selected)[0];
         if(revealedIndex) {
-            children.forEach((child, index) => {
+            children = children.map((child, index) => {
                 if(index === revealedIndex) {
-                    Object.assign(child.props, {
-                        beforeHidden: false,
-                        afterHidden: false,
+                    return React.cloneElement(child, {
                         hidden: true
                     });
                 } else if(revealedIndex > index) {
-                    Object.assign(child.props, {
-                        beforeHidden: true,
-                        afterHidden: false,
-                        hidden: false
+                    return React.cloneElement(child, {
+                        beforeHidden: true
                     });
                 } else if(revealedIndex < index) {
-                    Object.assign(child.props, {
-                        beforeHidden: false,
-                        afterHidden: true,
-                        hidden: false
+                    return React.cloneElement(child, {
+                        afterHidden: true
                     });
+                } else {
+                    return child;
                 }
             });
         }
