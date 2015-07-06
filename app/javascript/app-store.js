@@ -91,7 +91,7 @@ const AppStore = Reflux.createStore({
         const completedActivities = window.level.levelId === "beginning" ? 
             _.filter(this.data.completedActivities, (value, id) => { // only check activities that are playable in beginning level
                 return beginningActs.indexOf(id) !== -1;
-            }) : 
+            }) :
             this.data.completedActivities;
 
         return _.every(completedActivities, (isCompleted) => isCompleted);

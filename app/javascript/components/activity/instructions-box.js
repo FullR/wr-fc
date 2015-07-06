@@ -5,15 +5,15 @@ const {micro, small, medium} = require("sizes");
 const InstructionsBox = React.createClass({
     render() {
         const style = {
-            position: "absolute",
-            left: "50%",
             top: bp({
                 [small]: 32,
                 [medium]: 48,
                 defaults: 64
             }),
-            width: 600,
-            marginLeft: -300,
+            position: "absolute",
+            left: "50%",
+            width: 700,
+            marginLeft: -350,
             cursor: "default"
         };
 

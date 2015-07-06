@@ -62,6 +62,7 @@ const Sounds = React.createClass({
         this.release();
         if(this.deferred) {
             this.deferred.stop();
+            this.deferred = null;
         }
     },
 

@@ -91,12 +91,12 @@ const Feedback = React.createClass({
                     <ScoreTable scores={this.props.scores}/>
                 </div>
 
-                {appStore.areAllCompleted() ?
+                {this.state.app.areAllCompleted() ?
                     <EndGameWindow/> :
-                    window.level.demo ? 
-                        <DemoModal>{this.props.demoText}</DemoModal>:
+                    window.level.demo ?
+                        <DemoModal>{this.props.demoText}</DemoModal> :
                         null
-                }
+                    }
 
                 <div style={buttonGroupStyle}>
                     {this.canReview() ?

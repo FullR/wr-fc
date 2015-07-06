@@ -130,7 +130,7 @@ const Choice = React.createClass({
         let className = "choice";
 
         if(this.props.revealed && !this.props.correct && !this.props.selected) {
-            /*_.extend(style, {
+            _.extend(style, {
                 visibility: "hidden",
                 transition: `width ${animationSpeed}s, border-width ${animationSpeed}s, margin ${animationSpeed}s`,
                 width: 0,
@@ -138,27 +138,9 @@ const Choice = React.createClass({
                 //padding: 0,
                 border: "0px solid #DCDC94",
                 borderWidth: 0
-            });*/
-        }
-        if(this.props.hidden) {
-            className += " choice--hidden";
-            _.extend(style, {
-                visibility: "hidden"
-            });
-        } else if(this.props.afterHidden) {
-            className += " choice--after-hidden";
-            _.extend(style, {
-                transition: `left ${animationSpeed}s`,
-                left: `-${width}px`
-            });
-        } else if(this.props.beforeHidden) {
-            className += " choice--before-hidden";
-            _.extend(style, {
-                transition: `right ${animationSpeed}s`,
-                right: `-${width}px`
             });
         }
-        
+
         if(this.props.style) {
             _.extend(style, this.props.style);
         }
@@ -170,6 +152,7 @@ const Choice = React.createClass({
                  onTouchStart={this.onClick}
                  className={className}
             >
+
                 {this.props.children}
 
                 {this.props.revealed ? 

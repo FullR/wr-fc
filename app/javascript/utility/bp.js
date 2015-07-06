@@ -1,13 +1,23 @@
 const _ = require("lodash");
-const compareRegex = /(width|height)\s*(<|>|=|<=|>=)\s*(\d*)/;
 
+const compareRegex = /(width|height)\s*(<|>|=|<=|>=)\s*(\d*)/;
+const unsubscribe = Symbol("bp mixin unsubscribe");
 let [width, height] = getDimension();
+let evalCache = new Map();
+
+const compareOps = {
+    "<": op((a, b) => a < b),
+    ">": op((a, b) => a > b),
+    "<=": op((a, b) => a <= b),
+    ">=": op((a, b) => a >= b),
+    "=": op((a, b) => a === b)
+};
 
 function getDimension() {
-    const docEl = document.documentElement,
-        body = document.getElementsByTagName('body')[0],
-        width = window.innerWidth || docEl.clientWidth || body.clientWidth,
-        height = window.innerHeight || docEl.clientHeight || body.clientHeight;
+    const docEl = document.documentElement;
+    const body = document.getElementsByTagName('body')[0];
+    const width = window.innerWidth || docEl.clientWidth || body.clientWidth;
+    const height = window.innerHeight || docEl.clientHeight || body.clientHeight;
 
     return [width, height];
 }
@@ -15,17 +25,15 @@ function getDimension() {
 function getDimValue(dimName) {
     if(dimName === "width") {
         return width;
-    }
-    else if(dimName === "height") {
+    } else if(dimName === "height") {
         return height;
-    }
-    else {
+    } else {
         throw new Error("Invalid dimension name: " + dimName);
     }
 }
 
 function op(compareFn) {
-    return function(dimName, compareValue) {
+    return (dimName, compareValue) => {
         compareValue = parseInt(compareValue);
         if(compareValue !== compareValue) {
             throw new Error("Compare value isn't a number");
@@ -34,38 +42,15 @@ function op(compareFn) {
     };
 }
 
-const compareOps = {
-    "<": op(function(a, b) {
-        return a < b;
-    }),
-    ">": op(function(a, b) {
-        return a > b;
-    }),
-    "=": op(function() {
-        return a === b;
-    }),
-    "<=": op(function(dimName, b) {
-        return a <= b;
-    }),
-    ">=": op(function(dimName, b) {
-        return a >= b;
-    })
-};
-
-let evalCache = {};
 function evalOp(bpString) {
-    let dimName;
-    let op;
-    let compareValue;
-    let passes;
-
-    if(typeof evalCache[bpString] === "boolean") {
-        return evalCache[bpString];
+    if(evalCache.has(bpString)) {
+        return evalCache.get(bpString);
+    } else {
+        const [, dimName, op, compareValue] = bpString.match(compareRegex);
+        const passes = compareOps[op] && compareOps[op](dimName, compareValue);
+        evalCache.set(bpString, passes);
+        return passes;
     }
-
-    [, dimName, op, compareValue] = bpString.match(compareRegex);
-    passes = evalCache[bpString] = (compareOps[op] && compareOps[op](dimName, compareValue));
-    return passes;
 }
 
 function bp(bpMap) {
@@ -85,25 +70,25 @@ function bp(bpMap) {
     return defaultResult;
 }
 
-window.addEventListener("resize", () => {
-    evalCache = {};
-    [width, height] = getDimension();
-});
-
 bp.mixin = {
     componentDidMount() {
         const onResize = (() => this.forceUpdate());
         window.addEventListener("resize", onResize);
-        this.unsubscribe = (() => window.removeEventListener("resize", onResize));
+        this[unsubscribe] = (() => window.removeEventListener("resize", onResize));
     },
 
     componentWillUnmount() {
-        if(this.unsubscribe) {
-            this.unsubscribe();
-            this.unsubscribe = null;
+        if(this[unsubscribe]) {
+            this[unsubscribe]();
+            this[unsubscribe] = null;
         }
     }
 };
+
+window.addEventListener("resize", () => {
+    evalCache = new Map();
+    [width, height] = getDimension();
+});
 
 bp.getHeight = () => height;
 bp.getWidth = () => width;

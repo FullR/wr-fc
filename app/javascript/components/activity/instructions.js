@@ -9,7 +9,6 @@ const Instructions = React.createClass({
                 [medium]: 25,
                 defaults: 35
             }),
-            whiteSpace: "nowrap",
             textAlign: "center",
             transition: this.props.fade ? "opacity 0.25s" : null,
             opacity: this.props.fade ? 0 : 1

@@ -51,9 +51,7 @@ const ActivityType2 = React.createClass({
     }),
 
     renderTitle() {
-        return (
-            <span>{this.props.title}</span>
-        );
+        return (<span>{this.props.title}</span>);
     },
 
     renderInstructions() {
@@ -61,12 +59,9 @@ const ActivityType2 = React.createClass({
     },
 
     componentDidMount() {
-        this.on("keydown", (event) => {
-            switch(event.keyCode) {
-                case 32: if(!this.state.isShowingFeedback() && this.state.isWaiting()) {
-                    this.props.actions.continueActivity();
-                    break;
-                }
+        this.on("keydown", ({keyCode}) => {
+            if(keyCode === 32 && !this.state.isShowingFeedback() && this.state.isWaiting()) {
+                this.props.actions.continueActivity();
             }
         });
     },
@@ -89,7 +84,7 @@ const ActivityType2 = React.createClass({
                 exampleWordSoundPath
             ]}/>);
         }
-        
+
         return (
             <div>
                 {sounds}
@@ -135,7 +130,7 @@ const ActivityType2 = React.createClass({
 
                     {revealed ?
                         <ContinueButton onClick={actions.continueActivity}/> :
-                        null 
+                        null
                     }
                 </BottomContainer>
             </div>
@@ -159,8 +154,7 @@ const ActivityType2 = React.createClass({
     render() {
         if(this.state.isShowingFeedback()) {
             return this.renderFeedback();
-        }
-        else {
+        } else {
             return this.renderActivity();
         }
     }
