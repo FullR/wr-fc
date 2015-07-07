@@ -27,8 +27,7 @@ const AudioInspector = React.createClass({
             let filterFn = (part) => part.id.match(this.state.filter);
             _words = words.filter(filterFn);
             _parts = parts.filter(filterFn);
-        }
-        else {
+        } else {
             _words = words;
             _parts = parts;
         }
