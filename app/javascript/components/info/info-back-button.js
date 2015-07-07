@@ -30,7 +30,7 @@ const InfoBackButton = React.createClass({
                 defaults: 20
             }),
             color: "#FFFFFF",
-            border: "1px solid #000000",
+            border: "2px solid #000000",
             background: colors.INFO_BUTTON_BG,
             cursor: "pointer",
             textDecoration: "none",

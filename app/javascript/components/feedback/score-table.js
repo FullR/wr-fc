@@ -19,7 +19,7 @@ const ScoreTable = React.createClass({
         });
 
         const style = {
-            border: "1px solid #000",
+            border: "2px solid #000",
             width: "100%",
             height: "100%",
             background: colors.HIGHSCORE_BG
@@ -39,7 +39,7 @@ const ScoreTable = React.createClass({
             overflow: "auto",
             width: "100%",
             background: "#FFFFFF",
-            borderBottom: "1px solid black"
+            borderBottom: "2px solid black"
         };
 
         const highscoreStyle = {

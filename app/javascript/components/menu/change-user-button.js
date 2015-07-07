@@ -30,7 +30,7 @@ const ChangeUserButton = React.createClass({
             }),
             zIndex: 2,
             background: colors.INFO_BUTTON_BG,
-            border: "1px solid black",
+            border: "2px solid black",
             borderRadius: 5,
             color: "#FFFFFF",
             textAlign: "center",

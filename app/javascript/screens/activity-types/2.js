@@ -58,14 +58,6 @@ const ActivityType2 = React.createClass({
         return this.props.instructions;
     },
 
-    componentDidMount() {
-        this.on("keydown", ({keyCode}) => {
-            if(keyCode === 32 && !this.state.isShowingFeedback() && this.state.isWaiting()) {
-                this.props.actions.continueActivity();
-            }
-        });
-    },
-
     renderActivity() {
         const revealed = this.state.isWaiting();
         const choices = this.state.getCurrentChoiceGroup();

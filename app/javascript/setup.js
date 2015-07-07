@@ -60,7 +60,5 @@ module.exports = function setup(globals) {
                 React.render(<Handler {...state}/>, document.body);
             });
         });
-    }).done();/*.catch((error) => {
-        console.error("Caught: " + error.toString());
-    });*/
+    }).done();
 };

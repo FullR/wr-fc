@@ -29,9 +29,7 @@ const Word = React.createClass({
                         };
                     }
                     if(word.spacing && index) {
-                        console.log("spacing");
                         style = _.extend(style || {}, {
-                            //wordSpacing: "1rem"
                             marginLeft: 10
                         });
                     }

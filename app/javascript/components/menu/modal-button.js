@@ -8,7 +8,7 @@ const ModalButton = React.createClass({
         const style = _.extend({
             backgroundColor: this.props.background,
             fontSize: 24,
-            border: "1px solid black",
+            border: "2px solid black",
             padding: 15,
             width: 75,
             borderRadius: 5,

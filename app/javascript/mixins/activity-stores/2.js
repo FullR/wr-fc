@@ -79,7 +79,10 @@ module.exports = function(basePartList) {
 
         nextGroup() {
             const {usedChoiceGroups, unusedChoiceGroups} = this.data.currentAttempt;
-            usedChoiceGroups.push(unusedChoiceGroups.shift());
+            const currentGroup = unusedChoiceGroups.shift();
+            if(currentGroup) {
+                usedChoiceGroups.push(currentGroup);
+            }
             if(this.isShowingFeedback()) {
                 this.recordScore();
             }
@@ -96,12 +99,17 @@ module.exports = function(basePartList) {
                 }
                 return score;
             }, {correct: 0, max: usedChoiceGroups.length, isReview: isReview});
+
             completeActivity(this.activityId);
             this.data.scores.unshift(score);
         },
 
         getCorrectChoice() {
             return this.getCurrentChoiceGroup().filter((choice) => choice.correct)[0];
+        },
+
+        getCorrectChoices() {
+            return [this.getCorrectChoice()];
         },
 
         getIndex() {

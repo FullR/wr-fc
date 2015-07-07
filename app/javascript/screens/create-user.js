@@ -81,7 +81,7 @@ const CreateUserScreen = React.createClass({
             }),
             padding: "8px 12px 8px 12px",
             borderRadius: 5,
-            border: "1px solid black",
+            border: "2px solid black",
             color: "#FFFFFF",
             cursor: "pointer",
             background: colors.INFO_BUTTON_BG,

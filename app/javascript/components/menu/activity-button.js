@@ -22,7 +22,7 @@ const style = {
     display: "inline-block",
     width: "20%",
     height: "100%",
-    border: "1px solid black",
+    border: "2px solid black",
     borderRadius: 8,
     textAlign: "center",
     verticalAlign: "middle",

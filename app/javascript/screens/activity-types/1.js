@@ -81,17 +81,6 @@ const ActivityType1 = React.createClass({
         return this.props.instructions;
     },
 
-    componentDidMount() {
-        this.on("keydown", (event) => {
-            switch(event.keyCode) {
-                case 32: if(!this.state.isShowingFeedback() && this.state.isWaiting()) {
-                    this.props.actions.continueActivity();
-                    break;
-                }
-            }
-        });
-    },
-
     renderActivity() {
         const revealed = this.state.isWaiting();
         const choices = this.state.getCurrentChoiceGroup();
@@ -168,6 +157,8 @@ const ActivityType1 = React.createClass({
                     <ContinueButton onClick={actions.continueActivity}/> :
                     null 
                 }
+
+                <button onClick={this.debugSelectCorrect} style={{position: "absolute", left: 20, top: 20, height: 100, width:200}}>Next</button>
             </div>
         );
     },

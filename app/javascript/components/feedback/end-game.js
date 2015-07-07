@@ -92,7 +92,7 @@ const EndGameWindow = React.createClass({
         }
 
         return (
-            <div style={overlayStyle} onClick={this.close}>
+            <div style={overlayStyle}>
                 <div style={{position: "relative", width: "100%", height: "100%"}}>
                     <div style={windowStyle}>
                         <div style={bgImageOverlayStyle}>

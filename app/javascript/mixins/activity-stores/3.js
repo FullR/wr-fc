@@ -62,7 +62,10 @@ module.exports = function(baseWordList) {
 
         nextGroup() {
             const {usedChoiceGroups, unusedChoiceGroups} = this.data.currentAttempt;
-            usedChoiceGroups.push(unusedChoiceGroups.shift());
+            const currentGroup = unusedChoiceGroups.shift();
+            if(currentGroup) {
+                usedChoiceGroups.push(currentGroup);
+            }
             if(this.isShowingFeedback()) {
                 this.recordScore();
             }

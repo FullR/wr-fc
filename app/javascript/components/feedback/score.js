@@ -48,7 +48,7 @@ const Score = React.createClass({
             }),
             width: "100%",
             boxSizing: "border-box",
-            borderBottom: "1px solid #CCC",
+            borderBottom: "1px solid #DDD",
             whiteSpace: "nowrap",
             fontWeight: "bold"
         };

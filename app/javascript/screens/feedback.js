@@ -1,4 +1,5 @@
 const React = require("react");
+const _ = require("lodash");
 const Reflux = require("reflux");
 const ScoreTable = require("components/feedback/score-table");
 const colors = require("colors");
@@ -91,7 +92,7 @@ const Feedback = React.createClass({
                     <ScoreTable scores={this.props.scores}/>
                 </div>
 
-                {this.state.app.areAllCompleted() ?
+                {appStore.areAllCompleted() ?
                     <EndGameWindow/> :
                     window.level.demo ?
                         <DemoModal>{this.props.demoText}</DemoModal> :

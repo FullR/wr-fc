@@ -9,8 +9,8 @@ module.exports = {
     "SUFFIX_HOVER":         "#00a0f7",
     "WORD_HOVER":           "#00c3c3",
     "LINK":                 "#0000FF", // footer links in menu
-    "INFO_BUTTON_BG":       "#f25c32", // change user button, info screen back buttons
-    "INFO_BUTTON_BG_HOVER": "#f04714",
+    "INFO_BUTTON_BG_HOVER": "#f25c32", // change user button, info screen back buttons
+    "INFO_BUTTON_BG":       "#f04714",
     "GLOW":                 "#ffea00", // active menu button
     "FEEDBACK_BG":          "#FCFAAA",
     "HIGHSCORE_BG":         "#FAC07A", // highscore background color in feedback screens
