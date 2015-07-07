@@ -30,7 +30,7 @@ const ActivityType1 = React.createClass({
 
     getSounds() {
         const correctPart = dictionary.get(this.state.getCorrectChoice().partId);
-        
+
         return {
             correctWord: correctPart.soundFile,
             correctDefinition: correctPart.definitionSoundFile
@@ -116,7 +116,7 @@ const ActivityType1 = React.createClass({
                 onPlay={this.onSoundPlay}
                 onEnd={this.onSoundEnd}/>
         ];
-        
+
         return (
             <div>
                 {sounds}

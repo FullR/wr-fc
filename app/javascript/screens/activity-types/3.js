@@ -59,7 +59,7 @@ const ActivityType3 = React.createClass({
         const correctWordSound = this.state.getCorrectWordSound();
         const index = this.state.getIndex();
         let sounds;
-        
+
         return (
             <div>
                 {revealed ?
