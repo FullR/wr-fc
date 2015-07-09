@@ -7,11 +7,8 @@ const additionalProps = {
     }
 };
 
-function Dictionary(props) {
-    const byType = (type) => ((part) => part.type === type);
-    const parts = props.parts;
-    const words = props.words;
-
+const byType = (type) => ((part) => part.type === type);
+function Dictionary({parts, word}) {
     words.forEach((word) => {
         word.parts = [...word.prefixes, ...word.roots, ...word.suffixes];
     });
