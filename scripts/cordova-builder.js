@@ -109,7 +109,7 @@ function addPlugin(projectDir, pluginName) {
 function addMergeDirectory(projectDir, mergeDir) {
     return mkdirp(projectDir + "/merges")
         .then(function() {
-            return exec("cp -R " + mergeDir + "/* " + projectDir + "/merges");
+            return exec("cp -R '" + mergeDir + "' '" + projectDir + "/merges'");
         });
 }
 
