@@ -1235,7 +1235,7 @@
     {"level": 2, "type": "word", "id": "dominate", "definition": "to control or have power over others", "prefixes": [], "roots": ["domin"], "suffixes": ["ate"], "choosableParts": ["as","meter","nox","or"]},
     {"level": 2, "type": "word", "id": "domination", "definition": "rule, control", "prefixes": [], "roots": ["domin"], "suffixes": ["ation"], "choosableParts": ["ad","gastr","press","escent"]},
     {"level": 2, "type": "word", "id": "dominion", "definition": "authority over others", "prefixes": [], "roots": ["domin"], "suffixes": ["ion"], "choosableParts": ["bi","metr","nom","ory"]},
-    {"level": 2, "type": "word", "id": "dormancy", "definition": "a state of inactivity", "prefixes": [], "roots": ["dorm"], "suffixes": ["ancy"], "choosableParts": ["circum","migr","nom","itory"]},
+    {"level": 2, "type": "word", "id": "dormancy", "definition": "a state of inactivity", "prefixes": [], "roots": ["dorm"], "suffixes": ["ancy"], "choosableParts": ["circum","migr","nom","ory"]},
     {"level": 2, "type": "word", "id": "dormant", "definition": "that which is temporarily inactive", "prefixes": [], "roots": ["dorm"], "suffixes": ["ant"], "choosableParts": ["con","noc","metr","ous"]},
     {"level": 2, "type": "word", "id": "dormitory", "definition": "a place with sleeping facilities for a number of people", "prefixes": [], "roots": ["dorm"], "suffixes": ["itory"], "choosableParts": ["de","nom","noc","ator"]},
     {"level": 2, "type": "word", "id": "dynamic", "definition": "energetic; forceful; of or relating to power", "prefixes": [], "roots": ["dynam"], "suffixes": ["ic"], "choosableParts": ["dis","nox","noc","atory"]},

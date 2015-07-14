@@ -43,12 +43,13 @@ const Sound = React.createClass({
     },
 
     componentWillUnmount() {
-        if(this.sound) {
-            soundManager.release(this.sound);
-        }
         if(this.timeout) {
             clearTimeout(this.timeout);
             this.timeout = null;
+        }
+        if(this.sound) {
+            this.sound.stop();
+            soundManager.release(this.sound);
         }
     },
 

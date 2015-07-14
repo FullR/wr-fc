@@ -2346,7 +2346,7 @@ module.exports = [
             "prefix-circum",
             "root-migr",
             "root-nom",
-            "suffix-itory"
+            "suffix-ory"
         ],
         "key": "word-dormancy",
         "soundFile": "word-parts/word/W-dormancy"

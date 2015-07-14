@@ -3,6 +3,7 @@ var gutil = require("gulp-util");
 var _ = require("lodash");
 var Q = require("q");
 var exec = Q.nfbind(require("child_process").exec);
+var spawn = require("child_process").spawn;
 var plumber = require("gulp-plumber");
 var runSequence = require("run-sequence");
 var buffer = require("vinyl-buffer");
@@ -194,6 +195,13 @@ function desktop(level) {
     };
 }
 
+function ios(level) {
+    return function() {
+        //return exec("cordova run ios --device", {cwd: "./cordova-builds/"+level, maxBuffer: Infinity, stdio: "inherit"});
+        spawn("cordova", ["run", "ios", "--device"], {cwd: "./cordova-builds/"+level, stdio: "inherit"});
+    };
+}
+
 // Build tasks handle html, scss, js, etc
 gulp.task("build", build());
 
@@ -324,6 +332,8 @@ levels.forEach(function(level) {
     gulp.task("desktop:" + level, ["build:"+level], desktop(level));
     gulp.task("upload:" + level, ["build:"+level], upload.bind(null, level));
     gulp.task("cordova:" + level, ["build:"+level], cordova(level));
+    gulp.task("ios:" + level, ios(level));
+
     gulp.task("generate:word-audio:"+level, function() {
         return require("./scripts/build-audio-dirs")(level);
     });

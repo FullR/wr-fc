@@ -24,8 +24,12 @@ const images = [
 ];
 
 module.exports = function setup(globals) {
+    if(window.logger) {
+        window.console = window.logger;
+    }
+
     console.log("deviceready fired");
-    console.log("---- STARTING APPLICATION ----");
+    console.log("---- STARTING APPLICATION ----\n\n\n");
     require("babelify/polyfill");
     require("polyfills/function-prototype-bind");
 

@@ -85,6 +85,9 @@ function build(options) {
                 log("Adding plugin: " + plugin);
                 return promise.then(addPlugin.bind(null, projectDir, plugin));
             }, Q.resolve());
+        })
+        .then(function() {
+            return exec("cordova prepare ios", {cwd: projectDir});
         });
 
     function log() {
@@ -109,7 +112,7 @@ function addPlugin(projectDir, pluginName) {
 function addMergeDirectory(projectDir, mergeDir) {
     return mkdirp(projectDir + "/merges")
         .then(function() {
-            return exec("cp -R '" + mergeDir + "' '" + projectDir + "/merges'");
+            return exec("cp -R " + mergeDir + "/* '" + projectDir + "/merges'");
         });
 }
 
