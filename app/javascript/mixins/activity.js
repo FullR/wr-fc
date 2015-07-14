@@ -18,9 +18,9 @@ module.exports = {
             const canSelect = !this.state.isShowingFeedback() && !this.state.isWaiting();
             if(keyCode === 32 && !canSelect) {
                 this.props.actions.continueActivity();
-            } else if(keyCode === 192) { // TODO: Remove/restrict before releasing
+            } /*else if(keyCode === 192) { // TODO: Remove/restrict before releasing
                 this.debugSelectCorrect();
-            }
+            }*/
         });
     },
 

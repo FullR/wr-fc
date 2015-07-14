@@ -1,0 +1,10 @@
+#!/bin/bash
+
+gulp cordova:beginning &&
+gulp cordova:level-1 &&
+gulp cordova:level-2 &&
+gulp cordova:level-3 &&
+gulp cordova:beginning-demo &&
+gulp cordova:level-1-demo &&
+gulp cordova:level-2-demo &&
+gulp cordova:level-3-demo

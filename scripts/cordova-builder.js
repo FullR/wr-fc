@@ -157,4 +157,4 @@ function buildConfigXML(options) {
     return writeFile(options.dest + "/config.xml", content);
 }
 
-module.exports = build;
+module.exports = _.once(build);

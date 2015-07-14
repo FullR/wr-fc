@@ -112,9 +112,8 @@ const ActivityType3 = React.createClass({
                         null 
                     }
                 </BottomContainer>
-                <button onClick={this.debugSelectCorrect} style={{position: "absolute", left: 20, top: 20, height: 100, width:200}}>Next</button>
             </div>
-        );
+        );//                <button onClick={this.debugSelectCorrect} style={{position: "absolute", left: 20, top: 20, height: 100, width:200}}>Next</button>
     },
 
     renderFeedback() {
