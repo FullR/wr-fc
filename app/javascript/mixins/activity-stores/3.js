@@ -114,12 +114,6 @@ module.exports = function(baseWordList) {
             return this.data.currentAttempt.unusedChoiceGroups.length === 0;
         },
 
-        // Action handlers
-        onContinueActivity() {
-            this.nextGroup();
-            this.trigger(this);
-        },
-
         onSelectChoice(choice) {
             choice.selected = true;
             this.trigger(this);
