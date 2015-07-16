@@ -18,7 +18,6 @@ const Instructions = require("components/activity/instructions");
 const DefinitionDisplayBox = require("components/activity/definition-display-box");
 const BottomContainer = require("components/activity/bottom-container");
 const PartPieceDisplay = require("components/activity/part-piece-display");
-const Sound = require("components/utility/sound");
 
 const ActivityType3 = React.createClass({
     mixins: [
@@ -26,20 +25,6 @@ const ActivityType3 = React.createClass({
         activityMixin,
         windowListener
     ],
-
-    onSoundPlay: isMounted(function() {
-        this.state.soundPlaying = true;
-        this.setState(this.state);
-    }),
-
-    onSoundEnd: isMounted(function() {
-        this.state.soundPlaying = false;
-        this.setState(this.state);
-    }),
-
-    playCorrectWord: isMounted(function() {
-        this.refs.correctWord.play();
-    }),
 
     renderTitle() {
         return (
@@ -56,24 +41,10 @@ const ActivityType3 = React.createClass({
         const choices = this.state.getCurrentChoiceGroup().choices;
         const actions = this.props.actions;
         const correctWordId = this.state.getCorrectWordId();
-        const correctWordSound = this.state.getCorrectWordSound();
         const index = this.state.getIndex();
-        let sounds;
 
         return (
             <div>
-                {revealed ?
-                    <Sound
-                        ref="correctWord"
-                        key={index}
-                        path={correctWordSound}
-                        delay={250}
-                        autoplay={true}
-                        onPlay={this.onSoundPlay}
-                        onEnd={this.onSoundEnd}/> :
-                    null
-                }
-
                 <Info>
                     {this.renderTitle()} {index}/{this.state.getCount()}
                 </Info>

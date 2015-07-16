@@ -18,7 +18,6 @@ const Instructions = require("components/activity/instructions");
 const PartDisplayBox = require("components/activity/part-display-box");
 const ExampleWord = require("components/activity/example-word");
 const BottomContainer = require("components/activity/bottom-container");
-const Sound = require("components/utility/sound");
 const dictionary = window.dictionary;
 
 const ActivityType1 = React.createClass({
@@ -27,49 +26,6 @@ const ActivityType1 = React.createClass({
         activityMixin,
         windowListener
     ],
-
-    getSounds() {
-        const correctPart = dictionary.get(this.state.getCorrectChoice().partId);
-
-        return {
-            correctWord: correctPart.soundFile,
-            correctDefinition: correctPart.definitionSoundFile
-        };
-    },
-
-    playWordSound: isMounted(function() {
-        if(this.refs.definitionSound) {
-            this.refs.definitionSound.stop();
-        }
-        this.refs.wordSound.play();
-    }),
-
-    playDefinitionSound: isMounted(function() {
-        if(this.refs.wordSound) {
-            this.refs.wordSound.stop();
-        }
-        this.refs.definitionSound.play();
-    }),
-
-    onSoundPlay: isMounted(function() {
-        this.state.soundPlaying = true;
-        this.setState(this.state);
-    }),
-
-    onSoundEnd: isMounted(function() {
-        this.state.soundPlaying = false;
-        this.setState(this.state);
-    }),
-
-    onDefinitionPlay: isMounted(function() {
-        this.state.defintionPlaying = true;
-        this.setState(this.state);
-    }),
-
-    onDefinitionEnd: isMounted(function() {
-        this.state.defintionPlaying = false;
-        this.setState(this.state);
-    }),
 
     renderTitle() {
         return (
@@ -84,42 +40,13 @@ const ActivityType1 = React.createClass({
     renderActivity() {
         const revealed = this.state.isWaiting();
         const choices = this.state.getCurrentChoiceGroup();
-        const correctPartSoundPath = this.state.getCorrectSound();
-        const correctDefSoundPath = this.state.getCorrectDefinitionSound();
         const exampleWordId = this.state.data.currentAttempt.exampleWordId;
         const correctPartId = this.state.getCorrectChoice().partId;
         const actions = this.props.actions;
         const index = this.state.getIndex();
 
-        const sounds = revealed ? [
-            <Sound 
-                ref="wordSound"
-                key={correctPartSoundPath + "-after"} 
-                path={correctPartSoundPath}
-                onPlay={this.onSoundPlay}
-                onEnd={this.onSoundEnd}/>,
-            <Sound
-                ref="definitionSound"
-                key={correctDefSoundPath}
-                path={correctDefSoundPath}
-                autoplay={true}
-                delay={250}
-                onPlay={this.onDefinitionPlay}
-                onEnd={this.onDefinitionEnd}/>
-        ] : [
-            <Sound
-                ref="wordSound"
-                key={correctPartSoundPath}
-                path={correctPartSoundPath}
-                autoplay={true}
-                delay={250}
-                onPlay={this.onSoundPlay}
-                onEnd={this.onSoundEnd}/>
-        ];
-
         return (
             <div>
-                {sounds}
                 <Info>
                     {this.renderTitle()} {index}/{this.state.getCount()}
                 </Info>

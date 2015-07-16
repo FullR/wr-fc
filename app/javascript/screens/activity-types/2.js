@@ -19,8 +19,6 @@ const Instructions = require("components/activity/instructions");
 const DefinitionDisplayBox = require("components/activity/definition-display-box");
 const BottomContainer = require("components/activity/bottom-container");
 const ExampleWord = require("components/activity/example-word");
-const Sound = require("components/utility/sound");
-const Sounds = require("components/utility/sounds");
 
 const ActivityType2 = React.createClass({
     mixins: [
@@ -28,27 +26,6 @@ const ActivityType2 = React.createClass({
         activityMixin,
         windowListener
     ],
-
-    playWordSound: isMounted(function() {
-        soundManager.stop();
-        this.refs.wordSound.play();
-    }),
-
-    stopSounds: isMounted(function() {
-        if(this.refs.sounds) {
-            this.refs.sounds.stop();
-        }
-    }),
-
-    onSoundPlay: isMounted(function() {
-        this.state.soundPlaying = true;
-        this.setState(this.state);
-    }),
-
-    onSoundEnd: isMounted(function() {
-        this.state.soundPlaying = false;
-        this.setState(this.state);
-    }),
 
     renderTitle() {
         return (<span>{this.props.title}</span>);
@@ -61,33 +38,13 @@ const ActivityType2 = React.createClass({
     renderActivity() {
         const revealed = this.state.isWaiting();
         const choices = this.state.getCurrentChoiceGroup();
-        const correctPartSoundPath = this.state.getCorrectSound();
-        const exampleWordSoundPath = this.state.getExampleSoundPath();
         const exampleWordId = this.state.data.currentAttempt.exampleWordId;
         const correctPartId = this.state.getCorrectChoice().partId;
         const actions = this.props.actions;
         const index = this.state.getIndex();
-        let sounds;
-
-        if(revealed) {
-            sounds = (<Sounds ref="sounds" autoplay={true} key={correctPartSoundPath + "-sounds"} delay={250} paths={[
-                correctPartSoundPath,
-                "as-in",
-                exampleWordSoundPath
-            ]}/>);
-        }
 
         return (
             <div>
-                {sounds}
-                <Sound 
-                    ref="wordSound"
-                    delay={250}
-                    key={correctPartSoundPath} 
-                    path={correctPartSoundPath}
-                    onPlay={this.onSoundPlay}
-                    onEnd={this.onSoundEnd}/>
-
                 <Info>
                     {this.renderTitle()} {index}/{this.state.getCount()}
                 </Info>
@@ -101,8 +58,7 @@ const ActivityType2 = React.createClass({
                         wordId={exampleWordId} 
                         underlinedPartId={correctPartId}
                         hidden={!revealed}
-                        playable={true}
-                        onPlay={this.stopSounds}/>
+                        playable={true}/>
                 </InstructionsBox>
 
                 <BottomContainer>
@@ -116,7 +72,7 @@ const ActivityType2 = React.createClass({
                                 selected={choice.selected}
                                 partId={choice.partId}
                                 onRevealedClick={choice.correct ? this.playWordSound : null}
-                                highlighted={choice.correct && this.state.soundPlaying}/>
+                                highlighted={choice.correct}/>
                         )}
                     </ChoiceContainer>
 

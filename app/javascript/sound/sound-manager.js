@@ -20,18 +20,42 @@ function get(path, options={}) {
     return sound;
 }
 
-function release(sound) {
-    sound.stop();
+function play(path, delay, releaseAfter) {
+    const sound = get(path);
+    return sound.load()
+        .then(() => {
+            return sound.play(delay);
+        })
+        .then(() => {
+            if(releaseAfter) {
+                setTimeout(() => {
+                    release(sound);
+                }, releaseAfter);
+            }
+        })
 }
 
-const soundManager = {
-    get: get,
-    release: release,
-    stop() {
-        return Q.all(sounds.map(function(sound) {
-            return sound.stop();
-        }));
-    }
-};
+function stop() {
+    return Q.all(sounds.map(function(sound) {
+        return sound.stop();
+    }));
+}
+
+function release(sound) {
+    console.log("Releasing " + sound.path);
+    logInfo();
+    sound.stop();
+    sound.release();
+}
+
+function logInfo() {
+    console.log(`
+        Sound Info
+            sounds.length = ${sounds.length}
+            loaded.length = ${sounds.filter((sound) => sound.isLoaded()).length}
+    `);
+}
+
+const soundManager = {get, release, play, stop};
 
 module.exports = soundManager;

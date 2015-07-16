@@ -50,5 +50,5 @@ ready.then(() => {
         })
     });
 }).catch((error) => {
-    console.log(`--- ERROR: ${error} ${error.stack}`);
+    console.log(`---- ERROR: ${error.stack}`);
 });

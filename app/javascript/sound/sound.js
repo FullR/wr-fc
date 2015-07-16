@@ -22,7 +22,6 @@ _.extend(Sound.prototype, emitter, {
             this.media = media = new window.Media(this.getNormalizedPath(), 
                                      this._finishedPlaying.bind(this), 
                                      this._finishedPlaying.bind(this));
-            this.loading = true;
 
             if(media.load) {
                 loadPromise = media.load().then(function() {
@@ -34,8 +33,6 @@ _.extend(Sound.prototype, emitter, {
             }
 
             this._loadPromise = loadPromise.then(function() {
-                this.loading = false;
-                this.loaded = true;
                 return this;
             }.bind(this));
         }
@@ -103,10 +100,15 @@ _.extend(Sound.prototype, emitter, {
         return Q.resolve();
     },
 
+    isLoaded() {
+        return !!this.media;
+    },
+
     release() {
         if(this.media) {
             this.fire("end");
             this.media.release();
+            this.media = null;
             this._loadPromise = null;
         }
     }
