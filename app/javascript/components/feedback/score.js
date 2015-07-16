@@ -5,20 +5,18 @@ const {micro, small, medium} = require("sizes");
 
 const textStyle = {
     display: "inline-block",
-    width: "50%",
-    marginLeft: 10
+    width: "50%"
 };
 
 const percentStyle = {
     display: "inline-block",
-    width: "15%",
-    marginRight: "5%"
+    width: "25%",
+    textAlign: "right"
 };
 
 const fractionStyle = {
     display: "inline-block",
-    width: "20%",
-    marginRight: 10,
+    width: "25%",
     textAlign: "right"
 };
 
@@ -28,6 +26,7 @@ const Score = React.createClass({
         const max = this.props.max;
         const percent = Math.floor((correct/max)*100);
         const style = {
+            padding: "0 10px 0 10px",
             height: bp({
                 [micro]: 30,
                 [small]: 40,

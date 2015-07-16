@@ -1,0 +1,10 @@
+#!/bin/bash
+
+gulp desktop:beginning &&
+gulp desktop:level-1 &&
+gulp desktop:level-2 &&
+gulp desktop:level-3 &&
+gulp desktop:beginning-demo &&
+gulp desktop:level-1-demo &&
+gulp desktop:level-2-demo &&
+gulp desktop:level-3-demo

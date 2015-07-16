@@ -31,5 +31,12 @@ module.exports = {
 
     getCount() {
         return this.data.currentAttempt.unusedChoiceGroups.length + this.data.currentAttempt.usedChoiceGroups.length;
-    }
+    },
+
+    onContinueActivity() {
+        if(!this.isShowingFeedback()) {
+            this.nextGroup();
+            this.trigger(this);
+        }
+    },
 };

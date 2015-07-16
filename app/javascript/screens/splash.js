@@ -36,9 +36,9 @@ const Splash = React.createClass({
             <div>
                 <Logo style={logoStyle}/>
                 <Link style={style} to={appStore.getUsername().length ? "menu" : "login"}/>
+                <Link to="sounds" style={soundLinkStyle}>Sounds</Link>
             </div>
         );
-        //                <Link to="sounds" style={soundLinkStyle}>Sounds</Link>
     }
 });
 
