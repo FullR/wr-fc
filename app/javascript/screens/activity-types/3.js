@@ -23,7 +23,8 @@ const ActivityType3 = React.createClass({
     mixins: [
         Reflux.ListenerMixin,
         activityMixin,
-        windowListener
+        windowListener,
+        require("mixins/audio")
     ],
 
     renderTitle() {
@@ -36,12 +37,42 @@ const ActivityType3 = React.createClass({
         return this.props.instructions;
     },
 
+    playCorrectWord(delay=0) {
+        const correctWordPath = this.state.getCorrectWordSound();
+        this.stop();
+        if(correctWordPath) {
+            this.play(correctWordPath, delay, true);
+        }
+    },
+
+    selectChoice(choice) {
+        this.props.actions.selectChoice(choice);
+        setTimeout(() => {
+            if(this.state.isWaiting() && !this.state.isShowingFeedback()) {
+                this.playCorrectWord();
+            }
+        }, 1);
+    },
+
+    continueActivity() {
+        this.stop();
+        this.props.actions.continueActivity();
+    },
+
+    componentDidMount() {
+        if(this.state.isWaiting() && !this.state.isShowingFeedback()) {
+            this.playCorrectWord(250);
+        }
+    },
+
     renderActivity() {
         const revealed = this.state.isWaiting();
         const choices = this.state.getCurrentChoiceGroup().choices;
         const actions = this.props.actions;
         const correctWordId = this.state.getCorrectWordId();
         const index = this.state.getIndex();
+
+        const isPlaying = this.isPlaying(this.state.getCorrectWordSound());
 
         return (
             <div>
@@ -61,14 +92,14 @@ const ActivityType3 = React.createClass({
                     revealed={revealed}
                     wordId={correctWordId}
                     choices={choices}
-                    highlighted={this.state.soundPlaying}
-                    onClick={revealed ? this.playCorrectWord : null}/>
+                    highlighted={isPlaying}
+                    onClick={revealed && !isPlaying ? this.playCorrectWord : null}/>
 
                 <BottomContainer>
                     <ChoiceContainer choiceCount={this.props.choiceCount}>
                         {choices.map((choice) =>
                             <PartChoice 
-                                onClick={actions.selectChoice.bind(null, choice)} 
+                                onClick={revealed ? null : this.selectChoice.bind(this, choice)} 
                                 key={`${index}-${choice.partId}`} 
                                 revealed={revealed}
                                 correct={choice.correct}
@@ -79,7 +110,7 @@ const ActivityType3 = React.createClass({
                     </ChoiceContainer>
 
                     {revealed ?
-                        <ContinueButton onClick={actions.continueActivity}/> :
+                        <ContinueButton onClick={this.continueActivity}/> :
                         null 
                     }
                 </BottomContainer>

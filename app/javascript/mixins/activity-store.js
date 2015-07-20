@@ -1,6 +1,7 @@
 const dictionary = window.dictionary;
 
 module.exports = {
+    mixins: [require("mixins/audio")],
     getInitialStorage() {
         return {
             scores: [],

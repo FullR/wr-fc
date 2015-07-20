@@ -24,7 +24,8 @@ const ActivityType1 = React.createClass({
     mixins: [
         Reflux.ListenerMixin,
         activityMixin,
-        windowListener
+        windowListener,
+        require("mixins/audio")
     ],
 
     renderTitle() {
@@ -37,6 +38,43 @@ const ActivityType1 = React.createClass({
         return this.props.instructions;
     },
 
+    componentDidMount() {
+        if(!this.state.isShowingFeedback()) {
+            if(this.state.isWaiting()) {
+                this.playDefinitionSound(250);
+            } else {
+                this.playWordSound(250);
+            }
+        }
+    },
+
+    playWordSound(delay=0) {
+        this.stop();
+        this.play(this.state.getCorrectSound(), delay, true);
+    },
+
+    playDefinitionSound(delay=0) {
+        const soundPath = this.state.getCorrectDefinitionSound();
+        this.stop();
+        if(soundPath) {
+            this.play(soundPath, delay, true);
+        }
+    },
+
+    selectChoice(choice) {
+        if(!this.state.isWaiting()) {
+            this.props.actions.selectChoice(choice);
+            this.playDefinitionSound();
+        }
+    },
+
+    continueActivity() {
+        if(this.state.isWaiting()) {
+            this.props.actions.continueActivity();
+            setTimeout(() => this.playWordSound(), 1);
+        }
+    },
+
     renderActivity() {
         const revealed = this.state.isWaiting();
         const choices = this.state.getCurrentChoiceGroup();
@@ -44,6 +82,9 @@ const ActivityType1 = React.createClass({
         const correctPartId = this.state.getCorrectChoice().partId;
         const actions = this.props.actions;
         const index = this.state.getIndex();
+
+        const isChoicePlaying = this.isPlaying(this.state.getCorrectDefinitionSound());
+        const isDisplayPlaying = this.isPlaying(this.state.getCorrectSound());
 
         return (
             <div>
@@ -55,8 +96,8 @@ const ActivityType1 = React.createClass({
                     <Instructions>{this.renderInstructions()}</Instructions>
                     <PartDisplayBox 
                         partId={this.state.getCorrectChoice().partId} 
-                        onClick={this.playWordSound}
-                        highlighted={this.state.soundPlaying}/>
+                        onClick={isDisplayPlaying ? null : this.playWordSound}
+                        highlighted={isDisplayPlaying}/>
                     <ExampleWord
                         key={index + exampleWordId}
                         wordId={exampleWordId}
@@ -68,20 +109,20 @@ const ActivityType1 = React.createClass({
                     <ChoiceContainer choiceCount={3}>
                         {choices.map((choice) =>
                             <DefinitionChoice 
-                                onClick={actions.selectChoice.bind(null, choice)}
-                                onRevealedClick={(revealed && choice.correct) ? this.playDefinitionSound : null}
+                                onClick={this.selectChoice.bind(this, choice)}
+                                onRevealedClick={(revealed && choice.correct && !isChoicePlaying) ? this.playDefinitionSound : null}
                                 key={`${index}-${choice.partId}`} 
                                 revealed={revealed}
                                 correct={choice.correct}
                                 selected={choice.selected}
                                 partId={choice.partId}
-                                highlighted={(revealed && choice.correct) && this.state.defintionPlaying}/>
+                                highlighted={(revealed && choice.correct) && isChoicePlaying}/>
                         )}
                     </ChoiceContainer>
                 </BottomContainer>
 
                 {revealed ?
-                    <ContinueButton onClick={actions.continueActivity}/> :
+                    <ContinueButton onClick={this.continueActivity}/> :
                     null
                 }
             </div>
@@ -89,13 +130,23 @@ const ActivityType1 = React.createClass({
 //<button onClick={this.debugSelectCorrect} style={{position: "absolute", left: 20, top: 20, height: 100, width:200}}>Next</button>
     },
 
+    replay() {
+        this.props.actions.replay();
+        setTimeout(() => this.playWordSound(250), 1);
+    },
+
+    review() {
+        this.props.actions.review();
+        setTimeout(() => this.playWordSound(250), 1);
+    },
+
     renderFeedback() {
         return (
             <Feedback
                 demoText={this.props.demoText}
                 scores={this.state.data.scores}
-                onReviewClick={this.props.actions.review}
-                onReplayClick={this.props.actions.replay}
+                onReviewClick={this.review}
+                onReplayClick={this.replay}
                 next={this.props.next}>
                 <FeedbackTitle>{this.renderTitle()} Completed</FeedbackTitle>
             </Feedback>

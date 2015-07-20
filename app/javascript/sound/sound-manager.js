@@ -11,6 +11,7 @@ function get(path, options={}) {
     path = `assets/audio/${path}`;
 
     if(soundIndex[path+"."+extention]) { return soundIndex[path+"."+extention]; }
+    else if(soundIndex[path]) { return soundIndex[path]; }
 
     sound = new Sound(_.extend({path}, options));
 
@@ -22,17 +23,14 @@ function get(path, options={}) {
 
 function play(path, delay, releaseAfter) {
     const sound = get(path);
-    return sound.load()
-        .then(() => {
-            return sound.play(delay);
-        })
+    return sound.play(delay)
         .then(() => {
             if(releaseAfter) {
                 setTimeout(() => {
                     release(sound);
                 }, releaseAfter);
             }
-        })
+        });
 }
 
 function stop() {
@@ -42,8 +40,7 @@ function stop() {
 }
 
 function release(sound) {
-    console.log("Releasing " + sound.path);
-    logInfo();
+    //logInfo();
     sound.stop();
     sound.release();
 }

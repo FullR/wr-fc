@@ -22,23 +22,21 @@ const OtherProducts = React.createClass({
             bottom: vars.FOOTER_HEIGHT
         };
 
-        const productBoxStyle = {
-            margin: "0 10% 0 10%"
+        const awardsStyle = {
+            maxWidth: 538,
+            maxHeight: 81,
+            margin: "50px 0 50px 0"
         };
 
-        const headerStyle = {
-            width: "100%",
-            margin: "16px 0 16px 0",
-            fontSize: 22,
-            fontWeight: 700,
-            textAlign: "center"
+        const productBoxStyle = {
+            margin: "0 10% 50px 10%"
         };
 
         const textContainerStyle = {
-            position: "absolute",
-            display: "inline-block",
-            left: 200,
-            right: 200,
+            position: "relative",
+            width: "70%",
+            left: "15%",
+            marginBottom: 50,
             fontSize: bp({
                 [small]: 18,
                 [medium]: 20,
@@ -46,40 +44,9 @@ const OtherProducts = React.createClass({
             })
         };
 
-        const marginImageStyle = {
-            position: "absolute",
-            left: 30,
-            width: 80,
-            height: 1150
-        };
-
-        const textHeaderStyle = {
-            fontSize: 32,
-            fontWeight: 700,
-            width: "100%",
-            textAlign: "center",
-            margin: "48px 0 16px 0"
-        };
-
         const paragraphStyle = {
             fontSize: 24,
-            lineHeight: "32px",
-            marginTop: 30
-        };
-
-        const guaranteeStyle = _.extend({}, paragraphStyle, {
-            textAlign: "center",
-            fontWeight: 700
-        });
-
-        const quoteStyle = {
-            display: "inline-block",
-            fontStyle: "italic",
-            textAlign: "left"
-        };
-
-        const citationStyle = {
-            textAlign: "right"
+            lineHeight: "32px"
         };
 
         const magazineStyle = {
@@ -90,7 +57,12 @@ const OtherProducts = React.createClass({
             <div>
                 <Header>Other Products</Header>
                 <div style={contentStyle}>
-                    <div style={headerStyle}>Preschool Products</div>
+                    <div style={{width: "100%", textAlign: "center"}}>
+                        <img src="assets/images/other-products/awards.jpg" style={awardsStyle}/>
+                    </div>
+                    <div style={textContainerStyle}>
+                        <div style={paragraphStyle}>The Critical Thinking Co.&trade; is recommended by <span style={magazineStyle}>Learning® Magazine</span>, <span style={magazineStyle}>The Well-Trained Mind</span>, <span style={magazineStyle}>College Prep Genius</span>, <span style={magazineStyle}>Creative Child Magazine</span>, <span style={magazineStyle}>Dr. Toy</span>, and used by <span style={magazineStyle}>Sylvan Learning® Centers</span>, <span style={magazineStyle}>Club Z In-Home Tutoring</span>, leading U.S. public schools, and gifted and talented programs in 57 countries throughout the world.</div>
+                    </div>
                     <div style={productBoxStyle}>
                         <Product src="assets/images/other-products/asg.png" href="http://www.criticalthinking.com/alphabet-song-game.html">
                             <ProductTitle>Alphabet Song Game</ProductTitle>&nbsp;
@@ -123,25 +95,36 @@ const OtherProducts = React.createClass({
                             <br/>
                             The easy, fun way to teach the alphabet!  Students learn upper and lowercase letter names and shapes and how to distinguish similar, mirrored, and reverse letters.
                         </Product><hr/>
-                    </div>
-                    <div>
-                        <img src="assets/images/other-products/left.png" style={marginImageStyle}/>
-                        <div style={textContainerStyle}>
-                            <div style={textHeaderStyle}>150+ National Award-Winning Books and Software</div>
-                            <div style={paragraphStyle}>For more than 50 years, our fun, award-winning products have helped students of all abilities achieve better grades and higher test scores with highly effective lessons that sharpen the mind as they teach reading, writing, mathematics, science, and history.  We do not teach through drill and memorization or teach to the tests - we empower the mind!</div>
-                            <div style={paragraphStyle}>We design critical thinking into our products so students must carefully analyze what they are learning.  Deeper analysis produces deeper understanding, which results in better academic performance.  Over time, students who practice critical thinking learn to apply it throughout their education and life.</div>
-                            <div style={_.extend({}, paragraphStyle, {textAlign: "center", width: "100%"})}>
-                                <div style={quoteStyle}>
-                                    “If we teach children everything we know, their knowledge is limited to ours.&nbsp;
-                                    If we teach children to think, their knowledge is limitless.”<br/>
-                                    <div style={citationStyle}>- Michael Baker, President</div>
-                                </div>
-                            </div>
-                            <div style={paragraphStyle}>The Critical Thinking Co.&trade; is recommended by <span style={magazineStyle}>Learning® Magazine</span>, <span style={magazineStyle}>The Well-Trained Mind</span>, <span style={magazineStyle}>College Prep Genius</span>, <span style={magazineStyle}>Creative Child Magazine</span>, <span style={magazineStyle}>Dr. Toy</span>, and used by <span style={magazineStyle}>Sylvan Learning® Centers</span>, <span style={magazineStyle}>Club Z In-Home Tutoring</span>, leading U.S. public schools, and gifted and talented programs in 57 countries throughout the world.</div>
-                            <div style={guaranteeStyle}>We guarantee better grades and higher test scores or your money back.</div>
-                            <div style={paragraphStyle}>Children love our products and you’ll love what our products do for your child!</div>
-                        </div>
-                        <img src="assets/images/other-products/right.png" style={_.extend({}, marginImageStyle, {left: "auto", right: 30})}/>
+                        <Product src="assets/images/other-products/mind-benders.png" href="http://www.criticalthinking.com/mind-benders.html">
+                            <ProductTitle>Mind Benders</ProductTitle>&nbsp;
+                            <ProductGrade>6 levels:&nbsp; Grades PreK-12+</ProductGrade>
+                            <br/>
+                            Students analyze each story and its clues, identifying logical associations between people, places, and things, and using their powers of deduction to solve the puzzles.
+                        </Product><hr/>
+                        <Product src="assets/images/other-products/eic-beginning-1.png" href="http://www.criticalthinking.com/editor-in-chief.html">
+                            <ProductTitle>Editor in Chief Beginning</ProductTitle>&nbsp;
+                            <ProductGrade>2 levels:&nbsp; Grades 2-4</ProductGrade>
+                            <br/>
+                            Students learn grammar, punctuation, spelling, capitalization, and critical reading using a standards-based thinking approach rather than drill and practice.  After a concise lesson, students carefully analyze and edit stories, letters, and articles.  This approach helps students master concepts that are necessary to become skilled writers.
+                        </Product><hr/>
+                        <Product src="assets/images/other-products/eic-a1.png" href="http://www.criticalthinking.com/editor-in-chief.html">
+                            <ProductTitle>Editor in Chief</ProductTitle>&nbsp;
+                            <ProductGrade>6 levels:&nbsp; Grades 4-12+</ProductGrade>
+                            <br/>
+                            Students learn grammar, punctuation, spelling, capitalization, and critical reading using a standards-based thinking approach rather than drill and practice.  After a concise lesson, students carefully analyze and edit stories, letters, and articles.  This approach helps students master concepts that are necessary to become skilled writers.
+                        </Product><hr/>
+                        <Product src="assets/images/other-products/science-det.png" href="http://www.criticalthinking.com/science-detective.html">
+                            <ProductTitle>Science Detective</ProductTitle>&nbsp;
+                            <ProductGrade>2 levels:&nbsp; Grades 3-6</ProductGrade>
+                            <br/>
+                            Students analyze and synthesize the information from the text and the charts, tables, and graphs to answer critical thinking questions to improve their understanding of physical, life, and Earth science concepts.  Students also practice reading comprehension and inferential and deductive thinking skills.
+                        </Product><hr/>
+                        <Product src="assets/images/other-products/reading-det.png" href="http://www.criticalthinking.com/reading-detective.html">
+                            <ProductTitle>Reading Detective</ProductTitle>&nbsp;
+                            <ProductGrade>3 levels:&nbsp; Grades 3-8</ProductGrade>
+                            <br/>
+                            Students read and analyze literature passages and use analysis, synthesis, and vocabulary skills to answer the reading comprehension questions.  The activities help students understand reading concepts such as drawing inferences, making conclusions, determining cause-and-effect, and using context clues.
+                        </Product>
                     </div>
                 </div>
                 <Footer/>

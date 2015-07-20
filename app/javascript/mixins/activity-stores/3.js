@@ -90,11 +90,13 @@ module.exports = function(baseWordList) {
         },
 
         getCorrectChoices() {
-            return this.getCurrentChoiceGroup().choices.filter((choice) => choice.correct);
+            const choiceGroup = this.getCurrentChoiceGroup();
+            return choiceGroup ? choiceGroup.choices.filter((choice) => choice.correct) : [];
         },
 
         getIncorrectChoices() {
-            return this.getCurrentChoiceGroup().choices.filter((choice) => !choice.correct);
+            const choiceGroup = this.getCurrentChoiceGroup();
+            return choiceGroup ? choiceGroup.choices.filter((choice) => !choice.correct) : [];
         },
 
         getIndex() {

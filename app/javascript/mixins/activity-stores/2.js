@@ -121,7 +121,8 @@ module.exports = function(basePartList) {
         },
 
         isWaiting() {
-            return this.getCurrentChoiceGroup().some((choice) => choice.selected);
+            const currentChoiceGroup = this.getCurrentChoiceGroup();
+            return currentChoiceGroup && currentChoiceGroup.some((choice) => choice.selected);
         },
 
         isShowingFeedback() {

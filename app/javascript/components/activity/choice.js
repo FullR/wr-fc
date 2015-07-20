@@ -20,8 +20,9 @@ const Choice = React.createClass({
 
     render() {
         let width;
+        const {choiceCount, onRevealedClick, highlighted, revealed} = this.props;
 
-        switch(this.props.choiceCount) {
+        switch(choiceCount) {
             case 5: width = bp({
                 [micro]: 85,
                 [small]: 110,
@@ -74,19 +75,19 @@ const Choice = React.createClass({
             margin: "0 5px 0 5px",
             border: "3px solid #DCDC94",
             borderRadius: 10,
-            background: this.props.highlighted ? "#FFFD61" : "#F1F1D4",
+            background: highlighted ? "#FFFD61" : "#F1F1D4",
             cursor: "pointer",
             transform: "translate3d(0,0,0)",
 
             states: [
                 {hover: {
                     border: "3px solid #000000",
-                    background: this.props.onRevealedClick && this.props.revealed ? "#FFFD61" : "#F1F1D4"
+                    background: highlighted || (onRevealedClick && revealed) ? "#FFFD61" : "#F1F1D4"
                 }},
 
                 {active: {
                     border: "3px solid #000000",
-                    background: this.props.onRevealedClick && this.props.revealed ? "#FFFD61" : "#F1F1D4"
+                    background: highlighted || (onRevealedClick && revealed) ? "#FFFD61" : "#F1F1D4"
                 }}
             ],
 
@@ -97,7 +98,7 @@ const Choice = React.createClass({
                 }},
 
                 {revealed: {
-                    cursor: this.props.onRevealedClick ? "pointer" : "default",
+                    cursor: onRevealedClick ? "pointer" : "default",
                     border: "3px solid #000000"
                 }}
             ])

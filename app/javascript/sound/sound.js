@@ -55,10 +55,8 @@ _.extend(Sound.prototype, emitter, {
     },
 
     play(delay) {
-        if(!this.loaded) {
-            return Q.resolve();
-        }
-        return this.stop()
+        return this.load()
+            .then(() => this.stop())
             .then(() => {
                 let deferred;
                 if(delay) {

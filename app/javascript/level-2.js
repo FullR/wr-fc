@@ -3,7 +3,6 @@ const ready = require("polyfills/cordova/device-ready");
 ready.then(() => {
     const Dictionary = require("dictionary");
     const setup = require("setup");
-    console.log("deviceready fired");
 
     setup({
         level: {

@@ -9,6 +9,7 @@ const ExampleWord = React.createClass({
     mixins: [require("mixins/style")],
 
     render() {
+        const {onClick, hidden, wordId, underlinedPartId, highlighted} = this.props;
         const style = {
             width: "100%",
             fontSize: 32,
@@ -16,20 +17,20 @@ const ExampleWord = React.createClass({
             paddingTop: 10,
             paddingBottom: 10,
             transition: "opacity 0.25s",
-            opacity: this.props.hidden ? 0 : 1,
-//           cursor: playable ? "pointer" : null,
-//           background: this.isPlaying() ? colors.DISPLAY_BOX_BG_HOVER : null,
+            opacity: hidden ? 0 : 1,
+            cursor: !!onClick ? "pointer" : null,
+            background: highlighted ? colors.DISPLAY_BOX_BG_HOVER : null,
 
             states: [
                 {hover: {
-//                    background: playable ? colors.DISPLAY_BOX_BG_HOVER : null
+                    background: !!onClick ? colors.DISPLAY_BOX_BG_HOVER : null
                 }}
             ]
         };
 
         return (
             <div {...this.props} {...this.getStyle(style)}>
-                <Word wordId={this.props.wordId} underlinedPartId={this.props.underlinedPartId}/>: <Definition partId={this.props.wordId}/>
+                <Word wordId={wordId} underlinedPartId={underlinedPartId}/>: <Definition partId={wordId}/>
             </div>
         );
     }
