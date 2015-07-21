@@ -27,14 +27,10 @@ const ActivityType3 = React.createClass({
         require("mixins/audio")
     ],
 
-    renderTitle() {
-        return (
-            <span>{this.props.title}</span>
-        );
-    },
-
-    renderInstructions() {
-        return this.props.instructions;
+    componentDidMount() {
+        if(this.state.isWaiting() && !this.state.isShowingFeedback()) {
+            this.playCorrectWord(250);
+        }
     },
 
     playCorrectWord(delay=0) {
@@ -59,10 +55,14 @@ const ActivityType3 = React.createClass({
         this.props.actions.continueActivity();
     },
 
-    componentDidMount() {
-        if(this.state.isWaiting() && !this.state.isShowingFeedback()) {
-            this.playCorrectWord(250);
-        }
+    renderTitle() {
+        return (
+            <span>{this.props.title}</span>
+        );
+    },
+
+    renderInstructions() {
+        return this.props.instructions;
     },
 
     renderActivity() {

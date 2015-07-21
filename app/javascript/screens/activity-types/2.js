@@ -29,12 +29,10 @@ const ActivityType2 = React.createClass({
         require("mixins/audio")
     ],
 
-    renderTitle() {
-        return (<span>{this.props.title}</span>);
-    },
-
-    renderInstructions() {
-        return this.props.instructions;
+    componentDidMount() {
+        if(this.state.isWaiting() && !this.state.isShowingFeedback()) {
+            this.playBoth();
+        }
     },
 
     playCorrectPart(delay=0) {
@@ -67,12 +65,6 @@ const ActivityType2 = React.createClass({
         this.stop();
     },
 
-    componentDidMount() {
-        if(this.state.isWaiting() && !this.state.isShowingFeedback()) {
-            this.playBoth();
-        }
-    },
-
     selectChoice(choice) {
         this.props.actions.selectChoice(choice);
         setTimeout(() => this.playBoth(), 1);
@@ -85,6 +77,14 @@ const ActivityType2 = React.createClass({
         }
         this.stop();
         this.props.actions.continueActivity();
+    },
+
+    renderTitle() {
+        return (<span>{this.props.title}</span>);
+    },
+
+    renderInstructions() {
+        return this.props.instructions;
     },
 
     renderActivity() {

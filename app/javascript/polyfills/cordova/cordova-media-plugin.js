@@ -45,10 +45,10 @@ MediaPollyfill.prototype = {
     },
 
     release() {
-        //if(this.sound) {
-        //    this.sound.unload();
-        //    this.sound = null;
-        //}
+        if(this.sound) {
+            this.sound.unload();
+            this.sound = null;
+        }
     }
 };
 

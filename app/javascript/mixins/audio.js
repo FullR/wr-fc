@@ -13,6 +13,14 @@ module.exports = {
     });
   },
 
+  load(...paths) {
+    return Promise.all(_(paths).map(soundManager.get).invoke("load").valueOf());
+  },
+
+  release(...paths) {
+    _(paths).map(soundManager.get).invoke("stop").map(soundManager.release);
+  },
+
   isPlaying(path) {
     return PLAYING.has(path);
   },

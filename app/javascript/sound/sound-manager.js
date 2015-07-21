@@ -40,16 +40,19 @@ function stop() {
 }
 
 function release(sound) {
-    //logInfo();
+    logInfo();
     sound.stop();
     sound.release();
 }
 
 function logInfo() {
+    const loaded = sounds.filter((sound) => sound.isLoaded());
     console.log(`
         Sound Info
             sounds.length = ${sounds.length}
-            loaded.length = ${sounds.filter((sound) => sound.isLoaded()).length}
+            loaded.length = ${loaded.length}
+
+${_.pluck(loaded, "path").join("\n")}
     `);
 }
 
