@@ -136,7 +136,6 @@ const Choice = React.createClass({
                 transition: `width ${animationSpeed}s, border-width ${animationSpeed}s, margin ${animationSpeed}s`,
                 width: 0,
                 margin: 0,
-                //padding: 0,
                 border: "0px solid #DCDC94",
                 borderWidth: 0
             });

@@ -30,12 +30,20 @@ const ActivityType1 = React.createClass({
 
     componentDidMount() {
         if(!this.state.isShowingFeedback()) {
+            this.loadSounds();
             if(this.state.isWaiting()) {
                 this.playDefinitionSound(250);
             } else {
                 this.playWordSound(250);
             }
         }
+    },
+
+    loadSounds() {
+        return this.load(
+            this.state.getCorrectSound(),
+            this.state.getCorrectDefinitionSound()
+        );
     },
 
     playWordSound(delay=0) {
@@ -61,7 +69,10 @@ const ActivityType1 = React.createClass({
     continueActivity() {
         if(this.state.isWaiting()) {
             this.props.actions.continueActivity();
-            setTimeout(() => this.playWordSound(), 1);
+            
+            setTimeout(() => {
+                this.playWordSound();
+            }, 1);
         }
     },
 

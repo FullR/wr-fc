@@ -29,7 +29,7 @@ const ContinueButton = React.createClass({
         };
 
         return (
-            <div {...this.props} {...this.getStyle(style)} onTouchStart={this.props.onClick}/>
+            <div {...this.props} {...this.getStyle(style)} onTouchStart={this.props.onClick} onClick={null}/>
         );
     }
 });

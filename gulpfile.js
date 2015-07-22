@@ -197,8 +197,20 @@ function desktop(level) {
 
 function ios(level) {
     return function() {
-        //return exec("cordova run ios --device", {cwd: "./cordova-builds/"+level, maxBuffer: Infinity, stdio: "inherit"});
-        spawn("cordova", ["run", "ios", "--device"], {cwd: "./cordova-builds/"+level, stdio: "inherit"});
+        return Q.Promise(function(resolve, reject) {
+            var child = spawn("cordova", ["run", "ios", "--device"], {cwd: "./cordova-builds/"+level});
+
+            child.stdout.on("data", function(data) {
+                process.stdout.write(data);
+                if(data && data.toString().match(/---- STARTING APPLICATION ----/)) {
+                    console.log("\n\nStopping child process\n\n");
+                    child.kill();
+                    resolve();
+                }
+            });
+        }).catch(function(error) {
+            console.log("Failed: " + error);
+        });
     };
 }
 

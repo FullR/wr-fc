@@ -5,6 +5,8 @@ const Sound = require("./sound");
 const sounds = [];
 const soundIndex = {};
 
+let toRelease = [];
+
 function get(path, options={}) {
     const extention = options.extention || "";
     let sound;
@@ -21,28 +23,35 @@ function get(path, options={}) {
     return sound;
 }
 
-function play(path, delay, releaseAfter) {
+function play(path, delay, autoRelease) {
     const sound = get(path);
-    return sound.play(delay)
-        .then(() => {
-            if(releaseAfter) {
-                setTimeout(() => {
-                    release(sound);
-                }, releaseAfter);
-            }
-        });
+
+    return sound.play(delay).then(() => {
+        if(autoRelease) {
+            release(sound);
+        }
+    });
 }
 
 function stop() {
-    return Q.all(sounds.map(function(sound) {
+    return sounds.map(function(sound) {
         return sound.stop();
-    }));
+    });
 }
 
 function release(sound) {
-    logInfo();
+    if(!sound) {
+        console.warn("Falsey value passed to soundManager.release. No-op");
+        return;
+    }
     sound.stop();
-    sound.release();
+    //console.log("Releasing " + sound.path);
+    toRelease.push(sound);
+    if(toRelease.length >= 20) {
+        //console.log("Releasing old audio");
+        _.invoke(toRelease, "release");
+        toRelease = [];
+    }
 }
 
 function logInfo() {
@@ -51,11 +60,19 @@ function logInfo() {
         Sound Info
             sounds.length = ${sounds.length}
             loaded.length = ${loaded.length}
-
-${_.pluck(loaded, "path").join("\n")}
+            toRelease.length = ${toRelease.length}
     `);
 }
 
+/*setInterval(() => {
+    if(toRelease.length) {
+        const sound = toRelease.shift();
+        sound.stop();
+        sound.release();
+        logInfo();
+    }
+}, 3000);
+*/
 const soundManager = {get, release, play, stop};
 
 module.exports = soundManager;

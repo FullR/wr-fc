@@ -104,6 +104,7 @@ _.extend(Sound.prototype, emitter, {
 
     release() {
         if(this.media) {
+            console.log(`Releasing ${this.path}`);
             this.fire("end");
             this.media.release();
             this.media = null;

@@ -1,20 +1,21 @@
 const soundManager = require("sound/sound-manager");
+const Q = require("q");
 const _ = require("lodash");
 
 const PLAYING = new Set();
 
 module.exports = {
-  play(path, delay, releaseAfter) {
+  play(path, delay, autoRelease) {
     PLAYING.add(path);
-    this.setState(this.state);
-    return soundManager.play(path, delay, releaseAfter).then(() => {
+    this.forceUpdate();
+    return soundManager.play(path, delay, autoRelease).then(() => {
       PLAYING.delete(path);
-      this.setState(this.state);
+      this.forceUpdate();
     });
   },
 
   load(...paths) {
-    return Promise.all(_(paths).map(soundManager.get).invoke("load").valueOf());
+    return Q.all(_(paths).map(soundManager.get).invoke("load").valueOf());
   },
 
   release(...paths) {
