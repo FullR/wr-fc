@@ -28,8 +28,9 @@ const ContinueButton = React.createClass({
             ]
         };
 
-        return (
-            <div {...this.props} {...this.getStyle(style)} onTouchStart={this.props.onClick} onClick={null}/>
+        return (window.__platform.cordova ?
+            <div {...this.props} {...this.getStyle(style)} onTouchStart={this.props.onClick} onClick={null}/> :
+            <div {...this.props} {...this.getStyle(style)} onTouchStart={null} onClick={this.props.onClick}/>
         );
     }
 });

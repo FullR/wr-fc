@@ -1,12 +1,15 @@
 const _ = require("lodash");
 const {StyleResolverMixin, BrowserStateMixin} = require("radium");
+const {cordova} = (window.__platform || {});
 
 module.exports = {
     mixins: [StyleResolverMixin, BrowserStateMixin],
     getListeners() {
         const eventListeners = this.getBrowserStateEvents();
-        eventListeners.onTouchStart = eventListeners.onMouseEnter;
-        eventListeners.onTouchCancel = eventListeners.onTouchEnd = eventListeners.onMouseLeave;
+        if(cordova) {
+            eventListeners.onTouchStart = eventListeners.onMouseEnter;
+            eventListeners.onTouchCancel = eventListeners.onTouchEnd = eventListeners.onMouseLeave;
+        }
         return eventListeners;
     },
 
