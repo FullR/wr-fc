@@ -1,6 +1,5 @@
 const React = require("react");
 const _ = require("lodash");
-const {Link} = require("react-router");
 const bp = require("utility/bp");
 const {micro, small, medium} = require("sizes");
 
@@ -41,7 +40,7 @@ const MenuButton = React.createClass({
         }));
 
         return (
-            <Link {...this.getStyle(style)} to="menu" className="menu-button"/>
+            <a {...this.getStyle(style)} href="#menu" className="menu-button"/>
         );
     }
 });

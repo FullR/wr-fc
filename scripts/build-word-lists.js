@@ -2,7 +2,7 @@ var Q = require("q");
 var _ = require("lodash");
 var fs = require("fs");
 var exec = Q.nfbind(require("child_process").exec);
-var masterList = JSON.parse(fs.readFileSync(__dirname+"/../master-word-list.json"));//require("../master-word-list");
+var masterList = require("../master-word-list");//JSON.parse(fs.readFileSync(__dirname+"/../master-word-list.json"));//require("../master-word-list");
 var mkdirp = Q.nfbind(require("mkdirp"));
 
 function trim(s) {

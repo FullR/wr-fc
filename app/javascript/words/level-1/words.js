@@ -4223,7 +4223,7 @@ module.exports = [
         "level": 1,
         "type": "word",
         "id": "luminary",
-        "definition": "an object, like a star, that gives off light; a famous person (\"star\")",
+        "definition": "an object, like a star, that gives off light; a famous person (star)",
         "prefixes": [],
         "roots": [
             "root-lumin"
@@ -5451,7 +5451,7 @@ module.exports = [
         ],
         "choosableParts": [
             "prefix-ac",
-            "root-nov",
+            "root-lumin",
             "root-ceed",
             "suffix-ary"
         ],
@@ -5543,7 +5543,7 @@ module.exports = [
             "prefix-bi",
             "root-pugn",
             "root-cept",
-            "suffix-ation"
+            "suffix-ition"
         ],
         "key": "word-renovate",
         "soundFile": "word-parts/word/W-renovate"

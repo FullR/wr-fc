@@ -1875,7 +1875,7 @@ module.exports = [
             "suffix-able"
         ],
         "choosableParts": [
-            "prefix-un",
+            "prefix-dis",
             "root-graphy",
             "root-mar",
             "suffix-ness"

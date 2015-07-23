@@ -1,7 +1,6 @@
 const React = require("react");
 const WebLink = require("components/utility/web-link");
 const colors = require("colors");
-const {Link} = require("react-router");
 const bp = require("utility/bp");
 const {micro, small, medium} = require("sizes");
 

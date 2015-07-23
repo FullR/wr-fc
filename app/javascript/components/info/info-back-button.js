@@ -45,7 +45,7 @@ const InfoBackButton = React.createClass({
         };
 
         return (
-            <Link {...this.getStyle(style)} to="menu">Back</Link>
+            <a {...this.getStyle(style)} href="#menu">Back</a>
         );
     }
 });

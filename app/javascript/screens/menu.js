@@ -1,7 +1,6 @@
 const React = require("react");
 const Reflux = require("reflux");
 const _ = require("lodash");
-const {Link} = require("react-router");
 const s = require("utility/styles");
 const appStore = require("app-store");
 const bp = require("utility/bp");
@@ -188,10 +187,10 @@ const Menu = React.createClass({
                 <ChangeUserButton onClick={this.openModal.bind(this, changeUserModal)}/>
                 <CloseButton/>
                 <FooterMenu>
-                    <FooterLink to="about">About</FooterLink>
-                    <FooterLink to="license">License Agreement</FooterLink>
-                    <FooterLink to="products">Other Products</FooterLink>
-                    <FooterLink to="credits">Credits</FooterLink>
+                    <FooterLink href="#about">About</FooterLink>
+                    <FooterLink href="#license">License Agreement</FooterLink>
+                    <FooterLink href="#products">Other Products</FooterLink>
+                    <FooterLink href="#credits">Credits</FooterLink>
                     <FooterLink onClick={this.openModal.bind(this, clearModal)}>Clear User Data</FooterLink>
                 </FooterMenu>
             </div>

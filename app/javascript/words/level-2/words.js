@@ -1315,7 +1315,7 @@ module.exports = [
         "suffixes": [],
         "choosableParts": [
             "prefix-super",
-            "root-dign",
+            "root-sens",
             "root-solute",
             "suffix-ative"
         ],
@@ -2346,7 +2346,7 @@ module.exports = [
             "prefix-circum",
             "root-migr",
             "root-nom",
-            "suffix-ory"
+            "suffix-itory"
         ],
         "key": "word-dormancy",
         "soundFile": "word-parts/word/W-dormancy"

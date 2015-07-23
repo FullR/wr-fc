@@ -1,6 +1,6 @@
 const React = require("react");
 const _ = require("lodash");
-const {Link} = require("react-router");
+//const {Link} = require("react-router");
 const appStore = require("app-store");
 const Logo = require("components/menu/logo");
 
@@ -35,10 +35,9 @@ const Splash = React.createClass({
         return (
             <div>
                 <Logo style={logoStyle}/>
-                <Link style={style} to={appStore.getUsername().length ? "menu" : "login"}/>
-                <Link to="sounds" style={soundLinkStyle}>Sounds</Link>
+                <a style={style} href={appStore.getUsername().length ? "#menu" : "#login"}/>
             </div>
-        );
+        ); //<Link to="sounds" style={soundLinkStyle}>Sounds</Link>
     }
 });
 

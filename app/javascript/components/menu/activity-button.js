@@ -1,6 +1,5 @@
 const React = require("react");
 const _ = require("lodash");
-const {Link} = require("react-router");
 const s = require("utility/styles");
 const bp = require("utility/bp");
 const colors = require("colors");
@@ -80,10 +79,10 @@ const ActivityButton = React.createClass({
         };
 
         return (
-            <Link {...this.getStyle(style)} to={"activity-"+this.props.activityId}>
+            <a {...this.getStyle(style)} href={`#activity/${this.props.activityId}`}>
                 <div style={indexStyle}>{this.props.index || this.props.activityId}</div>
                 {this.props.children}
-            </Link>
+            </a>
         );
     }
 });

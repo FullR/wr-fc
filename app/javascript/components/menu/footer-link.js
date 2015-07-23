@@ -1,6 +1,5 @@
 const React = require("react");
 const bp = require("utility/bp");
-const {Link} = require("react-router");
 const {micro, small, medium} = require("sizes");
 
 const FooterLink = React.createClass({
@@ -25,8 +24,8 @@ const FooterLink = React.createClass({
             ]
         });
 
-        return this.props.to ?
-            <Link {...this.getStyle(style)} {...this.props}>{this.props.children}</Link> :
+        return this.props.href ?
+            <a {...this.getStyle(style)} {...this.props}>{this.props.children}</a> :
             <span {...this.getStyle(style)} {...this.props}>{this.props.children}</span>;
     }
 });

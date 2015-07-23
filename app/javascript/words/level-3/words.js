@@ -1488,7 +1488,7 @@ module.exports = [
         "choosableParts": [
             "prefix-syn",
             "root-meter",
-            "root-nomo",
+            "root-nome",
             "suffix-on"
         ],
         "key": "word-cardiology",
@@ -1978,7 +1978,7 @@ module.exports = [
         "choosableParts": [
             "prefix-sym",
             "root-phil",
-            "root-micro",
+            "root-meso",
             "suffix-oid"
         ],
         "key": "word-diagram",
@@ -3692,7 +3692,7 @@ module.exports = [
             "prefix-amphi",
             "root-gynec",
             "root-gram",
-            "suffix-ics"
+            "suffix-ism"
         ],
         "key": "word-logic",
         "soundFile": "word-parts/word/W-logic"
@@ -4386,7 +4386,7 @@ module.exports = [
         ],
         "suffixes": [],
         "choosableParts": [
-            "prefix-bi",
+            "prefix-de",
             "root-naut",
             "root-derm",
             "suffix-ia"
@@ -4740,7 +4740,7 @@ module.exports = [
         "choosableParts": [
             "prefix-tri",
             "root-philo",
-            "root-crac",
+            "root-clast",
             "suffix-esis"
         ],
         "key": "word-neography",
@@ -4846,7 +4846,7 @@ module.exports = [
             "suffix-ous"
         ],
         "choosableParts": [
-            "prefix-ant",
+            "prefix-anti",
             "root-pod",
             "root-clast",
             "suffix-cide"
@@ -4952,7 +4952,7 @@ module.exports = [
             "suffix-ic"
         ],
         "choosableParts": [
-            "prefix-eu",
+            "prefix-exo",
             "root-scope",
             "root-chron",
             "suffix-er"
@@ -5084,7 +5084,7 @@ module.exports = [
         "suffixes": [],
         "choosableParts": [
             "prefix-iso",
-            "root-tele",
+            "root-scope",
             "root-chromo",
             "suffix-er"
         ],
@@ -5599,7 +5599,7 @@ module.exports = [
             "suffix-ic"
         ],
         "choosableParts": [
-            "prefix-hypo",
+            "prefix-peri",
             "root-bronch",
             "root-biblio",
             "prefix-ant"
@@ -5751,7 +5751,7 @@ module.exports = [
         "choosableParts": [
             "prefix-syn",
             "root-crac",
-            "root-bio",
+            "root-grapho",
             "prefix-ant"
         ],
         "key": "word-psychogenic",
@@ -6424,7 +6424,7 @@ module.exports = [
             "suffix-y"
         ],
         "choosableParts": [
-            "prefix-anti",
+            "prefix-ant",
             "root-gram",
             "root-andro",
             "suffix-ac"

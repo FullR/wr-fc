@@ -1,7 +1,6 @@
 const React = require("react");
 const _ = require("lodash");
 const fastclick = require("fastclick");
-const Router = require("react-router");
 const ready = require("polyfills/cordova/device-ready");
 
 const images = [
@@ -24,6 +23,7 @@ const images = [
 ];
 
 module.exports = function setup(globals) {
+    let router;
     if(window.logger) {
         window.console = window.logger;
     }
@@ -31,12 +31,13 @@ module.exports = function setup(globals) {
     console.log("---- STARTING APPLICATION ----\n\n\n");
     require("babelify/polyfill");
     require("polyfills/function-prototype-bind");
-
     _.extend(window, globals);
-    React.initializeTouchEvents(true);
-    document.getElementsByTagName("title")[0].innerHTML = `Word Roots ${window.level.title} Flashcards`;
+
+    const Router = require("router");
     const appStore = require("app-store");
-    let router;
+    React.initializeTouchEvents(true);
+
+    document.getElementsByTagName("title")[0].innerHTML = `Word Roots ${window.level.title} Flashcards`;
     if(!window.__platform.cordova) {
         document.body.classList.add("hover-enabled");
     }
@@ -53,15 +54,8 @@ module.exports = function setup(globals) {
     if(window.navigator && window.navigator.splashscreen) {
         window.navigator.splashscreen.hide();
     }
+
     // Cordova media polyfill
     require("polyfills/cordova/cordova-media-plugin")();
-    router = Router.create(require("routes"));
-
-    router.run(function(Handler, state) {
-        React.withContext({
-            router: router
-        }, function() {
-            React.render(<Handler {...state}/>, document.body);
-        });
-    });
+    React.render(<Router/>, document.body);
 };

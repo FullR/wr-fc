@@ -34,7 +34,7 @@ const AudioInspector = React.createClass({
 
         return (
             <div style={{overflow: "auto", height: "100%", padding: 30, fontSize: 18, lineHeight: "20px"}}>
-                <div><Link to="/">Back</Link></div>
+                <div><a href="#splash">Back</a></div>
                 <input value={this.state.filter} onChange={this.updateFilter}/>
                 <table>
                     <thead></thead>
