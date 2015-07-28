@@ -5,6 +5,7 @@ const s = require("utility/styles");
 const appStore = require("app-store");
 const bp = require("utility/bp");
 const {small, medium} = require("sizes");
+const hasher = require("hasher");
 
 const Header = require("components/menu/header");
 const ButtonContainer = require("components/menu/button-container");
@@ -69,7 +70,7 @@ const Menu = React.createClass({
 
     changeUser() {
         reset();
-        this.context.router.transitionTo("login");
+        hasher.setHash("login");
     },
 
     renderLabel(activityId) {
@@ -90,7 +91,7 @@ const Menu = React.createClass({
 
     render() {
         const isActive = this.state.appStore.isLastActivity.bind(this.state.appStore);
-        const isBeginning = (window.level.id === "beginning");
+        const isBeginning = (window.level.levelId === "beginning");
         const clearModal = (
             <Modal
                 key="clear-user-modal"

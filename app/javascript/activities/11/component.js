@@ -6,7 +6,7 @@ const store = require("./store");
 
 const Activity11 = React.createClass({
     render() {
-        const index = window.level.id === "beginning" ? "10" : "11";
+        const index = window.level.levelId === "beginning" ? "10" : "11";
         const title = `Game ${index} - Three Word Parts`;
         const instructions = "Touch the three word parts that together make a word.";
         const isBeginning = (window.level.id === "beginning");
@@ -18,7 +18,7 @@ const Activity11 = React.createClass({
             title={title}
             instructions={instructions}
             choiceCount={4}
-            next={isBeginning ? null : "activity-12"}
+            next={isBeginning ? null : "activity/12"}
             demoText={`There are ${window.dictionary.words.length - 2} additional words in the full version.`}/>);
     }
 });

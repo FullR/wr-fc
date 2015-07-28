@@ -14,15 +14,15 @@ module.exports = {
     },
 
     addKeyListeners() {
-        // this.on("keydown", ({keyCode}) => {
-        //     const canSelect = !this.state.isShowingFeedback() && !this.state.isWaiting();
+        this.on("keydown", ({keyCode}) => {
+            const canSelect = !this.state.isShowingFeedback() && !this.state.isWaiting();
 
-        //     if(keyCode === 32 && !canSelect) {
-        //         this.props.actions.continueActivity();
-        //     } else if(keyCode === 192) { // TODO: Remove/restrict before releasing
-        //         this.debugSelectCorrect();
-        //     }
-        // });
+            if(keyCode === 32 && !canSelect) {
+                this.props.actions.continueActivity();
+            } else if(keyCode === 192) { // TODO: Remove/restrict before releasing
+                this.debugSelectCorrect();
+            }
+        });
     },
 
     debugSelectCorrect() {

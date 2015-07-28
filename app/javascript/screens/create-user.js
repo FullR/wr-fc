@@ -4,6 +4,7 @@ const colors = require("colors");
 const {StyleResolverMixin, BrowserStateMixin} = require("radium");
 const bp = require("utility/bp");
 const {micro, small, medium} = require("sizes");
+const hasher = require("hasher");
 
 const style = {
     width: "100%",
@@ -38,9 +39,6 @@ const inputStyle = {
 
 const CreateUserScreen = React.createClass({
     mixins: [StyleResolverMixin, BrowserStateMixin],
-    contextTypes: {
-        router: React.PropTypes.func
-    },
 
     getInitialState() {
         return {
@@ -59,7 +57,7 @@ const CreateUserScreen = React.createClass({
         event.preventDefault();
         if(this.state.username.trim().length) {
             setUsername(this.state.username);
-            this.context.router.transitionTo("menu");
+            hasher.setHash("menu");
         }
     },
 

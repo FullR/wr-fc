@@ -21,7 +21,7 @@ const ContinueButton = React.createClass({
             bottom: "15%",
             marginBottom: -20,
             right: "2.5%",
-            states: [
+            states: window.__platform.cordova ? [] : [ // make sure the hover state never appears on mobile platforms
                 {hover: {
                     backgroundImage: "url('assets/images/continue-button_hover.png')"
                 }}

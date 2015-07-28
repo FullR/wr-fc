@@ -14,7 +14,7 @@ const Activity6 = React.createClass({
             actions={actions} 
             title={title}
             instructions={instructions}
-            next="activity-7"
+            next="activity/7"
             demoText={`There are ${window.dictionary.suffixes.length - 2} additional suffixes in the full version.`}/>);
     }
 });

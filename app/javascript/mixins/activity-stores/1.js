@@ -15,7 +15,7 @@ module.exports = function(basePartList) {
                 const partId = this.getCorrectChoice().partId;
                 soundPath = dictionary.get(partId).soundFile;
             } catch(error) {
-                console.log("Failed to get correct sound path",error);
+                console.log("Failed to get correct sound path",error.stack);
             }
             return soundPath;
         },
@@ -26,7 +26,7 @@ module.exports = function(basePartList) {
                 const partId = this.getCorrectChoice().partId;
                 soundPath = dictionary.get(partId).definitionSoundFile;
             } catch(error) {
-                console.log("Failed to get correct definition sound path:",error);
+                console.log("Failed to get correct definition sound path:",error.stack);
             }
             return soundPath;
         },
@@ -119,7 +119,7 @@ module.exports = function(basePartList) {
         },
 
         getCorrectChoice() {
-            return this.getCurrentChoiceGroup().filter((choice) => choice.correct)[0];
+            return this.getCurrentChoiceGroup().filter((choice) => choice.correct)[0]; //TODO: Check for falsy value
         },
 
         getCorrectChoices() {

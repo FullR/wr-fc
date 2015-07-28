@@ -1,5 +1,4 @@
 const React = require("react");
-const {Link} = require("react-router");
 const colors = require("colors");
 const bp = require("utility/bp");
 const {micro, small, medium} = require("sizes");

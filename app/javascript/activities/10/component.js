@@ -6,7 +6,7 @@ const store = require("./store");
 
 const Activity10 = React.createClass({
     render() {
-        const index = window.level.id === "beginning" ? "9" : "10";
+        const index = window.level.levelId === "beginning" ? "9" : "10";
         const title = `Game ${index} - Two Word Parts`;
         const instructions = "Touch the two word parts that together make a word.";
         return (<ActivityType3
@@ -16,7 +16,7 @@ const Activity10 = React.createClass({
             actions={actions}
             title={title}
             instructions={instructions}
-            next="activity-11"
+            next="activity/11"
             demoText={`There are ${window.dictionary.words.length - 2} additional words in the full version.`}/>);
     }
 });

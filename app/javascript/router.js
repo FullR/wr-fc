@@ -47,13 +47,13 @@ const Router = React.createClass({
 
     const [routeName, activityId] = this.state.hash.split("/");
     switch(routeName) {
-      case "splash": return <Splash/>;
-      case "menu": return <Menu/>;
-      case "login": return <Login/>;
-      case "about": return <About/>;
-      case "license": return <License/>;
-      case "products": return <About/>;
-      case "credits": return <Credits/>;
+      case "splash": return (<Splash/>);
+      case "menu": return (<Menu/>);
+      case "login": return (<Login/>);
+      case "about": return (<About/>);
+      case "license": return (<License/>);
+      case "products": return (<Products/>);
+      case "credits": return (<Credits/>);
 
       case "activity": 
         const Activity = Activities[activityId];
@@ -62,7 +62,7 @@ const Router = React.createClass({
             <Activity/>
           </ActivityContainer>
         );
-      default: return <Splash/>;
+      default: return (<Splash/>);
     }
   },
 

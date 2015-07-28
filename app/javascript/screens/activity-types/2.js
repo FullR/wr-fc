@@ -51,6 +51,12 @@ const ActivityType2 = React.createClass({
 
     playBoth() {
         this.stopAll();
+        this.load(
+            this.state.getCorrectSound(),
+            this.state.getExampleSoundPath(),
+            "as-in"
+        );
+
         this.queue = queue([
             ["playCorrectPart"],
             ["playAsIn"],

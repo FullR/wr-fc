@@ -24,9 +24,11 @@ _.extend(Sound.prototype, emitter, {
                                      this._finishedPlaying.bind(this));
 
             if(media.load) {
-                loadPromise = media.load().then(function() {
+                this._isLoading = true;
+                loadPromise = media.load().then(() => {
+                    this._isLoading = false;
                     return this;
-                }.bind(this));
+                });
             }
             else {
                 loadPromise = Q.resolve(this);
@@ -103,12 +105,14 @@ _.extend(Sound.prototype, emitter, {
     },
 
     release() {
-        if(this.media) {
-            console.log(`Releasing ${this.path}`);
-            this.fire("end");
-            this.media.release();
-            this.media = null;
-            this._loadPromise = null;
+        if(this._loadPromise) {
+            this._loadPromise.then(() => {
+                console.log(`Releasing ${this.path}`);
+                this.fire("end");
+                this.media.release();
+                this.media = null;
+                this._loadPromise = null;
+            });
         }
     }
 });

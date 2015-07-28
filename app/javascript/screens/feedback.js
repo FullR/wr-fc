@@ -1,4 +1,5 @@
 const React = require("react");
+const hasher = require("hasher");
 const _ = require("lodash");
 const Reflux = require("reflux");
 const ScoreTable = require("components/feedback/score-table");
@@ -23,14 +24,13 @@ const buttonStyle = {
 const Feedback = React.createClass({
     mixins: [Reflux.connect(appStore, "app")],
 
-    contextTypes: {
-        router: React.PropTypes.func,
-        level: React.PropTypes.object,
-        dictionary: React.PropTypes.object
-    },
-
     goToNextGame() {
-        this.context.router.transitionTo(this.props.next);
+        //this.context.router.transitionTo(this.props.next);
+        if(this.props.next) {
+            hasher.setHash(this.props.next);
+        } else {
+            console.warn("Attempting to transition to undefined route");
+        }
     },
 
     canReview() {
