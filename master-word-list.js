@@ -783,7 +783,7 @@ module.exports = [
     {"level": 0, "type": "word", "id": "pharmacist", "definition": "one who is trained to dispense drugs (medicines)", "prefixes": [], "roots": ["pharmac"], "suffixes": ["ist"], "choosableParts": ["un","loc","thermo","ty"]},
     {"level": 0, "type": "word", "id": "plentiful", "definition": "having or yielding plenty; abundant", "prefixes": [], "roots": ["plen"], "suffixes": ["tiful"], "choosableParts": ["ob","hydro","therm","iment"]},
     {"level": 0, "type": "word", "id": "plenty", "definition": "state of having a full amount", "prefixes": [], "roots": ["plen"], "suffixes": ["ty"], "choosableParts": ["com","happy","tele","ly"]},
-    {"level": 0, "type": "word", "id": "portable", "definition": "able to be carried from one place to another", "prefixes": [], "roots": ["port"], "suffixes": ["able"], "choosableParts": ["dis","graphy","mar","ness"]},
+    {"level": 0, "type": "word", "id": "portable", "definition": "able to be carried from one place to another", "prefixes": [], "roots": ["port"], "suffixes": ["able"], "choosableParts": ["im","graphy","mar","ness"]},
     {"level": 0, "type": "word", "id": "predict", "definition": "to say that a thing will happen before it actually does", "prefixes": ["pre"], "roots": ["dict"], "suffixes": [], "choosableParts": ["op","grad","struct","olog"]},
     {"level": 0, "type": "word", "id": "prediction", "definition": "a statement of what a person or group thinks will happen before it actually does", "prefixes": ["pre"], "roots": ["dict"], "suffixes": ["ion"], "choosableParts": ["de","corn","stat","ology"]},
     {"level": 0, "type": "word", "id": "preservation", "definition": "the process of keeping something safe or protected before anything can harm it", "prefixes": ["pre"], "roots": ["serv"], "suffixes": ["ation"], "choosableParts": ["un","flex","naut","ure"]},
@@ -1444,7 +1444,7 @@ module.exports = [
     {"level": 3, "type": "word", "id": "agronomy", "definition": "management of farmland", "prefixes": [], "roots": ["agro", "nom"], "suffixes": ["y"], "choosableParts": ["amphi","andro","xeno","ium"]},
     {"level": 3, "type": "word", "id": "amphibious", "definition": "able to live on both land and water", "prefixes": ["amphi"], "roots": ["bi"], "suffixes": ["ous"], "choosableParts": ["ana","agro","thermo","y"]},
     {"level": 3, "type": "word", "id": "anachronism", "definition": "something out of place or time", "prefixes": ["ana"], "roots": ["chron"], "suffixes": ["ism"], "choosableParts": ["ant","acro","therm","y"]},
-    {"level": 3, "type": "word", "id": "anarchy", "definition": "absence of rule", "prefixes": ["an"], "roots": ["arch"], "suffixes": ["y"], "choosableParts": ["anti","anthrope","therm","counter"]},
+    {"level": 3, "type": "word", "id": "anarchy", "definition": "absence of rule", "prefixes": ["an"], "roots": ["arch"], "suffixes": ["y"], "choosableParts": ["anti","anthrope","therm","ial"]},
     {"level": 3, "type": "word", "id": "androcentric", "definition": "centered around male interests", "prefixes": [], "roots": ["andro", "centr"], "suffixes": ["ic"], "choosableParts": ["eu","anthropo","therap","sis"]},
     {"level": 3, "type": "word", "id": "androcracy", "definition": "political and social rule by men", "prefixes": [], "roots": ["andro", "crac"], "suffixes": ["y"], "choosableParts": ["de","arch","therap","ous"]},
     {"level": 3, "type": "word", "id": "androgen", "definition": "male sex hormone", "prefixes": [], "roots": ["andro", "gen"], "suffixes": [], "choosableParts": ["dia","arthr","theo","sis"]},
@@ -1675,10 +1675,10 @@ module.exports = [
     {"level": 3, "type": "word", "id": "perianth", "definition": "the outer part of a flower", "prefixes": ["peri"], "roots": ["anth"], "suffixes": [], "choosableParts": ["amphi","phil","geo","itis"]},
     {"level": 3, "type": "word", "id": "pericardial", "definition": "situated around the heart", "prefixes": ["peri"], "roots": ["cardi"], "suffixes": ["al"], "choosableParts": ["hyper","somato","chromo","ic"]},
     {"level": 3, "type": "word", "id": "perihelion", "definition": "point closest to the sun in a planet's orbit", "prefixes": ["peri"], "roots": ["heli"], "suffixes": ["on"], "choosableParts": ["hypo","taph","chromo","ic"]},
-    {"level": 3, "type": "word", "id": "perimeter", "definition": "circumference or distance around a figure", "prefixes": ["peri"], "roots": ["meter"], "suffixes": [], "choosableParts": ["iso","scope","chromo","er"]},
+    {"level": 3, "type": "word", "id": "perimeter", "definition": "circumference or distance around a figure", "prefixes": ["peri"], "roots": ["meter"], "suffixes": [], "choosableParts": ["iso","scop","chromo","er"]},
     {"level": 3, "type": "word", "id": "perinatal", "definition": "of, or related to the time immediately before and after birth (medical)", "prefixes": ["peri"], "roots": ["nat"], "suffixes": ["al"], "choosableParts": ["an","chrom","seismo","sis"]},
     {"level": 3, "type": "word", "id": "perioptic", "definition": "situated about or surrounding the eyeball", "prefixes": ["peri"], "roots": ["opt"], "suffixes": ["ic"], "choosableParts": ["mon","thanas","chrome","cide"]},
-    {"level": 3, "type": "word", "id": "periscope", "definition": "instrument for viewing surrounding area, especially objects not in the direct line of sight", "prefixes": ["peri"], "roots": ["scope"], "suffixes": [], "choosableParts": ["mono","the","chrome","ic"]},
+    {"level": 3, "type": "word", "id": "periscope", "definition": "instrument for viewing surrounding area, especially objects not in the direct line of sight", "prefixes": ["peri"], "roots": ["scope"], "suffixes": [], "choosableParts": ["de","the","chrome","ic"]},
     {"level": 3, "type": "word", "id": "philanthropic", "definition": "related to the love of mankind", "prefixes": [], "roots": ["phil", "anthrop"], "suffixes": ["ic"], "choosableParts": ["hyper","icono","thanas","on"]},
     {"level": 3, "type": "word", "id": "philanthropy", "definition": "love of mankind", "prefixes": [], "roots": ["phil", "anthrop"], "suffixes": ["y"], "choosableParts": ["mono","theo","chrome","cide"]},
     {"level": 3, "type": "word", "id": "philogyny", "definition": "fondness for women", "prefixes": [], "roots": ["philo", "gyn"], "suffixes": ["y"], "choosableParts": ["peri","therm","chrom","cide"]},
@@ -1748,4 +1748,4 @@ module.exports = [
     {"level": 3, "type": "word", "id": "tripod", "definition": "three-legged stand", "prefixes": ["tri"], "roots": ["pod"], "suffixes": [], "choosableParts": ["hyper","klepto","acro","ac"]},
     {"level": 3, "type": "word", "id": "xenophile", "definition": "lover of foreign things", "prefixes": [], "roots": ["xeno", "phile"], "suffixes": [], "choosableParts": ["hypo","auto","acro","ac"]},
     {"level": 3, "type": "word", "id": "xenophobia", "definition": "fear of strangers", "prefixes": [], "roots": ["xeno", "phob"], "suffixes": ["ia"], "choosableParts": ["iso","litho","acro","ac"]}
-]
+];

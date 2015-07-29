@@ -38,7 +38,7 @@ module.exports = [
             "prefix-amphi",
             "root-andro",
             "root-xeno",
-            "suffix-y"
+            "suffix-ium"
         ],
         "key": "word-agronomy",
         "soundFile": "word-parts/word/W-agronomy"
@@ -107,7 +107,7 @@ module.exports = [
             "prefix-anti",
             "root-anthrope",
             "root-therm",
-            "suffix-y"
+            "suffix-ial"
         ],
         "key": "word-anarchy",
         "soundFile": "word-parts/word/W-anarchy"
@@ -5084,7 +5084,7 @@ module.exports = [
         "suffixes": [],
         "choosableParts": [
             "prefix-iso",
-            "root-scope",
+            "root-scop",
             "root-chromo",
             "suffix-er"
         ],
@@ -5150,7 +5150,7 @@ module.exports = [
         ],
         "suffixes": [],
         "choosableParts": [
-            "prefix-mono",
+            "prefix-de",
             "root-the",
             "root-chrome",
             "suffix-ic"

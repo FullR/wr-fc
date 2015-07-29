@@ -79,8 +79,7 @@ function bundleLevel(level) {
     .add(`./app/javascript/${level}.js`)
     .transform(require("babelify"))
     .transform("brfs");
-  }
-  else {
+  } else {
     bundler = Browserify({
       paths: ["./node_modules", "./app/javascript", "./lib"],
       debug: !release
