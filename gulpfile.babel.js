@@ -128,8 +128,9 @@ function copy(target, destination) {
 
 function statics(level) {
   return () => {
-    return copy(`statics/${level}/*`, `dist/${level}`)
+    return copy(`statics/${level}`+"/*", `dist/${level}`)
       .then(() => copy("statics/all/*", `dist/${level}`));
+    //*/
   };
 }
 
@@ -178,15 +179,50 @@ function cordova(level) {
 
 function desktop(level) {
   return () => {
-    var NwBuilder = require("node-webkit-builder");
+    var NwBuilder = require("nw-builder");
     var nw = new NwBuilder({
-      version: "0.12.1",
       macIcns: `./statics/${level}/assets/icon.icns`,
       files: `./dist/${level}/**/!(*.mp3)`,
       platforms: ["osx32", "osx64", "win32", "win64"],
       buildDir: "./desktop-builds",
-      macZip: true
-      });
+      macZip: true,
+      window: {
+        toolbar: false,
+        frame: true
+      },
+      platformOverrides: {
+          win: {
+              window: {
+                  toolbar: false
+              }
+          },
+          win32: {
+              window: {
+                  toolbar: false
+              }
+          },
+          win64: {
+              window: {
+                  toolbar: false
+              }
+          },
+          osx: {
+              window: {
+                  toolbar: false
+              }
+          },
+          osx32: {
+              window: {
+                  toolbar: false
+              }
+          },
+          osx64: {
+              window: {
+                  toolbar: false
+              }
+          }
+        }
+    });
 
     nw.on("log", console.log.bind(console));
     return nw.build();

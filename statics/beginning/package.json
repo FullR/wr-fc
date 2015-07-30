@@ -6,7 +6,7 @@
 	"window": {
 		"title": "Word Roots Beginning Flashcards",
 		"icon": "./res/icon.png",
-		"toolbar": true,
+		"toolbar": false,
 		"frame": true,
 		"width": 1080,
 		"height": 768,
