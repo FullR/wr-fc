@@ -35,6 +35,10 @@ const ActivityType2 = React.createClass({
         }
     },
 
+    componentWillUnmount() {
+        this.stopAll();
+    },
+
     playCorrectPart(delay=0) {
         this.stop();
         return this.play(this.state.getCorrectSound(), delay, true);
