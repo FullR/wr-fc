@@ -1,5 +1,7 @@
 #!/bin/bash
 
+rm -rf desktop-builds/*
+
 gulp desktop:beginning &&
 gulp desktop:level-1 &&
 gulp desktop:level-2 &&

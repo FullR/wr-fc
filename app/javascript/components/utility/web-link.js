@@ -3,11 +3,10 @@ const React = require("react");
 const WebLink = React.createClass({
     openInSystem(event) {
         event.preventDefault();
-        if(window.gui) {
-            window.gui.Shell.openExternal(this.props.href);
-        }
-        else {
-            window.open(this.props.href, "_system", "location=yes")
+        if(window._isNodeWebkit) {
+            require("open")(this.props.href);//window.gui.Shell.openExternal(this.props.href);
+        } else {
+            window.open(this.props.href, "_system", "location=yes");
         }
     },
 
