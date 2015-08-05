@@ -31,6 +31,7 @@
     "hasher": "^1.2.0",
     "howler": "^1.1.25",
     "lodash": "^2.4.1",
+    "nw-builder": "^2.0.2",
     "putainde-localstorage": "^2.1.0",
     "q": "^1.0.1",
     "radium": "^0.10.1",

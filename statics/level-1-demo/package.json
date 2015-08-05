@@ -6,7 +6,7 @@
 	"window": {
 		"title": "Word Roots Level 1 Flashcards Demo",
 		"icon": "./res/icon.png",
-		"toolbar": true,
+		"toolbar": false,
 		"frame": true,
 		"width": 1080,
 		"height": 768,
