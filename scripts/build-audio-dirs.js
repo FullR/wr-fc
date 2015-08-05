@@ -91,7 +91,7 @@ function buildLevelDir(level) {
                     return copy(levelFile, dest + ".ogg");
                 }
                 else if(exists(file)) {
-                    return copy(file, dest + ".ogg");
+                    return copy(file, dest.replace(/é/g, "e") + ".ogg");
                 }
                 else {
                     console.log("Missing: " + file);
@@ -105,7 +105,7 @@ function buildLevelDir(level) {
                     return copy(levelFile, dest + ".mp3");
                 }
                 else if(exists(file)) {
-                    return copy(file, dest + ".mp3");
+                    return copy(file, dest.replace(/é/g, "e") + ".mp3");
                 }
                 else {
                     console.log("Missing: " + file);

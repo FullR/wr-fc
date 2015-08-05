@@ -50,7 +50,8 @@ module.exports = function(basePartList) {
                 .map((correctPart) => {
                     let incorrectChoices = _(dictionary.parts)
                         .filter((part) => {
-                            let passes = part.key !== correctPart.key && part.definition !== correctPart.definition;
+                            let passes = part.key !== correctPart.key 
+                                && part.definition.slice(0, 10) !== correctPart.definition.slice(0, 10);
                             if(passes && correctPart.blacklist) {
                                 passes = correctPart.blacklist.indexOf(part.key) === -1; // make sure the part isn't on the correct part's blacklist
                             }

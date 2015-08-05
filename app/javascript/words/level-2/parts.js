@@ -1317,7 +1317,7 @@ module.exports = [
             4
         ],
         "key": "root-tégé",
-        "soundFile": "word-parts/root/R-tégé",
+        "soundFile": "word-parts/root/R-tege",
         "definitionSoundFile": "definitions/root/DR-tégé"
     },
     {

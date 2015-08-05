@@ -58,7 +58,7 @@ function fixWords() {
         word.id = word.id.trim();
         word.definition = word.definition.trim();
         word.key = word.type + "-" + word.id;
-        word.soundFile = "word-parts/"+word.type+"/"+word.type[0].toUpperCase() + "-" + word.id;
+        word.soundFile = "word-parts/"+word.type+"/"+word.type[0].toUpperCase() + "-" + word.id.replace(/é/g, "e");
 
         if(word.id === "per capita") {
             word.space = true;

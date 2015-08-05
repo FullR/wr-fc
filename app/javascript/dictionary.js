@@ -20,7 +20,7 @@ function Dictionary(options) {
     this.roots = parts.filter(byType("root"));
     this.suffixes = parts.filter(byType("suffix"));
 
-    this.index = parts.concat(words).reduce((index, word) => {
+    this.index = [...parts, ...words].reduce((index, word) => {
         if(additionalProps[word.key]) {
             // add any additional props to the word
             _.extend(word, additionalProps[word.key]);
@@ -44,11 +44,11 @@ _.extend(Dictionary.prototype, {
 
     getWordsWithPart(partId) {
         return _(this.words)
-        .filter((word) => {
-            return word.parts.indexOf(partId) !== -1
-        })
-        .map((word) => word.key)
-        .value();
+            .filter((word) => {
+                return word.parts.indexOf(partId) !== -1
+            })
+            .map((word) => word.key)
+            .value();
     },
 
     filterByPartCount(count) {

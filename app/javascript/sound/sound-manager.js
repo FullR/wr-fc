@@ -64,15 +64,6 @@ function logInfo() {
     `);
 }
 
-/*setInterval(() => {
-    if(toRelease.length) {
-        const sound = toRelease.shift();
-        sound.stop();
-        sound.release();
-        logInfo();
-    }
-}, 3000);
-*/
 const soundManager = {get, release, play, stop};
 
 module.exports = soundManager;

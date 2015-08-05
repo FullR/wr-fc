@@ -5210,7 +5210,7 @@ module.exports = [
             "suffix-tion"
         ],
         "key": "word-protégé",
-        "soundFile": "word-parts/word/W-protégé"
+        "soundFile": "word-parts/word/W-protege"
     },
     {
         "level": 2,
