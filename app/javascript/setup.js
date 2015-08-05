@@ -2,6 +2,7 @@ const React = require("react");
 const _ = require("lodash");
 const fastclick = require("fastclick");
 const ready = require("polyfills/cordova/device-ready");
+const {version} = require("../../package");
 
 const images = [
     "continue-button",
@@ -28,7 +29,11 @@ module.exports = function setup(globals) {
         window.console = window.logger;
     }
 
-    console.log("---- STARTING APPLICATION ----\n\n\n");
+    console.log(`
+---- STARTING APPLICATION ----
+Version: ${version}
+\n\n\n
+    `);
     require("babelify/polyfill");
     require("polyfills/function-prototype-bind");
     _.extend(window, globals);

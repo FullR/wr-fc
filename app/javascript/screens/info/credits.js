@@ -5,6 +5,7 @@ const getVars = require("components/info/variables");
 const WebLink = require("components/utility/web-link");
 const colors = require("colors");
 const bp = require("utility/bp");
+const {version} = require("../../../../package");
 const {micro, small, medium} = require("sizes");
 
 const Credits = React.createClass({
@@ -55,6 +56,15 @@ const Credits = React.createClass({
             marginBottom: "3%"
         };
 
+        const versionStyle = {
+            position: "absolute",
+            right: 4,
+            top: 2,
+            lineHeight: "14px",
+            fontSize: 12,
+            color: "#888"
+        };
+
         return (
             <div>
                 <div style={contentStyle}>
@@ -77,6 +87,7 @@ const Credits = React.createClass({
                     <div style={nameStyle}>Terry McDonald</div>
                     <div style={nameStyle}>Jesse Spinella</div>
                     <div style={isbnStyle}>ISBN {window.level.ISBN}</div>
+                    <div style={versionStyle}>version {version}</div>
                 </div>
                 <Footer/>
             </div>

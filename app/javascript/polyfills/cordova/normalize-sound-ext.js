@@ -1,4 +1,4 @@
-let audioExtention;
+const audioExtention = getAudioExtention();
 
 function isSupported(ext) {
     return Modernizr.audio[ext] && Modernizr.audio[ext] !== "";
@@ -16,18 +16,26 @@ function path(filepath) {
     }
 }
 
-switch(window.__platform.name) {
-    case "web":
-        if(isSupported("ogg")) {
-            audioExtention = "ogg";
-        } else if(isSupported("mp3")) {
-            audioExtention = "mp3";
-        }
-    break;
-    case "android": audioExtention = "ogg"; break;
-    case "ios":     audioExtention = "mp3"; break;
+function getAudioExtention() {
+    switch(window.__platform.name) {
+        case "web":
+            if(isSupported("ogg")) {
+                return"ogg";
+            } else if(isSupported("mp3")) {
+                return "mp3";
+            } else {
+                return null;
+            }
+        case "android": return "ogg";
+        case "ios":     return "mp3";
+        default: return null;
+    }
 }
 
-console.log("Using audio format: ", audioExtention);
+if(audioExtention) {
+    console.log("Using audio format: ", audioExtention);
+} else {
+    console.log("No supported audio format detected");
+}
 
 module.exports = {path, audioExtention};
