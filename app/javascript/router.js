@@ -2,6 +2,8 @@ const React = require("react");
 const hasher = require("hasher");
 
 const Router = React.createClass({
+  mixins: [require("utility/bp").mixin],
+
   getInitialState() {
     hasher.init();
     return {

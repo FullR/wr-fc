@@ -3,6 +3,11 @@
     -webkit-tap-highlight-color: transparent;
     -webkit-touch-callout: none;
     -webkit-user-select: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     input, textarea {
         -webkit-touch-callout: auto;
         -webkit-user-select: auto;
@@ -35,4 +40,8 @@ body {
 
 button:focus {
     outline: 0;
+}
+
+button::-moz-focus-inner {
+    border: 0;
 }

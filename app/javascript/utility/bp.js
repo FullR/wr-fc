@@ -72,9 +72,11 @@ function bp(bpMap) {
 
 bp.mixin = {
     componentDidMount() {
-        const onResize = (() => this.forceUpdate());
+        const onResize = (() => {
+            this.forceUpdate();
+        });
         window.addEventListener("resize", onResize);
-        this[unsubscribe] = (() => window.removeEventListener("resize", onResize));
+        this[unsubscribe] = () => window.removeEventListener("resize", onResize);
     },
 
     componentWillUnmount() {
@@ -86,7 +88,7 @@ bp.mixin = {
 };
 
 window.addEventListener("resize", () => {
-    evalCache = new Map();
+    evalCache.clear();
     [width, height] = getDimension();
 });
 

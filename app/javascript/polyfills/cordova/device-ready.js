@@ -1,15 +1,13 @@
 const Q = require("q");
 
-let ready;
-
-if (window.__platform.cordova) {
-    ready = Q.Promise(function(resolve) {
-        document.addEventListener("deviceready", function() {
+module.exports = Q.promise((resolve) => {
+    if(window.__platform.cordova) {
+        document.addEventListener("deviceready", () => {
             resolve();
         }, false);
-    });
-} else {
-    ready = Q.resolve();
-}
-
-module.exports = ready;
+    } else {
+        window.onload = () => {
+            resolve();
+        };
+    }
+});
