@@ -14,6 +14,7 @@ module.exports = {
     },
 
     addKeyListeners() {
+        /* Debug key bindings
         this.on("keydown", ({keyCode}) => {
             const canSelect = !this.state.isShowingFeedback() && !this.state.isWaiting();
 
@@ -23,6 +24,7 @@ module.exports = {
                 this.debugSelectCorrect();
             }
         });
+        */
     },
 
     debugSelectCorrect() {
