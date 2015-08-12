@@ -45,8 +45,7 @@ _.extend(Sound.prototype, emitter, {
     _finishedPlaying(stopped) {
         let deferred = this.deferred;
         this.playing = false;
-        this.timeout = null;
-        
+
         if(deferred) {
             deferred.resolve();
             this.deferred = null;
@@ -107,7 +106,6 @@ _.extend(Sound.prototype, emitter, {
     release() {
         if(this._loadPromise) {
             this._loadPromise.then(() => {
-                console.log(`Releasing ${this.path}`);
                 this.fire("end");
                 this.media.release();
                 this.media = null;

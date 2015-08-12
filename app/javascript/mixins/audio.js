@@ -27,7 +27,7 @@ module.exports = {
   },
 
   stop() {
-    soundManager.stop();
+    return soundManager.stop();
   },
 
   componentWillUnmount() {

@@ -34,9 +34,9 @@ function play(path, delay, autoRelease) {
 }
 
 function stop() {
-    return sounds.map(function(sound) {
+    return Q.all(sounds.map(function(sound) {
         return sound.stop();
-    });
+    }));
 }
 
 function release(sound) {

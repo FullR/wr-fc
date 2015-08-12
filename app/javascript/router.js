@@ -13,7 +13,6 @@ const Router = React.createClass({
 
   componentDidMount() {
     hasher.changed.add(this.onHashChanged);
-    hasher.initialized.add(this.onHashChanged);
   },
 
   onHashChanged() {
@@ -70,6 +69,7 @@ const Router = React.createClass({
 
   render() {
     const App = require("screens/application");
+    console.log("Rendering router");
     return (
       <App>{this.renderRoute()}</App>
     );

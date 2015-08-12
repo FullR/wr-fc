@@ -110,7 +110,6 @@ const Menu = React.createClass({
                 Changing users will permanently remove this user{"'"}s progress.  Are you sure you wish to continue?
             </Modal>
         );
-        console.log("Rendering menu");
 
         return (
             <div style={style}>

@@ -61,8 +61,12 @@ const CreateUserScreen = React.createClass({
         }
     },
 
-    componentDidMount() {
+    focusInput() {
         this.refs.input.getDOMNode().focus();
+    },
+
+    componentDidMount() {
+        this.focusInput();
     },
 
     render() {
@@ -96,12 +100,12 @@ const CreateUserScreen = React.createClass({
                 <div style={labelStyle}>Enter a name to begin.</div>
 
                 <form onSubmit={this.submit} style={formStyle}>
-                    <input ref="input" value={this.state.username} onChange={this.updateUsername} placeholder="New User Name" style={inputStyle}/>
+                    <input ref="input" value={this.state.username} onChange={this.updateUsername} style={inputStyle}/>
                     <button {...this.getBrowserStateEvents()} style={this.buildStyles(buttonStyle)}>Create</button>
                 </form>
             </div>
         );
     }
 });
-
+// placeholder="New User Name"
 module.exports = CreateUserScreen;

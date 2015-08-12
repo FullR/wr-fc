@@ -47,7 +47,7 @@ const ActivityType3 = React.createClass({
             if(this.state.isWaiting() && !this.state.isShowingFeedback()) {
                 this.playCorrectWord();
             }
-        }, 1);
+        }, 10);
     },
 
     continueActivity() {

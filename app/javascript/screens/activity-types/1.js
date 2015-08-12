@@ -47,16 +47,16 @@ const ActivityType1 = React.createClass({
     },
 
     playWordSound(delay=0) {
-        this.stop();
-        this.play(this.state.getCorrectSound(), delay, true);
+        this.stop().then(() => this.play(this.state.getCorrectSound(), delay, true));
     },
 
     playDefinitionSound(delay=0) {
         const soundPath = this.state.getCorrectDefinitionSound();
-        this.stop();
-        if(soundPath) {
-            this.play(soundPath, delay, true);
-        }
+        this.stop().then(() => {
+            if(soundPath) {
+                this.play(soundPath, delay, true);
+            }
+        });
     },
 
     selectChoice(choice) {
