@@ -72,7 +72,7 @@ const ActivityType1 = React.createClass({
             
             setTimeout(() => {
                 this.playWordSound();
-            }, 1);
+            }, 10);
         }
     },
 

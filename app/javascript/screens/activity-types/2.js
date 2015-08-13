@@ -77,7 +77,7 @@ const ActivityType2 = React.createClass({
 
     selectChoice(choice) {
         this.props.actions.selectChoice(choice);
-        setTimeout(() => this.playBoth(), 1);
+        setTimeout(() => this.playBoth(), 10);
     },
 
     continueActivity() {
