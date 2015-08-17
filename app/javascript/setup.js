@@ -4,6 +4,11 @@ const fastclick = require("fastclick");
 const ready = require("polyfills/cordova/device-ready");
 const {version} = require("../../package");
 
+const startText = `
+\n\n\n
+---- STARTING APPLICATION ----
+Version: ${version}`;
+
 const images = [
     "continue-button",
     "continue-button_hover",
@@ -29,11 +34,8 @@ module.exports = function setup(globals) {
         window.console = window.logger;
     }
 
-    console.log(`
----- STARTING APPLICATION ----
-Version: ${version}
-\n\n\n
-    `);
+    console.log(startText);
+
     require("babelify/polyfill");
     require("polyfills/function-prototype-bind");
     _.extend(window, globals);

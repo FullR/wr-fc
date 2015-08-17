@@ -69,7 +69,6 @@ const Router = React.createClass({
 
   render() {
     const App = require("screens/application");
-    console.log("Rendering router");
     return (
       <App>{this.renderRoute()}</App>
     );

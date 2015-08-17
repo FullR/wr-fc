@@ -33,7 +33,7 @@ function getAudioExtention() {
 }
 
 if(audioExtention) {
-    console.log("Using audio format: ", audioExtention);
+    console.log("Using audio format:", audioExtention);
 } else {
     console.log("No supported audio format detected");
 }
