@@ -349,7 +349,7 @@ gulp.task("generate:word-audio", (callback) => {
     "generate:word-audio:level-2-demo",
     "generate:word-audio:level-3-demo",
     callback
-    );
+  );
 });
 
 gulp.task("watch", () => {

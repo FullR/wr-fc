@@ -1,5 +1,5 @@
 const React = require("react");
-const _ = require("lodash");
+const {extend} = require("lodash");
 const fastclick = require("fastclick");
 const ready = require("polyfills/cordova/device-ready");
 const {version} = require("../../package");
@@ -38,7 +38,7 @@ module.exports = function setup(globals) {
 
     require("babelify/polyfill");
     require("polyfills/function-prototype-bind");
-    _.extend(window, globals);
+    extend(window, globals);
 
     const Router = require("router");
     const appStore = require("app-store");
