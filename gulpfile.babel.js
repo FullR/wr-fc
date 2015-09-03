@@ -148,8 +148,8 @@ function cordova(level) {
       merge: `${__dirname}/cordova-merges/all`,
       platforms: ["ios"],
       plugins: [
-        "org.apache.cordova.media",
         "org.apache.cordova.console",
+        "https://github.com/floatinghotpot/cordova-plugin-nativeaudio",
         "https://github.com/katzer/cordova-plugin-hidden-statusbar-overlay", // since fullscreen no longer works in iOS
         "org.apache.cordova.splashscreen",
         "org.apache.cordova.inappbrowser"
@@ -159,9 +159,9 @@ function cordova(level) {
         '<preference name="Fullscreen" value="true" />',
         '<preference name="DisallowOverscroll" value="true" />',
         '<preference name="webviewbounce" value="false" />',
-        '<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">',
-        '    <false/>',
-        '</gap:config-file>',
+        //'<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">',
+        //'    <false/>',
+        //'</gap:config-file>',
         '<splash src="www/assets/splashscreens/Default-Landscape.png" width="1024" height="768"/>',
         '<splash src="www/assets/splashscreens/Default-Landscape@2x.png" width="2048" height="1536"/>',
         '<splash src="www/assets/splashscreens/Default-Landscape-736h@3x.png" width="2208" height="1242"/>',

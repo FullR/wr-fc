@@ -20,6 +20,8 @@ const ExampleWord = require("components/activity/example-word");
 const BottomContainer = require("components/activity/bottom-container");
 const dictionary = window.dictionary;
 
+const Sound = require("sound/sound");
+
 const ActivityType1 = React.createClass({
     mixins: [
         Reflux.ListenerMixin,
@@ -28,51 +30,74 @@ const ActivityType1 = React.createClass({
         require("mixins/audio")
     ],
 
-    componentDidMount() {
-        if(!this.state.isShowingFeedback()) {
-            this.loadSounds();
-            if(this.state.isWaiting()) {
-                this.playDefinitionSound(250);
-            } else {
-                this.playWordSound(250);
+    // componentDidMount() {
+    //     if(!this.state.isShowingFeedback()) {
+    //         this.loadSounds().then(() => {
+    //             if(this.state.isWaiting()) {
+    //                 this.playDefinitionSound(250);
+    //             } else {
+    //                 this.playWordSound(250);
+    //             }
+    //         });
+    //     }
+    // },
+
+
+    // loadSounds() {
+    //     return this.load(
+    //         this.state.getCorrectSound(),
+    //         this.state.getCorrectDefinitionSound()
+    //     );
+    // },
+
+
+    playWordSound(delay=0) {
+        //this.stop().then(() => this.play(this.state.getCorrectSound(), delay, true));
+        // try {
+        //     const soundPath = this.state.getCorrectSound();
+        //     if(soundPath) {
+        //         console.log("playWordSound", soundPath);
+        //         (new Sound({path: soundPath})).play();
+        //     } else {
+        //         console.log("playWordSound: soundPath is falsy");
+        //     }
+        // } catch(error) {
+        //     console.log("Failed: " + error.stack);
+        // }
+        try {
+            const path = this.state.getCorrectSound();
+            if(path) {
+                this.play(path, delay).subscribe(() => {
+                    console.log("playWordSound finished");
+                });
             }
+        } catch(err) {
+            console.log("playWordSound failed", err);
         }
     },
 
-    loadSounds() {
-        return this.load(
-            this.state.getCorrectSound(),
-            this.state.getCorrectDefinitionSound()
-        );
-    },
-
-    playWordSound(delay=0) {
-        this.stop().then(() => this.play(this.state.getCorrectSound(), delay, true));
-    },
-
     playDefinitionSound(delay=0) {
-        const soundPath = this.state.getCorrectDefinitionSound();
-        this.stop().then(() => {
-            if(soundPath) {
-                this.play(soundPath, delay, true);
-            }
-        });
+        const path = this.state.getCorrectDefinitionSound();
+        if(path) {
+            this.play(path, delay).subscribe(() => {
+                console.log("playDefinitionSound finished");
+            });
+        }
     },
 
     selectChoice(choice) {
         if(!this.state.isWaiting()) {
             this.props.actions.selectChoice(choice);
-            this.playDefinitionSound();
+            //this.playDefinitionSound();
         }
     },
 
     continueActivity() {
         if(this.state.isWaiting()) {
             this.props.actions.continueActivity();
-            
-            setTimeout(() => {
-                this.playWordSound();
-            }, 10);
+            //setTimeout(() => {
+            //    this.playWordSound();
+            //}, 10);
         }
     },
 
@@ -107,7 +132,7 @@ const ActivityType1 = React.createClass({
                     <Instructions>{this.renderInstructions()}</Instructions>
                     <PartDisplayBox 
                         partId={this.state.getCorrectChoice().partId} 
-                        onClick={isDisplayPlaying ? null : this.playWordSound}
+                        onClick={isDisplayPlaying ? null : this.playWordSound.bind(this)}
                         highlighted={isDisplayPlaying}/>
                     <ExampleWord
                         key={index + exampleWordId}
@@ -121,7 +146,7 @@ const ActivityType1 = React.createClass({
                         {choices.map((choice) =>
                             <DefinitionChoice 
                                 onClick={this.selectChoice.bind(this, choice)}
-                                onRevealedClick={(revealed && choice.correct && !isChoicePlaying) ? this.playDefinitionSound : null}
+                                onRevealedClick={(revealed && choice.correct && !isChoicePlaying) ? this.playDefinitionSound.bind(this) : null}
                                 key={`${index}-${choice.partId}`} 
                                 revealed={revealed}
                                 correct={choice.correct}

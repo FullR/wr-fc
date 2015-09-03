@@ -26,11 +26,11 @@ function get(path, options={}) {
 function play(path, delay, autoRelease) {
     const sound = get(path);
 
-    return sound.play(delay).then(() => {
-        if(autoRelease) {
-            release(sound);
-        }
-    });
+    return sound.play(delay);//.do(() => {
+        //if(autoRelease) {
+        //    release(sound);
+        //}
+    //});
 }
 
 function stop() {
@@ -64,6 +64,18 @@ function logInfo() {
     `);
 }
 
-const soundManager = {get, release, play, stop};
+function mute() {
+    if(window.Media && window.Media.mute) {
+        window.Media.mute();
+    }
+}
+
+function unmute() {
+    if(window.Media && window.Media.unmute) {
+        window.Media.unmute();
+    }
+}
+
+const soundManager = {get, release, play, stop, mute, unmute};
 
 module.exports = soundManager;

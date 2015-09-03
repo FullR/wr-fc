@@ -87,7 +87,11 @@ function build(options) {
             }, Q.resolve());
         })
         .then(function() {
-            return exec("cordova prepare ios", {cwd: projectDir});
+            log("Building");
+            return exec("cordova build ios", {cwd: projectDir});
+        })
+        .then(function() {
+            console.log("Finished creating project");
         });
 
     function log() {

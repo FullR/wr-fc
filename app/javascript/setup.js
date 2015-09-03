@@ -31,7 +31,9 @@ const images = [
 module.exports = function setup(globals) {
     let router;
     if(window.logger) {
+        console.log("Logger detected. Switching to window.logger...");
         window.console = window.logger;
+        console.log("Now using window.logger instead of window.console");
     }
 
     console.log(startText);

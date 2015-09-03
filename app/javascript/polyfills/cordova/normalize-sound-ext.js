@@ -7,11 +7,7 @@ function isSupported(ext) {
 function path(filepath) {
     if(window.__platform.name === "android") {
         return `/android_asset/www/${filepath}`;
-    }
-    else if(window.__platform.name === "ios") {
-        return `${filepath}`;
-    }
-    else {
+    } else {
         return filepath;
     }
 }

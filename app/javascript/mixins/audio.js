@@ -1,37 +1,44 @@
-const soundManager = require("sound/sound-manager");
-const Q = require("q");
+const Sound = require("sound/sound");
 const _ = require("lodash");
 
-const PLAYING = new Set();
+const soundCache = new Map();
+
+function isSoundCached(path) {
+  return soundCache.has(path);
+}
+
+function getSound(path) {
+  if(!isSoundCached(path)) {
+    soundCache.set(path, new Sound({path}));
+  }
+  return soundCache.get(path);
+}
 
 module.exports = {
-  play(path, delay, autoRelease) {
-    PLAYING.add(path);
-    this.forceUpdate();
-    return soundManager.play(path, delay, autoRelease).then(() => {
-      PLAYING.delete(path);
-      this.forceUpdate();
-    });
-  },
-
-  load(...paths) {
-    return Q.all(_(paths).map(soundManager.get).invoke("load").valueOf());
+  play(path, delay) {
+    return getSound(path).play(delay);
   },
 
   release(...paths) {
-    _(paths).map(soundManager.get).invoke("stop").map(soundManager.release);
+    return Promise.all(
+      _(paths)
+        .filter(isSoundCached)
+        .map(getSound)
+        .invoke("release")
+        .valueOf()
+    );
   },
 
   isPlaying(path) {
-    return PLAYING.has(path);
+    return isSoundCached(path) && getSound(path).isPlaying();
   },
 
-  stop() {
-    return soundManager.stop();
-  },
-
-  componentWillUnmount() {
-    PLAYING.clear();
-    this.stop();
+  stop(...paths) {
+    return Promise.all(
+      _(paths)
+        .filter(isSoundCached)
+        .invoke("stop")
+        .valueOf()
+    );
   }
 };
