@@ -22,11 +22,19 @@ const Product = React.createClass({
             ]
         };
 
-        const imageStyle = {
+        const imageWrapperStyle = {
             display: "inline-block",
             height: 152,
             width: 202,
             background: "#FFFFFF"
+        };
+
+        const imageStyle = {
+            maxHeight: 152,
+            maxWidth: 202,
+            position: "relative",
+            top: "50%",
+            transform: "translateY(-50%)"
         };
 
         const contentStyle = {
@@ -40,7 +48,9 @@ const Product = React.createClass({
 
         return (
             <WebLink {...this.getStyle(style)} href={this.props.href}>
-                <img src={this.props.src} style={imageStyle}/>
+                <div style={imageWrapperStyle}>
+                    <img src={this.props.src} style={imageStyle}/>
+                </div>
                 <div style={contentStyle}>
                     {this.props.children}
                 </div>

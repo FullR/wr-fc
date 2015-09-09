@@ -3,6 +3,7 @@
     top: 0;
     padding: 16px;
     overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .license__header {

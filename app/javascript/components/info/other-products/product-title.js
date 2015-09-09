@@ -9,7 +9,7 @@ const style = {
 const ProductTitle = React.createClass({
     render() {
         return (
-            <span><span style={style}>{this.props.children}</span>&trade;</span>
+            <span><span style={style}>{this.props.children}</span>{this.props.noTrademark ? "" : <span>&trade;</span>}</span>
         );
     }
 });
