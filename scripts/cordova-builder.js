@@ -119,7 +119,6 @@ function addMergeDirectory(projectDir, mergeDir) {
 function addProjectFiles(projectDir, projectFileDir) {
     return exec("rm -rf " + projectDir + "/www")
         .then(function() {
-            //return exec("cp -R " + projectFileDir + "/* " + projectDir + "/www");
             return exec("ln -s " + projectFileDir + " " + projectDir + "/www");
         });
 }

@@ -153,12 +153,14 @@ function cordova(level) {
         "https://github.com/katzer/cordova-plugin-hidden-statusbar-overlay", // since fullscreen no longer works in iOS
         "org.apache.cordova.splashscreen",
         "org.apache.cordova.inappbrowser"
+        //"https://github.com/devgeeks/VolumeSlider"
       ],
       preferences: [
         '<preference name="Orientation" value="landscape" />',
         '<preference name="Fullscreen" value="true" />',
         '<preference name="DisallowOverscroll" value="true" />',
         '<preference name="webviewbounce" value="false" />',
+        '<preference name="target-device" value="tablet" />',
         '<gap:config-file platform="ios" parent="UIViewControllerBasedStatusBarAppearance" overwrite="true">',
         '    <false/>',
         '</gap:config-file>',
@@ -197,6 +199,7 @@ function desktop(level) {
     var NwBuilder = require("nw-builder");
     var nw = new NwBuilder({
       macIcns: `./statics/${level}/assets/icon.icns`,
+      version: "0.12.1",
       files: `./dist/${level}/**/!(*.mp3)`,
       platforms: ["osx32", "osx64", "win32", "win64"],
       buildDir: "./desktop-builds",

@@ -22,6 +22,7 @@ _.extend(Sound.prototype, emitter, {
             this.media = media = new window.Media(this.getNormalizedPath(), 
                                      this._finishedPlaying.bind(this), 
                                      this._finishedPlaying.bind(this));
+            this.media.setVolume(1);
 
             if(media.load) {
                 this._isLoading = true;

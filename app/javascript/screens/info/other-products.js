@@ -98,7 +98,7 @@ const OtherProducts = React.createClass({
                             identification of two or more clues to deduce the answer.
                         </Product><hr/>
                         <Product src="assets/images/other-products/mind-benders.png" href="http://www.criticalthinking.com/mind-benders.html">
-                            <ProductTitle>Mind Benders</ProductTitle>&nbsp;
+                            <ProductTitle noTrademark={true}>Mind Benders&reg;</ProductTitle>&nbsp;
                             <ProductGrade>6 levels:&nbsp; Grades PreK – 12+</ProductGrade>
                             <br/>
                             Students analyze each story and its clues, identifying logical associations between people, places, and things, and using their powers of deduction to solve the puzzles.

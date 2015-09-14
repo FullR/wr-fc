@@ -54,6 +54,12 @@ const Menu = React.createClass({
     },
 
     componentDidMount() {
+        //var volumeSlider = window.plugins ? window.plugins.volumeSlider : null;
+        //if(volumeSlider) {
+        //    volumeSlider.createVolumeSlider(bp.getWidth() - 35, 100, 300, 30); // origin x, origin y, width, height
+        //    volumeSlider.showVolumeSlider();
+        //}
+
         this.listenTo(appStore, () => {
             this.setState(_.extend({}, this.state, {
                 appStore: appStore

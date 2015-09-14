@@ -13,13 +13,13 @@ const Product = React.createClass({
             verticalAlign: "middle",
             cursor: "pointer",
             fontSize: 20,
-            color: "#000000",
+            color: "#000000"
 
-            states: [
-                {hover: {
-                    background: "rgba(0,0,255,0.05)"
-                }}
-            ]
+            //states: [
+            //    {hover: {
+            //        background: "rgba(0,0,255,0.05)"
+            //    }}
+            //]
         };
 
         const imageWrapperStyle = {
@@ -31,10 +31,10 @@ const Product = React.createClass({
 
         const imageStyle = {
             maxHeight: 152,
-            maxWidth: 202,
-            position: "relative",
-            top: "50%",
-            transform: "translateY(-50%)"
+            width: 202
+            //position: "relative",
+            //top: "50%",
+            //transform: "translateY(-50%)"
         };
 
         const contentStyle = {
@@ -46,16 +46,29 @@ const Product = React.createClass({
             padding: 8
         };
 
-        return (
-            <WebLink {...this.getStyle(style)} href={this.props.href}>
-                <div style={imageWrapperStyle}>
-                    <img src={this.props.src} style={imageStyle}/>
-                </div>
-                <div style={contentStyle}>
-                    {this.props.children}
-                </div>
-            </WebLink>
-        );
+        if(window.__platform.name !== "ios") {
+            return (
+                <WebLink className="product" style={style} href={this.props.href}>
+                    <div className="product__image-wrapper" style={imageWrapperStyle}>
+                        <img src={this.props.src} style={imageStyle}/>
+                    </div>
+                    <div style={contentStyle}>
+                        {this.props.children}
+                    </div>
+                </WebLink>
+            );
+        } else {
+            return (
+                <span className="product" style={style} href={this.props.href}>
+                    <div className="product__image-wrapper" style={imageWrapperStyle}>
+                        <img src={this.props.src} style={imageStyle}/>
+                    </div>
+                    <div style={contentStyle}>
+                        {this.props.children}
+                    </div>
+                </span>
+            );
+        }
     }
 });
 

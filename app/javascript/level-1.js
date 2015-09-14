@@ -1,7 +1,7 @@
 const ready = require("polyfills/cordova/device-ready");
 const {wait} = require("./util");
 
-Promise.all([ready, wait(4000)]).then(() => {
+Promise.all([ready, wait(3000)]).then(() => {
     const Dictionary = require("dictionary");
     const setup = require("setup");
 

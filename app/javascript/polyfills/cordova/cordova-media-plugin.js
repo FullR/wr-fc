@@ -49,6 +49,10 @@ MediaPollyfill.prototype = {
             this.sound.unload();
             this.sound = null;
         }
+    },
+
+    setVolume() {
+        // noop
     }
 };
 
