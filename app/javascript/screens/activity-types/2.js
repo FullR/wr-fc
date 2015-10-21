@@ -30,8 +30,12 @@ const ActivityType2 = React.createClass({
     ],
 
     componentDidMount() {
-        if(this.state.isWaiting() && !this.state.isShowingFeedback()) {
-            this.playBoth();
+        const showingFeedback = this.state.isShowingFeedback();
+        if(!showingFeedback) {
+            this.loadSounds();
+            if(this.state.isWaiting()) {
+                this.playBoth();
+            }
         }
     },
 
@@ -53,13 +57,17 @@ const ActivityType2 = React.createClass({
         return this.play(this.state.getExampleSoundPath(), delay, true);
     },
 
-    playBoth() {
-        this.stopAll();
-        this.load(
+    loadSounds() {
+        return this.load(
             this.state.getCorrectSound(),
             this.state.getExampleSoundPath(),
             "as-in"
         );
+    },
+
+    playBoth() {
+        this.stopAll();
+        this.loadSounds();
 
         this.queue = queue([
             ["playCorrectPart"],

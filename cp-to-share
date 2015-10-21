@@ -1,0 +1,5 @@
+#!/bin/bash
+SHARE_DIR="/Volumes/share/Storyline/Full Versions/Finalized/Word Roots Flashcards"
+
+rsync --progress -r desktop-builds/* "$SHARE_DIR/desktop"
+rsync --progress -r dist/* "$SHARE_DIR/web"

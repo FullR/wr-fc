@@ -857,7 +857,7 @@ module.exports = [
     {"level": 1, "type": "word", "id": "aviary", "definition": "a large enclosure in which birds are kept", "prefixes": [], "roots": ["avi"], "suffixes": ["ary"], "choosableParts": ["intro","ceed","vince","ile"]},
     {"level": 1, "type": "word", "id": "aviation", "definition": "the act or practice of flying airplanes, helicopters, etc.", "prefixes": [], "roots": ["avi"], "suffixes": ["ation"], "choosableParts": ["cent","vis","ceed","aneous"]},
     {"level": 1, "type": "word", "id": "aviator", "definition": "one who flies an airplane; a pilot", "prefixes": [], "roots": ["avi"], "suffixes": ["ator"], "choosableParts": ["com","vince","celer","ial"]},
-    {"level": 1, "type": "word", "id": "aviatrix", "definition": "a woman airplane pilot", "prefixes": [], "roots": ["avia"], "suffixes": ["trix"], "choosableParts": ["mis","celer","vince","ance"]},
+    {"level": 1, "type": "word", "id": "aviatrix", "definition": "a female airplane pilot", "prefixes": [], "roots": ["avia"], "suffixes": ["trix"], "choosableParts": ["mis","celer","vince","ance"]},
     {"level": 1, "type": "word", "id": "benevolence", "definition": "the act of doing good; kindliness", "prefixes": ["bene"], "roots": ["vol"], "suffixes": ["ence"], "choosableParts": ["pre","avi","fract","eous"]},
     {"level": 1, "type": "word", "id": "benevolent", "definition": "showing kindness or goodwill", "prefixes": ["bene"], "roots": ["vol"], "suffixes": ["ent"], "choosableParts": ["infra","cept","vinc","cide"]},
     {"level": 1, "type": "word", "id": "biannual", "definition": "happening twice a year", "prefixes": ["bi"], "roots": ["annu"], "suffixes": ["al"], "choosableParts": ["pro","aud","enni","er"]},
@@ -1621,7 +1621,7 @@ module.exports = [
     {"level": 3, "type": "word", "id": "macroscopic", "definition": "visible to the naked eye", "prefixes": [], "roots": ["macro", "scop"], "suffixes": ["ic"], "choosableParts": ["dia","hydr","geno","ics"]},
     {"level": 3, "type": "word", "id": "mesocracy", "definition": "government by the middle classes", "prefixes": [], "roots": ["meso", "crac"], "suffixes": ["y"], "choosableParts": ["en","hydro","geno","ics"]},
     {"level": 3, "type": "word", "id": "mesodermic", "definition": "related to the middle layer of skin", "prefixes": [], "roots": ["meso", "derm"], "suffixes": ["ic"], "choosableParts": ["bi","icono","geno","ics"]},
-    {"level": 3, "type": "word", "id": "mesophilic", "definition": "thriving in a moderate environment", "prefixes": [], "roots": ["meso", "phil"], "suffixes": ["ic"], "choosableParts": ["eu","ideo","ge","ic"]},
+    {"level": 3, "type": "word", "id": "mesophilic", "definition": "thriving in a moderate environment", "prefixes": [], "roots": ["meso", "phil"], "suffixes": ["ic"], "choosableParts": ["eu","ideo","ge","esis"]},
     {"level": 3, "type": "word", "id": "mesophyte", "definition": "a plant that requires a moderate amount of water", "prefixes": [], "roots": ["meso", "phyte"], "suffixes": [], "choosableParts": ["ana","gyn","psych","ous"]},
     {"level": 3, "type": "word", "id": "mesosomatic", "definition": "related to the middle region of the body of various invertebrates", "prefixes": [], "roots": ["meso", "somat"], "suffixes": ["ic"], "choosableParts": ["exo","klept","gen","ia"]},
     {"level": 3, "type": "word", "id": "mesotherm", "definition": "plant that requires a moderate degree of heat", "prefixes": [], "roots": ["meso", "therm"], "suffixes": [], "choosableParts": ["hyper","klepto","gen","er"]},
@@ -1747,5 +1747,5 @@ module.exports = [
     {"level": 3, "type": "word", "id": "tricycle", "definition": "vehicle with three wheels", "prefixes": ["tri"], "roots": ["cycle"], "suffixes": [], "choosableParts": ["exo","klept","agro","ac"]},
     {"level": 3, "type": "word", "id": "tripod", "definition": "three-legged stand", "prefixes": ["tri"], "roots": ["pod"], "suffixes": [], "choosableParts": ["hyper","klepto","acro","ac"]},
     {"level": 3, "type": "word", "id": "xenophile", "definition": "lover of foreign things", "prefixes": [], "roots": ["xeno", "phile"], "suffixes": [], "choosableParts": ["hypo","auto","acro","ac"]},
-    {"level": 3, "type": "word", "id": "xenophobia", "definition": "fear of strangers", "prefixes": [], "roots": ["xeno", "phob"], "suffixes": ["ia"], "choosableParts": ["iso","litho","acro","ac"]}
+    {"level": 3, "type": "word", "id": "xenophobia", "definition": "fear of strangers", "prefixes": [], "roots": ["xeno", "phob"], "suffixes": ["ia"], "choosableParts": ["iso","litho","acro","ac"]},
 ];

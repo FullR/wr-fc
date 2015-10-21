@@ -1,0 +1,18 @@
+#!/bin/bash
+
+RELEASE_DIR=wrfc-releases
+DESKTOP_DIR=$RELEASE_DIR/desktop
+WEB_DIR=$RELEASE_DIR/web
+
+echo "Creating $RELEASE_DIR"
+mkdir -p $RELEASE_DIR
+rm -rf releases/*
+mkdir -p $DESKTOP_DIR
+mkdir -p $WEB_DIR
+
+#./build-all-desktop
+
+echo "Copying desktop builds into $DESKTOP_DIR"
+rsync -r --progress desktop-builds/* $DESKTOP_DIR
+echo "Copying web builds into $WEB_DIR"
+rsync -r --progress dist/* $WEB_DIR

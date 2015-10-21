@@ -3924,7 +3924,7 @@ module.exports = [
             "prefix-eu",
             "root-ideo",
             "root-ge",
-            "suffix-ic"
+            "suffix-esis"
         ],
         "key": "word-mesophilic",
         "soundFile": "word-parts/word/W-mesophilic"

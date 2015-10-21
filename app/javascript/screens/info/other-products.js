@@ -23,8 +23,8 @@ const OtherProducts = React.createClass({
         };
 
         const awardsStyle = {
-            maxWidth: 538,
-            maxHeight: 81,
+            width: "80%",
+            //maxWidth: 1000,
             margin: "50px 0 50px 0"
         };
 
@@ -58,7 +58,7 @@ const OtherProducts = React.createClass({
                 <Header>Other Products</Header>
                 <div style={contentStyle} className="other-products">
                     <div style={{width: "100%", textAlign: "center"}}>
-                        <img src="assets/images/other-products/awards.jpg" style={awardsStyle}/>
+                        <img src="assets/images/other-products/awards.png" style={awardsStyle}/>
                     </div>
                     <div style={textContainerStyle}>
                         <div style={paragraphStyle}>The Critical Thinking Co.&trade; is recommended by <span style={magazineStyle}>Learning® Magazine</span>, <span style={magazineStyle}>The Well-Trained Mind</span>, <span style={magazineStyle}>College Prep Genius</span>, <span style={magazineStyle}>Creative Child Magazine</span>, <span style={magazineStyle}>Dr. Toy</span>, and used by <span style={magazineStyle}>Sylvan Learning® Centers</span>, <span style={magazineStyle}>Club Z In-Home Tutoring</span>, leading U.S. public schools, and gifted and talented programs in 57 countries throughout the world.</div>

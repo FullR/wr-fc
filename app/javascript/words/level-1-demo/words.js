@@ -525,7 +525,7 @@ module.exports = [
         "level": 1,
         "type": "word",
         "id": "aviatrix",
-        "definition": "a woman airplane pilot",
+        "definition": "a female airplane pilot",
         "prefixes": [],
         "roots": [
             "root-avia"

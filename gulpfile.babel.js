@@ -128,7 +128,7 @@ function copy(target, destination) {
 
 function statics(level) {
   return () => {
-    return copy(`statics/${level}`+"/*", `dist/${level}`)
+    return copy(`statics/${level}${"/*"}`, `dist/${level}`)
       .then(() => copy("statics/all/*", `dist/${level}`));
     //*/
   };
@@ -203,43 +203,7 @@ function desktop(level) {
       files: `./dist/${level}/**/!(*.mp3)`,
       platforms: ["osx32", "osx64", "win32", "win64"],
       buildDir: "./desktop-builds",
-      macZip: true,
-      window: {
-        toolbar: false,
-        frame: true
-      },
-      platformOverrides: {
-          win: {
-              window: {
-                  toolbar: false
-              }
-          },
-          win32: {
-              window: {
-                  toolbar: false
-              }
-          },
-          win64: {
-              window: {
-                  toolbar: false
-              }
-          },
-          osx: {
-              window: {
-                  toolbar: false
-              }
-          },
-          osx32: {
-              window: {
-                  toolbar: false
-              }
-          },
-          osx64: {
-              window: {
-                  toolbar: false
-              }
-          }
-        }
+      macZip: true
     });
 
     nw.on("log", console.log.bind(console));
