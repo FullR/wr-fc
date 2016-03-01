@@ -19,6 +19,8 @@ const DefinitionDisplayBox = require("components/activity/definition-display-box
 const BottomContainer = require("components/activity/bottom-container");
 const PartPieceDisplay = require("components/activity/part-piece-display");
 
+const logError = (error) => console.error(error);
+
 const ActivityType3 = React.createClass({
     mixins: [
         Reflux.ListenerMixin,
@@ -37,7 +39,7 @@ const ActivityType3 = React.createClass({
         const correctWordPath = this.state.getCorrectWordSound();
         this.stop();
         if(correctWordPath) {
-            this.play(correctWordPath, delay, true);
+            this.play(correctWordPath, delay, true).catch(logError);
         }
     },
 

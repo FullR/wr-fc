@@ -21,6 +21,8 @@ const BottomContainer = require("components/activity/bottom-container");
 const ExampleWord = require("components/activity/example-word");
 const queue = require("utility/queue");
 
+const logError = (error) => console.error(error);
+
 const ActivityType2 = React.createClass({
     mixins: [
         Reflux.ListenerMixin,
@@ -45,7 +47,8 @@ const ActivityType2 = React.createClass({
 
     playCorrectPart(delay=0) {
         this.stop();
-        return this.play(this.state.getCorrectSound(), delay, true);
+        return this.play(this.state.getCorrectSound(), delay, true)
+            .catch(logError);
     },
 
     playAsIn() {
@@ -54,7 +57,8 @@ const ActivityType2 = React.createClass({
 
     playExampleWord(delay=0) {
         this.stop();
-        return this.play(this.state.getExampleSoundPath(), delay, true);
+        return this.play(this.state.getExampleSoundPath(), delay, true)
+            .catch(logError);
     },
 
     loadSounds() {
@@ -74,6 +78,8 @@ const ActivityType2 = React.createClass({
             ["playAsIn"],
             ["playExampleWord"],
         ], ([fnKey]) => this[fnKey]());
+
+        this.queue.promise.catch(logError);
     },
 
     stopAll() {

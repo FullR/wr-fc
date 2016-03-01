@@ -20,6 +20,8 @@ const ExampleWord = require("components/activity/example-word");
 const BottomContainer = require("components/activity/bottom-container");
 const dictionary = window.dictionary;
 
+const logError = (error) => console.error(error);
+
 const ActivityType1 = React.createClass({
     mixins: [
         Reflux.ListenerMixin,
@@ -47,16 +49,18 @@ const ActivityType1 = React.createClass({
     },
 
     playWordSound(delay=0) {
-        this.stop().then(() => this.play(this.state.getCorrectSound(), delay, true));
+        this.stop()
+            .then(() => this.play(this.state.getCorrectSound(), delay, true))
+            .catch(logError);
     },
 
     playDefinitionSound(delay=0) {
         const soundPath = this.state.getCorrectDefinitionSound();
         this.stop().then(() => {
             if(soundPath) {
-                this.play(soundPath, delay, true);
+                return this.play(soundPath, delay, true);
             }
-        });
+        }).catch(logError);
     },
 
     selectChoice(choice) {
